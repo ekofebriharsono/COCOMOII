@@ -924,23 +924,35 @@ function hitungStepOne(){
     // var ActivityTraining = EMGlobal * Training * TotalGajiGlobal;
     // var ActivityEvaluation = EMGlobal * Evaluation * TotalGajiGlobal;
 
-    var ActivityRequirements = PMGlobal * Requirements;
-    var ActivitySpecifications = PMGlobal * Specifications;
-    var ActivityDesign = PMGlobal * Design;
-    var ActivityImplementation = PMGlobal * Implementation;
-    var ActivityIntegration = PMGlobal * Integration;
-    var ActivityAcceptance = PMGlobal * Acceptance;
-    var ActivityProjectManagement = PMGlobal * ProjectManagement;
-    var ActivityConfiguration = PMGlobal * Configuration;
-    var ActivityQuality = PMGlobal * Quality;
-    var ActivityDocumentations = PMGlobal * Documentations;
-    var ActivityTraining = PMGlobal * Training;
-    var ActivityEvaluation = PMGlobal * Evaluation;
+    var ActivityRequirements = PMGlobal * (Requirements / 100);
+    var ActivitySpecifications = PMGlobal * (Specifications / 100);
+    var ActivityDesign = PMGlobal * (Design / 100);
+    var ActivityImplementation = PMGlobal * (Implementation / 100);
+    var ActivityIntegration = PMGlobal * (Integration / 100);
+    var ActivityAcceptance = PMGlobal * (Acceptance / 100);
+    var ActivityProjectManagement = PMGlobal * (ProjectManagement / 100);
+    var ActivityConfiguration = PMGlobal * (Configuration / 100);
+    var ActivityQuality = PMGlobal * (Quality / 100);
+    var ActivityDocumentations = PMGlobal * (Documentations / 100);
+    var ActivityTraining = PMGlobal * (Training/ 100);
+    var ActivityEvaluation = PMGlobal * (Evaluation / 100);
 
     var totalActivityWaterfall = ActivityRequirements + ActivitySpecifications + ActivityDesign + ActivityImplementation + ActivityIntegration + ActivityAcceptance + ActivityProjectManagement + ActivityConfiguration + ActivityQuality + ActivityDocumentations + ActivityTraining + ActivityEvaluation ;
 
     document.getElementById("valueTotalCostOfActivityWaterfall").value = totalActivityWaterfall;
-    
+    document.getElementById("totalRequirements").value = ActivityRequirements;
+    document.getElementById("totalSpecifications").value = ActivitySpecifications;
+    document.getElementById("totalDesign").value = ActivityDesign;
+    document.getElementById("totalImplementation").value = ActivityImplementation;
+    document.getElementById("totalIntegration").value = ActivityIntegration;
+    document.getElementById("totalAcceptance").value = ActivityAcceptance;
+    document.getElementById("totalProjectManagement").value = ActivityProjectManagement;
+    document.getElementById("totalConfiguration").value = ActivityConfiguration;
+    document.getElementById("totalQuality").value = ActivityQuality;
+    document.getElementById("totalDocumentations").value = ActivityDocumentations;
+    document.getElementById("totalTraining").value = ActivityTraining;
+    document.getElementById("totalEvaluation").value = ActivityEvaluation;
+
   }
 
 
