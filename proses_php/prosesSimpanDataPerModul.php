@@ -89,6 +89,8 @@ if(isset($_POST['id_modul'])){
     $TRA = $_POST['totalTraining'];
     $EVA = $_POST['totalEvaluation'];
 
+    $TotalCostOfActivityWaterfall = $_POST['valueTotalCostOfActivityWaterfall'];
+
     $sqlILF = "INSERT INTO ufp_complexity_weight (id_ufp,id_modul,low,average,height) VALUES ('ilf_ufp',$id_modul,$ILF_LOW,$ILF_AVERAGE,$ILF_HEIGHT)";
     $sqlEIF = "INSERT INTO ufp_complexity_weight (id_ufp,id_modul,low,average,height) VALUES ('eif_ufp',$id_modul,$EIF_LOW,$EIF_AVERAGE,$EIF_HEIGHT)";
     $sqlEI = "INSERT INTO ufp_complexity_weight (id_ufp,id_modul,low,average,height) VALUES ('ei_ufp',$id_modul,$EI_LOW,$EI_AVERAGE,$EI_HEIGHT)";
@@ -141,6 +143,8 @@ if(isset($_POST['id_modul'])){
     $sqlDOC = "INSERT INTO activity_user (id_activity, id_modul, persen, value) VALUES ('doc',$id_modul,$PDOC,$DOC)";
     $sqlTRA = "INSERT INTO activity_user (id_activity, id_modul, persen, value) VALUES ('tra',$id_modul,$PTRA,$TRA)";
     $sqlEVA = "INSERT INTO activity_user (id_activity, id_modul, persen, value) VALUES ('eva',$id_modul,$PEVA,$EVA)";
+
+    $sqlTotalCostOfActivityWaterfall = "INSERT INTO total_activity_user (id_modul, value) VALUES ($id_modul,$TotalCostOfActivityWaterfall)";
 
     $sqlUpdateTotalInProject ="UPDATE modul SET total = '$valueTotalCostOfActivityWaterfall' WHERE id_modul= $id_modul";
     $sqlUpdateStatusModul ="UPDATE modul SET status = 1 WHERE id_modul= '$id_modul'";
@@ -196,6 +200,8 @@ if(isset($_POST['id_modul'])){
     $resultDOC = mysqli_query($con, $sqlDOC);
     $resultTRA = mysqli_query($con, $sqlTRA);
     $resultEVA = mysqli_query($con, $sqlEVA);
+
+    $resultTotalCostOfActivityWaterfall = mysqli_query($con, $sqlTotalCostOfActivityWaterfall);
 
     $resultsUpdateTotalInProject = mysqli_query($con,$sqlUpdateTotalInProject);
     $resultsUpdateStatusModul = mysqli_query($con,$sqlUpdateStatusModul);

@@ -1086,7 +1086,7 @@ if($res){
             ?>
     </table>
 
-<hr>
+    <hr>
 
     <table border="1">
         <tr>
@@ -1555,25 +1555,25 @@ if($res){
     <hr>
 
     <table border="1">
-            <tr>
-                <td>
-                    <b>Modul-ID</b>
-                </td>
-                <td>
-                    <b>Size (KSLOC)</b>
-                </td>
-                <td>
-                    <b>E</b>
-                </td>
-                <td>
-                    <b>Total EM</b>
-                </td>
-                <td>
-                    <b>Hasil</b>
-                </td>
-            </tr>
+        <tr>
+            <td>
+                <b>Modul-ID</b>
+            </td>
+            <td>
+                <b>Size (KSLOC)</b>
+            </td>
+            <td>
+                <b>E</b>
+            </td>
+            <td>
+                <b>Total EM</b>
+            </td>
+            <td>
+                <b>Hasil</b>
+            </td>
+        </tr>
 
-            <?php 
+        <?php 
                 $idUser = $_SESSION['id_user'];
                 $sql = "SELECT modul.id_modul, size_user.size_in_sloc , e_user.value as valueE, total_em_user.value as valueEM, pm_user.value as valuePM FROM project 
                 INNER JOIN modul 
@@ -1604,8 +1604,521 @@ if($res){
                 }
             }
             ?>
-    
+
     </table>
+
+    <hr>
+
+    <table border="1">
+        <tr>
+            <td rowspan="2">
+                <center><b>No</b></center>
+            </td>
+            <td rowspan="2">
+                <center><b>Activity</b></center>
+            </td>
+            <td rowspan="2">
+                <center><b>%</b></center>
+            </td>
+            <td colspan="<?php echo $totalModul; ?>">
+                <center><b>Modul-ID</b></center>
+            </td>
+        </tr>
+        <tr>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $sql = "SELECT modul.id_modul as idmodul   
+                FROM project  
+                INNER JOIN modul  
+                ON project.id_project = modul.id_project WHERE project.id_project='$idProject'";
+                $res = mysqli_query($con,$sql);
+                $no = 0;
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++; ?>
+            <td>
+                <center><b><?php echo $no; ?></b></center>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+
+        <tr>
+            <td>
+                1
+            </td>
+            <td>
+                Requirement
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN activity_user 
+                ON modul.id_modul = activity_user.id_modul 
+                WHERE project.id_project='$idProject' and activity_user.id_activity = 'rec'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+            <?php if($no == 1){ ?>
+
+            <td>
+                <?php echo $d['persen']; ?>
+            </td>
+
+            <?php    }
+
+                        ?>
+
+            <td>
+                <?php echo $d['value']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                2
+            </td>
+            <td>
+                Specifications
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN activity_user 
+                ON modul.id_modul = activity_user.id_modul 
+                WHERE project.id_project='$idProject' and activity_user.id_activity = 'spe'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+            <?php if($no == 1){ ?>
+
+            <td>
+                <?php echo $d['persen']; ?>
+            </td>
+
+            <?php    }
+
+                        ?>
+
+            <td>
+                <?php echo $d['value']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                3
+            </td>
+            <td>
+                Design
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN activity_user 
+                ON modul.id_modul = activity_user.id_modul 
+                WHERE project.id_project='$idProject' and activity_user.id_activity = 'des'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+            <?php if($no == 1){ ?>
+
+            <td>
+                <?php echo $d['persen']; ?>
+            </td>
+
+            <?php    }
+
+                        ?>
+
+            <td>
+                <?php echo $d['value']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                4
+            </td>
+            <td>
+                Implementation
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN activity_user 
+                ON modul.id_modul = activity_user.id_modul 
+                WHERE project.id_project='$idProject' and activity_user.id_activity = 'imp'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+            <?php if($no == 1){ ?>
+
+            <td>
+                <?php echo $d['persen']; ?>
+            </td>
+
+            <?php    }
+
+                        ?>
+
+            <td>
+                <?php echo $d['value']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                5
+            </td>
+            <td>
+                Integration Testing
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN activity_user 
+                ON modul.id_modul = activity_user.id_modul 
+                WHERE project.id_project='$idProject' and activity_user.id_activity = 'int'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+            <?php if($no == 1){ ?>
+
+            <td>
+                <?php echo $d['persen']; ?>
+            </td>
+
+            <?php    }
+
+                        ?>
+
+            <td>
+                <?php echo $d['value']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                6
+            </td>
+            <td>
+                Acceptance & deployment
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN activity_user 
+                ON modul.id_modul = activity_user.id_modul 
+                WHERE project.id_project='$idProject' and activity_user.id_activity = 'acc'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+            <?php if($no == 1){ ?>
+
+            <td>
+                <?php echo $d['persen']; ?>
+            </td>
+
+            <?php    }
+
+                        ?>
+
+            <td>
+                <?php echo $d['value']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                7
+            </td>
+            <td>
+                Project Management
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN activity_user 
+                ON modul.id_modul = activity_user.id_modul 
+                WHERE project.id_project='$idProject' and activity_user.id_activity = 'pro'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+            <?php if($no == 1){ ?>
+
+            <td>
+                <?php echo $d['persen']; ?>
+            </td>
+
+            <?php    }
+
+                        ?>
+
+            <td>
+                <?php echo $d['value']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                8
+            </td>
+            <td>
+                Configuration Management
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN activity_user 
+                ON modul.id_modul = activity_user.id_modul 
+                WHERE project.id_project='$idProject' and activity_user.id_activity = 'con'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+            <?php if($no == 1){ ?>
+
+            <td>
+                <?php echo $d['persen']; ?>
+            </td>
+
+            <?php    }
+
+                        ?>
+
+            <td>
+                <?php echo $d['value']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                9
+            </td>
+            <td>
+                Quality Assurance
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN activity_user 
+                ON modul.id_modul = activity_user.id_modul 
+                WHERE project.id_project='$idProject' and activity_user.id_activity = 'qua'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+            <?php if($no == 1){ ?>
+
+            <td>
+                <?php echo $d['persen']; ?>
+            </td>
+
+            <?php    }
+
+                        ?>
+
+            <td>
+                <?php echo $d['value']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                10
+            </td>
+            <td>
+                Documentations
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN activity_user 
+                ON modul.id_modul = activity_user.id_modul 
+                WHERE project.id_project='$idProject' and activity_user.id_activity = 'doc'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+            <?php if($no == 1){ ?>
+
+            <td>
+                <?php echo $d['persen']; ?>
+            </td>
+
+            <?php    }
+
+                        ?>
+
+            <td>
+                <?php echo $d['value']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                11
+            </td>
+            <td>
+                Training & support
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN activity_user 
+                ON modul.id_modul = activity_user.id_modul 
+                WHERE project.id_project='$idProject' and activity_user.id_activity = 'tra'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+            <?php if($no == 1){ ?>
+
+            <td>
+                <?php echo $d['persen']; ?>
+            </td>
+
+            <?php    }
+
+                        ?>
+
+            <td>
+                <?php echo $d['value']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                12
+            </td>
+            <td>
+                Evaluation & testing
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN activity_user 
+                ON modul.id_modul = activity_user.id_modul 
+                WHERE project.id_project='$idProject' and activity_user.id_activity = 'eva'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+            <?php if($no == 1){ ?>
+
+            <td>
+                <?php echo $d['persen']; ?>
+            </td>
+
+            <?php    }
+
+                        ?>
+
+            <td>
+                <?php echo $d['value']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+
+
+
+    </table>
+
+
 </body>
 
 </html>
