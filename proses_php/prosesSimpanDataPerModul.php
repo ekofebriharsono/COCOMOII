@@ -108,7 +108,7 @@ if(isset($_POST['id_modul'])){
     $sqlE = "INSERT INTO e_user (id_modul, value) VALUES ($id_modul,$E)";
 
     $sqlTotalEM = "INSERT INTO total_em_user (id_modul, value) VALUES ($id_modul,$totalEM)";
-    
+
     $sqlTotalPM = "INSERT INTO pm_user (id_modul, value) VALUES ($id_modul,$totalPM)";
 
     $sqlRELY = "INSERT INTO em_user (id_em, id_modul, value) VALUES ('rely',$id_modul,$RELY)";
@@ -178,7 +178,7 @@ if(isset($_POST['id_modul'])){
     $resultPCAP = mysqli_query($con, $sqlPCAP);
     $resultPCON = mysqli_query($con, $sqlPCON);
     $resultAPEX = mysqli_query($con, $sqlAPEX);
-    $resultPLEX = mysqli_query($con, $sqlPLEX);    
+    $resultPLEX = mysqli_query($con, $sqlPLEX);
     $resultLTEX = mysqli_query($con, $sqlLTEX);
     $resultTOOL = mysqli_query($con, $sqlTOOL);
     $resultSITE = mysqli_query($con, $sqlSITE);

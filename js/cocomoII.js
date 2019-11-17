@@ -924,8 +924,6 @@ function hitungStepOne(){
     // var ActivityTraining = EMGlobal * Training * TotalGajiGlobal;
     // var ActivityEvaluation = EMGlobal * Evaluation * TotalGajiGlobal;
 
-    PMGlobal = 67.33;
-
     var ActivityRequirements = PMGlobal * (Requirements / 100);
     var ActivitySpecifications = PMGlobal * (Specifications / 100);
     var ActivityDesign = PMGlobal * (Design / 100);
