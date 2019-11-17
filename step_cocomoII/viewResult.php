@@ -2113,6 +2113,30 @@ if($res){
             }
             ?>
         </tr>
+        <tr>
+            <td colspan="3">
+                <b>Total</b>
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $sql = "SELECT modul.id_modul, total_activity_user.value  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN total_activity_user 
+                ON modul.id_modul = total_activity_user.id_modul 
+                WHERE project.id_project='$idProject'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        ?>
+            <td>
+                <?php echo $d['value']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
 
 
 

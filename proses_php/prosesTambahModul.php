@@ -32,6 +32,7 @@ if(isset($_POST['submitDeleteModul'])){
     $sqlDeleteTotalEM = "DELETE FROM total_em_user WHERE id_modul=$idModul";
     $sqlDeleteTotalUFP = "DELETE FROM ufp_user WHERE id_modul=$idModul";
     $sqlDeleteAllDataActivity = "DELETE FROM activity_user WHERE id_modul=$idModul";
+    $sqlDeleteTotalActivity = "DELETE FROM total_activity_user WHERE id_modul=$idModul";
 
     $resultsDeleteModul = mysqli_query($con,$sqlDeleteModul);
     $resultsDeleteAllDataUFP = mysqli_query($con,$sqlDeleteAllDataUFP);
@@ -43,6 +44,7 @@ if(isset($_POST['submitDeleteModul'])){
     $resultsDeleteTotalEM = mysqli_query($con,$sqlDeleteTotalEM);
     $resultsDeleteTotalUFP = mysqli_query($con,$sqlDeleteTotalUFP);
     $resultsDeleteAllDataActivity = mysqli_query($con,$sqlDeleteAllDataActivity);
+    $resultsDeleteTotalActivity = mysqli_query($con,$sqlDeleteTotalActivity);
 
     if($resultsDeleteModul && $resultsDeleteAllDataUFP) {
       header('Location: ../tambah_project.php?project='.$idProject);
