@@ -1,0 +1,84 @@
+<div class="tab">Step Three:
+    <p>Software Scale Drivers</p>
+    <table border="0">
+      <tr>
+        <td>Precedentedness</td>
+        <td> : </td>
+        <td>
+        <input hidden type="text" name="PrecedentednessValue" id="PrecedentednessValue">
+          <select name="Precedentedness" id="Precedentedness">
+            <option value="very_low">Very Low</option>
+            <option value="low">Low</option>
+            <option value="nominal" selected>Nominal</option>
+            <option value="height">Height</option>
+            <option value="very_height">Very Height</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Development Flexibility</td>
+        <td> : </td>
+        <td>
+        <input hidden type="text" name="DevelopmentFlexibilityValue" id="DevelopmentFlexibilityValue">
+          <select name="DevelopmentFlexibility" id="DevelopmentFlexibility">
+            <option value="very_low">Very Low</option>
+            <option value="low">Low</option>
+            <option value="nominal" selected>Nominal</option>
+            <option value="height">Height</option>
+            <option value="very_height">Very Height</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Architecture / Risk Resolution</td>
+        <td> : </td>
+        <td>
+        <input hidden type="text" name="ArchitectureValue" id="ArchitectureValue">
+          <select name="Architecture" id="Architecture">
+            <option value="very_low">Very Low</option>
+            <option value="low">Low</option>
+            <option value="nominal" selected>Nominal</option>
+            <option value="height">Height</option>
+            <option value="very_height">Very Height</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Team Cohesion</td>
+        <td> : </td>
+        <td>
+        <input hidden type="text" name="TeamCohesionValue" id="TeamCohesionValue">
+          <select name="TeamCohesion" id="TeamCohesion">
+            <option value="very_low">Very Low</option>
+            <option value="low">Low</option>
+            <option value="nominal" selected>Nominal</option>
+            <option value="height">Height</option>
+            <option value="very_height">Very Height</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Process Maturity</td>
+        <td> : </td>
+        <td>
+        <input hidden type="text" name="ProcessMaturityValue" id="ProcessMaturityValue">
+          <select name="ProcessMaturity" id="ProcessMaturity">
+            <option value="very_low">Very Low</option>
+            <option value="low">Low</option>
+            <option value="nominal" selected>Nominal</option>
+            <option value="height">Height</option>
+            <option value="very_height">Very Height</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3"><button type="button" onclick="hitungStepThree()" >Hitung</button></td>
+      </tr>
+      <tr>
+        <td>
+          <input placeholder="Total" type="number" value="0" readonly oninput="this.className = ''" id="totalStepThree" name="E">
+        </td>
+      </tr>
+
+    </table>
+  </div>
