@@ -83,7 +83,7 @@
       </td>
       <td>
       <input type="number" oninput="this.className = ''" id="valueRequirements" name="valueRequirements"> 
-      <input type="number" oninput="this.className = ''" id="totalRequirements" name="totalRequirements"> 
+      <input type="number" oninput="this.className = ''" id="totalRequirements" name="totalRequirements" hidden> 
       </td>
     </tr>
     <tr>
@@ -103,7 +103,7 @@
       </td>
       <td>
       <input type="number" oninput="this.className = ''" id="valueSpecifications" name="valueSpecifications"> 
-      <input type="number" oninput="this.className = ''" id="totalSpecifications" name="totalSpecifications"> 
+      <input type="number" oninput="this.className = ''" id="totalSpecifications" name="totalSpecifications" hidden> 
       </td>
     </tr>
     <tr>
@@ -123,7 +123,7 @@
       </td>
       <td>
       <input type="number" oninput="this.className = ''" id="valueDesign" name="valueDesign"> 
-      <input type="number" oninput="this.className = ''" id="totalDesign" name="totalDesign"> 
+      <input type="number" oninput="this.className = ''" id="totalDesign" name="totalDesign" hidden> 
       </td>
     </tr>
     <tr>
@@ -143,7 +143,7 @@
       </td>
       <td>
       <input type="number" oninput="this.className = ''" id="valueImplementation" name="valueImplementation"> 
-      <input type="number" oninput="this.className = ''" id="totalImplementation" name="totalImplementation"> 
+      <input type="number" oninput="this.className = ''" id="totalImplementation" name="totalImplementation" hidden> 
       </td>
     </tr>
     <tr>
@@ -163,7 +163,7 @@
       </td>
       <td>
       <input type="number" oninput="this.className = ''" id="valueIntegration" name="valueIntegration"> 
-      <input type="number" oninput="this.className = ''" id="totalIntegration" name="totalIntegration"> 
+      <input type="number" oninput="this.className = ''" id="totalIntegration" name="totalIntegration" hidden> 
       </td>
     </tr>
     <tr>
@@ -183,7 +183,7 @@
       </td>
       <td>
       <input type="number" oninput="this.className = ''" id="valueAcceptance" name="valueAcceptance"> 
-      <input type="number" oninput="this.className = ''" id="totalAcceptance" name="totalAcceptance"> 
+      <input type="number" oninput="this.className = ''" id="totalAcceptance" name="totalAcceptance" hidden> 
       </td>
     </tr>
     <tr>
@@ -203,7 +203,7 @@
       </td>
       <td>
       <input type="number" oninput="this.className = ''" id="valueProjectManagement" name="valueProjectManagement"> 
-      <input type="number" oninput="this.className = ''" id="totalProjectManagement" name="totalProjectManagement"> 
+      <input type="number" oninput="this.className = ''" id="totalProjectManagement" name="totalProjectManagement" hidden> 
       </td>
     </tr>
     <tr>
@@ -223,7 +223,7 @@
       </td>
       <td>
       <input type="number" oninput="this.className = ''" id="valueConfiguration" name="valueConfiguration"> 
-      <input type="number" oninput="this.className = ''" id="totalConfiguration" name="totalConfiguration"> 
+      <input type="number" oninput="this.className = ''" id="totalConfiguration" name="totalConfiguration" hidden> 
       </td>
     </tr>
     <tr>
@@ -243,7 +243,7 @@
       </td>
       <td>
       <input type="number" oninput="this.className = ''" id="valueQuality" name="valueQuality"> 
-      <input type="number" oninput="this.className = ''" id="totalQuality" name="totalQuality"> 
+      <input type="number" oninput="this.className = ''" id="totalQuality" name="totalQuality" hidden> 
       </td>
     </tr>
     <tr>
@@ -263,7 +263,7 @@
       </td>
       <td>
       <input type="number" oninput="this.className = ''" id="valueDocumentations" name="valueDocumentations"> 
-      <input type="number" oninput="this.className = ''" id="totalDocumentations" name="totalDocumentations"> 
+      <input type="number" oninput="this.className = ''" id="totalDocumentations" name="totalDocumentations" hidden> 
       </td>
     </tr>
     <tr>
@@ -283,7 +283,7 @@
       </td>
       <td>
       <input type="number" oninput="this.className = ''" id="valueTraining" name="valueTraining"> 
-      <input type="number" oninput="this.className = ''" id="totalTraining" name="totalTraining"> 
+      <input type="number" oninput="this.className = ''" id="totalTraining" name="totalTraining" hidden> 
       </td>
     </tr>
     <tr>
@@ -303,7 +303,7 @@
       </td>
       <td>
       <input type="number" oninput="this.className = ''" id="valueEvaluation" name="valueEvaluation"> 
-      <input type="number" oninput="this.className = ''" id="totalEvaluation" name="totalEvaluation"> 
+      <input type="number" oninput="this.className = ''" id="totalEvaluation" name="totalEvaluation" hidden> 
       </td>
     </tr>
     <tr>
