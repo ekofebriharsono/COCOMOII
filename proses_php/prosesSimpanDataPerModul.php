@@ -63,18 +63,31 @@ if(isset($_POST['id_modul'])){
     $SITE = $_POST['resultMultisiteDevelopment'];
     $SCED = $_POST['resultRequiredDevelopmentSchedule'];
 
-    $REC = $_POST['valueRequirements'];
-    $SPE = $_POST['valueSpecifications'];
-    $DES = $_POST['valueDesign'];
-    $IMP = $_POST['valueImplementation'];
-    $INT = $_POST['valueIntegration'];
-    $ACC = $_POST['valueAcceptance'];
-    $PRO = $_POST['valueProjectManagement'];
-    $CON = $_POST['valueConfiguration'];
-    $QUA = $_POST['valueQuality'];
-    $DOC = $_POST['valueDocumentations'];
-    $TRA = $_POST['valueTraining'];
-    $EVA = $_POST['valueEvaluation'];
+    $PREC = $_POST['valueRequirements'];
+    $PSPE = $_POST['valueSpecifications'];
+    $PDES = $_POST['valueDesign'];
+    $PIMP = $_POST['valueImplementation'];
+    $PINT = $_POST['valueIntegration'];
+    $PACC = $_POST['valueAcceptance'];
+    $PPRO = $_POST['valueProjectManagement'];
+    $PCON = $_POST['valueConfiguration'];
+    $PQUA = $_POST['valueQuality'];
+    $PDOC = $_POST['valueDocumentations'];
+    $PTRA = $_POST['valueTraining'];
+    $PEVA = $_POST['valueEvaluation'];
+
+    $REC = $_POST['totalRequirements'];
+    $SPE = $_POST['totalSpecifications'];
+    $DES = $_POST['totalDesign'];
+    $IMP = $_POST['totalImplementation'];
+    $INT = $_POST['totalIntegration'];
+    $ACC = $_POST['totalAcceptance'];
+    $PRO = $_POST['totalProjectManagement'];
+    $CON = $_POST['totalConfiguration'];
+    $QUA = $_POST['totalQuality'];
+    $DOC = $_POST['totalDocumentations'];
+    $TRA = $_POST['totalTraining'];
+    $EVA = $_POST['totalEvaluation'];
 
     $sqlILF = "INSERT INTO ufp_complexity_weight (id_ufp,id_modul,low,average,height) VALUES ('ilf_ufp',$id_modul,$ILF_LOW,$ILF_AVERAGE,$ILF_HEIGHT)";
     $sqlEIF = "INSERT INTO ufp_complexity_weight (id_ufp,id_modul,low,average,height) VALUES ('eif_ufp',$id_modul,$EIF_LOW,$EIF_AVERAGE,$EIF_HEIGHT)";
@@ -93,7 +106,9 @@ if(isset($_POST['id_modul'])){
     $sqlPMAT = "INSERT INTO sf_user (id_sf, id_modul, value) VALUES ('pmat',$id_modul,$ProcessMaturityValue)";
 
     $sqlE = "INSERT INTO e_user (id_modul, value) VALUES ($id_modul,$E)";
+
     $sqlTotalEM = "INSERT INTO total_em_user (id_modul, value) VALUES ($id_modul,$totalEM)";
+    
     $sqlTotalPM = "INSERT INTO pm_user (id_modul, value) VALUES ($id_modul,$totalPM)";
 
     $sqlRELY = "INSERT INTO em_user (id_em, id_modul, value) VALUES ('rely',$id_modul,$RELY)";
@@ -114,54 +129,60 @@ if(isset($_POST['id_modul'])){
     $sqlSITE = "INSERT INTO em_user (id_em, id_modul, value) VALUES ('site',$id_modul,$SITE)";
     $sqlSCED = "INSERT INTO em_user (id_em, id_modul, value) VALUES ('sced',$id_modul,$SCED)";
 
-    $sqlREC = "INSERT INTO activity_user (id_activity, id_modul, value) VALUES ('rec',$id_modul,$REC)";
-    $sqlSPE = "INSERT INTO activity_user (id_activity, id_modul, value) VALUES ('spe',$id_modul,$SPE)";
-    $sqlDES = "INSERT INTO activity_user (id_activity, id_modul, value) VALUES ('des',$id_modul,$DES)";
-    $sqlIMP = "INSERT INTO activity_user (id_activity, id_modul, value) VALUES ('imp',$id_modul,$IMP)";
-    $sqlINT = "INSERT INTO activity_user (id_activity, id_modul, value) VALUES ('int',$id_modul,$INT)";
-    $sqlACC = "INSERT INTO activity_user (id_activity, id_modul, value) VALUES ('acc',$id_modul,$ACC)";
-    $sqlPRO = "INSERT INTO activity_user (id_activity, id_modul, value) VALUES ('pro',$id_modul,$PRO)";
-    $sqlCON = "INSERT INTO activity_user (id_activity, id_modul, value) VALUES ('con',$id_modul,$CON)";
-    $sqlQUA = "INSERT INTO activity_user (id_activity, id_modul, value) VALUES ('qua',$id_modul,$QUA)";
-    $sqlDOC = "INSERT INTO activity_user (id_activity, id_modul, value) VALUES ('doc',$id_modul,$DOC)";
-    $sqlTRA = "INSERT INTO activity_user (id_activity, id_modul, value) VALUES ('tra',$id_modul,$TRA)";
-    $sqlEVA = "INSERT INTO activity_user (id_activity, id_modul, value) VALUES ('eva',$id_modul,$TRA)";
+    $sqlREC = "INSERT INTO activity_user (id_activity, id_modul, persen, value) VALUES ('rec',$id_modul,$PREC,$REC)";
+    $sqlSPE = "INSERT INTO activity_user (id_activity, id_modul, persen, value) VALUES ('spe',$id_modul,$PSPE,$SPE)";
+    $sqlDES = "INSERT INTO activity_user (id_activity, id_modul, persen, value) VALUES ('des',$id_modul,$PDES,$DES)";
+    $sqlIMP = "INSERT INTO activity_user (id_activity, id_modul, persen, value) VALUES ('imp',$id_modul,$PIMP,$IMP)";
+    $sqlINT = "INSERT INTO activity_user (id_activity, id_modul, persen, value) VALUES ('int',$id_modul,$PINT,$INT)";
+    $sqlACC = "INSERT INTO activity_user (id_activity, id_modul, persen, value) VALUES ('acc',$id_modul,$PACC,$ACC)";
+    $sqlPRO = "INSERT INTO activity_user (id_activity, id_modul, persen, value) VALUES ('pro',$id_modul,$PPRO,$PRO)";
+    $sqlCON = "INSERT INTO activity_user (id_activity, id_modul, persen, value) VALUES ('con',$id_modul,$PCON,$CON)";
+    $sqlQUA = "INSERT INTO activity_user (id_activity, id_modul, persen, value) VALUES ('qua',$id_modul,$PQUA,$QUA)";
+    $sqlDOC = "INSERT INTO activity_user (id_activity, id_modul, persen, value) VALUES ('doc',$id_modul,$PDOC,$DOC)";
+    $sqlTRA = "INSERT INTO activity_user (id_activity, id_modul, persen, value) VALUES ('tra',$id_modul,$PTRA,$TRA)";
+    $sqlEVA = "INSERT INTO activity_user (id_activity, id_modul, persen, value) VALUES ('eva',$id_modul,$PEVA,$EVA)";
 
     $sqlUpdateTotalInProject ="UPDATE modul SET total = '$valueTotalCostOfActivityWaterfall' WHERE id_modul= $id_modul";
     $sqlUpdateStatusModul ="UPDATE modul SET status = 1 WHERE id_modul= '$id_modul'";
 
-    // $resultsILF = mysqli_query($con,$sqlILF);
-    // $resultsEIF = mysqli_query($con,$sqlEIF);
-    // $resultsEI = mysqli_query($con,$sqlEI);
-    // $resultsEO = mysqli_query($con,$sqlEO);
-    // $resultsEQ = mysqli_query($con,$sqlEQ);
-    // $resultsUFP = mysqli_query($con,$sqlUFP);
-    // $resultSIZE = mysqli_query($con, $sqlSIZE);
-    // $resultPREC = mysqli_query($con, $sqlPREC);
-    // $resultFLEX = mysqli_query($con, $sqlFLEX);
-    // $resultRESL = mysqli_query($con, $sqlRESL);
-    // $resultTEAM = mysqli_query($con, $sqlTEAM);
-    // $resultPMAT = mysqli_query($con, $sqlPMAT);
-    // $resultE = mysqli_query($con, $sqlE);
-    // $resultTotalEM = mysqli_query($con, $sqlTotalEM);
-    // $resultTotalPM = mysqli_query($con, $sqlTotalPM);
-    // $resultRELY = mysqli_query($con, $sqlRELY);
-    // $resultDATA = mysqli_query($con, $sqlDATA);
-    // $resultCPLX = mysqli_query($con, $sqlCPLX);
-    // $resultRUSE = mysqli_query($con, $sqlRUSE);
-    // $resultDOCU = mysqli_query($con, $sqlDOCU);
-    // $resultTIME = mysqli_query($con, $sqlTIME);
-    // $resultSTOR = mysqli_query($con, $sqlSTOR);
-    // $resultPVOL = mysqli_query($con, $sqlPVOL);
-    // $resultACAP = mysqli_query($con, $sqlACAP);
-    // $resultPCAP = mysqli_query($con, $sqlPCAP);
-    // $resultPCON = mysqli_query($con, $sqlPCON);
-    // $resultAPEX = mysqli_query($con, $sqlAPEX);
-    // $resultPLEX = mysqli_query($con, $sqlPLEX);    
-    // $resultLTEX = mysqli_query($con, $sqlLTEX);
-    // $resultTOOL = mysqli_query($con, $sqlTOOL);
-    // $resultSITE = mysqli_query($con, $sqlSITE);
-    // $resultSCED = mysqli_query($con, $sqlSCED);
+    $resultsILF = mysqli_query($con,$sqlILF);
+    $resultsEIF = mysqli_query($con,$sqlEIF);
+    $resultsEI = mysqli_query($con,$sqlEI);
+    $resultsEO = mysqli_query($con,$sqlEO);
+    $resultsEQ = mysqli_query($con,$sqlEQ);
+
+    $resultsUFP = mysqli_query($con,$sqlUFP);
+
+    $resultSIZE = mysqli_query($con, $sqlSIZE);
+
+    $resultPREC = mysqli_query($con, $sqlPREC);
+    $resultFLEX = mysqli_query($con, $sqlFLEX);
+    $resultRESL = mysqli_query($con, $sqlRESL);
+    $resultTEAM = mysqli_query($con, $sqlTEAM);
+    $resultPMAT = mysqli_query($con, $sqlPMAT);
+
+    $resultE = mysqli_query($con, $sqlE);
+
+    $resultTotalEM = mysqli_query($con, $sqlTotalEM);
+    $resultTotalPM = mysqli_query($con, $sqlTotalPM);
+
+    $resultRELY = mysqli_query($con, $sqlRELY);
+    $resultDATA = mysqli_query($con, $sqlDATA);
+    $resultCPLX = mysqli_query($con, $sqlCPLX);
+    $resultRUSE = mysqli_query($con, $sqlRUSE);
+    $resultDOCU = mysqli_query($con, $sqlDOCU);
+    $resultTIME = mysqli_query($con, $sqlTIME);
+    $resultSTOR = mysqli_query($con, $sqlSTOR);
+    $resultPVOL = mysqli_query($con, $sqlPVOL);
+    $resultACAP = mysqli_query($con, $sqlACAP);
+    $resultPCAP = mysqli_query($con, $sqlPCAP);
+    $resultPCON = mysqli_query($con, $sqlPCON);
+    $resultAPEX = mysqli_query($con, $sqlAPEX);
+    $resultPLEX = mysqli_query($con, $sqlPLEX);    
+    $resultLTEX = mysqli_query($con, $sqlLTEX);
+    $resultTOOL = mysqli_query($con, $sqlTOOL);
+    $resultSITE = mysqli_query($con, $sqlSITE);
+    $resultSCED = mysqli_query($con, $sqlSCED);
 
     $resultREC = mysqli_query($con, $sqlREC);
     $resultSPE = mysqli_query($con, $sqlSPE);
@@ -176,14 +197,14 @@ if(isset($_POST['id_modul'])){
     $resultTRA = mysqli_query($con, $sqlTRA);
     $resultEVA = mysqli_query($con, $sqlEVA);
 
-    // $resultsUpdateTotalInProject = mysqli_query($con,$sqlUpdateTotalInProject);
-    // $resultsUpdateStatusModul = mysqli_query($con,$sqlUpdateStatusModul);
+    $resultsUpdateTotalInProject = mysqli_query($con,$sqlUpdateTotalInProject);
+    $resultsUpdateStatusModul = mysqli_query($con,$sqlUpdateStatusModul);
 
-    // if($resultsILF && $resultsEIF && $resultsEI && $resultsEO && $resultsEQ && $resultsUpdateTotalInProject && $resultsUpdateStatusModul && $resultsUFP && $resultSIZE && $resultPREC && $resultFLEX && $resultRESL && $resultTEAM && $resultPMAT && $resultE) {
-    //   header('Location: ../tambah_project.php?project='.$id_project);
-    // }else {
-    //   header('Location: ../tambah_project.php?gagal=1');
-    // }
+    if($resultsILF && $resultsEIF && $resultsEI && $resultsEO && $resultsEQ && $resultsUpdateTotalInProject && $resultsUpdateStatusModul && $resultsUFP && $resultSIZE && $resultPREC && $resultFLEX && $resultRESL && $resultTEAM && $resultPMAT && $resultE) {
+      header('Location: ../tambah_project.php?project='.$id_project);
+    }else {
+      header('Location: ../tambah_project.php?gagal=1');
+    }
 
     
 }
