@@ -63,20 +63,35 @@ if(isset($_POST['id_modul'])){
     $SITE = $_POST['resultMultisiteDevelopment'];
     $SCED = $_POST['resultRequiredDevelopmentSchedule'];
 
-
+    $REC = $_POST['valueRequirements'];
+    $SPE = $_POST['valueSpecifications'];
+    $DES = $_POST['valueDesign'];
+    $IMP = $_POST['valueImplementation'];
+    $INT = $_POST['valueIntegration'];
+    $ACC = $_POST['valueAcceptance'];
+    $PRO = $_POST['valueProjectManagement'];
+    $CON = $_POST['valueConfiguration'];
+    $QUA = $_POST['valueQuality'];
+    $DOC = $_POST['valueDocumentations'];
+    $TRA = $_POST['valueTraining'];
+    $EVA = $_POST['valueEvaluation'];
 
     $sqlILF = "INSERT INTO ufp_complexity_weight (id_ufp,id_modul,low,average,height) VALUES ('ilf_ufp',$id_modul,$ILF_LOW,$ILF_AVERAGE,$ILF_HEIGHT)";
     $sqlEIF = "INSERT INTO ufp_complexity_weight (id_ufp,id_modul,low,average,height) VALUES ('eif_ufp',$id_modul,$EIF_LOW,$EIF_AVERAGE,$EIF_HEIGHT)";
     $sqlEI = "INSERT INTO ufp_complexity_weight (id_ufp,id_modul,low,average,height) VALUES ('ei_ufp',$id_modul,$EI_LOW,$EI_AVERAGE,$EI_HEIGHT)";
     $sqlEO = "INSERT INTO ufp_complexity_weight (id_ufp,id_modul,low,average,height) VALUES ('eo_ufp',$id_modul,$EO_LOW,$EO_AVERAGE,$EO_HEIGHT)";
     $sqlEQ = "INSERT INTO ufp_complexity_weight (id_ufp,id_modul,low,average,height) VALUES ('eq_ufp',$id_modul,$EQ_LOW,$EQ_AVERAGE,$EQ_HEIGHT)";
+
     $sqlUFP = "INSERT INTO ufp_user (id_modul, value) VALUES ($id_modul,$UFP)";
+
     $sqlSIZE = "INSERT INTO size_user (id_modul, sloc_convertion_ratio, size_in_sloc) VALUES ($id_modul,$SLOC,$SIZE)";
+
     $sqlPREC = "INSERT INTO sf_user (id_sf, id_modul, value) VALUES ('prec',$id_modul,$PrecedentednessValue)";
     $sqlFLEX = "INSERT INTO sf_user (id_sf, id_modul, value) VALUES ('flex',$id_modul,$DevelopmentFlexibilityValue)";
     $sqlRESL = "INSERT INTO sf_user (id_sf, id_modul, value) VALUES ('resl',$id_modul,$ArchitectureValue)";
     $sqlTEAM = "INSERT INTO sf_user (id_sf, id_modul, value) VALUES ('team',$id_modul,$TeamCohesionValue)";
     $sqlPMAT = "INSERT INTO sf_user (id_sf, id_modul, value) VALUES ('pmat',$id_modul,$ProcessMaturityValue)";
+
     $sqlE = "INSERT INTO e_user (id_modul, value) VALUES ($id_modul,$E)";
     $sqlTotalEM = "INSERT INTO total_em_user (id_modul, value) VALUES ($id_modul,$totalEM)";
     $sqlTotalPM = "INSERT INTO pm_user (id_modul, value) VALUES ($id_modul,$totalPM)";
@@ -99,6 +114,18 @@ if(isset($_POST['id_modul'])){
     $sqlSITE = "INSERT INTO em_user (id_em, id_modul, value) VALUES ('site',$id_modul,$SITE)";
     $sqlSCED = "INSERT INTO em_user (id_em, id_modul, value) VALUES ('sced',$id_modul,$SCED)";
 
+    $sqlREC = "INSERT INTO activity_user (id_activity, id_modul, value) VALUES ('rec',$id_modul,$REC)";
+    $sqlSPE = "INSERT INTO activity_user (id_activity, id_modul, value) VALUES ('spe',$id_modul,$SPE)";
+    $sqlDES = "INSERT INTO activity_user (id_activity, id_modul, value) VALUES ('des',$id_modul,$DES)";
+    $sqlIMP = "INSERT INTO activity_user (id_activity, id_modul, value) VALUES ('imp',$id_modul,$IMP)";
+    $sqlINT = "INSERT INTO activity_user (id_activity, id_modul, value) VALUES ('int',$id_modul,$INT)";
+    $sqlACC = "INSERT INTO activity_user (id_activity, id_modul, value) VALUES ('acc',$id_modul,$ACC)";
+    $sqlPRO = "INSERT INTO activity_user (id_activity, id_modul, value) VALUES ('pro',$id_modul,$PRO)";
+    $sqlCON = "INSERT INTO activity_user (id_activity, id_modul, value) VALUES ('con',$id_modul,$CON)";
+    $sqlQUA = "INSERT INTO activity_user (id_activity, id_modul, value) VALUES ('qua',$id_modul,$QUA)";
+    $sqlDOC = "INSERT INTO activity_user (id_activity, id_modul, value) VALUES ('doc',$id_modul,$DOC)";
+    $sqlTRA = "INSERT INTO activity_user (id_activity, id_modul, value) VALUES ('tra',$id_modul,$TRA)";
+    $sqlEVA = "INSERT INTO activity_user (id_activity, id_modul, value) VALUES ('eva',$id_modul,$TRA)";
 
     $sqlUpdateTotalInProject ="UPDATE modul SET total = '$valueTotalCostOfActivityWaterfall' WHERE id_modul= $id_modul";
     $sqlUpdateStatusModul ="UPDATE modul SET status = 1 WHERE id_modul= '$id_modul'";
@@ -118,24 +145,36 @@ if(isset($_POST['id_modul'])){
     // $resultE = mysqli_query($con, $sqlE);
     // $resultTotalEM = mysqli_query($con, $sqlTotalEM);
     // $resultTotalPM = mysqli_query($con, $sqlTotalPM);
-    $resultRELY = mysqli_query($con, $sqlRELY);
-    $resultDATA = mysqli_query($con, $sqlDATA);
-    $resultCPLX = mysqli_query($con, $sqlCPLX);
-    $resultRUSE = mysqli_query($con, $sqlRUSE);
-    $resultDOCU = mysqli_query($con, $sqlDOCU);
-    $resultTIME = mysqli_query($con, $sqlTIME);
-    $resultSTOR = mysqli_query($con, $sqlSTOR);
-    $resultPVOL = mysqli_query($con, $sqlPVOL);
-    $resultACAP = mysqli_query($con, $sqlACAP);
-    $resultPCAP = mysqli_query($con, $sqlPCAP);
-    $resultPCON = mysqli_query($con, $sqlPCON);
-    $resultAPEX = mysqli_query($con, $sqlAPEX);
-    $resultPLEX = mysqli_query($con, $sqlPLEX);    
-    $resultLTEX = mysqli_query($con, $sqlLTEX);
-    $resultTOOL = mysqli_query($con, $sqlTOOL);
-    $resultSITE = mysqli_query($con, $sqlSITE);
-    $resultSCED = mysqli_query($con, $sqlSCED);
+    // $resultRELY = mysqli_query($con, $sqlRELY);
+    // $resultDATA = mysqli_query($con, $sqlDATA);
+    // $resultCPLX = mysqli_query($con, $sqlCPLX);
+    // $resultRUSE = mysqli_query($con, $sqlRUSE);
+    // $resultDOCU = mysqli_query($con, $sqlDOCU);
+    // $resultTIME = mysqli_query($con, $sqlTIME);
+    // $resultSTOR = mysqli_query($con, $sqlSTOR);
+    // $resultPVOL = mysqli_query($con, $sqlPVOL);
+    // $resultACAP = mysqli_query($con, $sqlACAP);
+    // $resultPCAP = mysqli_query($con, $sqlPCAP);
+    // $resultPCON = mysqli_query($con, $sqlPCON);
+    // $resultAPEX = mysqli_query($con, $sqlAPEX);
+    // $resultPLEX = mysqli_query($con, $sqlPLEX);    
+    // $resultLTEX = mysqli_query($con, $sqlLTEX);
+    // $resultTOOL = mysqli_query($con, $sqlTOOL);
+    // $resultSITE = mysqli_query($con, $sqlSITE);
+    // $resultSCED = mysqli_query($con, $sqlSCED);
 
+    $resultREC = mysqli_query($con, $sqlREC);
+    $resultSPE = mysqli_query($con, $sqlSPE);
+    $resultDES = mysqli_query($con, $sqlDES);
+    $resultIMP = mysqli_query($con, $sqlIMP);
+    $resultINT = mysqli_query($con, $sqlINT);
+    $resultACC = mysqli_query($con, $sqlACC);
+    $resultPRO = mysqli_query($con, $sqlPRO);
+    $resultCON = mysqli_query($con, $sqlCON);
+    $resultQUA = mysqli_query($con, $sqlQUA);
+    $resultDOC = mysqli_query($con, $sqlDOC);
+    $resultTRA = mysqli_query($con, $sqlTRA);
+    $resultEVA = mysqli_query($con, $sqlEVA);
 
     // $resultsUpdateTotalInProject = mysqli_query($con,$sqlUpdateTotalInProject);
     // $resultsUpdateStatusModul = mysqli_query($con,$sqlUpdateStatusModul);
