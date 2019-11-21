@@ -1091,7 +1091,7 @@ if($res){
     <table border="1">
         <tr>
             <td rowspan="2">
-                <center><b>Scale Factor</b></center>
+                <center><b>Effort Multiplier</b></center>
             </td>
             <td colspan="<?php echo $totalModul; ?>">
                 <center><b>Modul-ID</b></center>
