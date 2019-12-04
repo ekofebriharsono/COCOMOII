@@ -36,6 +36,7 @@ if(isset($_SESSION['username'])==""){
           <form action="proses_php/prosesTambahProject.php" method="post">
             <?php if(isset($_GET['project'])){ 
               $idProject = $_GET['project'];
+              $_SESSION['project'] = $_GET['project'];
               $sql = "select * from project where id_project='$idProject'";
               $data = mysqli_query($con,$sql);
               $row = mysqli_fetch_array($data);
@@ -102,6 +103,7 @@ if(isset($_SESSION['username'])==""){
         </tr>
         <?php 
            @$idProject = $_GET['project'];
+           $_SESSION['project'] = $_GET['project'];
            $sql = "select * from modul where id_project='$idProject'";
            $data = mysqli_query($con,$sql);
            $no = 0;

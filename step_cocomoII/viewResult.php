@@ -2,7 +2,7 @@
 session_start();
 include '../proses_php/koneksi.php';
 
-$idProject = $_POST['idProject'];
+$idProject = $_SESSION['project'];
 $namaProject = "";
 
 $sql = "SELECT nama_project from project where id_project='$idProject'";
@@ -26,37 +26,48 @@ if(isset($_SESSION['username'])==""){
     <title>Result</title>
 
     <style type="text/css">
-	body{
-		font-family: sans-serif;
-	}
-	table{
-		margin: 20px auto;
-		border-collapse: collapse;
-	}
-	table th,
-	table td{
-		border: 1px solid #3c3c3c;
-		padding: 3px 8px;
+        body {
+            font-family: Calibri;
+        }
 
-	}
-	a{
-		background: blue;
-		color: #fff;
-		padding: 8px 10px;
-		text-decoration: none;
-		border-radius: 2px;
-	}
-	</style>
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        table th,
+        table td {
+            border: 1px solid #3c3c3c;
+            padding: 3px 8px;
+
+        }
+
+        a {
+            background: blue;
+            color: #fff;
+            padding: 8px 10px;
+            text-decoration: none;
+            border-radius: 2px;
+        }
+    </style>
 </head>
 
 <body>
-<center>
-		<h1>Result Data Proyek <?php echo $namaProject; ?><br/></h1>
-	</center>
 
-	<center>
-		<a target="_blank" href="export_excel.php">EXPORT KE EXCEL</a>
-	</center>
+<?php  if(isset($_GET['excel'])=="true"){
+	header("Content-type: application/vnd-ms-excel");
+	header("Content-Disposition: attachment; filename=Data Pegawai.xls");
+ } ?>
+
+    <center>
+        <h1>Result Data Proyek <?php echo $namaProject; ?><br /></h1>
+    </center>
+    <?php  if(!isset($_GET['excel'])){ ?>
+    <center>
+        <a href="viewResult.php?excel=true">EXPORT KE EXCEL</a>
+    </center>
+
+<?php } ?>
     <?php 
                 $idUser = $_SESSION['id_user'];
                 $totalModul = 0;
@@ -2184,6 +2195,8 @@ if($res){
 </body>
 
 </html>
+
+
 <?php 
 }
 ?>
