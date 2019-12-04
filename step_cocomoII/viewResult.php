@@ -3,6 +3,14 @@ session_start();
 include '../proses_php/koneksi.php';
 
 $idProject = $_POST['idProject'];
+$namaProject = "";
+
+$sql = "SELECT nama_project from project where id_project='$idProject'";
+$res = mysqli_query($con,$sql);
+if ($res){
+    $row = mysqli_fetch_array($res);
+    $namaProject = $row['nama_project'];
+}
 
 if(isset($_SESSION['username'])==""){
     echo "<script>window.open('login.php?pesan=belum_login','_self')</script>";
@@ -16,9 +24,39 @@ if(isset($_SESSION['username'])==""){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Result</title>
+
+    <style type="text/css">
+	body{
+		font-family: sans-serif;
+	}
+	table{
+		margin: 20px auto;
+		border-collapse: collapse;
+	}
+	table th,
+	table td{
+		border: 1px solid #3c3c3c;
+		padding: 3px 8px;
+
+	}
+	a{
+		background: blue;
+		color: #fff;
+		padding: 8px 10px;
+		text-decoration: none;
+		border-radius: 2px;
+	}
+	</style>
 </head>
 
 <body>
+<center>
+		<h1>Result Data Proyek <?php echo $namaProject; ?><br/></h1>
+	</center>
+
+	<center>
+		<a target="_blank" href="export_excel.php">EXPORT KE EXCEL</a>
+	</center>
     <?php 
                 $idUser = $_SESSION['id_user'];
                 $totalModul = 0;
