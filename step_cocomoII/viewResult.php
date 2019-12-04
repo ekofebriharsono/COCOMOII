@@ -1595,7 +1595,7 @@ if($res){
                         ?>
         <tr>
             <td><?php echo $no; ?></td>
-            <td><?php echo $d['size_in_sloc']; ?></td>
+            <td><?php echo $d['size_in_sloc']/1000; ?></td>
             <td><?php echo $d['valueE']; ?></td>
             <td><?php echo $d['valueEM']; ?></td>
             <td><?php echo $d['valuePM']; ?></td>
