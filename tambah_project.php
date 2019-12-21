@@ -107,7 +107,7 @@ if(isset($_SESSION['username'])==""){
            $sql = "select * from modul where id_project='$idProject'";
            $data = mysqli_query($con,$sql);
            $no = 0;
-           $isAllCounted = true;
+           $isAllCounted = false;
            while($d = mysqli_fetch_array($data)){
             $no++;
           ?>
