@@ -8,7 +8,7 @@
 </head>
 <body>
     <script>
-    var angka = 0.6725389236460039;
+    var angka = 4800;
 hasil = angka.toFixed(4);
 document.write(hasil);
     </script>

@@ -939,21 +939,36 @@ function hitungStepOne(){
     var ActivityTraining = PMGlobal * (Training/ 100);
     var ActivityEvaluation = PMGlobal * (Evaluation / 100);
 
+    KOMAActivityRequirements = ActivityRequirements.toFixed(4);
+    KOMAActivitySpecifications = ActivitySpecifications.toFixed(4);
+    KOMAActivityDesign = ActivityDesign.toFixed(4);
+    KOMAActivityImplementation = ActivityImplementation.toFixed(4);
+    KOMAActivityIntegration = ActivityIntegration.toFixed(4);
+    KOMAActivityAcceptance = ActivityAcceptance.toFixed(4);
+    KOMAActivityProjectManagement = ActivityProjectManagement.toFixed(4);
+    KOMAActivityConfiguration = ActivityConfiguration.toFixed(4);
+    KOMAActivityQuality = ActivityQuality.toFixed(4);
+    KOMAActivityDocumentations = ActivityDocumentations.toFixed(4);
+    KOMAActivityTraining = ActivityTraining.toFixed(4);
+    KOMAActivityEvaluation = ActivityEvaluation.toFixed(4);
+
     var totalActivityWaterfall = ActivityRequirements + ActivitySpecifications + ActivityDesign + ActivityImplementation + ActivityIntegration + ActivityAcceptance + ActivityProjectManagement + ActivityConfiguration + ActivityQuality + ActivityDocumentations + ActivityTraining + ActivityEvaluation ;
 
+    totalActivityWaterfall = totalActivityWaterfall.toFixed(4);
+
     document.getElementById("valueTotalCostOfActivityWaterfall").value = totalActivityWaterfall;
-    document.getElementById("totalRequirements").value = ActivityRequirements;
-    document.getElementById("totalSpecifications").value = ActivitySpecifications;
-    document.getElementById("totalDesign").value = ActivityDesign;
-    document.getElementById("totalImplementation").value = ActivityImplementation;
-    document.getElementById("totalIntegration").value = ActivityIntegration;
-    document.getElementById("totalAcceptance").value = ActivityAcceptance;
-    document.getElementById("totalProjectManagement").value = ActivityProjectManagement;
-    document.getElementById("totalConfiguration").value = ActivityConfiguration;
-    document.getElementById("totalQuality").value = ActivityQuality;
-    document.getElementById("totalDocumentations").value = ActivityDocumentations;
-    document.getElementById("totalTraining").value = ActivityTraining;
-    document.getElementById("totalEvaluation").value = ActivityEvaluation;
+    document.getElementById("totalRequirements").value = KOMAActivityRequirements;
+    document.getElementById("totalSpecifications").value = KOMAActivitySpecifications;
+    document.getElementById("totalDesign").value = KOMAActivityDesign;
+    document.getElementById("totalImplementation").value = KOMAActivityImplementation;
+    document.getElementById("totalIntegration").value = KOMAActivityIntegration;
+    document.getElementById("totalAcceptance").value = KOMAActivityAcceptance;
+    document.getElementById("totalProjectManagement").value = KOMAActivityProjectManagement;
+    document.getElementById("totalConfiguration").value = KOMAActivityConfiguration;
+    document.getElementById("totalQuality").value = KOMAActivityQuality;
+    document.getElementById("totalDocumentations").value = KOMAActivityDocumentations;
+    document.getElementById("totalTraining").value = KOMAActivityTraining;
+    document.getElementById("totalEvaluation").value = KOMAActivityEvaluation;
 
   }
 

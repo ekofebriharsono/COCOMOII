@@ -7,7 +7,7 @@ body {
   background-size: cover;
 background-repeat: no-repeat;
 height: 100%;
-font-family: 'Numans', sans-serif;
+font-family: "Times New Roman";
 
 }
 
@@ -20,7 +20,7 @@ font-family: 'Numans', sans-serif;
   background: rgba(0, 0, 0, 0.699);
   color: white;
   margin: 80px auto;
-  font-family: Raleway;
+  font-family: "Times New Roman";
   padding: 40px;
   width: 80%;
   min-width: 300px;
@@ -33,7 +33,7 @@ font-family: 'Numans', sans-serif;
   background: rgba(0, 0, 0, 0.699);
   color: white;
   margin: 10px auto;
-  font-family: Raleway;
+  font-family: "Times New Roman";
   padding: 40px;
   width: 80%;
   min-width: 300px;
@@ -61,7 +61,7 @@ input {
   padding: 10px;
   width: 100%;
   font-size: 17px;
-  font-family: Raleway;
+  font-family: "Times New Roman";
   border: 1px solid #aaaaaa;
   border-radius: 10px;
 }
@@ -87,7 +87,7 @@ button {
   border: none;
   padding: 10px 20px;
   font-size: 17px;
-  font-family: Raleway;
+  font-family: "Times New Roman";
   cursor: pointer;
   border-radius: 10px;
 }
