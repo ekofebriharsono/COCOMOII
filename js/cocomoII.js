@@ -746,9 +746,11 @@ function hitungStepOne(){
     EM = RequiredSoftwareReliability * DataBaseSize * ProductComplexity * DevelopedforReusability * DocumentationMatchtoLifecycleNeeds * AnalystCapability * ProgrammerCapability * PersonnelContinuity * ApplicationExperience * PlatformExperience * TimeConstraint * StorageConstraint * PlatformVolatility *LanguageandToolsetExperience* UseofSoftwareTools * MultisiteDevelopment * RequiredDevelopmentSchedule ;
     
     PM = A * sizeE * EM;
-    
-    document.getElementById("totalStepFour").value = EM;
-    document.getElementById("totalStepFourPM").value = PM;
+    PMGlobal = PM.toFixed(4);
+    EMGlobal = EM.toFixed(4);
+
+    document.getElementById("totalStepFour").value = EMGlobal;
+    document.getElementById("totalStepFourPM").value = PMGlobal;
     PMGlobal = PM;
     EMGlobal = EM;
 
