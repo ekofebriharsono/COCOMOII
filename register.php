@@ -49,25 +49,25 @@
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-							<input type="text" class="form-control" placeholder="Nama" name="nama">
+							<input type="text" class="form-control" placeholder="Nama" name="nama" required>
 						</div>
 						<div class="input-group form-group">
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-							<input type="text" class="form-control" placeholder="Email" name="email">
+							<input type="text" class="form-control" placeholder="Email" name="email" required>
 						</div>
 						<div class="input-group form-group">
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-							<input type="text" class="form-control" placeholder="Username" name="username">
+							<input type="text" class="form-control" placeholder="Username" name="username" required>
 						</div>
 						<div class="input-group form-group">
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-							<input type="password" class="form-control" placeholder="Password" name="password">
+							<input type="password" class="form-control" placeholder="Password" name="password" required>
 						</div>
 						<div class="form-group">
 							<input type="submit" value="Register" class="btn float-right login_btn">
