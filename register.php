@@ -30,6 +30,13 @@
 			<div class="card">
 				<div class="card-header">
 					<h3>Sign In</h3>
+					<?php if(isset($_GET['pesan'])){
+						$pesan = $_GET['pesan'];
+						if($pesan == "register_failed"){ ?>
+					<center>
+						<h6>Register Failed</h6>
+					</center>
+					<?php } }?>
 					<div class="d-flex justify-content-end social_icon">
 						<span><i class="fab fa-facebook-square"></i></span>
 						<span><i class="fab fa-google-plus-square"></i></span>

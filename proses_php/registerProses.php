@@ -11,9 +11,9 @@ include 'koneksi.php';
   $results = mysqli_query($con,$sql);
   
   if($results) {
-      header('Location: ../login.php?register_sukses=1');
+      header('Location: ../login.php?pesan=register_successfully');
     }else {
-      header('Location: ../register.php?gagal=1');
+      header('Location: ../register.php?pesan=register_failed');
     }
     
 ?>

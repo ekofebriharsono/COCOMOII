@@ -39,16 +39,19 @@
 					<h6>COCOMO II</h6>
 					<?php if(isset($_GET['pesan'])){
 						$pesan = $_GET['pesan'];
-						if($pesan == "gagal"){ ?>
+						if($pesan == "failed"){ ?>
 					<center>
 						<h6>Username or password incorrect</h6>
 					</center>
 					<?php	} if ($pesan == "logout"){ ?>
 					<center>
-						<h6>Logout Berhasil</h6>
+						<h6>Logout Successfully</h6>
 					</center>
-					<?php	}
-
+					<?php	} if ($pesan == "register_successfully"){ ?>
+					<center>
+						<h6>Register Successfully</h6>
+					</center>
+					<?php }
 					}
 					?>
 					<div class="d-flex justify-content-end social_icon">

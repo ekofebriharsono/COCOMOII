@@ -20,7 +20,7 @@ if($cek > 0){
     header("location:../index.php");
     }
 }else{
-	header("location:../login.php?pesan=gagal");
+	header("location:../login.php?pesan=failed");
 }
 
 ?>
