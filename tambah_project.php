@@ -36,6 +36,7 @@ if(isset($_SESSION['username'])==""){
           <form action="proses_php/prosesTambahProject.php" method="post">
             <?php if(isset($_GET['project'])){ 
               $idProject = $_GET['project'];
+              
               $_SESSION['project'] = $_GET['project'];
               $sql = "select * from project where id_project='$idProject'";
               $data = mysqli_query($con,$sql);
@@ -64,6 +65,7 @@ if(isset($_SESSION['username'])==""){
 
       <hr>
 
+      <?php if(isset($_GET['project'])){ ?>
       <table border="0">
         <tr>
           <td colspan="2">
@@ -84,8 +86,21 @@ if(isset($_SESSION['username'])==""){
         </tr>
       </table>
 
+      <?php } ?>
+
       <br>
 
+
+      <?php 
+        if(isset($_GET['project'])){ 
+           $idProject = $_GET['project'];
+           
+           $_SESSION['project'] = $_GET['project'];
+           $sql = "select * from modul where id_project='$idProject'";
+           $data = mysqli_query($con,$sql);
+           $no = 0;
+           $isAllCounted = false;
+           ?>
       <table border="1" style="width: auto;">
         <tr>
           <td>
@@ -101,13 +116,8 @@ if(isset($_SESSION['username'])==""){
             <center>Aksi</center>
           </td>
         </tr>
+
         <?php 
-           @$idProject = $_GET['project'];
-           $_SESSION['project'] = $_GET['project'];
-           $sql = "select * from modul where id_project='$idProject'";
-           $data = mysqli_query($con,$sql);
-           $no = 0;
-           $isAllCounted = false;
            while($d = mysqli_fetch_array($data)){
             $no++;
           ?>
@@ -144,10 +154,10 @@ if(isset($_SESSION['username'])==""){
         <?php if ($isAllCounted) { ?>
         <tr>
           <td>
-          <form action="step_cocomoII/viewResult.php" method="post">
-         
+            <form action="step_cocomoII/viewResult.php" method="post">
+
               <input hidden type="text" name="idProject" value="<?php echo $idProject; ?>">
-            <button type="submit">View Result</button>
+              <button type="submit">View Result</button>
             </form>
           </td>
         </tr>
@@ -181,6 +191,8 @@ if(isset($_SESSION['username'])==""){
         </tr>
       </table>
     </div>
+
+    <?php } ?>
 
     <div style="text-align:center;margin-top:40px;">
       <p>&copy; 2019 LUG</p>
