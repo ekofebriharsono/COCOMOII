@@ -124,7 +124,7 @@ if(isset($_SESSION['username'])==""){
               <input hidden type="text" name="project" value="<?php echo $d['id_project']; ?>">
               <input hidden type="text" name="nama_modul" value="<?php echo $d['nama_modul']; ?>">
               <input hidden type="text" name="id_modul" value="<?php echo $d['id_modul']; ?>">
-              <?php if ($d['status']==1){ ?>
+              <?php if ($d['status']==1){ $isAllCounted = true; ?>
               <button type="submit" name="submitEditData">Edit Data</button>
               <?php } else { $isAllCounted = false; ?>
               <button type="submit" name="submitIsiData">Isi Data</button>
