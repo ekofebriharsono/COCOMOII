@@ -364,10 +364,12 @@ function hitungStepOne(){
     }
 
     var totalScaleFactors = Precedentedness + DevelopmentFlexibility + Architecture + TeamCohesion + ProcessMaturity;
-    
+
     E = B + (0.01 * totalScaleFactors);
     
-    document.getElementById("totalStepThree").value = E;
+    var Efixed = E.toFixed(4);
+
+    document.getElementById("totalStepThree").value = Efixed;
     document.getElementById("PrecedentednessValue").value = Precedentedness;
     document.getElementById("DevelopmentFlexibilityValue").value = DevelopmentFlexibility;
     document.getElementById("ArchitectureValue").value = Architecture;
@@ -375,7 +377,7 @@ function hitungStepOne(){
     document.getElementById("ProcessMaturityValue").value = ProcessMaturity;
 
 
-    EGlobal = E;
+    EGlobal = Efixed;
   }
 
   function hitungStepFour(){
@@ -746,7 +748,7 @@ function hitungStepOne(){
     EM = RequiredSoftwareReliability * DataBaseSize * ProductComplexity * DevelopedforReusability * DocumentationMatchtoLifecycleNeeds * AnalystCapability * ProgrammerCapability * PersonnelContinuity * ApplicationExperience * PlatformExperience * TimeConstraint * StorageConstraint * PlatformVolatility *LanguageandToolsetExperience* UseofSoftwareTools * MultisiteDevelopment * RequiredDevelopmentSchedule ;
     
     PM = A * sizeE * EM;
-    PMGlobal = PM.toFixed(4);
+    PMGlobal = PM.toFixed(2);
     EMGlobal = EM.toFixed(4);
 
     document.getElementById("totalStepFour").value = EMGlobal;
@@ -939,22 +941,22 @@ function hitungStepOne(){
     var ActivityTraining = PMGlobal * (Training/ 100);
     var ActivityEvaluation = PMGlobal * (Evaluation / 100);
 
-    KOMAActivityRequirements = ActivityRequirements.toFixed(4);
-    KOMAActivitySpecifications = ActivitySpecifications.toFixed(4);
-    KOMAActivityDesign = ActivityDesign.toFixed(4);
-    KOMAActivityImplementation = ActivityImplementation.toFixed(4);
-    KOMAActivityIntegration = ActivityIntegration.toFixed(4);
-    KOMAActivityAcceptance = ActivityAcceptance.toFixed(4);
-    KOMAActivityProjectManagement = ActivityProjectManagement.toFixed(4);
-    KOMAActivityConfiguration = ActivityConfiguration.toFixed(4);
-    KOMAActivityQuality = ActivityQuality.toFixed(4);
-    KOMAActivityDocumentations = ActivityDocumentations.toFixed(4);
-    KOMAActivityTraining = ActivityTraining.toFixed(4);
-    KOMAActivityEvaluation = ActivityEvaluation.toFixed(4);
+    KOMAActivityRequirements = ActivityRequirements.toFixed(2);
+    KOMAActivitySpecifications = ActivitySpecifications.toFixed(2);
+    KOMAActivityDesign = ActivityDesign.toFixed(2);
+    KOMAActivityImplementation = ActivityImplementation.toFixed(2);
+    KOMAActivityIntegration = ActivityIntegration.toFixed(2);
+    KOMAActivityAcceptance = ActivityAcceptance.toFixed(2);
+    KOMAActivityProjectManagement = ActivityProjectManagement.toFixed(2);
+    KOMAActivityConfiguration = ActivityConfiguration.toFixed(2);
+    KOMAActivityQuality = ActivityQuality.toFixed(2);
+    KOMAActivityDocumentations = ActivityDocumentations.toFixed(2);
+    KOMAActivityTraining = ActivityTraining.toFixed(2);
+    KOMAActivityEvaluation = ActivityEvaluation.toFixed(2);
 
     var totalActivityWaterfall = ActivityRequirements + ActivitySpecifications + ActivityDesign + ActivityImplementation + ActivityIntegration + ActivityAcceptance + ActivityProjectManagement + ActivityConfiguration + ActivityQuality + ActivityDocumentations + ActivityTraining + ActivityEvaluation ;
 
-    totalActivityWaterfall = totalActivityWaterfall.toFixed(4);
+    totalActivityWaterfall = totalActivityWaterfall.toFixed(2);
 
     document.getElementById("valueTotalCostOfActivityWaterfall").value = totalActivityWaterfall;
     document.getElementById("totalRequirements").value = KOMAActivityRequirements;
