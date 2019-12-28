@@ -35,7 +35,6 @@ if(isset($_SESSION['username'])==""){
             <div class="col-12">
               <div class="box-content" style="height:120px;">
                 <h1 class="text-center "></h1>
-
               </div>
             </div>
           </div>
@@ -62,80 +61,78 @@ if(isset($_SESSION['username'])==""){
         </div>
       </div>
       <div class="col-8">
-        <div class="box-content">
-          <div class="row">
-            <div class="col-4">
-              <form id="regBox" method="POST" action="#">
+
+        <div class="box-content border">
+
+
+          <div id="regForm">
+            <h1>PROJECT COCOMO II</h1>
+            <hr>
+            <center>
+              <table border="1">
+                <tr>
+                  <td>
+                    <center>No.</center>
+                  </td>
+                  <td>
+                    <center>Nama Project</center>
+                  </td>
+                  <td>
+                    <center>Total</center>
+                  </td>
+                  <td colspan="2">
+                    <center>Aksi</center>
+                  </td>
+                </tr>
                 <?php 
-                $idUser = $_SESSION['id_user'];
-                $sql = "select COUNT(id_project) as totalproject from project where id_user = $idUser";
-                $res = mysqli_query($con,$sql);
-                $result = mysqli_num_rows($res);
-                if($res){
-                  if($result > 0){
-                    $row = mysqli_fetch_array($res); ?>
-                <h4><?php echo $row['totalproject']; ?></h4>
-                <?php
-                  }
-                }
-                ?>
-                <p>Project</p>
-              </form>
-            </div>
-            <div class="col-4">
-              <form id="regBox" method="POST" action="#">
-              <?php 
-                $idUser = $_SESSION['id_user'];
-                $sql = "SELECT COUNT(modul.id_modul) as totalmodul
-                FROM project   
-                INNER JOIN modul  
-                ON project.id_project = modul.id_project WHERE project.id_user=$idUser";
-                $res = mysqli_query($con,$sql);
-                $result = mysqli_num_rows($res);
-                if($res){
-                  if($result > 0){
-                    $row = mysqli_fetch_array($res); ?>
-                <h4><?php echo $row['totalmodul']; ?></h4>
-                <?php
-                  }
-                }
-                ?>
-                <p>Modul</p>
-              </form>
-            </div>
-            <div class="col-4">
-              <form id="regBox" method="POST" action="#">
-                <h4>3.000.000</h4>
-                <p>Profit</p>
-              </form>
-            </div>
-          </div>
-        </div>
-        <div class="box-content border-top">
-          <form id="regForm" method="POST" action="tambah_project.php">
-            <h1>COCOMO II</h1>
-            <div class="tab">
-              <center>
-                <p><b>Welcome back sir!</b></p>
-              </center>
-            </div>
+          $id_user =  $_SESSION['id_user'];
+          $sql = "select * from project where id_user='$id_user'";
+          $data = mysqli_query($con,$sql);
+          $no = 0;
+          while($d = mysqli_fetch_array($data)){
+            $no++;
+        ?>
+                <tr>
+                  <td>
+                    <center><?php echo $no; ?></center>
+                  </td>
+                  <td><?php echo $d['nama_project']; ?></td>
+                  <td>
+                    <center><?php echo $d['total']; ?></center>
+                  </td>
+                  <td>
+                    <form action="tambah_project.php" method="get">
+                      <input hidden type="text" name="project" value="<?php echo $d['id_project']; ?>">
+                      <button type="submit">Edit</button>
+                    </form>
+                  </td>
+                  <td>
+                    <form action="proses_php/prosesTambahProject.php" method="get">
+                      <input hidden type="text" name="idProject" value="<?php echo $d['id_project']; ?>">
+                      <button type="submit" name="submitDeleteProject"
+                        style="background-color: #df2929;">Delete</button>
+                    </form>
+                  </td>
+                </tr>
+                <?php } ?>
+              </table>
+            </center>
 
             <div style="overflow:auto;">
               <div style="float:right;">
-                <button type="submit">Get Started</button>
+                <form action="tambah_project.php">
+                  <button type="submit">Tambah Project</button>
+                </form>
               </div>
             </div>
 
-            <div style="text-align:center;margin-top:40px;">
-              <p>&copy; 2019 LUG</p>
-            </div>
-          </form>
+
+          </div>
+
+
         </div>
-
-
       </div>
     </div>
-  </div>
 
 </body>
 

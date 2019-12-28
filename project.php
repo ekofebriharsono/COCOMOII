@@ -30,8 +30,8 @@ if(isset($_SESSION['username'])==""){
     <div class="tab">
       <hr>
     </div>
-
-    <table border="1" style="width: auto;">
+      <center>
+    <table border="1">
       <tr>
         <td>
           <center>No.</center>
@@ -77,6 +77,7 @@ if(isset($_SESSION['username'])==""){
       </tr>
       <?php } ?>
     </table>
+    </center>
 
     <div style="overflow:auto;">
       <div style="float:right;">
