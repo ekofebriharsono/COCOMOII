@@ -42,14 +42,14 @@ if(isset($_SESSION['username'])==""){
             <div class="col-12">
               <form id="regBox" method="GET" action="https://en.wikipedia.org/wiki/COCOMO">
                 <h6>Module</h6>
-                <h5><?php echo $_POST['nama_modul']; ?></h5>
+                <h5 class="text-warning"><?php echo $_POST['nama_modul']; ?></h5>
               </form>
             </div>
           </div>
           <div class="row">
             <div class="col-12">
               <form id="regInfo" method="GET" action="https://en.wikipedia.org/wiki/COCOMO">
-                <h1>Infomation</h1>
+                <h1 class="text-warning">Infomation</h1>
                 <div class="tab1">
                 </div>
                 <div style="overflow:auto;">

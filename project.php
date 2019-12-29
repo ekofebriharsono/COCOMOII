@@ -40,7 +40,7 @@ if(isset($_SESSION['username'])==""){
           <div class="row">
             <div class="col-12">
               <form id="regInfo" method="GET" action="https://en.wikipedia.org/wiki/COCOMO">
-                <h1>Information</h1>
+                <h1 class="text-warning">Information</h1>
                 <div class="tab1">
                 </div>
                 <div style="overflow:auto;">

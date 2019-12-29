@@ -40,7 +40,7 @@ if(isset($_SESSION['username'])==""){
           <div class="row">
             <div class="col-12">
               <form id="regInfo" method="GET" action="https://en.wikipedia.org/wiki/COCOMO">
-                <h1>Info</h1>
+                <h1 class="text-warning">Information</h1>
                 <div class="tab1">
                 </div>
                 <div style="overflow:auto;">
@@ -61,6 +61,7 @@ if(isset($_SESSION['username'])==""){
           <div class="row">
             <div class="col-4">
               <form id="regBox" method="POST" action="#">
+                <p>Project</p>
                 <?php 
                 $idUser = $_SESSION['id_user'];
                 $sql = "select COUNT(id_project) as totalproject from project where id_user = $idUser";
@@ -69,16 +70,16 @@ if(isset($_SESSION['username'])==""){
                 if($res){
                   if($result > 0){
                     $row = mysqli_fetch_array($res); ?>
-                <h4><?php echo $row['totalproject']; ?></h4>
+                <h4 class="text-warning"><?php echo $row['totalproject']; ?></h4>
                 <?php
                   }
                 }
                 ?>
-                <p>Project</p>
               </form>
             </div>
             <div class="col-4">
               <form id="regBox" method="POST" action="#">
+                <p>Module</p>
                 <?php 
                 $idUser = $_SESSION['id_user'];
                 $sql = "SELECT COUNT(modul.id_modul) as totalmodul
@@ -90,18 +91,17 @@ if(isset($_SESSION['username'])==""){
                 if($res){
                   if($result > 0){
                     $row = mysqli_fetch_array($res); ?>
-                <h4><?php echo $row['totalmodul']; ?></h4>
+                <h4 class="text-warning"><?php echo $row['totalmodul']; ?></h4>
                 <?php
                   }
                 }
                 ?>
-                <p>Module</p>
               </form>
             </div>
             <div class="col-4">
               <form id="regBox" method="POST" action="#">
-                <h4>3.000.000</h4>
                 <p>Profit</p>
+                <h4 class="text-warning">Rp. 3.000.000</h4>
               </form>
             </div>
           </div>
