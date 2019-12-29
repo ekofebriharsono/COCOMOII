@@ -65,6 +65,12 @@ if(isset($_SESSION['username'])==""){
                 </div>
               </form>
             </div>
+            <div class="col-12">
+              <form id="regInfo" method="GET" action="javascript:history.back()">
+                <center> <button type="submit" name="submitDeleteProject"
+                    style="background-color: #df2929; color:white;">Cancel</button></center>
+              </form>
+            </div>
           </div>
         </div>
       </div>
@@ -99,7 +105,6 @@ if(isset($_SESSION['username'])==""){
                   <span class="step"></span>
                   <span class="step"></span>
                   <span class="step"></span>
-                  
                 </div>
             </div>
           </div>
