@@ -15,7 +15,6 @@ if(isset($_SESSION['username'])==""){
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
   integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-
 <head>
   <meta name="Author" content="Eko Febri Harsono">
   <meta name="description" content="COCOMO II">
@@ -35,7 +34,6 @@ if(isset($_SESSION['username'])==""){
             <div class="col-12">
               <div class="box-content" style="height:120px;">
                 <h1 class="text-center "></h1>
-
               </div>
             </div>
           </div>
@@ -45,19 +43,16 @@ if(isset($_SESSION['username'])==""){
                 <h1>Info</h1>
                 <div class="tab1">
                 </div>
-
                 <div style="overflow:auto;">
                   <div style="float:right;">
-                    <p class="text-justify">COCOMO II (Constructive Cost Model) adalah sebuah model algoritma estimasi
-                      biaya perangkat lunak yang didesain oleh Barry Boehm untuk memperoleh perkiraan dari jumlah
-                      orang-bulan yang diperlukan untuk mengembangkan suatu produk perangkat lunak.</p>
+                    <p class="text-justify">COCOMO II (Constructive Cost Model) is a software cost estimation algorithm
+                      model designed by Barry Boehm to obtain an estimate of the number of people required to develop a
+                      software product.</p>
                     <button type="submit">more</button>
                   </div>
                 </div>
-
               </form>
             </div>
-
           </div>
         </div>
       </div>
@@ -84,7 +79,7 @@ if(isset($_SESSION['username'])==""){
             </div>
             <div class="col-4">
               <form id="regBox" method="POST" action="#">
-              <?php 
+                <?php 
                 $idUser = $_SESSION['id_user'];
                 $sql = "SELECT COUNT(modul.id_modul) as totalmodul
                 FROM project   
@@ -100,7 +95,7 @@ if(isset($_SESSION['username'])==""){
                   }
                 }
                 ?>
-                <p>Modul</p>
+                <p>Module</p>
               </form>
             </div>
             <div class="col-4">
@@ -116,23 +111,22 @@ if(isset($_SESSION['username'])==""){
             <h1>COCOMO II</h1>
             <div class="tab">
               <center>
-                <p><b>Welcome back sir!</b></p>
+                <p>
+                  Hello world, welcome to the software development cost calculation site using the COCOMO II
+                  method!</p>
               </center>
             </div>
-
             <div style="overflow:auto;">
               <div style="float:right;">
                 <button type="submit">Get Started</button>
               </div>
             </div>
-
             <div style="text-align:center;margin-top:40px;">
-              <p>&copy; 2019 LUG</p>
+              <p>&copy; 2019 LUG by <a href="https://github.com/ekofebriharsono"
+                  class="text-warning stretched-link">Maseko</a></p>
             </div>
           </form>
         </div>
-
-
       </div>
     </div>
   </div>

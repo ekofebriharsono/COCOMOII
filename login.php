@@ -88,7 +88,7 @@
 						Don't have an account?<a href="register.php">Sign Up</a>
 					</div>
 					<div class="d-flex justify-content-center links">
-						&copy; 2019 LUG By Maseko
+						&copy; 2019 LUG By <a href="https://github.com/ekofebriharsono">Maseko</a>
 					</div>
 				</div>
 			</div>

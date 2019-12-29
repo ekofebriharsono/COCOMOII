@@ -40,14 +40,18 @@ if(isset($_SESSION['username'])==""){
           <div class="row">
             <div class="col-12">
               <form id="regInfo" method="GET" action="https://en.wikipedia.org/wiki/COCOMO">
-                <h1>Info</h1>
+                <h1>Information</h1>
                 <div class="tab1">
                 </div>
                 <div style="overflow:auto;">
                   <div style="float:right;">
-                    <p class="text-justify">Project adalah sebuah fitur history atau project yang telah didaftarkan yang
-                      sudah dihitung atupun belum dihitung akan terseimpan kedalam sistem</p>
+                    <p class="text-justify">Projects are historical features or registered projects that have been
+                      calculated or not yet counted will be saved into the system</p>
                   </div>
+                </div>
+                <div style="text-align:center;margin-top:40px;">
+                  <p>&copy; 2019 LUG by <a href="https://github.com/ekofebriharsono"
+                      class="text-warning stretched-link">Maseko</a></p>
                 </div>
               </form>
             </div>
@@ -76,12 +80,12 @@ if(isset($_SESSION['username'])==""){
                 </tr>
               </thead>
               <?php 
-          $id_user =  $_SESSION['id_user'];
-          $sql = "select * from project where id_user='$id_user'";
-          $data = mysqli_query($con,$sql);
-          $no = 0;
-          while($d = mysqli_fetch_array($data)){
-            $no++; ?>
+                $id_user =  $_SESSION['id_user'];
+                $sql = "select * from project where id_user='$id_user'";
+                $data = mysqli_query($con,$sql);
+                $no = 0;
+                while($d = mysqli_fetch_array($data)){
+                  $no++; ?>
               <tr>
                 <td>
                   <center><?php echo $no; ?></center>
@@ -93,7 +97,7 @@ if(isset($_SESSION['username'])==""){
                 <td>
                   <form action="tambah_project.php" method="get">
                     <input hidden type="text" name="project" value="<?php echo $d['id_project']; ?>">
-                    <button type="submit">Edit</button>
+                    <button type="submit">Change Data</button>
                   </form>
                 </td>
                 <td>
@@ -108,7 +112,7 @@ if(isset($_SESSION['username'])==""){
             <div style="overflow:auto;">
               <div style="float:right;">
                 <form action="tambah_project.php">
-                  <button type="submit">Tambah Project</button>
+                  <button type="submit">Add New Project</button>
                 </form>
               </div>
             </div>
@@ -127,7 +131,6 @@ if(isset($_SESSION['username'])==""){
   integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
   integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
 
 </html>
 <?php 

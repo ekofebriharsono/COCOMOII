@@ -50,6 +50,10 @@ if(isset($_SESSION['username'])==""){
                                             a software project using the COCOMO II method</p>
                                     </div>
                                 </div>
+                                <div style="text-align:center;margin-top:40px;">
+                                    <p>&copy; 2019 LUG by <a href="https://github.com/ekofebriharsono"
+                                            class="text-warning stretched-link">Maseko</a></p>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -84,7 +88,7 @@ if(isset($_SESSION['username'])==""){
                                         <td>
                                             <input readonly hidden value="<?php echo $row['id_project']; ?>" type="text"
                                                 oninput="this.className = ''" name="idProject">
-                                            <button type="submit" name="submitEditProject">Edit</button></td>
+                                            <button type="submit" name="submitEditProject">Change</button></td>
                                         <?php } else { ?>
                                         <td><input placeholder="Project Name" type="text" oninput="this.className = ''"
                                                 name="namaProject"></td>
@@ -236,13 +240,13 @@ if(isset($_SESSION['username'])==""){
                 </div>
             </div>
             <?php } } else { ?>
-            <div class="box-content border">
+            <div class="box-content">
                 <div class="col-12">
                     <div id="regForm">
                         <h1>COCOMO II</h1>
-
                         <div style="text-align:center;margin-top:40px;">
-                            <p>&copy; 2019 LUG</p>
+                            <p>&copy; 2019 LUG by <a href="https://github.com/ekofebriharsono"
+                                    class="text-warning stretched-link">Maseko</a></p>
                         </div>
                     </div>
                 </div>

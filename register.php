@@ -78,10 +78,8 @@
 					<div class="d-flex justify-content-center links">
 						have an account?<a href="login.php">Sign In</a>
 					</div>￼￼
-
-
 					<div class="d-flex justify-content-center links">
-						&copy; 2019 LUG By Maseko
+						&copy; 2019 LUG By <a href="https://github.com/ekofebriharsono">Maseko</a>
 					</div>
 				</div>
 			</div>
