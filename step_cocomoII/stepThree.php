@@ -1,12 +1,12 @@
 <div class="tab">Step Three:
     <p>Software Scale Drivers</p>
-    <table border="0">
+    <table border="0" class="table">
       <tr>
         <td>Precedentedness</td>
         <td> : </td>
         <td>
         <input hidden type="text" name="PrecedentednessValue" id="PrecedentednessValue">
-          <select name="Precedentedness" id="Precedentedness">
+          <select class="custom-select my-1 mr-sm-2" name="Precedentedness" id="Precedentedness">
             <option value="very_low">Very Low</option>
             <option value="low">Low</option>
             <option value="nominal" selected>Nominal</option>
@@ -20,7 +20,7 @@
         <td> : </td>
         <td>
         <input hidden type="text" name="DevelopmentFlexibilityValue" id="DevelopmentFlexibilityValue">
-          <select name="DevelopmentFlexibility" id="DevelopmentFlexibility">
+          <select class="custom-select my-1 mr-sm-2" name="DevelopmentFlexibility" id="DevelopmentFlexibility">
             <option value="very_low">Very Low</option>
             <option value="low">Low</option>
             <option value="nominal" selected>Nominal</option>
@@ -34,7 +34,7 @@
         <td> : </td>
         <td>
         <input hidden type="text" name="ArchitectureValue" id="ArchitectureValue">
-          <select name="Architecture" id="Architecture">
+          <select class="custom-select my-1 mr-sm-2" name="Architecture" id="Architecture">
             <option value="very_low">Very Low</option>
             <option value="low">Low</option>
             <option value="nominal" selected>Nominal</option>
@@ -48,7 +48,7 @@
         <td> : </td>
         <td>
         <input hidden type="text" name="TeamCohesionValue" id="TeamCohesionValue">
-          <select name="TeamCohesion" id="TeamCohesion">
+          <select class="custom-select my-1 mr-sm-2" name="TeamCohesion" id="TeamCohesion">
             <option value="very_low">Very Low</option>
             <option value="low">Low</option>
             <option value="nominal" selected>Nominal</option>
@@ -62,7 +62,7 @@
         <td> : </td>
         <td>
         <input hidden type="text" name="ProcessMaturityValue" id="ProcessMaturityValue">
-          <select name="ProcessMaturity" id="ProcessMaturity">
+          <select class="custom-select my-1 mr-sm-2" name="ProcessMaturity" id="ProcessMaturity">
             <option value="very_low">Very Low</option>
             <option value="low">Low</option>
             <option value="nominal" selected>Nominal</option>

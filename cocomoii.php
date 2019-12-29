@@ -12,6 +12,9 @@ if(isset($_SESSION['username'])==""){
 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 <link href="style/css/style.css" rel="stylesheet">
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 <head>
   <meta name="Author" content="Eko Febri Harsono">
   <meta name="description" content="COCOMO II">
@@ -21,51 +24,104 @@ if(isset($_SESSION['username'])==""){
 
 <body>
 
-  <?php include('navbar.php'); ?>
+  <?php include('navbar.php');
+   if(isset($_POST['project'])!=''){ ?>
 
-  <?php if(isset($_POST['project'])!=''){ ?>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-4">
+        <div class="box-content">
+          <div class="row">
+            <div class="col-12">
+              <div class="box-content" style="height:120px;">
+                <h1 class="text-center "></h1>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <form id="regBox" method="GET" action="https://en.wikipedia.org/wiki/COCOMO">
+                <h6>Module</h6>
+                <h5><?php echo $_POST['nama_modul']; ?></h5>
+              </form>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <form id="regInfo" method="GET" action="https://en.wikipedia.org/wiki/COCOMO">
+                <h1>Infomation</h1>
+                <div class="tab1">
+                </div>
+                <div style="overflow:auto;">
+                  <div style="float:right;">
+                    <p class="text-justify">New Project is a feature of adding or editing projects
+                      and modules to calculate or determine the estimated total cost of developing
+                      a software project using the COCOMO II method</p>
+                  </div>
+                </div>
+                <div style="text-align:center;margin-top:40px;">
+                  <p>&copy; 2019 LUG by <a href="https://github.com/ekofebriharsono"
+                      class="text-warning stretched-link">Maseko</a></p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-8">
+        <div class="box-content">
+          <div class="row">
+            <div class="col-12">
+              <form id="regBoxModuleRumus" action="proses_php/prosesSimpanDataPerModul.php" method="post">
+                <input hidden type="text" name="id_modul" value="<?php echo $_POST['id_modul']; ?>">
+                <input hidden type="text" name="id_project" value="<?php echo $_POST['project']; ?>">
 
-  <form id="regForm" action="proses_php/prosesSimpanDataPerModul.php" method="post">
-    <h1>Modul "<?php echo $_POST['nama_modul']; ?>"</h1>
+                <?php include('step_cocomoII/stepOne.php'); ?>
 
-    <input hidden type="text" name="id_modul" value="<?php echo $_POST['id_modul']; ?>">
-    <input hidden type="text" name="id_project" value="<?php echo $_POST['project']; ?>">
+                <?php include('step_cocomoII/stepTwo.php'); ?>
 
-    <?php include('step_cocomoII/stepOne.php'); ?>
+                <?php include('step_cocomoII/stepThree.php'); ?>
 
-    <?php include('step_cocomoII/stepTwo.php'); ?>
+                <?php include('step_cocomoII/stepFour.php'); ?>
 
-    <?php include('step_cocomoII/stepThree.php'); ?>
+                <?php include('step_cocomoII/stepFive.php'); ?>
 
-    <?php include('step_cocomoII/stepFour.php'); ?>
+                <div style="overflow:auto;">
+                  <div style="float:right;">
+                    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                    <button type="button" id="nextBtn" name="submitDataCocomo" onclick="nextPrev(1)">Next</button>
+                  </div>
+                </div>
 
-    <?php include('step_cocomoII/stepFive.php'); ?>
-
-    <div style="overflow:auto;">
-      <div style="float:right;">
-        <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-        <button type="button" id="nextBtn" name="submitDataCocomo" onclick="nextPrev(1)">Next</button>
+                <div style="text-align:center;margin-top:40px;">
+                  <span class="step"></span>
+                  <span class="step"></span>
+                  <span class="step"></span>
+                  <span class="step"></span>
+                  <span class="step"></span>
+                  
+                </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-
-    <div style="text-align:center;margin-top:40px;">
-      <span class="step"></span>
-      <span class="step"></span>
-      <span class="step"></span>
-      <span class="step"></span>
-      <span class="step"></span>
-      <span class="step"></span>
-
-      <p>&copy; 2019 LUG</p>
-    </div>
-  </form>
-
+  </div>
   <?php } ?>
-
 </body>
 
 <script src="js/formPagination.js"></script>
 <script src="js/cocomoII.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+</script>
 
 </html>
 <?php 
