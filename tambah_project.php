@@ -15,7 +15,6 @@ if(isset($_SESSION['username'])==""){
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-
 <head>
     <meta name="Author" content="Eko Febri Harsono">
     <meta name="description" content="COCOMO II">
@@ -41,19 +40,18 @@ if(isset($_SESSION['username'])==""){
                     <div class="row">
                         <div class="col-12">
                             <form id="regInfo" method="GET" action="https://en.wikipedia.org/wiki/COCOMO">
-                                <h1>Info</h1>
+                                <h1>Infomation</h1>
                                 <div class="tab1">
                                 </div>
                                 <div style="overflow:auto;">
                                     <div style="float:right;">
-                                        <p class="text-justify">New Project adalah sebuah fitur menambahkan atau
-                                            mengedit project dan modul untuk menghitung atau menentukan estimasi biaya
-                                            total pengembangan proyek perangkat lunak menggunakan metode COCOMO II</p>
+                                        <p class="text-justify">New Project is a feature of adding or editing projects
+                                            and modules to calculate or determine the estimated total cost of developing
+                                            a software project using the COCOMO II method</p>
                                     </div>
                                 </div>
                             </form>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -66,21 +64,21 @@ if(isset($_SESSION['username'])==""){
                                 <table border="0">
                                     <tr>
                                         <?php if(isset($_GET['project'])){ 
-              $idProject = $_GET['project'];
-              
-              $_SESSION['project'] = $_GET['project'];
-              $sql = "select * from project where id_project='$idProject'";
-              $data = mysqli_query($con,$sql);
-              $row = mysqli_fetch_array($data);
-              $isAvaiable = false;
+                                                $idProject = $_GET['project'];
+                                                
+                                                $_SESSION['project'] = $_GET['project'];
+                                                $sql = "select * from project where id_project='$idProject'";
+                                                $data = mysqli_query($con,$sql);
+                                                $row = mysqli_fetch_array($data);
+                                                $isAvaiable = false;
 
-              if ($row['id_project']!=""){
-                $isAvaiable = true;
-              }  else {
-                $isAvaiable = false;
-              }
-              ?>
-                                        <td><input placeholder="Nama Project"
+                                                if ($row['id_project']!=""){
+                                                    $isAvaiable = true;
+                                                }  else {
+                                                    $isAvaiable = false;
+                                                }
+                                                ?>
+                                        <td><input placeholder="Project Name"
                                                 value="<?php echo $row['nama_project']; ?>" type="text"
                                                 oninput="this.className = ''" name="namaProject"></td>
                                         <td>
@@ -88,14 +86,12 @@ if(isset($_SESSION['username'])==""){
                                                 oninput="this.className = ''" name="idProject">
                                             <button type="submit" name="submitEditProject">Edit</button></td>
                                         <?php } else { ?>
-                                        <td><input placeholder="Nama Project" type="text" oninput="this.className = ''"
+                                        <td><input placeholder="Project Name" type="text" oninput="this.className = ''"
                                                 name="namaProject"></td>
                                         <td><button type="submit" name="submitNewProject">Submit</button></td>
                                         <?php } ?>
-
                                     </tr>
                                 </table>
-
                             </form>
                         </div>
                         <div class="col-6">
@@ -106,8 +102,6 @@ if(isset($_SESSION['username'])==""){
                         </div>
                     </div>
                 </div>
-
-
                 <?php if(isset($_GET['project'])){      
                                 if($isAvaiable){ ?>
                 <div class="box-content">
@@ -116,17 +110,16 @@ if(isset($_SESSION['username'])==""){
                             <div id="regBox">
                                 <h6>Module Name</h6>
                                 <table border="0">
-
                                     <tr>
                                         <form action="proses_php/prosesTambahModul.php" method="post">
                                             <td>
-                                                <input placeholder="Nama Modul" type="text"
+                                                <input placeholder="Module Name" type="text"
                                                     oninput="this.className = ''" name="namaModul">
                                                 <input placeholder="Nama Modul" type="text"
                                                     oninput="this.className = ''" name="idProject" hidden readonly
                                                     value="<?php echo @$_GET['project']; ?>">
                                             </td>
-                                            <td><button type="submit" name="submitNewModul">Tambah</button></td>
+                                            <td><button type="submit" name="submitNewModul">Add</button></td>
                                         </form>
                                     </tr>
                                 </table>
@@ -156,37 +149,36 @@ if(isset($_SESSION['username'])==""){
                         <div class="row">
                             <div class="col-12">
                                 <div id="regBox">
-                                    <h6>Data</h6>
+                                    <h6>Modoule Data</h6>
                                     <?php 
-        if(isset($_GET['project'])){ 
-           $idProject = $_GET['project'];
-           
-           $_SESSION['project'] = $_GET['project'];
-           $sql = "select * from modul where id_project='$idProject'";
-           $data = mysqli_query($con,$sql);
-           $no = 0;
-           $isAllCounted = false;
-           ?>
+                                        if(isset($_GET['project'])){ 
+                                        $idProject = $_GET['project'];
+                                        
+                                        $_SESSION['project'] = $_GET['project'];
+                                        $sql = "select * from modul where id_project='$idProject'";
+                                        $data = mysqli_query($con,$sql);
+                                        $no = 0;
+                                        $isAllCounted = false;
+                                        ?>
                                     <table class="table table-hover">
                                         <tr>
                                             <td>
-                                                <center>No.</center>
+                                                <center>No</center>
                                             </td>
                                             <td>
-                                                <center>Nama Modul</center>
+                                                <center>Module Name</center>
                                             </td>
                                             <td>
                                                 <center>Total</center>
                                             </td>
                                             <td colspan="2">
-                                                <center>Aksi</center>
+                                                <center>Action</center>
                                             </td>
                                         </tr>
-
                                         <?php 
-           while($d = mysqli_fetch_array($data)){
-            $no++;
-          ?>
+                                            while($d = mysqli_fetch_array($data)){
+                                                $no++;
+                                            ?>
                                         <tr>
                                             <td>
                                                 <center><?php echo $no; ?></center>
@@ -204,9 +196,9 @@ if(isset($_SESSION['username'])==""){
                                                     <input hidden type="text" name="id_modul"
                                                         value="<?php echo $d['id_modul']; ?>">
                                                     <?php if ($d['status']==1){ $isAllCounted = true; ?>
-                                                    <button type="submit" name="submitEditData">Edit Data</button>
+                                                    <button type="submit" name="submitEditData">Change Data</button>
                                                     <?php } else { $isAllCounted = false; ?>
-                                                    <button type="submit" name="submitIsiData">Isi Data</button>
+                                                    <button type="submit" name="submitIsiData">Add Data</button>
                                                     <?php } ?>
                                                 </form>
                                             </td>
@@ -235,13 +227,8 @@ if(isset($_SESSION['username'])==""){
                                             </td>
                                         </tr>
                                         <?php } ?>
-
                                     </table>
-
-
-
                                 </div>
-
                                 <?php } ?>
                             </div>
                         </div>
@@ -278,7 +265,6 @@ if(isset($_SESSION['username'])==""){
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
 </script>
-
 
 </html>
 <?php 
