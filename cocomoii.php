@@ -52,13 +52,63 @@ if(isset($_SESSION['username'])==""){
                 <h1 class="text-warning">Infomation</h1>
                 <div class="tab1">
                 </div>
-                <div style="overflow:auto;">
+                <table class="table">
+                  <tr>
+                    <td>
+                      Total UFP
+                    </td>
+                    <td>
+                      <p id="resultTotalUFP">0</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Size in SLOC
+                    </td>
+                    <td>
+                      <p id="resultTotalSize">0</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Scale Factor
+                    </td>
+                    <td>
+                      <p id="resultTotalScaleFactor">0</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Total Effort Multiplier
+                    </td>
+                    <td>
+                      <p id="resultTotalEffortMultiplier">0</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Person Month
+                    </td>
+                    <td>
+                      <p id="resultTotalPersonMonth">0</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      total Method
+                    </td>
+                    <td>
+                      <p id="resultTotalMethod">0</p>
+                    </td>
+                  </tr>
+                </table>
+                <!-- <div style="overflow:auto;">
                   <div style="float:right;">
                     <p class="text-justify">New Project is a feature of adding or editing projects
                       and modules to calculate or determine the estimated total cost of developing
                       a software project using the COCOMO II method</p>
                   </div>
-                </div>
+                </div> -->
                 <div style="text-align:center;margin-top:40px;">
                   <p>&copy; 2019 LUG by <a href="https://github.com/ekofebriharsono"
                       class="text-warning stretched-link">Maseko</a></p>

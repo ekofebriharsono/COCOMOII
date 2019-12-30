@@ -84,6 +84,8 @@ function hitungStepOne(){
     document.getElementById("UFP").value = UFP;
     UFPGlobal = UFP;
     document.getElementById("UFPFromStepOne").value = UFPGlobal;
+    document.getElementById("resultTotalUFP").innerHTML = UFPGlobal;
+
   }
 
   function hitungStepTwo(){
@@ -234,7 +236,7 @@ function hitungStepOne(){
         document.getElementById("SLOC").value = SLOC_Conversion_ratios;
         document.getElementById("SIZE").value = SIZE;
         KLOCGlobal = SIZE / 1000;
-
+        document.getElementById("resultTotalSize").innerHTML = KLOCGlobal;
     }
    
   }
@@ -376,6 +378,7 @@ function hitungStepOne(){
     document.getElementById("TeamCohesionValue").value = TeamCohesion;
     document.getElementById("ProcessMaturityValue").value = ProcessMaturity;
 
+    document.getElementById("resultTotalScaleFactor").innerHTML = Efixed;
 
     EGlobal = Efixed;
   }
@@ -756,6 +759,9 @@ function hitungStepOne(){
     PMGlobal = PM;
     EMGlobal = EM;
 
+    document.getElementById("resultTotalEffortMultiplier").innerHTML = EMGlobal;
+    document.getElementById("resultTotalPersonMonth").innerHTML = PMGlobal;
+
   }
 
   function pointRequiredSoftwareReliability(point){
@@ -971,6 +977,9 @@ function hitungStepOne(){
     document.getElementById("totalDocumentations").value = KOMAActivityDocumentations;
     document.getElementById("totalTraining").value = KOMAActivityTraining;
     document.getElementById("totalEvaluation").value = KOMAActivityEvaluation;
+
+    document.getElementById("resultTotalMethod").innerHTML = totalActivityWaterfall;
+
 
   }
 
