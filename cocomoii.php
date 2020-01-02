@@ -25,7 +25,7 @@ if(isset($_SESSION['username'])==""){
 <body>
 
   <?php include('navbar.php');
-  //  if(isset($_POST['project'])!=''){ ?>
+    if(isset($_POST['project'])!=''){ ?>
 
   <div class="container-fluid">
     <div class="row">
@@ -42,7 +42,7 @@ if(isset($_SESSION['username'])==""){
             <div class="col-12">
               <form id="regBox" method="GET" action="https://en.wikipedia.org/wiki/COCOMO">
                 <h6>Module</h6>
-                <h5 class="text-warning"><?php// echo $_POST['nama_modul']; ?></h5>
+                <h5 class="text-warning"><?php echo $_POST['nama_modul']; ?></h5>
               </form>
             </div>
           </div>
@@ -148,6 +148,10 @@ if(isset($_SESSION['username'])==""){
 
                 <?php include('step_cocomoII/stepEight.php'); ?>
 
+                <?php include('step_cocomoII/stepNine.php'); ?>
+
+                <?php include('step_cocomoII/stepTen.php'); ?>
+
                 <div style="overflow:auto;">
                   <div style="float:right;">
                     <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
@@ -164,6 +168,8 @@ if(isset($_SESSION['username'])==""){
                   <span class="step"></span>
                   <span class="step"></span>
                   <span class="step"></span>
+                  <span class="step"></span>
+                  <span class="step"></span>
                 </div>
             </div>
           </div>
@@ -171,7 +177,7 @@ if(isset($_SESSION['username'])==""){
       </div>
     </div>
   </div>
-  <?php //} ?>
+  <?php } ?>
 </body>
 
 <script src="js/formPagination.js"></script>

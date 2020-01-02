@@ -733,14 +733,49 @@ function hitungStepSeven() {
 
 function hitungProfit(){
   var profit = document.getElementById("profit").value;
-  var cost = document.getElementById("costBeforeProfit").value;
+  var costz = document.getElementById("costBeforeProfit").value;
 
   profit = profit / 100;
 
-  var totalProfit = cost * profit;
-  var totalCostWithProfit = Number(cost)  + Number(totalProfit);
+  var totalProfit = costz * profit;
+  var totalCostWithProfit = Number(costz)  + Number(totalProfit);
 
   document.getElementById("totalProfit").value = totalProfit.toFixed(0);
   document.getElementById("costWithProfit").value = totalCostWithProfit.toFixed(0);
+
+  document.getElementById("PersonelDirectCostBeforeProfit").value = costz;
+  document.getElementById("totalProfitIDR").value = totalProfit.toFixed(0);
+  document.getElementById("PersonelDirectCost").value = totalCostWithProfit.toFixed(0);
+
+}
+
+function hitungNonPersonel(){
+  var a = document.getElementById("dfta").value;
+  var b = document.getElementById("tt").value;
+
+  var total = Number(a) + Number(b);
+
+  document.getElementById("totalNonPersonel").value = total.toFixed(0);
+  document.getElementById("NonPersonnelDirectCost").value = total.toFixed(0);
+  
+}
+
+function hitungTax(){
+
+  var NonPersonnelDirectCost = document.getElementById("NonPersonnelDirectCost").value;
+  var PersonelDirectCost = document.getElementById("PersonelDirectCost").value;
+  var tax = document.getElementById("tax").value;
+
+  var totalOwnerCostEstimateBeforeTax = Number(NonPersonnelDirectCost) + Number(PersonelDirectCost);
+
+  tax = tax /100;
+
+  var totalTax = tax * totalOwnerCostEstimateBeforeTax;
+  var OwnerCostEstimate = Number(totalTax) + Number(totalOwnerCostEstimateBeforeTax);
+
+  document.getElementById("OwnerCostEstimateBeforeTaxes").value = totalOwnerCostEstimateBeforeTax.toFixed(0);
+  document.getElementById("ValueAddedTax").value = totalTax.toFixed(0);
+  document.getElementById("OwnerCostEstimate").value = OwnerCostEstimate.toFixed(0);
+
 
 }
