@@ -91,6 +91,14 @@ if(isset($_POST['id_modul'])){
 
     $TotalCostOfActivityWaterfall = $_POST['valueTotalCostOfActivityWaterfall'];
 
+    $PersonelDirectCostBeforeProfit = $_POST['PersonelDirectCostBeforeProfit'];
+    $totalProfitIDR = $_POST['totalProfitIDR'];
+    $PersonelDirectCost = $_POST['PersonelDirectCost'];
+    $NonPersonnelDirectCost = $_POST['NonPersonnelDirectCost'];
+    $OwnerCostEstimateBeforeTaxes = $_POST['OwnerCostEstimateBeforeTaxes'];
+    $ValueAddedTax = $_POST['ValueAddedTax'];
+    $OwnerCostEstimate = $_POST['OwnerCostEstimate'];
+
     $sqlILF = "INSERT INTO ufp_complexity_weight (id_ufp,id_modul,low,average,height) VALUES ('ilf_ufp',$id_modul,$ILF_LOW,$ILF_AVERAGE,$ILF_HEIGHT)";
     $sqlEIF = "INSERT INTO ufp_complexity_weight (id_ufp,id_modul,low,average,height) VALUES ('eif_ufp',$id_modul,$EIF_LOW,$EIF_AVERAGE,$EIF_HEIGHT)";
     $sqlEI = "INSERT INTO ufp_complexity_weight (id_ufp,id_modul,low,average,height) VALUES ('ei_ufp',$id_modul,$EI_LOW,$EI_AVERAGE,$EI_HEIGHT)";
@@ -144,9 +152,12 @@ if(isset($_POST['id_modul'])){
     $sqlTRA = "INSERT INTO activity_user (id_activity, id_modul, persen, value) VALUES ('tra',$id_modul,$PTRA,$TRA)";
     $sqlEVA = "INSERT INTO activity_user (id_activity, id_modul, persen, value) VALUES ('eva',$id_modul,$PEVA,$EVA)";
 
+    $sqlAllCost = "INSERT INTO all_cost_user (id_modul, personel_direct_cost_before_profit, profit, personel_direct_cost, non_personel_direct_cost, owner_estimate_before_tax, tax, owner_cost_estimate) 
+    VALUES ($id_modul, $PersonelDirectCostBeforeProfit, $totalProfitIDR, $PersonelDirectCost, $NonPersonnelDirectCost, $OwnerCostEstimateBeforeTaxes, $ValueAddedTax, $OwnerCostEstimate )";
+  
     $sqlTotalCostOfActivityWaterfall = "INSERT INTO total_activity_user (id_modul, value) VALUES ($id_modul,$TotalCostOfActivityWaterfall)";
 
-    $sqlUpdateTotalInProject ="UPDATE modul SET total = '$valueTotalCostOfActivityWaterfall' WHERE id_modul= $id_modul";
+    $sqlUpdateTotalInProject ="UPDATE modul SET total = '$OwnerCostEstimate' WHERE id_modul= $id_modul";
     $sqlUpdateStatusModul ="UPDATE modul SET status = 1 WHERE id_modul= '$id_modul'";
 
     $resultsILF = mysqli_query($con,$sqlILF);
@@ -201,12 +212,14 @@ if(isset($_POST['id_modul'])){
     $resultTRA = mysqli_query($con, $sqlTRA);
     $resultEVA = mysqli_query($con, $sqlEVA);
 
+    $resultAllCost = mysqli_query($con, $sqlAllCost);
+
     $resultTotalCostOfActivityWaterfall = mysqli_query($con, $sqlTotalCostOfActivityWaterfall);
 
     $resultsUpdateTotalInProject = mysqli_query($con,$sqlUpdateTotalInProject);
     $resultsUpdateStatusModul = mysqli_query($con,$sqlUpdateStatusModul);
 
-    if($resultsILF && $resultsEIF && $resultsEI && $resultsEO && $resultsEQ && $resultsUpdateTotalInProject && $resultsUpdateStatusModul && $resultsUFP && $resultSIZE && $resultPREC && $resultFLEX && $resultRESL && $resultTEAM && $resultPMAT && $resultE) {
+    if($resultAllCost && $resultsILF && $resultsEIF && $resultsEI && $resultsEO && $resultsEQ && $resultsUpdateTotalInProject && $resultsUpdateStatusModul && $resultsUFP && $resultSIZE && $resultPREC && $resultFLEX && $resultRESL && $resultTEAM && $resultPMAT && $resultE) {
       header('Location: ../tambah_project.php?project='.$id_project);
     }else {
       header('Location: ../tambah_project.php?gagal=1');

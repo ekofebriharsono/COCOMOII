@@ -52,7 +52,7 @@ if(isset($_SESSION['username'])==""){
                 <h1 class="text-warning">Infomation</h1>
                 <div class="tab1">
                 </div>
-                <!-- <table class="table">
+                <table class="table">
                   <tr>
                     <td>
                       Total UFP
@@ -101,14 +101,14 @@ if(isset($_SESSION['username'])==""){
                       <p id="resultTotalMethod">0</p>
                     </td>
                   </tr>
-                </table> -->
-                <div style="overflow:auto;">
+                </table>
+                <!-- <div style="overflow:auto;">
                   <div style="float:right;">
                     <p class="text-justify">New Project is a feature of adding or editing projects
                       and modules to calculate or determine the estimated total cost of developing
                       a software project using the COCOMO II method</p>
                   </div>
-                </div>
+                </div> -->
                 <div style="text-align:center;margin-top:40px;">
                   <p>&copy; 2019 LUG by <a href="https://github.com/ekofebriharsono"
                       class="text-warning stretched-link">Maseko</a></p>

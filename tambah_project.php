@@ -1,6 +1,14 @@
 <?php 
 session_start();
 include 'proses_php/koneksi.php';
+
+function rupiah($angka){
+                                    
+    $hasil_rupiah = "Rp " . number_format($angka,0,',','.');
+    return $hasil_rupiah;
+
+}
+
 if(isset($_SESSION['username'])==""){
     echo "<script>window.open('login.php?pesan=belum_login','_self')</script>";
     } else { 
@@ -101,7 +109,19 @@ if(isset($_SESSION['username'])==""){
                         <div class="col-6">
                             <form id="regBox" method="POST" action="#">
                                 <h6>Total</h6>
-                                <h5 class="text-warning">Rp. 1.000.000.000</h5>
+                                <h5 class="text-warning">
+                                    <?php
+
+                                $idProject = $_GET['project'];
+                                    $sqlTotal = "select sum(total) as total_project from modul WHERE id_project = '$idProject'";
+                                    $cek = mysqli_query($con, $sqlTotal);
+                                    if($cek){
+                                        $rowTotal = mysqli_fetch_array($cek); 
+                                        echo rupiah($rowTotal['total_project']);
+                                    } 
+                                   
+                                ?>
+                                </h5>
                             </form>
                         </div>
                     </div>
@@ -189,7 +209,7 @@ if(isset($_SESSION['username'])==""){
                                             </td>
                                             <td><?php echo $d['nama_modul']; ?></td>
                                             <td>
-                                                <center><?php echo $d['total']; ?></center>
+                                                <center><?php echo rupiah($d['total']); ?></center>
                                             </td>
                                             <td>
                                                 <form action="cocomoii.php" method="post">
