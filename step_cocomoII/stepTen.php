@@ -27,7 +27,8 @@
         Personel Direct Cost Before Profit (IDR)
       </td>
       <td>
-        <input type="number" value="0" oninput="this.className = ''" id="PersonelDirectCostBeforeProfit" name="PersonelDirectCostBeforeProfit">
+        <input type="number" value="0" oninput="this.className = ''" id="PersonelDirectCostBeforeProfit"
+          name="PersonelDirectCostBeforeProfit">
       </td>
     </tr>
     <tr>
@@ -51,7 +52,8 @@
         Non Personnel Direct Cost (IDR)
       </td>
       <td>
-        <input type="number" value="0" oninput="this.className = ''" id="NonPersonnelDirectCost" name="NonPersonnelDirectCost">
+        <input type="number" value="0" oninput="this.className = ''" id="NonPersonnelDirectCost"
+          name="NonPersonnelDirectCost">
       </td>
     </tr>
     <tr>
@@ -59,7 +61,8 @@
         Owner Cost Estimate Before Taxes (IDR)
       </td>
       <td>
-        <input type="number" value="0" oninput="this.className = ''" id="OwnerCostEstimateBeforeTaxes" name="OwnerCostEstimateBeforeTaxes">
+        <input type="number" value="0" oninput="this.className = ''" id="OwnerCostEstimateBeforeTaxes"
+          name="OwnerCostEstimateBeforeTaxes">
       </td>
     </tr>
     <tr>
@@ -78,11 +81,6 @@
         <input type="number" value="0" oninput="this.className = ''" id="OwnerCostEstimate" name="OwnerCostEstimate">
       </td>
     </tr>
-
-
-
-
-
   </table>
 
 </div>
