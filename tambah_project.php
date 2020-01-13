@@ -150,23 +150,22 @@ if(isset($_SESSION['username'])==""){
                             </div>
                         </div>
                         <div class="col-6">
-                            <div id="regBox">
+                            <form id="regBox" method="POST" action="#">
                                 <h6>Profit</h6>
-                                <table border="0">
-                                    <tr>
-                                        <form action="#" method="post">
-                                            <td>
-                                                <input placeholder="Profit" type="number" oninput="this.className = ''"
-                                                    name="profit">
-                                                <input placeholder="Nama Modul" type="text"
-                                                    oninput="this.className = ''" name="idProject" hidden readonly
-                                                    value="<?php echo @$_GET['project']; ?>">
-                                            </td>
-                                            <td><button type="submit" name="submitProfit">Save</button></td>
-                                        </form>
-                                    </tr>
-                                </table>
-                            </div>
+                                <h5 class="text-warning">
+                                    <?php
+
+                                $idProject = $_GET['project'];
+                                    $sqlTotal = "select sum(total) as total_project from modul WHERE id_project = '$idProject'";
+                                    $cek = mysqli_query($con, $sqlTotal);
+                                    if($cek){
+                                        $rowTotal = mysqli_fetch_array($cek); 
+                                        echo rupiah(0);
+                                    } 
+                                   
+                                ?>
+                                </h5>
+                            </form>
                         </div>
                     </div>
                     <div class="box-content">

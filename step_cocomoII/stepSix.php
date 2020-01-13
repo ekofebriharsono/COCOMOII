@@ -1,6 +1,6 @@
 <div class="tab">
 <h3>Salary</h3>
-  <table class="table">
+  <!-- <table class="table">
     <tr>
       <td>
         Project Manager Salary (IDR)
@@ -27,7 +27,7 @@
         <input placeholder="Total" type="number" value="0" readonly oninput="this.className = ''" id="totalGaji">
       </td>
     </tr>
-  </table>
+  </table> -->
 
   <table class="table">
     <tr>

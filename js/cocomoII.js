@@ -641,7 +641,7 @@ function hitungTotalCostOfActivityWaterfall() {
   document.getElementById("totalTraining").value = KOMAActivityTraining;
   document.getElementById("totalEvaluation").value = KOMAActivityEvaluation;
 
-  document.getElementById("resultTotalMethod").innerHTML = totalActivityWaterfall.toFixed(2);
+  document.getElementById("resultTotalMethod").innerHTML = totalActivityWaterfall;
 
 }
 
@@ -654,32 +654,32 @@ function hitungPaymentRate() {
   var salaryPublicTS = document.getElementById("salaryPublicTS").value;
   var salaryPublicD = document.getElementById("salaryPublicD").value;
 
-  salaryPublicPM = salaryPublicPM * 0.7;
-  salaryPublicSA = salaryPublicSA * 0.7;
-  salaryPublicP = salaryPublicP * 0.7;
-  salaryPublicST = salaryPublicST * 0.7;
-  salaryPublicTS = salaryPublicTS * 0.7;
-  salaryPublicD = salaryPublicD * 0.7;
+  TsalaryPublicPM = salaryPublicPM * 0.7;
+  TsalaryPublicSA = salaryPublicSA * 0.7;
+  TsalaryPublicP = salaryPublicP * 0.7;
+  TsalaryPublicST = salaryPublicST * 0.7;
+  TsalaryPublicTS = salaryPublicTS * 0.7;
+  TsalaryPublicD = salaryPublicD * 0.7;
 
-  document.getElementById("salaryPrivatePM").value = salaryPublicPM.toFixed(0);
-  document.getElementById("salaryPrivateSA").value = salaryPublicSA.toFixed(0);
-  document.getElementById("salaryPrivateP").value = salaryPublicP.toFixed(0);
-  document.getElementById("salaryPrivateST").value = salaryPublicST.toFixed(0);
-  document.getElementById("salaryPrivateTS").value = salaryPublicTS.toFixed(0);
-  document.getElementById("salaryPrivateD").value = salaryPublicD.toFixed(0);
+  document.getElementById("salaryPrivatePM").value = TsalaryPublicPM.toFixed(0);
+  document.getElementById("salaryPrivateSA").value = TsalaryPublicSA.toFixed(0);
+  document.getElementById("salaryPrivateP").value = TsalaryPublicP.toFixed(0);
+  document.getElementById("salaryPrivateST").value = TsalaryPublicST.toFixed(0);
+  document.getElementById("salaryPrivateTS").value = TsalaryPublicTS.toFixed(0);
+  document.getElementById("salaryPrivateD").value = TsalaryPublicD.toFixed(0);
 
-  document.getElementById("RequirementsPayrate").value = salaryPublicSA.toFixed(0);
-  document.getElementById("SpecificationsPayrate").value = salaryPublicSA.toFixed(0);
-  document.getElementById("DesignPayrate").value = salaryPublicSA.toFixed(0);
-  document.getElementById("ImplementationPayrate").value = salaryPublicP.toFixed(0);
-  document.getElementById("IntegrationPayrate").value = salaryPublicST.toFixed(0);
-  document.getElementById("AcceptancePayrate").value = salaryPublicST.toFixed(0);
-  document.getElementById("ProjectManagementPayrate").value = salaryPublicPM.toFixed(0);
-  document.getElementById("ConfigurationPayrate").value = salaryPublicSA.toFixed(0);
-  document.getElementById("QualityPayrate").value = salaryPublicST.toFixed(0);
-  document.getElementById("DocumentationsPayrate").value = salaryPublicD.toFixed(0);
-  document.getElementById("TrainingPayrate").value = salaryPublicTS.toFixed(0);
-  document.getElementById("EvaluationPayrate").value = salaryPublicST.toFixed(0);
+  document.getElementById("RequirementsPayrate").value = salaryPublicSA;
+  document.getElementById("SpecificationsPayrate").value = salaryPublicSA;
+  document.getElementById("DesignPayrate").value = salaryPublicSA;
+  document.getElementById("ImplementationPayrate").value = salaryPublicP;
+  document.getElementById("IntegrationPayrate").value = salaryPublicST;
+  document.getElementById("AcceptancePayrate").value = salaryPublicST;
+  document.getElementById("ProjectManagementPayrate").value = salaryPublicPM;
+  document.getElementById("ConfigurationPayrate").value = salaryPublicSA;
+  document.getElementById("QualityPayrate").value = salaryPublicST;
+  document.getElementById("DocumentationsPayrate").value = salaryPublicD;
+  document.getElementById("TrainingPayrate").value = salaryPublicTS;
+  document.getElementById("EvaluationPayrate").value = salaryPublicST;
 
 
 }

@@ -54,7 +54,7 @@ if(isset($_SESSION['username'])==""){
 
 <body>
 
-<?php  if(isset($_GET['excel'])=="true"){
+    <?php  if(isset($_GET['excel'])=="true"){
 	header("Content-type: application/vnd-ms-excel");
 	header("Content-Disposition: attachment; filename=Data Pegawai.xls");
  } ?>
@@ -67,7 +67,7 @@ if(isset($_SESSION['username'])==""){
         <a href="viewResult.php?excel=true">EXPORT KE EXCEL</a>
     </center>
 
-<?php } ?>
+    <?php } ?>
     <?php 
                 $idUser = $_SESSION['id_user'];
                 $totalModul = 0;
@@ -2163,7 +2163,7 @@ if($res){
             ?>
         </tr>
         <tr>
-            <td colspan="3">
+            <td colspan="2">
                 <b>Total</b>
             </td>
             <?php 
@@ -2179,8 +2179,12 @@ if($res){
                     while($d = mysqli_fetch_array($res)){ 
                         ?>
             <td>
+                100
+            </td>
+            <td>
                 <?php echo $d['value']; ?>
             </td>
+
             <?php
                 }
             }
