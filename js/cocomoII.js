@@ -731,14 +731,14 @@ function hitungStepSeven() {
 
 }
 
-function hitungProfit(){
+function hitungProfit() {
   var profit = document.getElementById("profit").value;
   var costz = document.getElementById("costBeforeProfit").value;
 
   profit = profit / 100;
 
   var totalProfit = costz * profit;
-  var totalCostWithProfit = Number(costz)  + Number(totalProfit);
+  var totalCostWithProfit = Number(costz) + Number(totalProfit);
 
   document.getElementById("totalProfit").value = totalProfit.toFixed(0);
   document.getElementById("costWithProfit").value = totalCostWithProfit.toFixed(0);
@@ -749,18 +749,49 @@ function hitungProfit(){
 
 }
 
-function hitungNonPersonel(){
-  var a = document.getElementById("dfta").value;
-  var b = document.getElementById("tt").value;
+function hitungNonPersonel() {
+  var dfta = document.getElementById("dfta").value;
+  var tt = document.getElementById("tt").value;
+  var eb = document.getElementById("eb").value;
+  var ub = document.getElementById("ub").value;
+  var lt = document.getElementById("lt").value;
+  var tcoppn = document.getElementById("tcoppn").value;
+  var icop = document.getElementById("icop").value;
+  var rav = document.getElementById("rav").value;
+  var rtpo = document.getElementById("rtpo").value;
+  var roe = document.getElementById("roe").value;
+  var rof = document.getElementById("rof").value;
+  var ocotpo = document.getElementById("ocotpo").value;
+  var oc = document.getElementById("oc").value;
+  var capc = document.getElementById("capc").value;
+  var cc = document.getElementById("cc").value;
+  var pda = document.getElementById("pda").value;
+  var ha = document.getElementById("ha").value;
+  var tl = document.getElementById("tl").value;
+  var ra = document.getElementById("ra").value;
+  var oosa = document.getElementById("oosa").value;
+  var etl = document.getElementById("etl").value;
+  var al = document.getElementById("al").value;
+  var rc = document.getElementById("rc").value;
+  var rse = document.getElementById("rse").value;
+  var sdc = document.getElementById("sdc").value;
+  var seminar = document.getElementById("seminar").value;
+  var s = document.getElementById("s").value;
+  var labt = document.getElementById("labt").value;
+  var c = document.getElementById("c").value;
 
-  var total = Number(a) + Number(b);
+
+
+  var total = Number(dfta) + Number(tt) + Number(eb) + Number(ub) + Number(lt) + Number(tcoppn) + Number(icop) + Number(rav) + Number(rtpo) + Number(roe) +
+    Number(rof) + Number(ocotpo) + Number(oc) + Number(capc) + Number(cc) + Number(pda) + Number(ha) +
+    Number(tl) + Number(ra) + Number(oosa) + Number(etl) + Number(al) + Number(rc) + Number(rse) + Number(sdc)+ Number(seminar)+ Number(s)+ Number(labt)+ Number(c);
 
   document.getElementById("totalNonPersonel").value = total.toFixed(0);
   document.getElementById("NonPersonnelDirectCost").value = total.toFixed(0);
-  
+
 }
 
-function hitungTax(){
+function hitungTax() {
 
   var NonPersonnelDirectCost = document.getElementById("NonPersonnelDirectCost").value;
   var PersonelDirectCost = document.getElementById("PersonelDirectCost").value;
@@ -768,7 +799,7 @@ function hitungTax(){
 
   var totalOwnerCostEstimateBeforeTax = Number(NonPersonnelDirectCost) + Number(PersonelDirectCost);
 
-  tax = tax /100;
+  tax = tax / 100;
 
   var totalTax = tax * totalOwnerCostEstimateBeforeTax;
   var OwnerCostEstimate = Number(totalTax) + Number(totalOwnerCostEstimateBeforeTax);
