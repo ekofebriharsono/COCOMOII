@@ -7,6 +7,8 @@ if(isset($_POST['id_modul'])){
     $id_modul = $_POST['id_modul'];
     $id_project = $_POST['id_project'];
 
+
+    // step One
     $ILF_LOW = $_POST['ILF_LOW'];
     $ILF_AVERAGE = $_POST['ILF_AVERAGE'];
     $ILF_HEIGHT = $_POST['ILF_HEIGHT'];
@@ -31,9 +33,12 @@ if(isset($_POST['id_modul'])){
 
     $UFP = $_POST['UFP'];
 
+
+    // step two
     $SLOC = $_POST['SLOC'];
     $SIZE = $_POST['SIZE'];
 
+    //Step three
     $PrecedentednessValue = $_POST['PrecedentednessValue'];
     $DevelopmentFlexibilityValue = $_POST['DevelopmentFlexibilityValue'];
     $ArchitectureValue = $_POST['ArchitectureValue'];
@@ -99,6 +104,61 @@ if(isset($_POST['id_modul'])){
     $ValueAddedTax = $_POST['ValueAddedTax'];
     $OwnerCostEstimate = $_POST['OwnerCostEstimate'];
 
+    //step six
+    $salaryPublicPM = $_POST['salaryPublicPM'];
+    $salaryPublicSA = $_POST['salaryPublicSA'];
+    $salaryPublicP = $_POST['salaryPublicP'];
+    $salaryPublicST = $_POST['salaryPublicST'];
+    $salaryPublicTS = $_POST['salaryPublicTS'];
+    $salaryPublicD = $_POST['salaryPublicD'];
+
+    $salaryPrivatePM = $_POST['salaryPrivatePM'];
+    $salaryPrivateSA = $_POST['salaryPrivateSA'];
+    $salaryPrivateP = $_POST['salaryPrivateP'];
+    $salaryPrivateST = $_POST['salaryPrivateST'];
+    $salaryPrivateTS = $_POST['salaryPrivateTS'];
+    $salaryPrivateD = $_POST['salaryPrivateD'];
+
+
+    // step seven
+    $RequirementsPayrate = $_POST['RequirementsPayrate'];
+    $valueRequirementsPayrate = $_POST['valueRequirementsPayrate'];
+
+    $SpecificationsPayrate = $_POST['SpecificationsPayrate'];
+    $valueSpecificationsPayrate = $_POST['valueSpecificationsPayrate'];
+
+    $DesignPayrate = $_POST['DesignPayrate'];
+    $valueDesignPayrate = $_POST['valueDesignPayrate'];
+
+    $ImplementationPayrate = $_POST['ImplementationPayrate'];
+    $valueImplementationPayrate = $_POST['valueImplementationPayrate'];
+
+    $IntegrationPayrate = $_POST['IntegrationPayrate'];
+    $valueIntegrationPayrate = $_POST['valueIntegrationPayrate'];
+
+    $AcceptancePayrate = $_POST['AcceptancePayrate'];
+    $valueAcceptancePayrate = $_POST['valueAcceptancePayrate'];
+
+    $ProjectManagementPayrate = $_POST['ProjectManagementPayrate'];
+    $valueProjectManagementPayrate = $_POST['valueProjectManagementPayrate'];
+
+    $ConfigurationPayrate = $_POST['ConfigurationPayrate'];
+    $valueConfigurationPayrate = $_POST['valueConfigurationPayrate'];
+
+    $QualityPayrate = $_POST['QualityPayrate'];
+    $valueQualityPayrate = $_POST['valueQualityPayrate'];
+
+    $DocumentationsPayrate = $_POST['DocumentationsPayrate'];
+    $valueDocumentationsPayrate = $_POST['valueDocumentationsPayrate'];
+
+    $TrainingPayrate = $_POST['TrainingPayrate'];
+    $valueTrainingPayrate = $_POST['valueTrainingPayrate'];
+
+    $EvaluationPayrate = $_POST['EvaluationPayrate'];
+    $valueEvaluationPayrate = $_POST['valueEvaluationPayrate'];
+
+    $valueTotalCostOfActivityWaterfallWithPayrate = $_POST['valueTotalCostOfActivityWaterfallWithPayrate'];
+
     $sqlILF = "INSERT INTO ufp_complexity_weight (id_ufp,id_modul,low,average,height) VALUES ('ilf_ufp',$id_modul,$ILF_LOW,$ILF_AVERAGE,$ILF_HEIGHT)";
     $sqlEIF = "INSERT INTO ufp_complexity_weight (id_ufp,id_modul,low,average,height) VALUES ('eif_ufp',$id_modul,$EIF_LOW,$EIF_AVERAGE,$EIF_HEIGHT)";
     $sqlEI = "INSERT INTO ufp_complexity_weight (id_ufp,id_modul,low,average,height) VALUES ('ei_ufp',$id_modul,$EI_LOW,$EI_AVERAGE,$EI_HEIGHT)";
@@ -160,70 +220,88 @@ if(isset($_POST['id_modul'])){
     $sqlUpdateTotalInProject ="UPDATE modul SET total = '$OwnerCostEstimate' WHERE id_modul= $id_modul";
     $sqlUpdateStatusModul ="UPDATE modul SET status = 1 WHERE id_modul= '$id_modul'";
 
-    $resultsILF = mysqli_query($con,$sqlILF);
-    $resultsEIF = mysqli_query($con,$sqlEIF);
-    $resultsEI = mysqli_query($con,$sqlEI);
-    $resultsEO = mysqli_query($con,$sqlEO);
-    $resultsEQ = mysqli_query($con,$sqlEQ);
 
-    $resultsUFP = mysqli_query($con,$sqlUFP);
+    //riset query 
 
-    $resultSIZE = mysqli_query($con, $sqlSIZE);
+    $sqlComplexityWeight = "INSERT INTO ufp_complexity_weight (id_ufp,id_modul,low,average,height) VALUES 
+    ('ilf_ufp',$id_modul,$ILF_LOW,$ILF_AVERAGE,$ILF_HEIGHT),
+    ('eif_ufp',$id_modul,$EIF_LOW,$EIF_AVERAGE,$EIF_HEIGHT),
+    ('ei_ufp',$id_modul,$EI_LOW,$EI_AVERAGE,$EI_HEIGHT),
+    ('eo_ufp',$id_modul,$EO_LOW,$EO_AVERAGE,$EO_HEIGHT),
+    ('eq_ufp',$id_modul,$EQ_LOW,$EQ_AVERAGE,$EQ_HEIGHT)";
 
-    $resultPREC = mysqli_query($con, $sqlPREC);
-    $resultFLEX = mysqli_query($con, $sqlFLEX);
-    $resultRESL = mysqli_query($con, $sqlRESL);
-    $resultTEAM = mysqli_query($con, $sqlTEAM);
-    $resultPMAT = mysqli_query($con, $sqlPMAT);
+    $resultComplexityWeight = mysqli_query($con,$sqlComplexityWeight);
 
-    $resultE = mysqli_query($con, $sqlE);
-
-    $resultTotalEM = mysqli_query($con, $sqlTotalEM);
-    $resultTotalPM = mysqli_query($con, $sqlTotalPM);
-
-    $resultRELY = mysqli_query($con, $sqlRELY);
-    $resultDATA = mysqli_query($con, $sqlDATA);
-    $resultCPLX = mysqli_query($con, $sqlCPLX);
-    $resultRUSE = mysqli_query($con, $sqlRUSE);
-    $resultDOCU = mysqli_query($con, $sqlDOCU);
-    $resultTIME = mysqli_query($con, $sqlTIME);
-    $resultSTOR = mysqli_query($con, $sqlSTOR);
-    $resultPVOL = mysqli_query($con, $sqlPVOL);
-    $resultACAP = mysqli_query($con, $sqlACAP);
-    $resultPCAP = mysqli_query($con, $sqlPCAP);
-    $resultPCON = mysqli_query($con, $sqlPCON);
-    $resultAPEX = mysqli_query($con, $sqlAPEX);
-    $resultPLEX = mysqli_query($con, $sqlPLEX);
-    $resultLTEX = mysqli_query($con, $sqlLTEX);
-    $resultTOOL = mysqli_query($con, $sqlTOOL);
-    $resultSITE = mysqli_query($con, $sqlSITE);
-    $resultSCED = mysqli_query($con, $sqlSCED);
-
-    $resultREC = mysqli_query($con, $sqlREC);
-    $resultSPE = mysqli_query($con, $sqlSPE);
-    $resultDES = mysqli_query($con, $sqlDES);
-    $resultIMP = mysqli_query($con, $sqlIMP);
-    $resultINT = mysqli_query($con, $sqlINT);
-    $resultACC = mysqli_query($con, $sqlACC);
-    $resultPRO = mysqli_query($con, $sqlPRO);
-    $resultCON = mysqli_query($con, $sqlCON);
-    $resultQUA = mysqli_query($con, $sqlQUA);
-    $resultDOC = mysqli_query($con, $sqlDOC);
-    $resultTRA = mysqli_query($con, $sqlTRA);
-    $resultEVA = mysqli_query($con, $sqlEVA);
-
-    $resultAllCost = mysqli_query($con, $sqlAllCost);
-
-    $resultTotalCostOfActivityWaterfall = mysqli_query($con, $sqlTotalCostOfActivityWaterfall);
-
-    $resultsUpdateTotalInProject = mysqli_query($con,$sqlUpdateTotalInProject);
-    $resultsUpdateStatusModul = mysqli_query($con,$sqlUpdateStatusModul);
-
-    if($resultAllCost && $resultsILF && $resultsEIF && $resultsEI && $resultsEO && $resultsEQ && $resultsUpdateTotalInProject && $resultsUpdateStatusModul && $resultsUFP && $resultSIZE && $resultPREC && $resultFLEX && $resultRESL && $resultTEAM && $resultPMAT && $resultE) {
-      header('Location: ../tambah_project.php?project='.$id_project);
-    }else {
-      header('Location: ../tambah_project.php?gagal=1');
+    if($resultComplexityWeight){
+      echo "sukses";
+    }else{
+      echo $sqlComplexityWeight;
     }
+
+    // $resultsILF = mysqli_query($con,$sqlILF);
+    // $resultsEIF = mysqli_query($con,$sqlEIF);
+    // $resultsEI = mysqli_query($con,$sqlEI);
+    // $resultsEO = mysqli_query($con,$sqlEO);
+    // $resultsEQ = mysqli_query($con,$sqlEQ);
+
+    // $resultsUFP = mysqli_query($con,$sqlUFP);
+
+    // $resultSIZE = mysqli_query($con, $sqlSIZE);
+
+    // $resultPREC = mysqli_query($con, $sqlPREC);
+    // $resultFLEX = mysqli_query($con, $sqlFLEX);
+    // $resultRESL = mysqli_query($con, $sqlRESL);
+    // $resultTEAM = mysqli_query($con, $sqlTEAM);
+    // $resultPMAT = mysqli_query($con, $sqlPMAT);
+
+    // $resultE = mysqli_query($con, $sqlE);
+
+    // $resultTotalEM = mysqli_query($con, $sqlTotalEM);
+    // $resultTotalPM = mysqli_query($con, $sqlTotalPM);
+
+    // $resultRELY = mysqli_query($con, $sqlRELY);
+    // $resultDATA = mysqli_query($con, $sqlDATA);
+    // $resultCPLX = mysqli_query($con, $sqlCPLX);
+    // $resultRUSE = mysqli_query($con, $sqlRUSE);
+    // $resultDOCU = mysqli_query($con, $sqlDOCU);
+    // $resultTIME = mysqli_query($con, $sqlTIME);
+    // $resultSTOR = mysqli_query($con, $sqlSTOR);
+    // $resultPVOL = mysqli_query($con, $sqlPVOL);
+    // $resultACAP = mysqli_query($con, $sqlACAP);
+    // $resultPCAP = mysqli_query($con, $sqlPCAP);
+    // $resultPCON = mysqli_query($con, $sqlPCON);
+    // $resultAPEX = mysqli_query($con, $sqlAPEX);
+    // $resultPLEX = mysqli_query($con, $sqlPLEX);
+    // $resultLTEX = mysqli_query($con, $sqlLTEX);
+    // $resultTOOL = mysqli_query($con, $sqlTOOL);
+    // $resultSITE = mysqli_query($con, $sqlSITE);
+    // $resultSCED = mysqli_query($con, $sqlSCED);
+
+    // $resultREC = mysqli_query($con, $sqlREC);
+    // $resultSPE = mysqli_query($con, $sqlSPE);
+    // $resultDES = mysqli_query($con, $sqlDES);
+    // $resultIMP = mysqli_query($con, $sqlIMP);
+    // $resultINT = mysqli_query($con, $sqlINT);
+    // $resultACC = mysqli_query($con, $sqlACC);
+    // $resultPRO = mysqli_query($con, $sqlPRO);
+    // $resultCON = mysqli_query($con, $sqlCON);
+    // $resultQUA = mysqli_query($con, $sqlQUA);
+    // $resultDOC = mysqli_query($con, $sqlDOC);
+    // $resultTRA = mysqli_query($con, $sqlTRA);
+    // $resultEVA = mysqli_query($con, $sqlEVA);
+
+    // $resultAllCost = mysqli_query($con, $sqlAllCost);
+
+    // $resultTotalCostOfActivityWaterfall = mysqli_query($con, $sqlTotalCostOfActivityWaterfall);
+
+    // $resultsUpdateTotalInProject = mysqli_query($con,$sqlUpdateTotalInProject);
+    // $resultsUpdateStatusModul = mysqli_query($con,$sqlUpdateStatusModul);
+
+    // if($resultAllCost && $resultsILF && $resultsEIF && $resultsEI && $resultsEO && $resultsEQ && $resultsUpdateTotalInProject && $resultsUpdateStatusModul && $resultsUFP && $resultSIZE && $resultPREC && $resultFLEX && $resultRESL && $resultTEAM && $resultPMAT && $resultE) {
+    //   header('Location: ../tambah_project.php?project='.$id_project);
+    // }else {
+    //   header('Location: ../tambah_project.php?gagal=1');
+    // }
 
     
 }

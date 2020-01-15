@@ -2195,6 +2195,549 @@ if($res){
 
     </table>
 
+    <hr>
+
+    <table border="1"> 
+            <tr>
+                <td style="width:150px;"><center><b>Position In Project Team</b></center></td>
+                <td style="width:150px;"><center><b>Minimum Requirement</b></center></td>
+                <td style="width:190px;"><center><b>Payment Rate For Private Sector in Person Month Rate(PMR) Requirement</b></center></td>
+                <td style="width:150px;"><center><b>Payment Rate For Public Sector (70% OF Private Sector[6])</b></center></td>
+            </tr>
+            <tr>
+                <td style="width:150px;">Project Management</td>
+                <td style="width:150px;">Minimal Undergraduate And Experience > 4 years</td>
+                <td style="width:150px;"><center>18,250,000</center></td>
+                <td style="width:150px;"><center>12,775,000</center></td>
+            </tr>
+            <tr>
+                <td style="width:150px;">System Analyst</td>
+                <td style="width:150px;">Minimal Undergraduate And Experience > 3 years</td>
+                <td style="width:150px;"><center>12,000,000</center></td>
+                <td style="width:150px;"><center>8,400,000</center></td>
+            </tr>
+            <tr>
+                <td style="width:150px;">Programmer</td>
+                <td style="width:150px;">Experience 1-2 years</td>
+                <td style="width:150px;"><center>11,000,000</center></td>
+                <td style="width:150px;"><center>7,700,000</center></td>
+            </tr>
+            <tr>
+                <td style="width:150px;">System Testing</td>
+                <td style="width:150px;">Experience 1-2 years</td>
+                <td style="width:150px;"><center>9,300,000</center></td>
+                <td style="width:150px;"><center>6,510,000</center></td>
+            </tr>
+            <tr>
+                <td style="width:150px;">Technical Support</td>
+                <td style="width:150px;">Experience 1-2 years</td>
+                <td style="width:150px;"><center>9,300,000</center></td>
+                <td style="width:150px;"><center>6,510,000</center></td>
+            </tr>
+            <tr>
+                <td style="width:150px;">Documenter</td>
+                <td style="width:150px;">Experience 1-2 years</td>
+                <td style="width:150px;"><center>5,000,000</center></td>
+                <td style="width:150px;"><center>3,500,000</center></td>
+            </tr>
+    </table>
+
+        <hr>
+        <table border="1">
+            <tr>
+                <td style="width:150px;" colspan="3px;"></td>
+                <td style="width:150px;"><center><b>Payrate (IDR/Month)</b></center></td>
+                <td style="width:150px;"colspan="4px;"><center><b>Project ID (Person Month)</b></center></td>
+            </tr>
+            <tr>
+                <td><center><b>No</b></center></td>
+                <td><center><b>Activity</b></center></td>
+                <td><center><b>Used by</b></center></td>
+                <td><center><b>Index = 1</b></center></td>
+                <td><center><b>1</b></center></td>
+                <td><center><b>2</b></center></td>
+                <td><center><b>3</b></center></td>
+                <td><center><b>4</b></center></td>
+            </tr>
+            <tr>
+            <td colspan="3px;"></td>
+            <td><center><b>Index</b></center></td>
+            <td><center><b>0,923</b></center></td>
+            <td><center><b>0,923</b></center></td>
+            <td><center><b>0,923</b></center></td>
+            <td><center><b>0,923</b></center></td>
+            </tr>
+            <tr>
+                <td colspan="8px">Software Development Phase</td>
+            </tr>
+            <tr>
+                <td><center>1</center></td>
+                <td><center>Requirements</center></td>
+                <td><center>System Analyst</center></td>
+                <td><center>12,000,000</center></td>
+                <td><center>8,750,040</center></td> <!--  siji -->
+                <td><center>7,667,923</center></td>
+                <td><center>4,805,945</center></td>
+                <td><center>5,668,620</center></td>
+            </tr>
+            <tr>
+                <td><center>2</center></td>
+                <td><center>Spesification</center></td>
+                <td><center>System Analyst</center></td>
+                <td><center>12,000,000</center></td>
+                <td><center>50,285,040</center></td>
+                <td><center>44,238,015</center></td>
+                <td><center>27,726,606</center></td>
+                <td><center>32,703,579</center></td>
+            </tr>
+            <tr>
+                <td><center>3</center></td>
+                <td><center>Design</center></td>
+                <td><center>System Analyst</center></td>
+                <td><center>12,000,000</center></td>
+                <td><center>41,535,000</center></td>
+                <td><center>36,504,554</center></td>
+                <td><center>22,879,585</center></td>
+                <td><center>26,986,509</center></td>
+            </tr>
+            <tr>
+                <td><center>4</center></td>
+                <td><center>Implementation</center></td>
+                <td><center>Programmer</center></td>
+                <td><center>11,000,000</center></td>
+                <td><center>380,432,910</center></td>
+                <td><center>334,324,700</center></td>
+                <td><center>209,541,259</center></td>
+                <td><center>247,154,271</center></td>
+            </tr>
+            <tr>
+                <td><center>5</center></td>
+                <td><center>Integration Testing</center></td>
+                <td><center>System Testing</center></td>
+                <td><center>9,300,000</center></td>
+                <td><center>37,082,448</center></td>
+                <td><center>32,608,332</center></td>
+                <td><center>20,437,589</center></td>
+                <td><center>24,106,172</center></td>
+            </tr>
+            <tr>
+                <td><center>6</center></td>
+                <td><center>Acceptance & Deployment</center></td>
+                <td><center>System Testing</center></td>
+                <td><center>9,300,000</center></td>
+                <td><center>32,361,303</center></td>
+                <td><center>28,443,405</center></td>
+                <td><center>17,827,181</center></td>
+                <td><center>21,027,190</center></td>
+            </tr>
+
+            <tr>
+                <td colspan="3px">Ongoing Activities & Quality And Testing</td>
+            </tr>
+            <tr>
+                <td><center>7</center></td>
+                <td><center>Project Management</center></td>
+                <td><center>Project Manager</center></td>
+                <td><center>18,250,000</center></td>
+                <td><center>28,972,970</center></td>
+                <td><center>25,416,378</center></td>
+                <td><center>15,929,962</center></td>
+                <td><center>18,789,417</center></td>
+            </tr>
+            <tr>
+                <td><center>8</center></td>
+                <td><center>Configuration Management</center></td>
+                <td><center>System Analyst</center></td>
+                <td><center>12,000,000</center></td>
+                <td><center>26,693,160</center></td>
+                <td><center>23,462,532</center></td>
+                <td><center>14,705,370</center></td>
+                <td><center>17,345,009</center></td>
+            </tr>
+            <tr>
+                <td><center>9</center></td>
+                <td><center>Quality Assurance</center></td>
+                <td><center>System Testing</center></td>
+                <td><center>9,300,000</center></td>
+                <td><center>3,776,916</center></td>
+                <td><center>3,352,258</center></td>
+                <td><center>2,101,061</center></td>
+                <td><center>2,478,205</center></td>
+            </tr>
+            <tr>
+                <td><center>10</center></td>
+                <td><center>Documentation</center></td>
+                <td><center>Documenter</center></td>
+                <td><center>5,000,000</center></td>
+                <td><center>30,320,550</center></td>
+                <td><center>26,652,039</center></td>
+                <td><center>16,704,424</center></td>
+                <td><center>19,702,897</center></td>
+            </tr>
+            <tr>
+                <td><center>11</center></td>
+                <td><center>Training & Support</center></td>
+                <td><center>Technical Support</center></td>
+                <td><center>9,300,000</center></td>
+                <td><center>3,605,238</center></td>
+                <td><center>3,149,091</center></td>
+                <td><center>1,973,724</center></td>
+                <td><center>2,328,010</center></td>
+            </tr>
+            <tr>
+                <td><center>12</center></td>
+                <td><center>Evaluation & Testing</center></td>
+                <td><center>System Testing</center></td>
+                <td><center>9,300,000</center></td>
+                <td><center>9,613,968</center></td>
+                <td><center>8,482,230</center></td>
+                <td><center>5,270,320</center></td>
+                <td><center>6,106,608</center></td>
+            </tr>
+            <tr>
+            <td colspan="4px"><center>Total</center></td>
+            <td><center>653,429,543</center></td>
+            <td><center>574,301,457</center></td>
+            <td><center>359,949,026</center></td>
+            <td><center>424,560,488</center></td>
+            </tr>
+    </table>
+    <hr>
+    <table border="1">
+            <tr>
+                <td style="width:150px;"><center><b>Project ID</b></center></td>
+                <td style="width:150px;"><center><b>Personel Direct Cost before Profit (IDR)</b></center></td>
+                <td style="width:190px;"><center><b>Profit (IDR)</b></center></td>
+                <td style="width:190px;"><center><b>Personel Direct Cost (IDR)</b></center></td>
+            </tr>
+            <tr>
+                <td style="width:150px;"><center>1</center></td>
+                <td style="width:150px;"><center>653,429,543</center></td>
+                <td style="width:190px;"><center>65,342,954</center></td>
+                <td style="width:190px;"><center>718,772,497</center></td>
+            </tr>
+            <tr>
+                <td style="width:150px;"><center>2</center></td>
+                <td style="width:150px;"><center>574,301,457</center></td>
+                <td style="width:190px;"><center>574,430,146</center></td>
+                <td style="width:190px;"><center>631,731,603</center></td>
+            </tr>
+            <tr>
+                <td style="width:150px;"><center>3</center></td>
+                <td style="width:150px;"><center>359,949,026</center></td>
+                <td style="width:190px;"><center>35,994,903</center></td>
+                <td style="width:190px;"><center>395,943,929</center></td>
+            </tr>
+            <tr>
+                <td style="width:150px;"><center>4</center></td>
+                <td style="width:150px;"><center>424,560,488</center></td>
+                <td style="width:190px;"><center>42,456,049</center></td>
+                <td style="width:190px;"><center>467,016,537</center></td>
+            </tr>
+    </table>
+
+    <hr>
+    <table border="1">
+            <tr>
+                <td rowspan="2"><center><b>No</b></center></td>
+                <td rowspan="2"><center><b>Cost Driver of Non-Personnel Direct Cost</b></center></td>
+                <td style="width:190px;" colspan="4px"><center><b>Project ID (IDR)</b></center></td>
+            </tr>
+            <tr>
+                <td><center>1</center></td>
+                <td><center>2</center></td>
+                <td><center>3</center></td>
+                <td><center>4</center></td>
+            </tr>
+
+            <tr>
+                <td colspan="2px">Reimbursable</td>
+                <td ><center>14,700,000</center></td>
+                <td ><center>5,060,000</center></td>
+                <td ><center>15,900,000</center></td>
+                <td ><center>19,100,000</center></td>
+            </tr>
+
+            <tr>
+                <td><center>1</center></td>
+                <td><center>Documents for Travel Abroad</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+            </tr>
+
+            <tr>
+                <td><center>2</center></td>
+                <td><center>Transportation Ticket</center></td>
+                <td><center>3,500,000</center></td>
+                <td><center>2,760,000</center></td>
+                <td><center>5,000,000</center></td>
+                <td><center>5,300,000</center></td>
+            </tr>
+
+            <tr>
+                <td><center>3</center></td>
+                <td><center>Excess Baggage</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+            </tr>
+            <tr>
+                <td><center>4</center></td>
+                <td><center>Unaccompanied Baggage</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+            </tr>
+            <tr>
+                <td><center>5</center></td>
+                <td><center>Local/inland travel</center></td>
+                <td><center>1,200,000</center></td>
+                <td><center>2,300,000</center></td>
+                <td><center>3,300,000</center></td>
+                <td><center>5,000,000</center></td>
+            </tr>
+            <tr>
+                <td><center>6</center></td>
+                <td><center>The Cost of Purchasing Project Needs</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+            </tr>
+            <tr>
+                <td><center>7</center></td>
+                <td><center>Instalation Cost of Phone/internet/website</center></td>
+                <td><center>10,000,000</center></td>
+                <td><center>0</center></td>
+                <td><center>7,600,000</center></td>
+                <td><center>8,800,000</center></td>
+            </tr>
+            <tr>
+                <td colspan="2px">Fixed Unit Rate</td>
+                <td ><center>24,750,00</center></td>
+                <td ><center>25,600,000</center></td>
+                <td ><center>16,050,000</center></td>
+                <td ><center>23,310,000</center></td>
+            </tr>
+            <tr>
+                <td><center>8</center></td>
+                <td><center>Rent a vechile</center></td>
+                <td><center>5,600,000</center></td>
+                <td><center>7,400,000</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+            </tr>
+            <tr>
+                <td><center>9</center></td>
+                <td><center>Rent the project office</center></td>
+                <td><center>3,000,000</center></td>
+                <td><center>5,000,000</center></td>
+                <td><center>0</center></td>
+                <td><center>7,000,000</center></td>
+            </tr>
+            <tr>
+                <td><center>10</center></td>
+                <td><center>Rent office equipment</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+            </tr>
+            <tr>
+                <td><center>11</center></td>
+                <td><center>Rent office furniture</center></td>
+                <td><center>2,000,000</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+            </tr>
+            <tr>
+                <td><center>12</center></td>
+                <td><center>Operational Cost of The Project Office</center></td>
+                <td><center>850,000</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>1,200,000</center></td>
+            </tr>
+            <tr>
+                <td><center>13</center></td>
+                <td><center>Office Consumabled</center></td>
+                <td><center>800,000</center></td>
+                <td><center>1,200,000</center></td>
+                <td><center>2,300,000</center></td>
+                <td><center>760,000</center></td>
+            </tr>
+            <tr>
+                <td><center>14</center></td>
+                <td><center>Computer and Printer Consumables</center></td>
+                <td><center>1,500,000</center></td>
+                <td><center>3,000,000</center></td>
+                <td><center>2,500,000</center></td>
+                <td><center>2,500,000</center></td>
+            </tr>
+            <tr>
+                <td><center>15</center></td>
+                <td><center>Communication Costs</center></td>
+                <td><center>3,500,000</center></td>
+                <td><center>2,500,000</center></td>
+                <td><center>4,750,000</center></td>
+                <td><center>3,350,000</center></td>
+            </tr>
+            <tr>
+                <td><center>16</center></td>
+                <td><center>Per Diem Allowwance</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+            </tr>
+            <tr>
+                <td><center>17</center></td>
+                <td><center>Housing Allowwance</center></td>
+                <td><center>0</center></td>
+                <td><center>00</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+            </tr>
+            <tr>
+                <td><center>18</center></td>
+                <td><center>Temporaray Loadging</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+            </tr>
+            <tr>
+                <td><center>19</center></td>
+                <td><center>Relocation Allowwance</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+            </tr>
+            <tr>
+                <td><center>20</center></td>
+                <td><center>Out Of Station Allowwance</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+            </tr>
+            <tr>
+                <td><center>21</center></td>
+                <td><center>Eksternal Task Lodging</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+            </tr>
+            <tr>
+                <td><center>22</center></td>
+                <td><center>Annual Leave</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+            </tr>
+            <tr>
+                <td><center>23</center></td>
+                <td><center>Reporting Costs</center></td>
+                <td><center>7,500,000</center></td>
+                <td><center>6,500,000</center></td>
+                <td><center>6,500,000</center></td>
+                <td><center>8,500,000</center></td>
+            </tr>
+            <tr>
+                <td><center>24</center></td>
+                <td><center>Rent Supporting Equipment</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+            </tr>
+            <tr>
+                <td colspan="2px">Lumpsum</td>
+                <td ><center>3,800,00</center></td>
+                <td ><center>5,000,000</center></td>
+                <td ><center>6,900,000</center></td>
+                <td ><center>4,800,000</center></td>
+            </tr>
+            <tr>
+                <td><center>25</center></td>
+                <td><center>Secondary Data Collection</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+            </tr>
+            <tr>
+                <td><center>26</center></td>
+                <td><center style="width:150px;">Seminar, workshop, socialization, training, dissemination, discussion, coordination, among agencies, and Focus Group discussion</center></td>
+                <td><center>3,800,000</center></td>
+                <td><center>5,000,000</center></td>
+                <td><center>6,900,000</center></td>
+                <td><center>4,800,000</center></td>
+            </tr>
+            <tr>
+                <td><center>27</center></td>
+                <td><center>Survey</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+            </tr>
+            <tr>
+                <td><center>28</center></td>
+                <td><center>Laboratory Test</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+            </tr>
+            <tr>
+                <td><center>29</center></td>
+                <td><center>Copyright</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+            </tr>
+            </tr>
+            <tr>
+                <td colspan="2px"><center>Total of Non-Personel Direct Costs</center></td>
+                <td><center>43,250,000</center></td>
+                <td><center>35,660,000</center></td>
+                <td><center>38,850,000</center></td>
+                <td><center>47,210,000</center></td>
+            </tr>
+    </table>
+
+    <table border="1">
+            <tr>
+                <td>Modul-ID</td>
+                <td>Personnel Direct Cost Before Profit (IDR)</td>
+                <td>Profit (IDR)</td>
+                <td>Personnel Direct Cost (IDR)</td>
+                <td>Non-Personnel Direct Cost (IDR)</td>
+                <td>Owner Estimate Before Taxes (IDR)</td>
+                <td>Tax (Value Added Tax 10%) (IDR)</td>
+                <td>Owner Cost Estimate (IDR)</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>653,429,543</td>
+                <td>65,342,954</td>
+                <td>718,772,497</td>
+                <td>43,250,000</td>
+                <td>762,022,497</td>
+                <td>76,202,250</td>
+                <td>838,224,747</td>
+            </tr>
+    </table>
 
 </body>
 
