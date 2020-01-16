@@ -2276,9 +2276,9 @@ if($res){
                 <td><center>System Analyst</center></td>
                 <td><center>12,000,000</center></td>
                 <td><center>8,750,040</center></td> <!--  siji -->
-                <td><center>7,667,923</center></td>
-                <td><center>4,805,945</center></td>
-                <td><center>5,668,620</center></td>
+                <td><center>10,965,240</center></td>
+                <td><center>6,867,120</center></td>
+                <td><center>8,085,480</center></td>
             </tr>
             <tr>
                 <td><center>2</center></td>
@@ -2286,9 +2286,9 @@ if($res){
                 <td><center>System Analyst</center></td>
                 <td><center>12,000,000</center></td>
                 <td><center>50,285,040</center></td>
-                <td><center>44,238,015</center></td>
-                <td><center>27,726,606</center></td>
-                <td><center>32,703,579</center></td>
+                <td><center>63,243,960</center></td>
+                <td><center>39,652,080</center></td>
+                <td><center>46,740,720</center></td>
             </tr>
             <tr>
                 <td><center>3</center></td>
@@ -2296,9 +2296,9 @@ if($res){
                 <td><center>System Analyst</center></td>
                 <td><center>12,000,000</center></td>
                 <td><center>41,535,000</center></td>
-                <td><center>36,504,554</center></td>
-                <td><center>22,879,585</center></td>
-                <td><center>26,986,509</center></td>
+                <td><center>52,167,960</center></td>
+                <td><center>32,674,200</center></td>
+                <td><center>38,544,480</center></td>
             </tr>
             <tr>
                 <td><center>4</center></td>
@@ -2306,9 +2306,9 @@ if($res){
                 <td><center>Programmer</center></td>
                 <td><center>11,000,000</center></td>
                 <td><center>380,432,910</center></td>
-                <td><center>334,324,700</center></td>
-                <td><center>209,541,259</center></td>
-                <td><center>247,154,271</center></td>
+                <td><center>477,597,120</center></td>
+                <td><center>299,411,970</center></td>
+                <td><center>353,121,340</center></td>
             </tr>
             <tr>
                 <td><center>5</center></td>
@@ -2316,9 +2316,9 @@ if($res){
                 <td><center>System Testing</center></td>
                 <td><center>9,300,000</center></td>
                 <td><center>37,082,448</center></td>
-                <td><center>32,608,332</center></td>
-                <td><center>20,437,589</center></td>
-                <td><center>24,106,172</center></td>
+                <td><center>46,610,577</center></td>
+                <td><center>29,185,260</center></td>
+                <td><center>34,421,439</center></td>
             </tr>
             <tr>
                 <td><center>6</center></td>
@@ -2326,9 +2326,9 @@ if($res){
                 <td><center>System Testing</center></td>
                 <td><center>9,300,000</center></td>
                 <td><center>32,361,303</center></td>
-                <td><center>28,443,405</center></td>
-                <td><center>17,827,181</center></td>
-                <td><center>21,027,190</center></td>
+                <td><center>40,601,847</center></td>
+                <td><center>25,494,183</center></td>
+                <td><center>30,043,650</center></td>
             </tr>
 
             <tr>
@@ -2340,9 +2340,9 @@ if($res){
                 <td><center>Project Manager</center></td>
                 <td><center>18,250,000</center></td>
                 <td><center>28,972,970</center></td>
-                <td><center>25,416,378</center></td>
-                <td><center>15,929,962</center></td>
-                <td><center>18,789,417</center></td>
+                <td><center>36,384,660</center></td>
+                <td><center>22,740,413</center></td>
+                <td><center>26,783,153</center></td>
             </tr>
             <tr>
                 <td><center>8</center></td>
@@ -2350,9 +2350,9 @@ if($res){
                 <td><center>System Analyst</center></td>
                 <td><center>12,000,000</center></td>
                 <td><center>26,693,160</center></td>
-                <td><center>23,462,532</center></td>
-                <td><center>14,705,370</center></td>
-                <td><center>17,345,009</center></td>
+                <td><center>33,560,280</center></td>
+                <td><center>21,044,400</center></td>
+                <td><center>24,810,240</center></td>
             </tr>
             <tr>
                 <td><center>9</center></td>
@@ -2360,9 +2360,9 @@ if($res){
                 <td><center>System Testing</center></td>
                 <td><center>9,300,000</center></td>
                 <td><center>3,776,916</center></td>
-                <td><center>3,352,258</center></td>
-                <td><center>2,101,061</center></td>
-                <td><center>2,478,205</center></td>
+                <td><center>4,806,984</center></td>
+                <td><center>3,004,365</center></td>
+                <td><center>3,519,399</center></td>
             </tr>
             <tr>
                 <td><center>10</center></td>
@@ -2370,9 +2370,9 @@ if($res){
                 <td><center>Documenter</center></td>
                 <td><center>5,000,000</center></td>
                 <td><center>30,320,550</center></td>
-                <td><center>26,652,039</center></td>
-                <td><center>16,704,424</center></td>
-                <td><center>19,702,897</center></td>
+                <td><center>38,073,750</center></td>
+                <td><center>23,859,550</center></td>
+                <td><center>28,151,500</center></td>
             </tr>
             <tr>
                 <td><center>11</center></td>
@@ -2380,9 +2380,9 @@ if($res){
                 <td><center>Technical Support</center></td>
                 <td><center>9,300,000</center></td>
                 <td><center>3,605,238</center></td>
-                <td><center>3,149,091</center></td>
-                <td><center>1,973,724</center></td>
-                <td><center>2,328,010</center></td>
+                <td><center>4,463,628</center></td>
+                <td><center>2,832,687</center></td>
+                <td><center>3,347,721</center></td>
             </tr>
             <tr>
                 <td><center>12</center></td>
@@ -2390,16 +2390,16 @@ if($res){
                 <td><center>System Testing</center></td>
                 <td><center>9,300,000</center></td>
                 <td><center>9,613,968</center></td>
-                <td><center>8,482,230</center></td>
-                <td><center>5,270,320</center></td>
-                <td><center>6,106,608</center></td>
+                <td><center>4,463,628</center></td>
+                <td><center>7,553,832</center></td>
+                <td><center>8,927,256</center></td>
             </tr>
             <tr>
             <td colspan="4px"><center>Total</center></td>
             <td><center>653,429,543</center></td>
-            <td><center>574,301,457</center></td>
-            <td><center>359,949,026</center></td>
-            <td><center>424,560,488</center></td>
+            <td><center>820,579,305</center></td>
+            <td><center>514,320,060</center></td>
+            <td><center>606,496,378</center></td>
             </tr>
     </table>
     <hr>
@@ -2418,9 +2418,9 @@ if($res){
             </tr>
             <tr>
                 <td style="width:150px;"><center>2</center></td>
-                <td style="width:150px;"><center>574,301,457</center></td>
-                <td style="width:190px;"><center>574,430,146</center></td>
-                <td style="width:190px;"><center>631,731,603</center></td>
+                <td style="width:150px;"><center>820,579,305</center></td>
+                <td style="width:190px;"><center>82,057,931</center></td>
+                <td style="width:190px;"><center>902,637,236</center></td>
             </tr>
             <tr>
                 <td style="width:150px;"><center>3</center></td>
@@ -2717,7 +2717,17 @@ if($res){
     </table>
 
     <table border="1">
-            <tr>
+    <tr>
+                <td>Modu</td>
+                <td>Personnel</td>
+                <td>Profit 10%</td>
+                <td>Personnel + Profit</td>
+                <td>Non-Personnel</td>
+                <td>Cost Estimate</td>
+                <td>Tax 10%</td>
+                <td>Cost Estimate + Tax</td>
+            </tr>
+            <!-- <tr>
                 <td>Modul-ID</td>
                 <td>Personnel Direct Cost Before Profit (IDR)</td>
                 <td>Profit (IDR)</td>
@@ -2726,7 +2736,7 @@ if($res){
                 <td>Owner Estimate Before Taxes (IDR)</td>
                 <td>Tax (Value Added Tax 10%) (IDR)</td>
                 <td>Owner Cost Estimate (IDR)</td>
-            </tr>
+            </tr> -->
             <tr>
                 <td>1</td>
                 <td>653,429,543</td>
@@ -2736,6 +2746,36 @@ if($res){
                 <td>762,022,497</td>
                 <td>76,202,250</td>
                 <td>838,224,747</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>820,579,305</td>
+                <td>82,057,931</td>
+                <td>902,637,236</td>
+                <td>35,660,000</td>
+                <td>938,297,236</td>
+                <td>93,829,724</td>
+                <td>1,032,126,960</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>514,320,060</td>
+                <td>51,432,006</td>
+                <td>565,752,066</td>
+                <td>38,850,000</td>
+                <td>604,602,066</td>
+                <td>60,460,207</td>
+                <td>665,062,273</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>606,496,378</td>
+                <td>60,649,638</td>
+                <td>667,146,016</td>
+                <td>47,210,000</td>
+                <td>714,356,016</td>
+                <td>71,435,602</td>
+                <td>785,791,618</td>
             </tr>
     </table>
 
