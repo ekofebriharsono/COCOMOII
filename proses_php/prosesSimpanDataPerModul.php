@@ -4,11 +4,11 @@ session_start();
 
 if(isset($_POST['id_modul'])){
 
-    $id_modul = $_POST['id_modul'];
-    $id_project = $_POST['id_project'];
+    // // required
+     $id_modul = $_POST['id_modul'];
+     $id_project = $_POST['id_project'];
 
-
-    // step One
+    // Data step 1
     $ILF_LOW = $_POST['ILF_LOW'];
     $ILF_AVERAGE = $_POST['ILF_AVERAGE'];
     $ILF_HEIGHT = $_POST['ILF_HEIGHT'];
@@ -29,16 +29,42 @@ if(isset($_POST['id_modul'])){
     $EQ_AVERAGE = $_POST['EQ_AVERAGE'];
     $EQ_HEIGHT = $_POST['EQ_HEIGHT'];
 
-    $valueTotalCostOfActivityWaterfall = $_POST['valueTotalCostOfActivityWaterfall'];
-
     $UFP = $_POST['UFP'];
 
+    //Query Step 1
+    $sqlComplexityWeight = "INSERT INTO ufp_complexity_weight (id_ufp,id_modul,low,average,height) VALUES 
+    ('ilf_ufp',$id_modul,$ILF_LOW,$ILF_AVERAGE,$ILF_HEIGHT),
+    ('eif_ufp',$id_modul,$EIF_LOW,$EIF_AVERAGE,$EIF_HEIGHT),
+    ('ei_ufp',$id_modul,$EI_LOW,$EI_AVERAGE,$EI_HEIGHT),
+    ('eo_ufp',$id_modul,$EO_LOW,$EO_AVERAGE,$EO_HEIGHT),
+    ('eq_ufp',$id_modul,$EQ_LOW,$EQ_AVERAGE,$EQ_HEIGHT)";
+    $sqlUFP = "INSERT INTO ufp_user (id_modul, value) VALUES ($id_modul,$UFP)";
+    $resultComplexityWeight = mysqli_query($con,$sqlComplexityWeight);
+    $resultsUFP = mysqli_query($con,$sqlUFP);
 
-    // step two
+    // Result Step 1
+    if($resultComplexityWeight && $resultsUFP){
+      echo "Berhasil menyimpan data UFP!".'</br>';
+    }else{
+      echo "Gagal menyimpan data UFP!".'</br>';
+    }
+
+    // Data Step 2
     $SLOC = $_POST['SLOC'];
     $SIZE = $_POST['SIZE'];
 
-    //Step three
+    // Query Step 2
+    $sqlSIZE = "INSERT INTO size_user (id_modul, sloc_convertion_ratio, size_in_sloc) VALUES ($id_modul,$SLOC,$SIZE)";
+    $resultSIZE = mysqli_query($con, $sqlSIZE);
+
+    // Result Step 2
+    if($resultSIZE){
+      echo "Berhasil menyimpan data Size!".'</br>';
+    }else{
+      echo "Gagal menyimpan data Size!".'</br>';
+    }
+
+    // Data Step 3
     $PrecedentednessValue = $_POST['PrecedentednessValue'];
     $DevelopmentFlexibilityValue = $_POST['DevelopmentFlexibilityValue'];
     $ArchitectureValue = $_POST['ArchitectureValue'];
@@ -47,9 +73,25 @@ if(isset($_POST['id_modul'])){
 
     $E = $_POST['E'];
 
-    $totalEM = $_POST['totalEM'];
-    $totalPM = $_POST['totalPM'];
+    // Query Step 3
+    $sqlScaleFactor = "INSERT INTO sf_user (id_sf, id_modul, value) VALUES 
+    ('prec',$id_modul,$PrecedentednessValue),
+    ('flex',$id_modul,$DevelopmentFlexibilityValue),
+    ('resl',$id_modul,$ArchitectureValue),
+    ('team',$id_modul,$TeamCohesionValue),
+    ('pmat',$id_modul,$ProcessMaturityValue)";
+    $sqlE = "INSERT INTO e_user (id_modul, value) VALUES ($id_modul,$E)";
+    $resultScaleFactor = mysqli_query($con,$sqlScaleFactor);
+    $resultE = mysqli_query($con,$sqlE);
 
+    //Result Step 3
+    if($resultScaleFactor && $resultE){
+      echo "Berhasil menyimpan data Scale Factor & Effort!".'</br>';
+    }else{
+      echo "Gagal menyimpan data Scale Factor & Effort!".'</br>';
+    }
+
+    // Data Step 4
     $RELY = $_POST['resultRequiredSoftwareReliability'];
     $DATA = $_POST['resultDataBaseSize'];
     $CPLX = $_POST['resultProductComplexity'];
@@ -68,6 +110,46 @@ if(isset($_POST['id_modul'])){
     $SITE = $_POST['resultMultisiteDevelopment'];
     $SCED = $_POST['resultRequiredDevelopmentSchedule'];
 
+    $totalEM = $_POST['totalEM'];
+    $totalPM = $_POST['totalPM'];
+
+    // Query Step 4
+    $sqlEffortMultiplier = "INSERT INTO em_user (id_em, id_modul, value) VALUES
+     ('rely',$id_modul,$RELY),
+     ('data',$id_modul,$DATA),
+     ('cplx',$id_modul,$CPLX),
+     ('ruse',$id_modul,$RUSE),
+     ('docu',$id_modul,$DOCU),
+     ('time',$id_modul,$TIME),
+     ('stor',$id_modul,$STOR),
+     ('pvol',$id_modul,$PVOL),
+     ('acap',$id_modul,$ACAP),
+     ('pcap',$id_modul,$PCAP),
+     ('pcon',$id_modul,$PCON),
+     ('apex',$id_modul,$APEX),
+     ('plex',$id_modul,$PLEX),
+     ('ltex',$id_modul,$LTEX),
+     ('tool',$id_modul,$TOOL),
+     ('site',$id_modul,$SITE),
+     ('sced',$id_modul,$SCED)";
+
+    $sqlTotalEM = "INSERT INTO total_em_user (id_modul, value) VALUES ($id_modul,$totalEM)";
+
+    $sqlTotalPM = "INSERT INTO pm_user (id_modul, value) VALUES ($id_modul,$totalPM)";
+
+    $resultEffortMultiplier = mysqli_query($con,$sqlEffortMultiplier);
+    $resultTotalEM = mysqli_query($con,$sqlTotalEM);
+    $resultTotalPM = mysqli_query($con,$sqlTotalPM);
+
+        //Result Step 4
+    if($resultEffortMultiplier && $resultTotalEM && $resultTotalPM){
+      echo "Berhasil menyimpan data Effort Multiplier & Person Month!".'</br>';
+    }else{
+      echo "Gagal menyimpan data Effort Multiplier & Person Month!".'</br>';
+    }
+
+
+    // Data Step 5
     $PREC = $_POST['valueRequirements'];
     $PSPE = $_POST['valueSpecifications'];
     $PDES = $_POST['valueDesign'];
@@ -96,31 +178,7 @@ if(isset($_POST['id_modul'])){
 
     $TotalCostOfActivityWaterfall = $_POST['valueTotalCostOfActivityWaterfall'];
 
-    $PersonelDirectCostBeforeProfit = $_POST['PersonelDirectCostBeforeProfit'];
-    $totalProfitIDR = $_POST['totalProfitIDR'];
-    $PersonelDirectCost = $_POST['PersonelDirectCost'];
-    $NonPersonnelDirectCost = $_POST['NonPersonnelDirectCost'];
-    $OwnerCostEstimateBeforeTaxes = $_POST['OwnerCostEstimateBeforeTaxes'];
-    $ValueAddedTax = $_POST['ValueAddedTax'];
-    $OwnerCostEstimate = $_POST['OwnerCostEstimate'];
-
-    //step six
-    $salaryPublicPM = $_POST['salaryPublicPM'];
-    $salaryPublicSA = $_POST['salaryPublicSA'];
-    $salaryPublicP = $_POST['salaryPublicP'];
-    $salaryPublicST = $_POST['salaryPublicST'];
-    $salaryPublicTS = $_POST['salaryPublicTS'];
-    $salaryPublicD = $_POST['salaryPublicD'];
-
-    $salaryPrivatePM = $_POST['salaryPrivatePM'];
-    $salaryPrivateSA = $_POST['salaryPrivateSA'];
-    $salaryPrivateP = $_POST['salaryPrivateP'];
-    $salaryPrivateST = $_POST['salaryPrivateST'];
-    $salaryPrivateTS = $_POST['salaryPrivateTS'];
-    $salaryPrivateD = $_POST['salaryPrivateD'];
-
-
-    // step seven
+    // Data Step 7
     $RequirementsPayrate = $_POST['RequirementsPayrate'];
     $valueRequirementsPayrate = $_POST['valueRequirementsPayrate'];
 
@@ -159,149 +217,118 @@ if(isset($_POST['id_modul'])){
 
     $valueTotalCostOfActivityWaterfallWithPayrate = $_POST['valueTotalCostOfActivityWaterfallWithPayrate'];
 
-    $sqlILF = "INSERT INTO ufp_complexity_weight (id_ufp,id_modul,low,average,height) VALUES ('ilf_ufp',$id_modul,$ILF_LOW,$ILF_AVERAGE,$ILF_HEIGHT)";
-    $sqlEIF = "INSERT INTO ufp_complexity_weight (id_ufp,id_modul,low,average,height) VALUES ('eif_ufp',$id_modul,$EIF_LOW,$EIF_AVERAGE,$EIF_HEIGHT)";
-    $sqlEI = "INSERT INTO ufp_complexity_weight (id_ufp,id_modul,low,average,height) VALUES ('ei_ufp',$id_modul,$EI_LOW,$EI_AVERAGE,$EI_HEIGHT)";
-    $sqlEO = "INSERT INTO ufp_complexity_weight (id_ufp,id_modul,low,average,height) VALUES ('eo_ufp',$id_modul,$EO_LOW,$EO_AVERAGE,$EO_HEIGHT)";
-    $sqlEQ = "INSERT INTO ufp_complexity_weight (id_ufp,id_modul,low,average,height) VALUES ('eq_ufp',$id_modul,$EQ_LOW,$EQ_AVERAGE,$EQ_HEIGHT)";
 
-    $sqlUFP = "INSERT INTO ufp_user (id_modul, value) VALUES ($id_modul,$UFP)";
+    // Query Step 5
+    $sqlActivity = "INSERT INTO activity_user (id_activity, id_modul, persen, value,used, payrate, total) VALUES 
+    ('rec',$id_modul,$PREC,$REC,'System Analyst',$RequirementsPayrate,$valueRequirementsPayrate),
+    ('spe',$id_modul,$PSPE,$SPE,'System Analyst',$SpecificationsPayrate,$valueSpecificationsPayrate),
+    ('des',$id_modul,$PDES,$DES,'System Analyst',$DesignPayrate,$valueDesignPayrate),
+    ('imp',$id_modul,$PIMP,$IMP,'Programmer',$ImplementationPayrate,$valueImplementationPayrate),
+    ('int',$id_modul,$PINT,$INT,'System Testing',$IntegrationPayrate,$valueIntegrationPayrate),
+    ('acc',$id_modul,$PACC,$ACC,'System Testing',$AcceptancePayrate,$valueAcceptancePayrate),
+    ('pro',$id_modul,$PPRO,$PRO,'Project Manager',$ProjectManagementPayrate,$valueProjectManagementPayrate),
+    ('con',$id_modul,$PCON,$CON,'System Analyst',$ConfigurationPayrate,$valueConfigurationPayrate),
+    ('qua',$id_modul,$PQUA,$QUA,'System Testing',$QualityPayrate,$valueQualityPayrate),
+    ('doc',$id_modul,$PDOC,$DOC,'Documenter',$DocumentationsPayrate,$valueDocumentationsPayrate),
+    ('tra',$id_modul,$PTRA,$TRA,'Technical Support',$TrainingPayrate,$valueTrainingPayrate),
+    ('eva',$id_modul,$PEVA,$EVA,'System Testing',$EvaluationPayrate,$valueEvaluationPayrate)";
 
-    $sqlSIZE = "INSERT INTO size_user (id_modul, sloc_convertion_ratio, size_in_sloc) VALUES ($id_modul,$SLOC,$SIZE)";
+    $sqlTotalCostOfActivityWaterfall = "INSERT INTO total_activity_user (id_modul, value, total) VALUES ($id_modul,$TotalCostOfActivityWaterfall,$valueTotalCostOfActivityWaterfallWithPayrate)";
 
-    $sqlPREC = "INSERT INTO sf_user (id_sf, id_modul, value) VALUES ('prec',$id_modul,$PrecedentednessValue)";
-    $sqlFLEX = "INSERT INTO sf_user (id_sf, id_modul, value) VALUES ('flex',$id_modul,$DevelopmentFlexibilityValue)";
-    $sqlRESL = "INSERT INTO sf_user (id_sf, id_modul, value) VALUES ('resl',$id_modul,$ArchitectureValue)";
-    $sqlTEAM = "INSERT INTO sf_user (id_sf, id_modul, value) VALUES ('team',$id_modul,$TeamCohesionValue)";
-    $sqlPMAT = "INSERT INTO sf_user (id_sf, id_modul, value) VALUES ('pmat',$id_modul,$ProcessMaturityValue)";
+    $resultsqlActivity = mysqli_query($con, $sqlActivity);
+    $resultsqlTotalCostOfActivityWaterfall = mysqli_query($con, $sqlTotalCostOfActivityWaterfall);
 
-    $sqlE = "INSERT INTO e_user (id_modul, value) VALUES ($id_modul,$E)";
+    //Result Step 5
+    if($resultsqlActivity && $resultsqlTotalCostOfActivityWaterfall){
+      echo "Berhasil menyimpan data Activity!".'</br>';
+    }else{
+      echo "Gagal menyimpan data Activity!".'</br>';
+    }
 
-    $sqlTotalEM = "INSERT INTO total_em_user (id_modul, value) VALUES ($id_modul,$totalEM)";
 
-    $sqlTotalPM = "INSERT INTO pm_user (id_modul, value) VALUES ($id_modul,$totalPM)";
+    //step 6
+    $salaryPublicPM = $_POST['salaryPublicPM'];
+    $salaryPublicSA = $_POST['salaryPublicSA'];
+    $salaryPublicP = $_POST['salaryPublicP'];
+    $salaryPublicST = $_POST['salaryPublicST'];
+    $salaryPublicTS = $_POST['salaryPublicTS'];
+    $salaryPublicD = $_POST['salaryPublicD'];
 
-    $sqlRELY = "INSERT INTO em_user (id_em, id_modul, value) VALUES ('rely',$id_modul,$RELY)";
-    $sqlDATA = "INSERT INTO em_user (id_em, id_modul, value) VALUES ('data',$id_modul,$DATA)";
-    $sqlCPLX = "INSERT INTO em_user (id_em, id_modul, value) VALUES ('cplx',$id_modul,$CPLX)";
-    $sqlRUSE = "INSERT INTO em_user (id_em, id_modul, value) VALUES ('ruse',$id_modul,$RUSE)";
-    $sqlDOCU = "INSERT INTO em_user (id_em, id_modul, value) VALUES ('docu',$id_modul,$DOCU)";
-    $sqlTIME = "INSERT INTO em_user (id_em, id_modul, value) VALUES ('time',$id_modul,$TIME)";
-    $sqlSTOR = "INSERT INTO em_user (id_em, id_modul, value) VALUES ('stor',$id_modul,$STOR)";
-    $sqlPVOL = "INSERT INTO em_user (id_em, id_modul, value) VALUES ('pvol',$id_modul,$PVOL)";
-    $sqlACAP = "INSERT INTO em_user (id_em, id_modul, value) VALUES ('acap',$id_modul,$ACAP)";
-    $sqlPCAP = "INSERT INTO em_user (id_em, id_modul, value) VALUES ('pcap',$id_modul,$PCAP)";
-    $sqlPCON = "INSERT INTO em_user (id_em, id_modul, value) VALUES ('pcon',$id_modul,$PCON)";
-    $sqlAPEX = "INSERT INTO em_user (id_em, id_modul, value) VALUES ('apex',$id_modul,$APEX)";
-    $sqlPLEX = "INSERT INTO em_user (id_em, id_modul, value) VALUES ('plex',$id_modul,$PLEX)";
-    $sqlLTEX = "INSERT INTO em_user (id_em, id_modul, value) VALUES ('ltex',$id_modul,$LTEX)";
-    $sqlTOOL = "INSERT INTO em_user (id_em, id_modul, value) VALUES ('tool',$id_modul,$TOOL)";
-    $sqlSITE = "INSERT INTO em_user (id_em, id_modul, value) VALUES ('site',$id_modul,$SITE)";
-    $sqlSCED = "INSERT INTO em_user (id_em, id_modul, value) VALUES ('sced',$id_modul,$SCED)";
+    $salaryPrivatePM = $_POST['salaryPrivatePM'];
+    $salaryPrivateSA = $_POST['salaryPrivateSA'];
+    $salaryPrivateP = $_POST['salaryPrivateP'];
+    $salaryPrivateST = $_POST['salaryPrivateST'];
+    $salaryPrivateTS = $_POST['salaryPrivateTS'];
+    $salaryPrivateD = $_POST['salaryPrivateD'];
 
-    $sqlREC = "INSERT INTO activity_user (id_activity, id_modul, persen, value) VALUES ('rec',$id_modul,$PREC,$REC)";
-    $sqlSPE = "INSERT INTO activity_user (id_activity, id_modul, persen, value) VALUES ('spe',$id_modul,$PSPE,$SPE)";
-    $sqlDES = "INSERT INTO activity_user (id_activity, id_modul, persen, value) VALUES ('des',$id_modul,$PDES,$DES)";
-    $sqlIMP = "INSERT INTO activity_user (id_activity, id_modul, persen, value) VALUES ('imp',$id_modul,$PIMP,$IMP)";
-    $sqlINT = "INSERT INTO activity_user (id_activity, id_modul, persen, value) VALUES ('int',$id_modul,$PINT,$INT)";
-    $sqlACC = "INSERT INTO activity_user (id_activity, id_modul, persen, value) VALUES ('acc',$id_modul,$PACC,$ACC)";
-    $sqlPRO = "INSERT INTO activity_user (id_activity, id_modul, persen, value) VALUES ('pro',$id_modul,$PPRO,$PRO)";
-    $sqlCON = "INSERT INTO activity_user (id_activity, id_modul, persen, value) VALUES ('con',$id_modul,$PCON,$CON)";
-    $sqlQUA = "INSERT INTO activity_user (id_activity, id_modul, persen, value) VALUES ('qua',$id_modul,$PQUA,$QUA)";
-    $sqlDOC = "INSERT INTO activity_user (id_activity, id_modul, persen, value) VALUES ('doc',$id_modul,$PDOC,$DOC)";
-    $sqlTRA = "INSERT INTO activity_user (id_activity, id_modul, persen, value) VALUES ('tra',$id_modul,$PTRA,$TRA)";
-    $sqlEVA = "INSERT INTO activity_user (id_activity, id_modul, persen, value) VALUES ('eva',$id_modul,$PEVA,$EVA)";
+    // Query Step 6
+    $sqlPayrateUser = "INSERT INTO pay_rate_user (id_modul, position, requirement, private, public) VALUES 
+    ($id_modul, 'Project Manager', 'minimal undergraduate and experience > 4 years',$salaryPrivatePM, $salaryPublicPM),
+    ($id_modul, 'System Analyst', 'minimal undergraduate and experience > 3 years',$salaryPrivateSA, $salaryPublicSA),
+    ($id_modul, 'Programmer', 'Experience 1-2 years',$salaryPrivateP, $salaryPublicP),
+    ($id_modul, 'System Testing', 'Experience 1-2 years',$salaryPrivateST, $salaryPublicST),
+    ($id_modul, 'Technical Support', 'Experience 1-2 years',$salaryPrivateTS, $salaryPublicTS),
+    ($id_modul, 'Documenter', 'Experience 1-2 years',$salaryPrivateD, $salaryPublicD)";
 
+    $resultSqlPayrateUser = mysqli_query($con, $sqlPayrateUser);
+
+    //Result Step 6
+    if($resultSqlPayrateUser){
+      echo "Berhasil menyimpan data Payrate user!".'</br>';
+    }else{
+      echo "Gagal menyimpan data Payrate user!".'</br>';
+    }
+
+   // echo "asd";
+
+    // Data Step 10
+    $PersonelDirectCostBeforeProfit = $_POST['PersonelDirectCostBeforeProfit'];
+    $totalProfitIDR = $_POST['totalProfitIDR'];
+    $PersonelDirectCost = $_POST['PersonelDirectCost'];
+    $NonPersonnelDirectCost = $_POST['NonPersonnelDirectCost'];
+    $OwnerCostEstimateBeforeTaxes = $_POST['OwnerCostEstimateBeforeTaxes'];
+    $ValueAddedTax = $_POST['ValueAddedTax'];
+    $OwnerCostEstimate = $_POST['OwnerCostEstimate'];
+
+    // Query Step 10
     $sqlAllCost = "INSERT INTO all_cost_user (id_modul, personel_direct_cost_before_profit, profit, personel_direct_cost, non_personel_direct_cost, owner_estimate_before_tax, tax, owner_cost_estimate) 
     VALUES ($id_modul, $PersonelDirectCostBeforeProfit, $totalProfitIDR, $PersonelDirectCost, $NonPersonnelDirectCost, $OwnerCostEstimateBeforeTaxes, $ValueAddedTax, $OwnerCostEstimate )";
-  
-    $sqlTotalCostOfActivityWaterfall = "INSERT INTO total_activity_user (id_modul, value) VALUES ($id_modul,$TotalCostOfActivityWaterfall)";
+    $resultsqlAllCost = mysqli_query($con, $sqlAllCost);
 
+    //Result Step 10
+    if($resultsqlAllCost){
+      echo "Berhasil menyimpan data Total Proyek!".'</br>';
+    }else{
+      echo "Gagal menyimpan data Total Proyek!".'</br>';
+    }
+
+    // Update Data
     $sqlUpdateTotalInProject ="UPDATE modul SET total = '$OwnerCostEstimate' WHERE id_modul= $id_modul";
     $sqlUpdateStatusModul ="UPDATE modul SET status = 1 WHERE id_modul= '$id_modul'";
 
+    $resultsqlUpdateTotalInProject = mysqli_query($con, $sqlUpdateTotalInProject);
+    $resultsqlUpdateStatusModul = mysqli_query($con, $sqlUpdateStatusModul);
 
-    //riset query 
-
-    $sqlComplexityWeight = "INSERT INTO ufp_complexity_weight (id_ufp,id_modul,low,average,height) VALUES 
-    ('ilf_ufp',$id_modul,$ILF_LOW,$ILF_AVERAGE,$ILF_HEIGHT),
-    ('eif_ufp',$id_modul,$EIF_LOW,$EIF_AVERAGE,$EIF_HEIGHT),
-    ('ei_ufp',$id_modul,$EI_LOW,$EI_AVERAGE,$EI_HEIGHT),
-    ('eo_ufp',$id_modul,$EO_LOW,$EO_AVERAGE,$EO_HEIGHT),
-    ('eq_ufp',$id_modul,$EQ_LOW,$EQ_AVERAGE,$EQ_HEIGHT)";
-
-    $resultComplexityWeight = mysqli_query($con,$sqlComplexityWeight);
-
-    if($resultComplexityWeight){
-      echo "sukses";
-    }else{
-      echo $sqlComplexityWeight;
+    if($resultsqlUpdateTotalInProject && $resultsqlUpdateStatusModul){
+      echo "Berhasil Mengupdate data Total Proyek!".'</br>';
+    } else {
+      echo "Gagal Mengupdate data Total Proyek!".'</br>';
     }
 
-    // $resultsILF = mysqli_query($con,$sqlILF);
-    // $resultsEIF = mysqli_query($con,$sqlEIF);
-    // $resultsEI = mysqli_query($con,$sqlEI);
-    // $resultsEO = mysqli_query($con,$sqlEO);
-    // $resultsEQ = mysqli_query($con,$sqlEQ);
+    $profit = $_POST['profit'];
+    $tax = $_POST['tax'];
 
-    // $resultsUFP = mysqli_query($con,$sqlUFP);
+    $sqlProfit = "INSERT INTO profit_user (id_modul, total) VALUES ($id_modul, $profit)";
+    $sqlTax = "INSERT INTO tax_user (id_modul, total) VALUES ($id_modul, $tax)";
 
-    // $resultSIZE = mysqli_query($con, $sqlSIZE);
+    $resultsqlProfit = mysqli_query($con, $sqlProfit);
+    $resultsqlTax = mysqli_query($con, $sqlTax);
 
-    // $resultPREC = mysqli_query($con, $sqlPREC);
-    // $resultFLEX = mysqli_query($con, $sqlFLEX);
-    // $resultRESL = mysqli_query($con, $sqlRESL);
-    // $resultTEAM = mysqli_query($con, $sqlTEAM);
-    // $resultPMAT = mysqli_query($con, $sqlPMAT);
-
-    // $resultE = mysqli_query($con, $sqlE);
-
-    // $resultTotalEM = mysqli_query($con, $sqlTotalEM);
-    // $resultTotalPM = mysqli_query($con, $sqlTotalPM);
-
-    // $resultRELY = mysqli_query($con, $sqlRELY);
-    // $resultDATA = mysqli_query($con, $sqlDATA);
-    // $resultCPLX = mysqli_query($con, $sqlCPLX);
-    // $resultRUSE = mysqli_query($con, $sqlRUSE);
-    // $resultDOCU = mysqli_query($con, $sqlDOCU);
-    // $resultTIME = mysqli_query($con, $sqlTIME);
-    // $resultSTOR = mysqli_query($con, $sqlSTOR);
-    // $resultPVOL = mysqli_query($con, $sqlPVOL);
-    // $resultACAP = mysqli_query($con, $sqlACAP);
-    // $resultPCAP = mysqli_query($con, $sqlPCAP);
-    // $resultPCON = mysqli_query($con, $sqlPCON);
-    // $resultAPEX = mysqli_query($con, $sqlAPEX);
-    // $resultPLEX = mysqli_query($con, $sqlPLEX);
-    // $resultLTEX = mysqli_query($con, $sqlLTEX);
-    // $resultTOOL = mysqli_query($con, $sqlTOOL);
-    // $resultSITE = mysqli_query($con, $sqlSITE);
-    // $resultSCED = mysqli_query($con, $sqlSCED);
-
-    // $resultREC = mysqli_query($con, $sqlREC);
-    // $resultSPE = mysqli_query($con, $sqlSPE);
-    // $resultDES = mysqli_query($con, $sqlDES);
-    // $resultIMP = mysqli_query($con, $sqlIMP);
-    // $resultINT = mysqli_query($con, $sqlINT);
-    // $resultACC = mysqli_query($con, $sqlACC);
-    // $resultPRO = mysqli_query($con, $sqlPRO);
-    // $resultCON = mysqli_query($con, $sqlCON);
-    // $resultQUA = mysqli_query($con, $sqlQUA);
-    // $resultDOC = mysqli_query($con, $sqlDOC);
-    // $resultTRA = mysqli_query($con, $sqlTRA);
-    // $resultEVA = mysqli_query($con, $sqlEVA);
-
-    // $resultAllCost = mysqli_query($con, $sqlAllCost);
-
-    // $resultTotalCostOfActivityWaterfall = mysqli_query($con, $sqlTotalCostOfActivityWaterfall);
-
-    // $resultsUpdateTotalInProject = mysqli_query($con,$sqlUpdateTotalInProject);
-    // $resultsUpdateStatusModul = mysqli_query($con,$sqlUpdateStatusModul);
-
-    // if($resultAllCost && $resultsILF && $resultsEIF && $resultsEI && $resultsEO && $resultsEQ && $resultsUpdateTotalInProject && $resultsUpdateStatusModul && $resultsUFP && $resultSIZE && $resultPREC && $resultFLEX && $resultRESL && $resultTEAM && $resultPMAT && $resultE) {
-    //   header('Location: ../tambah_project.php?project='.$id_project);
-    // }else {
-    //   header('Location: ../tambah_project.php?gagal=1');
-    // }
+    if($resultsqlProfit && $resultsqlTax){
+      header('Location: ../tambah_project.php?project='.$id_project);
+    }else {
+      header('Location: ../tambah_project.php?gagal=1');
+    }
 
     
 }
