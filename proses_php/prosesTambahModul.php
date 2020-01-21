@@ -33,6 +33,11 @@ if(isset($_POST['submitDeleteModul'])){
     $sqlDeleteTotalUFP = "DELETE FROM ufp_user WHERE id_modul=$idModul";
     $sqlDeleteAllDataActivity = "DELETE FROM activity_user WHERE id_modul=$idModul";
     $sqlDeleteTotalActivity = "DELETE FROM total_activity_user WHERE id_modul=$idModul";
+    $sqlDeleteAllCost = "DELETE FROM all_cost_user WHERE id_modul=$idModul";
+    $sqlDeleteNonPersonnel = "DELETE FROM non_personel WHERE id_modul=$idModul";
+    $sqlDeletePayrate = "DELETE FROM pay_rate_user WHERE id_modul=$idModul";
+    $sqlDeleteProfit = "DELETE FROM profit_user WHERE id_modul=$idModul";
+    $sqlDeleteTax = "DELETE FROM tax_user WHERE id_modul=$idModul";
 
     $resultsDeleteModul = mysqli_query($con,$sqlDeleteModul);
     $resultsDeleteAllDataUFP = mysqli_query($con,$sqlDeleteAllDataUFP);
@@ -45,6 +50,12 @@ if(isset($_POST['submitDeleteModul'])){
     $resultsDeleteTotalUFP = mysqli_query($con,$sqlDeleteTotalUFP);
     $resultsDeleteAllDataActivity = mysqli_query($con,$sqlDeleteAllDataActivity);
     $resultsDeleteTotalActivity = mysqli_query($con,$sqlDeleteTotalActivity);
+    $resultsDeleteAllCost = mysqli_query($con,$sqlDeleteAllCost);
+    $resultsDeleteNonPersonnel = mysqli_query($con,$sqlDeleteNonPersonnel);
+    $resultsDeletePayrate = mysqli_query($con,$sqlDeletePayrate);
+    $resultsDeleteProfit = mysqli_query($con,$sqlDeleteProfit);
+    $resultsDeleteTax = mysqli_query($con,$sqlDeleteTax);
+
 
     if($resultsDeleteModul && $resultsDeleteAllDataUFP) {
       header('Location: ../tambah_project.php?project='.$idProject);

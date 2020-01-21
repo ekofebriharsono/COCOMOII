@@ -148,7 +148,6 @@ if(isset($_POST['id_modul'])){
       echo "Gagal menyimpan data Effort Multiplier & Person Month!".'</br>';
     }
 
-
     // Data Step 5
     $PREC = $_POST['valueRequirements'];
     $PSPE = $_POST['valueSpecifications'];
@@ -245,7 +244,6 @@ if(isset($_POST['id_modul'])){
       echo "Gagal menyimpan data Activity!".'</br>';
     }
 
-
     //step 6
     $salaryPublicPM = $_POST['salaryPublicPM'];
     $salaryPublicSA = $_POST['salaryPublicSA'];
@@ -279,7 +277,78 @@ if(isset($_POST['id_modul'])){
       echo "Gagal menyimpan data Payrate user!".'</br>';
     }
 
-   // echo "asd";
+    // Data Step 9
+    $dfta = $_POST['dfta'];
+    $tt = $_POST['tt'];
+    $eb = $_POST['eb'];
+    $ub = $_POST['ub'];
+    $lt = $_POST['lt'];
+    $tcoppn = $_POST['tcoppn'];
+    $icop = $_POST['icop'];
+    $rav = $_POST['rav'];
+    $rtpo = $_POST['rtpo'];
+    $roe = $_POST['roe'];
+    $rof = $_POST['rof'];
+    $ocotpo = $_POST['ocotpo'];
+    $oc = $_POST['oc'];
+    $capc = $_POST['capc'];
+    $cc = $_POST['cc'];
+    $pda = $_POST['pda'];
+    $ha = $_POST['ha'];
+    $tl = $_POST['tl'];
+    $ra = $_POST['ra'];
+    $oosa = $_POST['oosa'];
+    $etl = $_POST['etl'];
+    $al = $_POST['al'];
+    $rc = $_POST['rc'];
+    $rse = $_POST['rse'];
+    $sdc = $_POST['sdc'];
+    $seminar = $_POST['seminar'];
+    $s = $_POST['s'];
+    $labt = $_POST['labt'];
+    $c = $_POST['c'];
+
+    $totalNonPersonel = $_POST['totalNonPersonel'];
+
+    // Query Step 9
+    $sqlNonpersonnel = "INSERT INTO non_personel (id_modul, name, biaya) VALUES 
+    ($id_modul,'Documents for Travel Abroad',$dfta),
+    ($id_modul,'Transportation Ticket',$tt),
+    ($id_modul,'Excess Baggage',$eb),
+    ($id_modul,'Unaccompanied Baggage',$ub),
+    ($id_modul,'Local/inland travel',$lt),
+    ($id_modul,'The Cost of Purchasing Project Needs',$tcoppn),
+    ($id_modul,'Instalation Cost of Phone/internet/website',$icop),
+    ($id_modul,'Rent a vechile',$rav),
+    ($id_modul,'Rent the project office',$rtpo),
+    ($id_modul,'Rent office equipment',$roe),
+    ($id_modul,'Rent office furniture',$rof),
+    ($id_modul,'Operational Cost of The Project Office',$ocotpo),
+    ($id_modul,'Office Consumabled',$oc),
+    ($id_modul,'Computer and Printer Consumables',$capc),
+    ($id_modul,'Communication Costs',$cc),
+    ($id_modul,'Per Diem Allowwance',$pda),
+    ($id_modul,'Housing Allowwance',$ha),
+    ($id_modul,'Temporaray Loadging',$tl),
+    ($id_modul,'Relocation Allowwance',$ra),
+    ($id_modul,'Eksternal Task Lodging',$etl),
+    ($id_modul,'Annual Leave',$al),
+    ($id_modul,'Reporting Costs',$rc),
+    ($id_modul,'Rent Supporting Equipment',$rse),
+    ($id_modul,'Secondary Data Collection',$sdc),
+    ($id_modul,'Seminar, workshop, socialization, training, dissemination, discussion, coordination, among agencies, and Focus Group discussion',$seminar),
+    ($id_modul,'Survey',$s),
+    ($id_modul,'Laboratory Test',$labt),
+    ($id_modul,'Copyright',$c)";
+
+    $resultsqlNonpersonnel = mysqli_query($con, $sqlNonpersonnel);
+
+    // Result Step 9 
+    if($resultsqlNonpersonnel){
+      echo "Berhasil menyimpan data Non Personnel!".'</br>';
+    }else{
+      echo "Gagal menyimpan data Non Personnel!".'</br>';
+    }
 
     // Data Step 10
     $PersonelDirectCostBeforeProfit = $_POST['PersonelDirectCostBeforeProfit'];
@@ -325,9 +394,9 @@ if(isset($_POST['id_modul'])){
     $resultsqlTax = mysqli_query($con, $sqlTax);
 
     if($resultsqlProfit && $resultsqlTax){
-      header('Location: ../tambah_project.php?project='.$id_project);
+     // header('Location: ../tambah_project.php?project='.$id_project);
     }else {
-      header('Location: ../tambah_project.php?gagal=1');
+    //  header('Location: ../tambah_project.php?gagal=1');
     }
 
     
