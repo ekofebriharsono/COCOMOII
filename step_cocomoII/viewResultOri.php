@@ -2197,1408 +2197,587 @@ if($res){
 
     <hr>
 
+    <table border="1"> 
+            <tr>
+                <td style="width:150px;"><center><b>Position In Project Team</b></center></td>
+                <td style="width:150px;"><center><b>Minimum Requirement</b></center></td>
+                <td style="width:190px;"><center><b>Payment Rate For Private Sector in Person Month Rate(PMR) Requirement</b></center></td>
+                <td style="width:150px;"><center><b>Payment Rate For Public Sector (70% OF Private Sector[6])</b></center></td>
+            </tr>
+            <tr>
+                <td style="width:150px;">Project Management</td>
+                <td style="width:150px;">Minimal Undergraduate And Experience > 4 years</td>
+                <td style="width:150px;"><center>18,250,000</center></td>
+                <td style="width:150px;"><center>12,775,000</center></td>
+            </tr>
+            <tr>
+                <td style="width:150px;">System Analyst</td>
+                <td style="width:150px;">Minimal Undergraduate And Experience > 3 years</td>
+                <td style="width:150px;"><center>12,000,000</center></td>
+                <td style="width:150px;"><center>8,400,000</center></td>
+            </tr>
+            <tr>
+                <td style="width:150px;">Programmer</td>
+                <td style="width:150px;">Experience 1-2 years</td>
+                <td style="width:150px;"><center>11,000,000</center></td>
+                <td style="width:150px;"><center>7,700,000</center></td>
+            </tr>
+            <tr>
+                <td style="width:150px;">System Testing</td>
+                <td style="width:150px;">Experience 1-2 years</td>
+                <td style="width:150px;"><center>9,300,000</center></td>
+                <td style="width:150px;"><center>6,510,000</center></td>
+            </tr>
+            <tr>
+                <td style="width:150px;">Technical Support</td>
+                <td style="width:150px;">Experience 1-2 years</td>
+                <td style="width:150px;"><center>9,300,000</center></td>
+                <td style="width:150px;"><center>6,510,000</center></td>
+            </tr>
+            <tr>
+                <td style="width:150px;">Documenter</td>
+                <td style="width:150px;">Experience 1-2 years</td>
+                <td style="width:150px;"><center>5,000,000</center></td>
+                <td style="width:150px;"><center>3,500,000</center></td>
+            </tr>
+    </table>
+
+        <hr>
+        <table border="1">
+            <tr>
+                <td style="width:150px;" colspan="3px;"></td>
+                <td style="width:150px;"><center><b>Payrate (IDR/Month)</b></center></td>
+                <td style="width:150px;"colspan="4px;"><center><b>Project ID (Person Month)</b></center></td>
+            </tr>
+            <tr>
+                <td><center><b>No</b></center></td>
+                <td><center><b>Activity</b></center></td>
+                <td><center><b>Used by</b></center></td>
+                <td><center><b>Index = 1</b></center></td>
+                <td><center><b>1</b></center></td>
+                <td><center><b>2</b></center></td>
+                <td><center><b>3</b></center></td>
+                <td><center><b>4</b></center></td>
+            </tr>
+            <tr>
+            <td colspan="3px;"></td>
+            <td><center><b>Index</b></center></td>
+            <td><center><b>0,923</b></center></td>
+            <td><center><b>0,923</b></center></td>
+            <td><center><b>0,923</b></center></td>
+            <td><center><b>0,923</b></center></td>
+            </tr>
+            <tr>
+                <td colspan="8px">Software Development Phase</td>
+            </tr>
+            <tr>
+                <td><center>1</center></td>
+                <td><center>Requirements</center></td>
+                <td><center>System Analyst</center></td>
+                <td><center>12,000,000</center></td>
+                <td><center>8,750,040</center></td> <!--  siji -->
+                <td><center>10,965,240</center></td>
+                <td><center>6,867,120</center></td>
+                <td><center>8,085,480</center></td>
+            </tr>
+            <tr>
+                <td><center>2</center></td>
+                <td><center>Spesification</center></td>
+                <td><center>System Analyst</center></td>
+                <td><center>12,000,000</center></td>
+                <td><center>50,285,040</center></td>
+                <td><center>63,243,960</center></td>
+                <td><center>39,652,080</center></td>
+                <td><center>46,740,720</center></td>
+            </tr>
+            <tr>
+                <td><center>3</center></td>
+                <td><center>Design</center></td>
+                <td><center>System Analyst</center></td>
+                <td><center>12,000,000</center></td>
+                <td><center>41,535,000</center></td>
+                <td><center>52,167,960</center></td>
+                <td><center>32,674,200</center></td>
+                <td><center>38,544,480</center></td>
+            </tr>
+            <tr>
+                <td><center>4</center></td>
+                <td><center>Implementation</center></td>
+                <td><center>Programmer</center></td>
+                <td><center>11,000,000</center></td>
+                <td><center>380,432,910</center></td>
+                <td><center>477,597,120</center></td>
+                <td><center>299,411,970</center></td>
+                <td><center>353,121,340</center></td>
+            </tr>
+            <tr>
+                <td><center>5</center></td>
+                <td><center>Integration Testing</center></td>
+                <td><center>System Testing</center></td>
+                <td><center>9,300,000</center></td>
+                <td><center>37,082,448</center></td>
+                <td><center>46,610,577</center></td>
+                <td><center>29,185,260</center></td>
+                <td><center>34,421,439</center></td>
+            </tr>
+            <tr>
+                <td><center>6</center></td>
+                <td><center>Acceptance & Deployment</center></td>
+                <td><center>System Testing</center></td>
+                <td><center>9,300,000</center></td>
+                <td><center>32,361,303</center></td>
+                <td><center>40,601,847</center></td>
+                <td><center>25,494,183</center></td>
+                <td><center>30,043,650</center></td>
+            </tr>
+
+            <tr>
+                <td colspan="3px">Ongoing Activities & Quality And Testing</td>
+            </tr>
+            <tr>
+                <td><center>7</center></td>
+                <td><center>Project Management</center></td>
+                <td><center>Project Manager</center></td>
+                <td><center>18,250,000</center></td>
+                <td><center>28,972,970</center></td>
+                <td><center>36,384,660</center></td>
+                <td><center>22,740,413</center></td>
+                <td><center>26,783,153</center></td>
+            </tr>
+            <tr>
+                <td><center>8</center></td>
+                <td><center>Configuration Management</center></td>
+                <td><center>System Analyst</center></td>
+                <td><center>12,000,000</center></td>
+                <td><center>26,693,160</center></td>
+                <td><center>33,560,280</center></td>
+                <td><center>21,044,400</center></td>
+                <td><center>24,810,240</center></td>
+            </tr>
+            <tr>
+                <td><center>9</center></td>
+                <td><center>Quality Assurance</center></td>
+                <td><center>System Testing</center></td>
+                <td><center>9,300,000</center></td>
+                <td><center>3,776,916</center></td>
+                <td><center>4,806,984</center></td>
+                <td><center>3,004,365</center></td>
+                <td><center>3,519,399</center></td>
+            </tr>
+            <tr>
+                <td><center>10</center></td>
+                <td><center>Documentation</center></td>
+                <td><center>Documenter</center></td>
+                <td><center>5,000,000</center></td>
+                <td><center>30,320,550</center></td>
+                <td><center>38,073,750</center></td>
+                <td><center>23,859,550</center></td>
+                <td><center>28,151,500</center></td>
+            </tr>
+            <tr>
+                <td><center>11</center></td>
+                <td><center>Training & Support</center></td>
+                <td><center>Technical Support</center></td>
+                <td><center>9,300,000</center></td>
+                <td><center>3,605,238</center></td>
+                <td><center>4,463,628</center></td>
+                <td><center>2,832,687</center></td>
+                <td><center>3,347,721</center></td>
+            </tr>
+            <tr>
+                <td><center>12</center></td>
+                <td><center>Evaluation & Testing</center></td>
+                <td><center>System Testing</center></td>
+                <td><center>9,300,000</center></td>
+                <td><center>9,613,968</center></td>
+                <td><center>4,463,628</center></td>
+                <td><center>7,553,832</center></td>
+                <td><center>8,927,256</center></td>
+            </tr>
+            <tr>
+            <td colspan="4px"><center>Total</center></td>
+            <td><center>653,429,543</center></td>
+            <td><center>820,579,305</center></td>
+            <td><center>514,320,060</center></td>
+            <td><center>606,496,378</center></td>
+            </tr>
+    </table>
+    <hr>
     <table border="1">
-        <tr>
-            <td style="width:150px;">
-                <center><b>Position In Project Team</b></center>
-            </td>
-            <td style="width:150px;">
-                <center><b>Minimum Requirement</b></center>
-            </td>
-            <td style="width:190px;">
-                <center><b>Payment Rate For Private Sector in Person Month Rate(PMR) Requirement</b></center>
-            </td>
-            <td style="width:150px;">
-                <center><b>Payment Rate For Public Sector (70% OF Private Sector[6])</b></center>
-            </td>
-        </tr>
-        <tr>
-            <td style="width:150px;">Project Management</td>
-            <td style="width:150px;">Minimal Undergraduate And Experience > 4 years</td>
-            <td style="width:150px;">
-                <center>18,250,000</center>
-            </td>
-            <td style="width:150px;">
-                <center>12,775,000</center>
-            </td>
-        </tr>
-        <tr>
-            <td style="width:150px;">System Analyst</td>
-            <td style="width:150px;">Minimal Undergraduate And Experience > 3 years</td>
-            <td style="width:150px;">
-                <center>12,000,000</center>
-            </td>
-            <td style="width:150px;">
-                <center>8,400,000</center>
-            </td>
-        </tr>
-        <tr>
-            <td style="width:150px;">Programmer</td>
-            <td style="width:150px;">Experience 1-2 years</td>
-            <td style="width:150px;">
-                <center>11,000,000</center>
-            </td>
-            <td style="width:150px;">
-                <center>7,700,000</center>
-            </td>
-        </tr>
-        <tr>
-            <td style="width:150px;">System Testing</td>
-            <td style="width:150px;">Experience 1-2 years</td>
-            <td style="width:150px;">
-                <center>9,300,000</center>
-            </td>
-            <td style="width:150px;">
-                <center>6,510,000</center>
-            </td>
-        </tr>
-        <tr>
-            <td style="width:150px;">Technical Support</td>
-            <td style="width:150px;">Experience 1-2 years</td>
-            <td style="width:150px;">
-                <center>9,300,000</center>
-            </td>
-            <td style="width:150px;">
-                <center>6,510,000</center>
-            </td>
-        </tr>
-        <tr>
-            <td style="width:150px;">Documenter</td>
-            <td style="width:150px;">Experience 1-2 years</td>
-            <td style="width:150px;">
-                <center>5,000,000</center>
-            </td>
-            <td style="width:150px;">
-                <center>3,500,000</center>
-            </td>
-        </tr>
+            <tr>
+                <td style="width:150px;"><center><b>Project ID</b></center></td>
+                <td style="width:150px;"><center><b>Personel Direct Cost before Profit (IDR)</b></center></td>
+                <td style="width:190px;"><center><b>Profit (IDR)</b></center></td>
+                <td style="width:190px;"><center><b>Personel Direct Cost (IDR)</b></center></td>
+            </tr>
+            <tr>
+                <td style="width:150px;"><center>1</center></td>
+                <td style="width:150px;"><center>653,429,543</center></td>
+                <td style="width:190px;"><center>65,342,954</center></td>
+                <td style="width:190px;"><center>718,772,497</center></td>
+            </tr>
+            <tr>
+                <td style="width:150px;"><center>2</center></td>
+                <td style="width:150px;"><center>820,579,305</center></td>
+                <td style="width:190px;"><center>82,057,931</center></td>
+                <td style="width:190px;"><center>902,637,236</center></td>
+            </tr>
+            <tr>
+                <td style="width:150px;"><center>3</center></td>
+                <td style="width:150px;"><center>359,949,026</center></td>
+                <td style="width:190px;"><center>35,994,903</center></td>
+                <td style="width:190px;"><center>395,943,929</center></td>
+            </tr>
+            <tr>
+                <td style="width:150px;"><center>4</center></td>
+                <td style="width:150px;"><center>424,560,488</center></td>
+                <td style="width:190px;"><center>42,456,049</center></td>
+                <td style="width:190px;"><center>467,016,537</center></td>
+            </tr>
     </table>
 
     <hr>
     <table border="1">
-        <tr>
-            <td rowspan="2">
-                <center><b>No</b></center>
-            </td>
-            <td rowspan="2">
-                <center><b>Activity</b></center>
-            </td>
-            <td rowspan="2">
-                <center><b>Used By</b></center>
-            </td>
-            <td rowspan="2">
-                <center><b>Index</b></center>
-            </td>
-            <td colspan="<?php echo $totalModul; ?>">
-                <center><b>Modul-ID</b></center>
-            </td>
-        </tr>
-        <tr>
-            <?php 
-                $idUser = $_SESSION['id_user'];
-                $sql = "SELECT modul.id_modul as idmodul   
-                FROM project  
-                INNER JOIN modul  
-                ON project.id_project = modul.id_project WHERE project.id_project='$idProject'";
-                $res = mysqli_query($con,$sql);
-                $no = 0;
-                if($res){
-                    while($d = mysqli_fetch_array($res)){ 
-                        $no++; ?>
-            <td>
-                <center><b><?php echo $no; ?></b></center>
-            </td>
-            <?php
-                }
-            }
-            ?>
-        </tr>
+            <tr>
+                <td rowspan="2"><center><b>No</b></center></td>
+                <td rowspan="2"><center><b>Cost Driver of Non-Personnel Direct Cost</b></center></td>
+                <td style="width:190px;" colspan="4px"><center><b>Project ID (IDR)</b></center></td>
+            </tr>
+            <tr>
+                <td><center>1</center></td>
+                <td><center>2</center></td>
+                <td><center>3</center></td>
+                <td><center>4</center></td>
+            </tr>
 
-        <tr>
-            <td>
-                1
-            </td>
-            <td>
-                Requirement
-            </td>
-            <?php 
-                $no = 0;
-                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value, activity_user.used, activity_user.payrate, activity_user.total  FROM project 
-                INNER JOIN modul 
-                ON project.id_project = modul.id_project 
-                INNER JOIN activity_user 
-                ON modul.id_modul = activity_user.id_modul 
-                WHERE project.id_project='$idProject' and activity_user.id_activity = 'rec'";
-                $res = mysqli_query($con,$sql);
-                if($res){
-                    while($d = mysqli_fetch_array($res)){ 
-                        $no++;
-                        ?>
-            <?php if($no == 1){ ?>
+            <tr>
+                <td colspan="2px">Reimbursable</td>
+                <td ><center>14,700,000</center></td>
+                <td ><center>5,060,000</center></td>
+                <td ><center>15,900,000</center></td>
+                <td ><center>19,100,000</center></td>
+            </tr>
 
-            <td>
-                <?php echo $d['used']; ?>
-            </td>
+            <tr>
+                <td><center>1</center></td>
+                <td><center>Documents for Travel Abroad</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+            </tr>
 
-            <?php    }
+            <tr>
+                <td><center>2</center></td>
+                <td><center>Transportation Ticket</center></td>
+                <td><center>3,500,000</center></td>
+                <td><center>2,760,000</center></td>
+                <td><center>5,000,000</center></td>
+                <td><center>5,300,000</center></td>
+            </tr>
 
-                        ?>
-            <td>
-                <?php echo $d['payrate']; ?>
-            </td>
-            <td>
-                <?php echo $d['total']; ?>
-            </td>
-            <?php
-                }
-            }
-            ?>
-        </tr>
-        <tr>
-            <td>
-                2
-            </td>
-            <td>
-                Specifications
-            </td>
-            <?php 
-                $idUser = $_SESSION['id_user'];
-                $no = 0;
-                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value, activity_user.used, activity_user.payrate, activity_user.total FROM project 
-                INNER JOIN modul 
-                ON project.id_project = modul.id_project 
-                INNER JOIN activity_user 
-                ON modul.id_modul = activity_user.id_modul 
-                WHERE project.id_project='$idProject' and activity_user.id_activity = 'spe'";
-                $res = mysqli_query($con,$sql);
-                if($res){
-                    while($d = mysqli_fetch_array($res)){ 
-                        $no++;
-                        ?>
-            <?php if($no == 1){ ?>
-
-            <td>
-                <?php echo $d['used']; ?>
-            </td>
-
-            <?php    }
-
-                        ?>
-
-<td>
-                <?php echo $d['payrate']; ?>
-            </td>
-            <td>
-                <?php echo $d['total']; ?>
-            </td>
-            <?php
-                }
-            }
-            ?>
-        </tr>
-        <tr>
-            <td>
-                3
-            </td>
-            <td>
-                Design
-            </td>
-            <?php 
-                $idUser = $_SESSION['id_user'];
-                $no = 0;
-                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value, activity_user.used, activity_user.payrate, activity_user.total  FROM project 
-                INNER JOIN modul 
-                ON project.id_project = modul.id_project 
-                INNER JOIN activity_user 
-                ON modul.id_modul = activity_user.id_modul 
-                WHERE project.id_project='$idProject' and activity_user.id_activity = 'des'";
-                $res = mysqli_query($con,$sql);
-                if($res){
-                    while($d = mysqli_fetch_array($res)){ 
-                        $no++;
-                        ?>
-            <?php if($no == 1){ ?>
-
-            <td>
-                <?php echo $d['used']; ?>
-            </td>
-
-            <?php    }
-
-                        ?>
-
-<td>
-                <?php echo $d['payrate']; ?>
-            </td>
-            <td>
-                <?php echo $d['total']; ?>
-            </td>
-            <?php
-                }
-            }
-            ?>
-        </tr>
-        <tr>
-            <td>
-                4
-            </td>
-            <td>
-                Implementation
-            </td>
-            <?php 
-                $idUser = $_SESSION['id_user'];
-                $no = 0;
-                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value, activity_user.used, activity_user.payrate, activity_user.total  FROM project 
-                INNER JOIN modul 
-                ON project.id_project = modul.id_project 
-                INNER JOIN activity_user 
-                ON modul.id_modul = activity_user.id_modul 
-                WHERE project.id_project='$idProject' and activity_user.id_activity = 'imp'";
-                $res = mysqli_query($con,$sql);
-                if($res){
-                    while($d = mysqli_fetch_array($res)){ 
-                        $no++;
-                        ?>
-            <?php if($no == 1){ ?>
-
-            <td>
-                <?php echo $d['used']; ?>
-            </td>
-
-            <?php    }
-
-                        ?>
-
-<td>
-                <?php echo $d['payrate']; ?>
-            </td>
-            <td>
-                <?php echo $d['total']; ?>
-            </td>
-            <?php
-                }
-            }
-            ?>
-        </tr>
-        <tr>
-            <td>
-                5
-            </td>
-            <td>
-                Integration Testing
-            </td>
-            <?php 
-                $idUser = $_SESSION['id_user'];
-                $no = 0;
-                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value, activity_user.used, activity_user.payrate, activity_user.total  FROM project 
-                INNER JOIN modul 
-                ON project.id_project = modul.id_project 
-                INNER JOIN activity_user 
-                ON modul.id_modul = activity_user.id_modul 
-                WHERE project.id_project='$idProject' and activity_user.id_activity = 'int'";
-                $res = mysqli_query($con,$sql);
-                if($res){
-                    while($d = mysqli_fetch_array($res)){ 
-                        $no++;
-                        ?>
-            <?php if($no == 1){ ?>
-
-            <td>
-                <?php echo $d['used']; ?>
-            </td>
-
-            <?php    }
-
-                        ?>
-
-<td>
-                <?php echo $d['payrate']; ?>
-            </td>
-            <td>
-                <?php echo $d['total']; ?>
-            </td>
-            <?php
-                }
-            }
-            ?>
-        </tr>
-        <tr>
-            <td>
-                6
-            </td>
-            <td>
-                Acceptance & deployment
-            </td>
-            <?php 
-                $idUser = $_SESSION['id_user'];
-                $no = 0;
-                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value, activity_user.used, activity_user.payrate, activity_user.total  FROM project 
-                INNER JOIN modul 
-                ON project.id_project = modul.id_project 
-                INNER JOIN activity_user 
-                ON modul.id_modul = activity_user.id_modul 
-                WHERE project.id_project='$idProject' and activity_user.id_activity = 'acc'";
-                $res = mysqli_query($con,$sql);
-                if($res){
-                    while($d = mysqli_fetch_array($res)){ 
-                        $no++;
-                        ?>
-            <?php if($no == 1){ ?>
-
-            <td>
-                <?php echo $d['used']; ?>
-            </td>
-
-            <?php    }
-
-                        ?>
-
-<td>
-                <?php echo $d['payrate']; ?>
-            </td>
-            <td>
-                <?php echo $d['total']; ?>
-            </td>
-            <?php
-                }
-            }
-            ?>
-        </tr>
-        <tr>
-            <td>
-                7
-            </td>
-            <td>
-                Project Management
-            </td>
-            <?php 
-                $idUser = $_SESSION['id_user'];
-                $no = 0;
-                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value, activity_user.used, activity_user.payrate, activity_user.total  FROM project 
-                INNER JOIN modul 
-                ON project.id_project = modul.id_project 
-                INNER JOIN activity_user 
-                ON modul.id_modul = activity_user.id_modul 
-                WHERE project.id_project='$idProject' and activity_user.id_activity = 'pro'";
-                $res = mysqli_query($con,$sql);
-                if($res){
-                    while($d = mysqli_fetch_array($res)){ 
-                        $no++;
-                        ?>
-            <?php if($no == 1){ ?>
-
-            <td>
-                <?php echo $d['used']; ?>
-            </td>
-
-            <?php    }
-
-                        ?>
-
-<td>
-                <?php echo $d['payrate']; ?>
-            </td>
-            <td>
-                <?php echo $d['total']; ?>
-            </td>
-            <?php
-                }
-            }
-            ?>
-        </tr>
-        <tr>
-            <td>
-                8
-            </td>
-            <td>
-                Configuration Management
-            </td>
-            <?php 
-                $idUser = $_SESSION['id_user'];
-                $no = 0;
-                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value, activity_user.used, activity_user.payrate, activity_user.total  FROM project 
-                INNER JOIN modul 
-                ON project.id_project = modul.id_project 
-                INNER JOIN activity_user 
-                ON modul.id_modul = activity_user.id_modul 
-                WHERE project.id_project='$idProject' and activity_user.id_activity = 'con'";
-                $res = mysqli_query($con,$sql);
-                if($res){
-                    while($d = mysqli_fetch_array($res)){ 
-                        $no++;
-                        ?>
-            <?php if($no == 1){ ?>
-
-            <td>
-                <?php echo $d['used']; ?>
-            </td>
-
-            <?php    }
-
-                        ?>
-
-<td>
-                <?php echo $d['payrate']; ?>
-            </td>
-            <td>
-                <?php echo $d['total']; ?>
-            </td>
-            <?php
-                }
-            }
-            ?>
-        </tr>
-        <tr>
-            <td>
-                9
-            </td>
-            <td>
-                Quality Assurance
-            </td>
-            <?php 
-                $idUser = $_SESSION['id_user'];
-                $no = 0;
-                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value, activity_user.used, activity_user.payrate, activity_user.total  FROM project 
-                INNER JOIN modul 
-                ON project.id_project = modul.id_project 
-                INNER JOIN activity_user 
-                ON modul.id_modul = activity_user.id_modul 
-                WHERE project.id_project='$idProject' and activity_user.id_activity = 'qua'";
-                $res = mysqli_query($con,$sql);
-                if($res){
-                    while($d = mysqli_fetch_array($res)){ 
-                        $no++;
-                        ?>
-            <?php if($no == 1){ ?>
-
-            <td>
-                <?php echo $d['used']; ?>
-            </td>
-
-            <?php    }
-
-                        ?>
-
-<td>
-                <?php echo $d['payrate']; ?>
-            </td>
-            <td>
-                <?php echo $d['total']; ?>
-            </td>
-            <?php
-                }
-            }
-            ?>
-        </tr>
-        <tr>
-            <td>
-                10
-            </td>
-            <td>
-                Documentations
-            </td>
-            <?php 
-                $idUser = $_SESSION['id_user'];
-                $no = 0;
-                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value, activity_user.used, activity_user.payrate, activity_user.total  FROM project 
-                INNER JOIN modul 
-                ON project.id_project = modul.id_project 
-                INNER JOIN activity_user 
-                ON modul.id_modul = activity_user.id_modul 
-                WHERE project.id_project='$idProject' and activity_user.id_activity = 'doc'";
-                $res = mysqli_query($con,$sql);
-                if($res){
-                    while($d = mysqli_fetch_array($res)){ 
-                        $no++;
-                        ?>
-            <?php if($no == 1){ ?>
-
-            <td>
-                <?php echo $d['used']; ?>
-            </td>
-
-            <?php    }
-
-                        ?>
-
-<td>
-                <?php echo $d['payrate']; ?>
-            </td>
-            <td>
-                <?php echo $d['total']; ?>
-            </td>
-            <?php
-                }
-            }
-            ?>
-        </tr>
-        <tr>
-            <td>
-                11
-            </td>
-            <td>
-                Training & support
-            </td>
-            <?php 
-                $idUser = $_SESSION['id_user'];
-                $no = 0;
-                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value, activity_user.used, activity_user.payrate, activity_user.total  FROM project 
-                INNER JOIN modul 
-                ON project.id_project = modul.id_project 
-                INNER JOIN activity_user 
-                ON modul.id_modul = activity_user.id_modul 
-                WHERE project.id_project='$idProject' and activity_user.id_activity = 'tra'";
-                $res = mysqli_query($con,$sql);
-                if($res){
-                    while($d = mysqli_fetch_array($res)){ 
-                        $no++;
-                        ?>
-            <?php if($no == 1){ ?>
-
-            <td>
-                <?php echo $d['used']; ?>
-            </td>
-
-            <?php    }
-
-                        ?>
-
-<td>
-                <?php echo $d['payrate']; ?>
-            </td>
-            <td>
-                <?php echo $d['total']; ?>
-            </td>
-            <?php
-                }
-            }
-            ?>
-        </tr>
-        <tr>
-            <td>
-                12
-            </td>
-            <td>
-                Evaluation & testing
-            </td>
-            <?php 
-                $idUser = $_SESSION['id_user'];
-                $no = 0;
-                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value, activity_user.used, activity_user.payrate, activity_user.total  FROM project 
-                INNER JOIN modul 
-                ON project.id_project = modul.id_project 
-                INNER JOIN activity_user 
-                ON modul.id_modul = activity_user.id_modul 
-                WHERE project.id_project='$idProject' and activity_user.id_activity = 'eva'";
-                $res = mysqli_query($con,$sql);
-                if($res){
-                    while($d = mysqli_fetch_array($res)){ 
-                        $no++;
-                        ?>
-            <?php if($no == 1){ ?>
-
-            <td>
-                <?php echo $d['used']; ?>
-            </td>
-
-            <?php    }
-
-                        ?>
-
-<td>
-                <?php echo $d['payrate']; ?>
-            </td>
-            <td>
-                <?php echo $d['total']; ?>
-            </td>
-            <?php
-                }
-            }
-            ?>
-        </tr>
-        <tr>
-            <td colspan="4">
-                <b>Total</b>
-            </td>
-            <?php 
-                $idUser = $_SESSION['id_user'];
-                $sql = "SELECT modul.id_modul, total_activity_user.total  FROM project 
-                INNER JOIN modul 
-                ON project.id_project = modul.id_project 
-                INNER JOIN total_activity_user 
-                ON modul.id_modul = total_activity_user.id_modul 
-                WHERE project.id_project='$idProject'";
-                $res = mysqli_query($con,$sql);
-                if($res){
-                    while($d = mysqli_fetch_array($res)){ 
-                        ?>
-       
-            <td>
-                <?php echo $d['total']; ?>
-            </td>
-
-            <?php
-                }
-            }
-            ?>
-        </tr>
-
-
-
-    </table>
-    <hr>
-
-    <table border="1">
-        <tr>
-            <td>Modul</td>
-            <td>Personnel</td>
-            <td>Profit 10%</td>
-            <td>Personnel + Profit</td>
-        </tr>
-        <?php 
-
-                $sql = "SELECT all_cost_user.personel_direct_cost_before_profit, all_cost_user.profit, all_cost_user.personel_direct_cost, all_cost_user.non_personel_direct_cost, all_cost_user.owner_estimate_before_tax, all_cost_user.tax, all_cost_user.owner_cost_estimate from modul 
-                JOIN all_cost_user ON modul.id_modul = all_cost_user.id_modul 
-                JOIN project ON modul.id_project = project.id_project 
-                WHERE modul.id_project = '$idProject';
-                ";
-                $res = mysqli_query($con,$sql);
-                $no = 0;
-                if($res){
-                    while($d = mysqli_fetch_array($res)){ 
-                        $no++;
-                        ?>
-        <tr>
-            <td><?php echo $no; ?></td>
-            <td><?php echo $d['personel_direct_cost_before_profit']; ?></td>
-            <td><?php echo $d['profit']; ?></td>
-            <td><?php echo $d['personel_direct_cost']; ?></td>
-        </tr>
-        <?php
-                }
-            }
-            ?>
-
-    </table>
-
-    <hr>
-    <table border="1">
-        <tr>
-            <td rowspan="2">
-                <center><b>No</b></center>
-            </td>
-            <td rowspan="2">
-                <center><b>Cost Driver of Non-Personnel Direct Cost</b></center>
-            </td>
-            <td style="width:190px;" colspan="4px">
-                <center><b>Project ID (IDR)</b></center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>1</center>
-            </td>
-            <td>
-                <center>2</center>
-            </td>
-            <td>
-                <center>3</center>
-            </td>
-            <td>
-                <center>4</center>
-            </td>
-        </tr>
-
-        <tr>
-            <td colspan="2px">Reimbursable</td>
-            <td>
-                <center>14,700,000</center>
-            </td>
-            <td>
-                <center>5,060,000</center>
-            </td>
-            <td>
-                <center>15,900,000</center>
-            </td>
-            <td>
-                <center>19,100,000</center>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <center>1</center>
-            </td>
-            <td>
-                <center>Documents for Travel Abroad</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <center>2</center>
-            </td>
-            <td>
-                <center>Transportation Ticket</center>
-            </td>
-            <td>
-                <center>3,500,000</center>
-            </td>
-            <td>
-                <center>2,760,000</center>
-            </td>
-            <td>
-                <center>5,000,000</center>
-            </td>
-            <td>
-                <center>5,300,000</center>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <center>3</center>
-            </td>
-            <td>
-                <center>Excess Baggage</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>4</center>
-            </td>
-            <td>
-                <center>Unaccompanied Baggage</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>5</center>
-            </td>
-            <td>
-                <center>Local/inland travel</center>
-            </td>
-            <td>
-                <center>1,200,000</center>
-            </td>
-            <td>
-                <center>2,300,000</center>
-            </td>
-            <td>
-                <center>3,300,000</center>
-            </td>
-            <td>
-                <center>5,000,000</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>6</center>
-            </td>
-            <td>
-                <center>The Cost of Purchasing Project Needs</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>7</center>
-            </td>
-            <td>
-                <center>Instalation Cost of Phone/internet/website</center>
-            </td>
-            <td>
-                <center>10,000,000</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>7,600,000</center>
-            </td>
-            <td>
-                <center>8,800,000</center>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2px">Fixed Unit Rate</td>
-            <td>
-                <center>24,750,00</center>
-            </td>
-            <td>
-                <center>25,600,000</center>
-            </td>
-            <td>
-                <center>16,050,000</center>
-            </td>
-            <td>
-                <center>23,310,000</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>8</center>
-            </td>
-            <td>
-                <center>Rent a vechile</center>
-            </td>
-            <td>
-                <center>5,600,000</center>
-            </td>
-            <td>
-                <center>7,400,000</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>9</center>
-            </td>
-            <td>
-                <center>Rent the project office</center>
-            </td>
-            <td>
-                <center>3,000,000</center>
-            </td>
-            <td>
-                <center>5,000,000</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>7,000,000</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>10</center>
-            </td>
-            <td>
-                <center>Rent office equipment</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>11</center>
-            </td>
-            <td>
-                <center>Rent office furniture</center>
-            </td>
-            <td>
-                <center>2,000,000</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>12</center>
-            </td>
-            <td>
-                <center>Operational Cost of The Project Office</center>
-            </td>
-            <td>
-                <center>850,000</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>1,200,000</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>13</center>
-            </td>
-            <td>
-                <center>Office Consumabled</center>
-            </td>
-            <td>
-                <center>800,000</center>
-            </td>
-            <td>
-                <center>1,200,000</center>
-            </td>
-            <td>
-                <center>2,300,000</center>
-            </td>
-            <td>
-                <center>760,000</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>14</center>
-            </td>
-            <td>
-                <center>Computer and Printer Consumables</center>
-            </td>
-            <td>
-                <center>1,500,000</center>
-            </td>
-            <td>
-                <center>3,000,000</center>
-            </td>
-            <td>
-                <center>2,500,000</center>
-            </td>
-            <td>
-                <center>2,500,000</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>15</center>
-            </td>
-            <td>
-                <center>Communication Costs</center>
-            </td>
-            <td>
-                <center>3,500,000</center>
-            </td>
-            <td>
-                <center>2,500,000</center>
-            </td>
-            <td>
-                <center>4,750,000</center>
-            </td>
-            <td>
-                <center>3,350,000</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>16</center>
-            </td>
-            <td>
-                <center>Per Diem Allowwance</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>17</center>
-            </td>
-            <td>
-                <center>Housing Allowwance</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>00</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>18</center>
-            </td>
-            <td>
-                <center>Temporaray Loadging</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>19</center>
-            </td>
-            <td>
-                <center>Relocation Allowwance</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>20</center>
-            </td>
-            <td>
-                <center>Out Of Station Allowwance</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>21</center>
-            </td>
-            <td>
-                <center>Eksternal Task Lodging</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>22</center>
-            </td>
-            <td>
-                <center>Annual Leave</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>23</center>
-            </td>
-            <td>
-                <center>Reporting Costs</center>
-            </td>
-            <td>
-                <center>7,500,000</center>
-            </td>
-            <td>
-                <center>6,500,000</center>
-            </td>
-            <td>
-                <center>6,500,000</center>
-            </td>
-            <td>
-                <center>8,500,000</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>24</center>
-            </td>
-            <td>
-                <center>Rent Supporting Equipment</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2px">Lumpsum</td>
-            <td>
-                <center>3,800,00</center>
-            </td>
-            <td>
-                <center>5,000,000</center>
-            </td>
-            <td>
-                <center>6,900,000</center>
-            </td>
-            <td>
-                <center>4,800,000</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>25</center>
-            </td>
-            <td>
-                <center>Secondary Data Collection</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>26</center>
-            </td>
-            <td>
-                <center style="width:150px;">Seminar, workshop, socialization, training, dissemination, discussion,
-                    coordination, among agencies, and Focus Group discussion</center>
-            </td>
-            <td>
-                <center>3,800,000</center>
-            </td>
-            <td>
-                <center>5,000,000</center>
-            </td>
-            <td>
-                <center>6,900,000</center>
-            </td>
-            <td>
-                <center>4,800,000</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>27</center>
-            </td>
-            <td>
-                <center>Survey</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>28</center>
-            </td>
-            <td>
-                <center>Laboratory Test</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>29</center>
-            </td>
-            <td>
-                <center>Copyright</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-        </tr>
-        </tr>
-        <tr>
-            <td colspan="2px">
-                <center>Total of Non-Personel Direct Costs</center>
-            </td>
-            <td>
-                <center>43,250,000</center>
-            </td>
-            <td>
-                <center>35,660,000</center>
-            </td>
-            <td>
-                <center>38,850,000</center>
-            </td>
-            <td>
-                <center>47,210,000</center>
-            </td>
-        </tr>
+            <tr>
+                <td><center>3</center></td>
+                <td><center>Excess Baggage</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+            </tr>
+            <tr>
+                <td><center>4</center></td>
+                <td><center>Unaccompanied Baggage</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+            </tr>
+            <tr>
+                <td><center>5</center></td>
+                <td><center>Local/inland travel</center></td>
+                <td><center>1,200,000</center></td>
+                <td><center>2,300,000</center></td>
+                <td><center>3,300,000</center></td>
+                <td><center>5,000,000</center></td>
+            </tr>
+            <tr>
+                <td><center>6</center></td>
+                <td><center>The Cost of Purchasing Project Needs</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+            </tr>
+            <tr>
+                <td><center>7</center></td>
+                <td><center>Instalation Cost of Phone/internet/website</center></td>
+                <td><center>10,000,000</center></td>
+                <td><center>0</center></td>
+                <td><center>7,600,000</center></td>
+                <td><center>8,800,000</center></td>
+            </tr>
+            <tr>
+                <td colspan="2px">Fixed Unit Rate</td>
+                <td ><center>24,750,00</center></td>
+                <td ><center>25,600,000</center></td>
+                <td ><center>16,050,000</center></td>
+                <td ><center>23,310,000</center></td>
+            </tr>
+            <tr>
+                <td><center>8</center></td>
+                <td><center>Rent a vechile</center></td>
+                <td><center>5,600,000</center></td>
+                <td><center>7,400,000</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+            </tr>
+            <tr>
+                <td><center>9</center></td>
+                <td><center>Rent the project office</center></td>
+                <td><center>3,000,000</center></td>
+                <td><center>5,000,000</center></td>
+                <td><center>0</center></td>
+                <td><center>7,000,000</center></td>
+            </tr>
+            <tr>
+                <td><center>10</center></td>
+                <td><center>Rent office equipment</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+            </tr>
+            <tr>
+                <td><center>11</center></td>
+                <td><center>Rent office furniture</center></td>
+                <td><center>2,000,000</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+            </tr>
+            <tr>
+                <td><center>12</center></td>
+                <td><center>Operational Cost of The Project Office</center></td>
+                <td><center>850,000</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>1,200,000</center></td>
+            </tr>
+            <tr>
+                <td><center>13</center></td>
+                <td><center>Office Consumabled</center></td>
+                <td><center>800,000</center></td>
+                <td><center>1,200,000</center></td>
+                <td><center>2,300,000</center></td>
+                <td><center>760,000</center></td>
+            </tr>
+            <tr>
+                <td><center>14</center></td>
+                <td><center>Computer and Printer Consumables</center></td>
+                <td><center>1,500,000</center></td>
+                <td><center>3,000,000</center></td>
+                <td><center>2,500,000</center></td>
+                <td><center>2,500,000</center></td>
+            </tr>
+            <tr>
+                <td><center>15</center></td>
+                <td><center>Communication Costs</center></td>
+                <td><center>3,500,000</center></td>
+                <td><center>2,500,000</center></td>
+                <td><center>4,750,000</center></td>
+                <td><center>3,350,000</center></td>
+            </tr>
+            <tr>
+                <td><center>16</center></td>
+                <td><center>Per Diem Allowwance</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+            </tr>
+            <tr>
+                <td><center>17</center></td>
+                <td><center>Housing Allowwance</center></td>
+                <td><center>0</center></td>
+                <td><center>00</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+            </tr>
+            <tr>
+                <td><center>18</center></td>
+                <td><center>Temporaray Loadging</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+            </tr>
+            <tr>
+                <td><center>19</center></td>
+                <td><center>Relocation Allowwance</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+            </tr>
+            <tr>
+                <td><center>20</center></td>
+                <td><center>Out Of Station Allowwance</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+            </tr>
+            <tr>
+                <td><center>21</center></td>
+                <td><center>Eksternal Task Lodging</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+            </tr>
+            <tr>
+                <td><center>22</center></td>
+                <td><center>Annual Leave</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+            </tr>
+            <tr>
+                <td><center>23</center></td>
+                <td><center>Reporting Costs</center></td>
+                <td><center>7,500,000</center></td>
+                <td><center>6,500,000</center></td>
+                <td><center>6,500,000</center></td>
+                <td><center>8,500,000</center></td>
+            </tr>
+            <tr>
+                <td><center>24</center></td>
+                <td><center>Rent Supporting Equipment</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+            </tr>
+            <tr>
+                <td colspan="2px">Lumpsum</td>
+                <td ><center>3,800,00</center></td>
+                <td ><center>5,000,000</center></td>
+                <td ><center>6,900,000</center></td>
+                <td ><center>4,800,000</center></td>
+            </tr>
+            <tr>
+                <td><center>25</center></td>
+                <td><center>Secondary Data Collection</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+            </tr>
+            <tr>
+                <td><center>26</center></td>
+                <td><center style="width:150px;">Seminar, workshop, socialization, training, dissemination, discussion, coordination, among agencies, and Focus Group discussion</center></td>
+                <td><center>3,800,000</center></td>
+                <td><center>5,000,000</center></td>
+                <td><center>6,900,000</center></td>
+                <td><center>4,800,000</center></td>
+            </tr>
+            <tr>
+                <td><center>27</center></td>
+                <td><center>Survey</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+            </tr>
+            <tr>
+                <td><center>28</center></td>
+                <td><center>Laboratory Test</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+            </tr>
+            <tr>
+                <td><center>29</center></td>
+                <td><center>Copyright</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+                <td><center>0</center></td>
+            </tr>
+            </tr>
+            <tr>
+                <td colspan="2px"><center>Total of Non-Personel Direct Costs</center></td>
+                <td><center>43,250,000</center></td>
+                <td><center>35,660,000</center></td>
+                <td><center>38,850,000</center></td>
+                <td><center>47,210,000</center></td>
+            </tr>
     </table>
 
     <table border="1">
-        <tr>
-            <td>Modul</td>
-            <td>Personnel</td>
-            <td>Profit 10%</td>
-            <td>Personnel + Profit</td>
-            <td>Non-Personnel</td>
-            <td>Cost Estimate</td>
-            <td>Tax 10%</td>
-            <td>Cost Estimate + Tax</td>
-        </tr>
-        <?php 
-
-                $sql = "SELECT all_cost_user.personel_direct_cost_before_profit, all_cost_user.profit, all_cost_user.personel_direct_cost, all_cost_user.non_personel_direct_cost, all_cost_user.owner_estimate_before_tax, all_cost_user.tax, all_cost_user.owner_cost_estimate from modul 
-                JOIN all_cost_user ON modul.id_modul = all_cost_user.id_modul 
-                JOIN project ON modul.id_project = project.id_project 
-                WHERE modul.id_project = '$idProject';
-                ";
-                $res = mysqli_query($con,$sql);
-                $no = 0;
-                if($res){
-                    while($d = mysqli_fetch_array($res)){ 
-                        $no++;
-                        ?>
-        <tr>
-            <td><?php echo $no; ?></td>
-            <td><?php echo $d['personel_direct_cost_before_profit']; ?></td>
-            <td><?php echo $d['profit']; ?></td>
-            <td><?php echo $d['personel_direct_cost']; ?></td>
-            <td><?php echo $d['non_personel_direct_cost']; ?></td>
-            <td><?php echo $d['owner_estimate_before_tax']; ?></td>
-            <td><?php echo $d['tax']; ?></td>
-            <td><?php echo $d['owner_cost_estimate']; ?></td>
-        </tr>
-        <?php
-                }
-            }
-            ?>
-
+    <tr>
+                <td>Modu</td>
+                <td>Personnel</td>
+                <td>Profit 10%</td>
+                <td>Personnel + Profit</td>
+                <td>Non-Personnel</td>
+                <td>Cost Estimate</td>
+                <td>Tax 10%</td>
+                <td>Cost Estimate + Tax</td>
+            </tr>
+            <!-- <tr>
+                <td>Modul-ID</td>
+                <td>Personnel Direct Cost Before Profit (IDR)</td>
+                <td>Profit (IDR)</td>
+                <td>Personnel Direct Cost (IDR)</td>
+                <td>Non-Personnel Direct Cost (IDR)</td>
+                <td>Owner Estimate Before Taxes (IDR)</td>
+                <td>Tax (Value Added Tax 10%) (IDR)</td>
+                <td>Owner Cost Estimate (IDR)</td>
+            </tr> -->
+            <tr>
+                <td>1</td>
+                <td>653,429,543</td>
+                <td>65,342,954</td>
+                <td>718,772,497</td>
+                <td>43,250,000</td>
+                <td>762,022,497</td>
+                <td>76,202,250</td>
+                <td>838,224,747</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>820,579,305</td>
+                <td>82,057,931</td>
+                <td>902,637,236</td>
+                <td>35,660,000</td>
+                <td>938,297,236</td>
+                <td>93,829,724</td>
+                <td>1,032,126,960</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>514,320,060</td>
+                <td>51,432,006</td>
+                <td>565,752,066</td>
+                <td>38,850,000</td>
+                <td>604,602,066</td>
+                <td>60,460,207</td>
+                <td>665,062,273</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>606,496,378</td>
+                <td>60,649,638</td>
+                <td>667,146,016</td>
+                <td>47,210,000</td>
+                <td>714,356,016</td>
+                <td>71,435,602</td>
+                <td>785,791,618</td>
+            </tr>
     </table>
-
 
 </body>
 
@@ -3608,469 +2787,3 @@ if($res){
 <?php 
 }
 ?>
-
-<!-- <table border="1">
-        <tr>
-            <td>
-                <center><b>Project ID</b></center>
-            </td>
-            <td style="width:150px;">
-                <center><b>Personel Direct Cost before Profit (IDR)</b></center>
-            </td>
-            <td style="width:190px;">
-                <center><b>Profit (IDR)</b></center>
-            </td>
-            <td style="width:190px;">
-                <center><b>Personel Direct Cost (IDR)</b></center>
-            </td>
-        </tr>
-        <tr>
-            <td style="width:150px;">
-                <center>1</center>
-            </td>
-            <td style="width:150px;">
-                <center>653,429,543</center>
-            </td>
-            <td style="width:190px;">
-                <center>65,342,954</center>
-            </td>
-            <td style="width:190px;">
-                <center>718,772,497</center>
-            </td>
-        </tr>
-        <tr>
-            <td style="width:150px;">
-                <center>2</center>
-            </td>
-            <td style="width:150px;">
-                <center>820,579,305</center>
-            </td>
-            <td style="width:190px;">
-                <center>82,057,931</center>
-            </td>
-            <td style="width:190px;">
-                <center>902,637,236</center>
-            </td>
-        </tr>
-        <tr>
-            <td style="width:150px;">
-                <center>3</center>
-            </td>
-            <td style="width:150px;">
-                <center>359,949,026</center>
-            </td>
-            <td style="width:190px;">
-                <center>35,994,903</center>
-            </td>
-            <td style="width:190px;">
-                <center>395,943,929</center>
-            </td>
-        </tr>
-        <tr>
-            <td style="width:150px;">
-                <center>4</center>
-            </td>
-            <td style="width:150px;">
-                <center>424,560,488</center>
-            </td>
-            <td style="width:190px;">
-                <center>42,456,049</center>
-            </td>
-            <td style="width:190px;">
-                <center>467,016,537</center>
-            </td>
-        </tr>
-    </table> -->
-
-
-<!-- <table border="1">
-        <tr>
-            <td style="width:150px;" colspan="3px;"></td>
-            <td style="width:150px;">
-                <center><b>Payrate (IDR/Month)</b></center>
-            </td>
-            <td style="width:150px;" colspan="4px;">
-                <center><b>Project ID (Person Month)</b></center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center><b>No</b></center>
-            </td>
-            <td>
-                <center><b>Activity</b></center>
-            </td>
-            <td>
-                <center><b>Used by</b></center>
-            </td>
-            <td>
-                <center><b>Index = 1</b></center>
-            </td>
-            <td>
-                <center><b>1</b></center>
-            </td>
-            <td>
-                <center><b>2</b></center>
-            </td>
-            <td>
-                <center><b>3</b></center>
-            </td>
-            <td>
-                <center><b>4</b></center>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="3px;"></td>
-            <td>
-                <center><b>Index</b></center>
-            </td>
-            <td>
-                <center><b>0,923</b></center>
-            </td>
-            <td>
-                <center><b>0,923</b></center>
-            </td>
-            <td>
-                <center><b>0,923</b></center>
-            </td>
-            <td>
-                <center><b>0,923</b></center>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="8px">Software Development Phase</td>
-        </tr>
-        <tr>
-            <td>
-                <center>1</center>
-            </td>
-            <td>
-                <center>Requirements</center>
-            </td>
-            <td>
-                <center>System Analyst</center>
-            </td>
-            <td>
-                <center>12,000,000</center>
-            </td>
-            <td>
-                <center>8,750,040</center>
-            </td>
-            <td>
-                <center>10,965,240</center>
-            </td>
-            <td>
-                <center>6,867,120</center>
-            </td>
-            <td>
-                <center>8,085,480</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>2</center>
-            </td>
-            <td>
-                <center>Spesification</center>
-            </td>
-            <td>
-                <center>System Analyst</center>
-            </td>
-            <td>
-                <center>12,000,000</center>
-            </td>
-            <td>
-                <center>50,285,040</center>
-            </td>
-            <td>
-                <center>63,243,960</center>
-            </td>
-            <td>
-                <center>39,652,080</center>
-            </td>
-            <td>
-                <center>46,740,720</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>3</center>
-            </td>
-            <td>
-                <center>Design</center>
-            </td>
-            <td>
-                <center>System Analyst</center>
-            </td>
-            <td>
-                <center>12,000,000</center>
-            </td>
-            <td>
-                <center>41,535,000</center>
-            </td>
-            <td>
-                <center>52,167,960</center>
-            </td>
-            <td>
-                <center>32,674,200</center>
-            </td>
-            <td>
-                <center>38,544,480</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>4</center>
-            </td>
-            <td>
-                <center>Implementation</center>
-            </td>
-            <td>
-                <center>Programmer</center>
-            </td>
-            <td>
-                <center>11,000,000</center>
-            </td>
-            <td>
-                <center>380,432,910</center>
-            </td>
-            <td>
-                <center>477,597,120</center>
-            </td>
-            <td>
-                <center>299,411,970</center>
-            </td>
-            <td>
-                <center>353,121,340</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>5</center>
-            </td>
-            <td>
-                <center>Integration Testing</center>
-            </td>
-            <td>
-                <center>System Testing</center>
-            </td>
-            <td>
-                <center>9,300,000</center>
-            </td>
-            <td>
-                <center>37,082,448</center>
-            </td>
-            <td>
-                <center>46,610,577</center>
-            </td>
-            <td>
-                <center>29,185,260</center>
-            </td>
-            <td>
-                <center>34,421,439</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>6</center>
-            </td>
-            <td>
-                <center>Acceptance & Deployment</center>
-            </td>
-            <td>
-                <center>System Testing</center>
-            </td>
-            <td>
-                <center>9,300,000</center>
-            </td>
-            <td>
-                <center>32,361,303</center>
-            </td>
-            <td>
-                <center>40,601,847</center>
-            </td>
-            <td>
-                <center>25,494,183</center>
-            </td>
-            <td>
-                <center>30,043,650</center>
-            </td>
-        </tr>
-
-        <tr>
-            <td colspan="3px">Ongoing Activities & Quality And Testing</td>
-        </tr>
-        <tr>
-            <td>
-                <center>7</center>
-            </td>
-            <td>
-                <center>Project Management</center>
-            </td>
-            <td>
-                <center>Project Manager</center>
-            </td>
-            <td>
-                <center>18,250,000</center>
-            </td>
-            <td>
-                <center>28,972,970</center>
-            </td>
-            <td>
-                <center>36,384,660</center>
-            </td>
-            <td>
-                <center>22,740,413</center>
-            </td>
-            <td>
-                <center>26,783,153</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>8</center>
-            </td>
-            <td>
-                <center>Configuration Management</center>
-            </td>
-            <td>
-                <center>System Analyst</center>
-            </td>
-            <td>
-                <center>12,000,000</center>
-            </td>
-            <td>
-                <center>26,693,160</center>
-            </td>
-            <td>
-                <center>33,560,280</center>
-            </td>
-            <td>
-                <center>21,044,400</center>
-            </td>
-            <td>
-                <center>24,810,240</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>9</center>
-            </td>
-            <td>
-                <center>Quality Assurance</center>
-            </td>
-            <td>
-                <center>System Testing</center>
-            </td>
-            <td>
-                <center>9,300,000</center>
-            </td>
-            <td>
-                <center>3,776,916</center>
-            </td>
-            <td>
-                <center>4,806,984</center>
-            </td>
-            <td>
-                <center>3,004,365</center>
-            </td>
-            <td>
-                <center>3,519,399</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>10</center>
-            </td>
-            <td>
-                <center>Documentation</center>
-            </td>
-            <td>
-                <center>Documenter</center>
-            </td>
-            <td>
-                <center>5,000,000</center>
-            </td>
-            <td>
-                <center>30,320,550</center>
-            </td>
-            <td>
-                <center>38,073,750</center>
-            </td>
-            <td>
-                <center>23,859,550</center>
-            </td>
-            <td>
-                <center>28,151,500</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>11</center>
-            </td>
-            <td>
-                <center>Training & Support</center>
-            </td>
-            <td>
-                <center>Technical Support</center>
-            </td>
-            <td>
-                <center>9,300,000</center>
-            </td>
-            <td>
-                <center>3,605,238</center>
-            </td>
-            <td>
-                <center>4,463,628</center>
-            </td>
-            <td>
-                <center>2,832,687</center>
-            </td>
-            <td>
-                <center>3,347,721</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>12</center>
-            </td>
-            <td>
-                <center>Evaluation & Testing</center>
-            </td>
-            <td>
-                <center>System Testing</center>
-            </td>
-            <td>
-                <center>9,300,000</center>
-            </td>
-            <td>
-                <center>9,613,968</center>
-            </td>
-            <td>
-                <center>4,463,628</center>
-            </td>
-            <td>
-                <center>7,553,832</center>
-            </td>
-            <td>
-                <center>8,927,256</center>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="4px">
-                <center>Total</center>
-            </td>
-            <td>
-                <center>653,429,543</center>
-            </td>
-            <td>
-                <center>820,579,305</center>
-            </td>
-            <td>
-                <center>514,320,060</center>
-            </td>
-            <td>
-                <center>606,496,378</center>
-            </td>
-        </tr>
-    </table> -->

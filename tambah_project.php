@@ -156,11 +156,11 @@ if(isset($_SESSION['username'])==""){
                                     <?php
 
                                 $idProject = $_GET['project'];
-                                    $sqlTotal = "select sum(total) as total_project from modul WHERE id_project = '$idProject'";
+                                    $sqlTotal = "select sum(all_cost_user.profit) as profit from modul JOIN project ON modul.id_project = project.id_project JOIN all_cost_user ON modul.id_modul = all_cost_user.id_modul WHERE modul.id_project = '$idProject'";
                                     $cek = mysqli_query($con, $sqlTotal);
                                     if($cek){
                                         $rowTotal = mysqli_fetch_array($cek); 
-                                        echo rupiah(0);
+                                        echo rupiah($rowTotal['profit']);
                                     } 
                                    
                                 ?>
