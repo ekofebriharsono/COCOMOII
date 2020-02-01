@@ -347,7 +347,7 @@ if(isset($_POST['id_modul'])){
     if($resultsqlNonpersonnel){
       echo "Berhasil menyimpan data Non Personnel!".'</br>';
     }else{
-      echo "Gagal menyimpan data Non Personnel!".'</br>';
+      echo $sql;
     }
 
     // Data Step 10
@@ -394,8 +394,10 @@ if(isset($_POST['id_modul'])){
     $resultsqlTax = mysqli_query($con, $sqlTax);
 
     if($resultsqlProfit && $resultsqlTax){
+      echo '<a href="../tambah_project.php?project='.$id_project.'">OK</a>';
      // header('Location: ../tambah_project.php?project='.$id_project);
     }else {
+      echo '<a href="../tambah_project.php?project='.$id_project.'">OK</a>';
     //  header('Location: ../tambah_project.php?gagal=1');
     }
 

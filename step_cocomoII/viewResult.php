@@ -2166,6 +2166,9 @@ if($res){
             <td colspan="2">
                 <b>Total</b>
             </td>
+            <td>
+                100
+            </td>
             <?php 
                 $idUser = $_SESSION['id_user'];
                 $sql = "SELECT modul.id_modul, total_activity_user.value  FROM project 
@@ -2178,9 +2181,7 @@ if($res){
                 if($res){
                     while($d = mysqli_fetch_array($res)){ 
                         ?>
-            <td>
-                100
-            </td>
+            
             <td>
                 <?php echo $d['value']; ?>
             </td>
@@ -2286,9 +2287,7 @@ if($res){
             <td rowspan="2">
                 <center><b>Used By</b></center>
             </td>
-            <td rowspan="2">
-                <center><b>Index</b></center>
-            </td>
+
             <td colspan="<?php echo $totalModul; ?>">
                 <center><b>Modul-ID</b></center>
             </td>
@@ -2343,9 +2342,7 @@ if($res){
             <?php    }
 
                         ?>
-            <td>
-                <?php echo $d['payrate']; ?>
-            </td>
+     
             <td>
                 <?php echo $d['total']; ?>
             </td>
@@ -2385,9 +2382,7 @@ if($res){
 
                         ?>
 
-<td>
-                <?php echo $d['payrate']; ?>
-            </td>
+
             <td>
                 <?php echo $d['total']; ?>
             </td>
@@ -2427,9 +2422,6 @@ if($res){
 
                         ?>
 
-<td>
-                <?php echo $d['payrate']; ?>
-            </td>
             <td>
                 <?php echo $d['total']; ?>
             </td>
@@ -2469,9 +2461,7 @@ if($res){
 
                         ?>
 
-<td>
-                <?php echo $d['payrate']; ?>
-            </td>
+
             <td>
                 <?php echo $d['total']; ?>
             </td>
@@ -2511,9 +2501,7 @@ if($res){
 
                         ?>
 
-<td>
-                <?php echo $d['payrate']; ?>
-            </td>
+
             <td>
                 <?php echo $d['total']; ?>
             </td>
@@ -2553,9 +2541,7 @@ if($res){
 
                         ?>
 
-<td>
-                <?php echo $d['payrate']; ?>
-            </td>
+
             <td>
                 <?php echo $d['total']; ?>
             </td>
@@ -2595,9 +2581,7 @@ if($res){
 
                         ?>
 
-<td>
-                <?php echo $d['payrate']; ?>
-            </td>
+
             <td>
                 <?php echo $d['total']; ?>
             </td>
@@ -2637,9 +2621,6 @@ if($res){
 
                         ?>
 
-<td>
-                <?php echo $d['payrate']; ?>
-            </td>
             <td>
                 <?php echo $d['total']; ?>
             </td>
@@ -2679,9 +2660,6 @@ if($res){
 
                         ?>
 
-<td>
-                <?php echo $d['payrate']; ?>
-            </td>
             <td>
                 <?php echo $d['total']; ?>
             </td>
@@ -2721,9 +2699,6 @@ if($res){
 
                         ?>
 
-<td>
-                <?php echo $d['payrate']; ?>
-            </td>
             <td>
                 <?php echo $d['total']; ?>
             </td>
@@ -2763,9 +2738,6 @@ if($res){
 
                         ?>
 
-<td>
-                <?php echo $d['payrate']; ?>
-            </td>
             <td>
                 <?php echo $d['total']; ?>
             </td>
@@ -2805,9 +2777,6 @@ if($res){
 
                         ?>
 
-<td>
-                <?php echo $d['payrate']; ?>
-            </td>
             <td>
                 <?php echo $d['total']; ?>
             </td>
@@ -2817,7 +2786,7 @@ if($res){
             ?>
         </tr>
         <tr>
-            <td colspan="4">
+            <td colspan="3">
                 <b>Total</b>
             </td>
             <?php 
