@@ -149,7 +149,7 @@ if(isset($_SESSION['username'])==""){
                                 </table>
                             </div>
                         </div>
-                        <div class="col-6">
+                        <div class="col-3">
                             <form id="regBox" method="POST" action="#">
                                 <h6>Profit</h6>
                                 <h5 class="text-warning">
@@ -157,6 +157,24 @@ if(isset($_SESSION['username'])==""){
 
                                 $idProject = $_GET['project'];
                                     $sqlTotal = "select sum(all_cost_user.profit) as profit from modul JOIN project ON modul.id_project = project.id_project JOIN all_cost_user ON modul.id_modul = all_cost_user.id_modul WHERE modul.id_project = '$idProject'";
+                                    $cek = mysqli_query($con, $sqlTotal);
+                                    if($cek){
+                                        $rowTotal = mysqli_fetch_array($cek); 
+                                        echo rupiah($rowTotal['profit']);
+                                    } 
+                                   
+                                ?>
+                                </h5>
+                            </form>
+                        </div>
+                        <div class="col-3">
+                            <form id="regBox" method="POST" action="#">
+                                <h6>Tax</h6>
+                                <h5 class="text-warning">
+                                    <?php
+
+                                $idProject = $_GET['project'];
+                                    $sqlTotal = "select sum(all_cost_user.tax) as profit from modul JOIN project ON modul.id_project = project.id_project JOIN all_cost_user ON modul.id_modul = all_cost_user.id_modul WHERE modul.id_project = '$idProject'";
                                     $cek = mysqli_query($con, $sqlTotal);
                                     if($cek){
                                         $rowTotal = mysqli_fetch_array($cek); 
