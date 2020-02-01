@@ -85,6 +85,1854 @@ if(isset($_SESSION['username'])==""){
                 }
             ?>
 
+<table border="1">
+        <tr>
+            <td>Modul</td>
+            <td>Personnel</td>
+            <td>Profit 10%</td>
+            <td>Personnel + Profit</td>
+            <td>Non-Personnel</td>
+            <td>Cost Estimate</td>
+            <td>Tax 10%</td>
+            <td>Cost Estimate + Tax</td>
+        </tr>
+        <?php 
+
+                $sql = "SELECT all_cost_user.personel_direct_cost_before_profit, all_cost_user.profit, all_cost_user.personel_direct_cost, all_cost_user.non_personel_direct_cost, all_cost_user.owner_estimate_before_tax, all_cost_user.tax, all_cost_user.owner_cost_estimate from modul 
+                JOIN all_cost_user ON modul.id_modul = all_cost_user.id_modul 
+                JOIN project ON modul.id_project = project.id_project 
+                WHERE modul.id_project = '$idProject'";
+                $res = mysqli_query($con,$sql);
+                $no = 0;
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+        <tr>
+            <td><?php echo $no; ?></td>
+            <td><?php echo $d['personel_direct_cost_before_profit']; ?></td>
+            <td><?php echo $d['profit']; ?></td>
+            <td><?php echo $d['personel_direct_cost']; ?></td>
+            <td><?php echo $d['non_personel_direct_cost']; ?></td>
+            <td><?php echo $d['owner_estimate_before_tax']; ?></td>
+            <td><?php echo $d['tax']; ?></td>
+            <td><?php echo $d['owner_cost_estimate']; ?></td>
+        </tr>
+        <?php
+                }
+            }
+            ?>
+
+    </table>
+
+    <hr>
+
+
+    <table border="1">
+        <tr>
+            <td style="width:150px;">
+                <center><b>Position In Project Team</b></center>
+            </td>
+            <td style="width:150px;">
+                <center><b>Minimum Requirement</b></center>
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $sql = "SELECT modul.id_modul as idmodul
+                FROM project   
+                INNER JOIN modul  
+                ON project.id_project = modul.id_project WHERE project.id_project='$idProject'";
+                $res = mysqli_query($con,$sql);
+                $no = 0;
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++; ?>
+            <td style="width:150px;">
+                <center><b><?php echo "Payment Rate For Private Sector in Person Month Rate(PMR) Requirement Modul ".$no; ?></b></center>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td style="width:150px;">Project Management</td>
+            <td style="width:150px;">Minimal Undergraduate And Experience > 4 years</td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, pay_rate_user.public FROM project 
+                INNER JOIN modul ON project.id_project = modul.id_project 
+                INNER JOIN pay_rate_user ON modul.id_modul = pay_rate_user.id_modul 
+                WHERE project.id_project='$idProject' and pay_rate_user.position = 'Project Manager'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+
+            <td>
+                <?php echo $d['public']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td style="width:150px;">System Analyst</td>
+            <td style="width:150px;">Minimal Undergraduate And Experience > 3 years</td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, pay_rate_user.public FROM project 
+                INNER JOIN modul ON project.id_project = modul.id_project 
+                INNER JOIN pay_rate_user ON modul.id_modul = pay_rate_user.id_modul 
+                WHERE project.id_project='$idProject' and pay_rate_user.position = 'System Analyst'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+
+            <td>
+                <?php echo $d['public']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td style="width:150px;">Programmer</td>
+            <td style="width:150px;">Experience 1-2 years</td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, pay_rate_user.public FROM project 
+                INNER JOIN modul ON project.id_project = modul.id_project 
+                INNER JOIN pay_rate_user ON modul.id_modul = pay_rate_user.id_modul 
+                WHERE project.id_project='$idProject' and pay_rate_user.position = 'Programmer'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+
+            <td>
+                <?php echo $d['public']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td style="width:150px;">System Testing</td>
+            <td style="width:150px;">Experience 1-2 years</td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, pay_rate_user.public FROM project 
+                INNER JOIN modul ON project.id_project = modul.id_project 
+                INNER JOIN pay_rate_user ON modul.id_modul = pay_rate_user.id_modul 
+                WHERE project.id_project='$idProject' and pay_rate_user.position = 'System Testing'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+
+            <td>
+                <?php echo $d['public']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td style="width:150px;">Technical Support</td>
+            <td style="width:150px;">Experience 1-2 years</td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, pay_rate_user.public FROM project 
+                INNER JOIN modul ON project.id_project = modul.id_project 
+                INNER JOIN pay_rate_user ON modul.id_modul = pay_rate_user.id_modul 
+                WHERE project.id_project='$idProject' and pay_rate_user.position = 'Technical Support'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+
+            <td style="width:150px;">
+                <?php echo $d['public']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td style="width:150px;">Documenter</td>
+            <td style="width:150px;">Experience 1-2 years</td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, pay_rate_user.public FROM project 
+                INNER JOIN modul ON project.id_project = modul.id_project 
+                INNER JOIN pay_rate_user ON modul.id_modul = pay_rate_user.id_modul 
+                WHERE project.id_project='$idProject' and pay_rate_user.position = 'Documenter'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+
+            <td style="width:150px;">
+                <?php echo $d['public']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+    </table>
+
+    <hr>
+    <table border="1">
+        <tr>
+            <td rowspan="2">
+                <center><b>No</b></center>
+            </td>
+            <td rowspan="2">
+                <center><b>Activity</b></center>
+            </td>
+            <td rowspan="2">
+                <center><b>Used By</b></center>
+            </td>
+
+            <td colspan="<?php echo $totalModul; ?>">
+                <center><b>Modul-ID</b></center>
+            </td>
+        </tr>
+        <tr>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $sql = "SELECT modul.id_modul as idmodul   
+                FROM project  
+                INNER JOIN modul  
+                ON project.id_project = modul.id_project WHERE project.id_project='$idProject'";
+                $res = mysqli_query($con,$sql);
+                $no = 0;
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++; ?>
+            <td>
+                <center><b><?php echo $no; ?></b></center>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+
+        <tr>
+            <td>
+                1
+            </td>
+            <td>
+                Requirement
+            </td>
+            <?php 
+                $no = 0;
+                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value, activity_user.used, activity_user.payrate, activity_user.total  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN activity_user 
+                ON modul.id_modul = activity_user.id_modul 
+                WHERE project.id_project='$idProject' and activity_user.id_activity = 'rec'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+            <?php if($no == 1){ ?>
+
+            <td>
+                <?php echo $d['used']; ?>
+            </td>
+
+            <?php    }
+
+                        ?>
+     
+            <td>
+                <?php echo $d['total']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                2
+            </td>
+            <td>
+                Specifications
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value, activity_user.used, activity_user.payrate, activity_user.total FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN activity_user 
+                ON modul.id_modul = activity_user.id_modul 
+                WHERE project.id_project='$idProject' and activity_user.id_activity = 'spe'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+            <?php if($no == 1){ ?>
+
+            <td>
+                <?php echo $d['used']; ?>
+            </td>
+
+            <?php    }
+
+                        ?>
+
+
+            <td>
+                <?php echo $d['total']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                3
+            </td>
+            <td>
+                Design
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value, activity_user.used, activity_user.payrate, activity_user.total  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN activity_user 
+                ON modul.id_modul = activity_user.id_modul 
+                WHERE project.id_project='$idProject' and activity_user.id_activity = 'des'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+            <?php if($no == 1){ ?>
+
+            <td>
+                <?php echo $d['used']; ?>
+            </td>
+
+            <?php    }
+
+                        ?>
+
+            <td>
+                <?php echo $d['total']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                4
+            </td>
+            <td>
+                Implementation
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value, activity_user.used, activity_user.payrate, activity_user.total  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN activity_user 
+                ON modul.id_modul = activity_user.id_modul 
+                WHERE project.id_project='$idProject' and activity_user.id_activity = 'imp'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+            <?php if($no == 1){ ?>
+
+            <td>
+                <?php echo $d['used']; ?>
+            </td>
+
+            <?php    }
+
+                        ?>
+
+
+            <td>
+                <?php echo $d['total']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                5
+            </td>
+            <td>
+                Integration Testing
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value, activity_user.used, activity_user.payrate, activity_user.total  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN activity_user 
+                ON modul.id_modul = activity_user.id_modul 
+                WHERE project.id_project='$idProject' and activity_user.id_activity = 'int'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+            <?php if($no == 1){ ?>
+
+            <td>
+                <?php echo $d['used']; ?>
+            </td>
+
+            <?php    }
+
+                        ?>
+
+
+            <td>
+                <?php echo $d['total']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                6
+            </td>
+            <td>
+                Acceptance & deployment
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value, activity_user.used, activity_user.payrate, activity_user.total  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN activity_user 
+                ON modul.id_modul = activity_user.id_modul 
+                WHERE project.id_project='$idProject' and activity_user.id_activity = 'acc'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+            <?php if($no == 1){ ?>
+
+            <td>
+                <?php echo $d['used']; ?>
+            </td>
+
+            <?php    }
+
+                        ?>
+
+
+            <td>
+                <?php echo $d['total']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                7
+            </td>
+            <td>
+                Project Management
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value, activity_user.used, activity_user.payrate, activity_user.total  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN activity_user 
+                ON modul.id_modul = activity_user.id_modul 
+                WHERE project.id_project='$idProject' and activity_user.id_activity = 'pro'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+            <?php if($no == 1){ ?>
+
+            <td>
+                <?php echo $d['used']; ?>
+            </td>
+
+            <?php    }
+
+                        ?>
+
+
+            <td>
+                <?php echo $d['total']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                8
+            </td>
+            <td>
+                Configuration Management
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value, activity_user.used, activity_user.payrate, activity_user.total  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN activity_user 
+                ON modul.id_modul = activity_user.id_modul 
+                WHERE project.id_project='$idProject' and activity_user.id_activity = 'con'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+            <?php if($no == 1){ ?>
+
+            <td>
+                <?php echo $d['used']; ?>
+            </td>
+
+            <?php    }
+
+                        ?>
+
+            <td>
+                <?php echo $d['total']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                9
+            </td>
+            <td>
+                Quality Assurance
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value, activity_user.used, activity_user.payrate, activity_user.total  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN activity_user 
+                ON modul.id_modul = activity_user.id_modul 
+                WHERE project.id_project='$idProject' and activity_user.id_activity = 'qua'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+            <?php if($no == 1){ ?>
+
+            <td>
+                <?php echo $d['used']; ?>
+            </td>
+
+            <?php    }
+
+                        ?>
+
+            <td>
+                <?php echo $d['total']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                10
+            </td>
+            <td>
+                Documentations
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value, activity_user.used, activity_user.payrate, activity_user.total  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN activity_user 
+                ON modul.id_modul = activity_user.id_modul 
+                WHERE project.id_project='$idProject' and activity_user.id_activity = 'doc'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+            <?php if($no == 1){ ?>
+
+            <td>
+                <?php echo $d['used']; ?>
+            </td>
+
+            <?php    }
+
+                        ?>
+
+            <td>
+                <?php echo $d['total']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                11
+            </td>
+            <td>
+                Training & support
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value, activity_user.used, activity_user.payrate, activity_user.total  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN activity_user 
+                ON modul.id_modul = activity_user.id_modul 
+                WHERE project.id_project='$idProject' and activity_user.id_activity = 'tra'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+            <?php if($no == 1){ ?>
+
+            <td>
+                <?php echo $d['used']; ?>
+            </td>
+
+            <?php    }
+
+                        ?>
+
+            <td>
+                <?php echo $d['total']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                12
+            </td>
+            <td>
+                Evaluation & testing
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value, activity_user.used, activity_user.payrate, activity_user.total  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN activity_user 
+                ON modul.id_modul = activity_user.id_modul 
+                WHERE project.id_project='$idProject' and activity_user.id_activity = 'eva'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+            <?php if($no == 1){ ?>
+
+            <td>
+                <?php echo $d['used']; ?>
+            </td>
+
+            <?php    }
+
+                        ?>
+
+            <td>
+                <?php echo $d['total']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <b>Total</b>
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $sql = "SELECT modul.id_modul, total_activity_user.total  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN total_activity_user 
+                ON modul.id_modul = total_activity_user.id_modul 
+                WHERE project.id_project='$idProject'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        ?>
+       
+            <td>
+                <?php echo $d['total']; ?>
+            </td>
+
+            <?php
+                }
+            }
+            ?>
+        </tr>
+
+
+
+    </table>
+    <hr>
+
+    <table border="1">
+        <tr>
+            <td>Modul</td>
+            <td>Personnel</td>
+            <td>Profit 10%</td>
+            <td>Personnel + Profit</td>
+        </tr>
+        <?php 
+
+                $sql = "SELECT all_cost_user.personel_direct_cost_before_profit, all_cost_user.profit, all_cost_user.personel_direct_cost, all_cost_user.non_personel_direct_cost, all_cost_user.owner_estimate_before_tax, all_cost_user.tax, all_cost_user.owner_cost_estimate from modul 
+                JOIN all_cost_user ON modul.id_modul = all_cost_user.id_modul 
+                JOIN project ON modul.id_project = project.id_project 
+                WHERE modul.id_project = '$idProject';
+                ";
+                $res = mysqli_query($con,$sql);
+                $no = 0;
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+        <tr>
+            <td><?php echo $no; ?></td>
+            <td><?php echo $d['personel_direct_cost_before_profit']; ?></td>
+            <td><?php echo $d['profit']; ?></td>
+            <td><?php echo $d['personel_direct_cost']; ?></td>
+        </tr>
+        <?php
+                }
+            }
+            ?>
+
+    </table>
+
+    <hr>
+    <table border="1">
+        <tr>
+            <td rowspan="2">
+                <center><b>No</b></center>
+            </td>
+            <td rowspan="2">
+                <center><b>Cost Driver of Non-Personnel Direct Cost</b></center>
+            </td>
+            <td style="width:190px;" colspan="<?php echo $totalModul; ?>">
+                <center><b>Project ID (IDR)</b></center>
+            </td>
+        </tr>
+        <tr>
+        <?php 
+                $idUser = $_SESSION['id_user'];
+                $sql = "SELECT modul.id_modul as idmodul   
+                FROM project  
+                INNER JOIN modul  
+                ON project.id_project = modul.id_project WHERE project.id_project='$idProject'";
+                $res = mysqli_query($con,$sql);
+                $no = 0;
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++; ?>
+            <td>
+                <center><b><?php echo $no; ?></b></center>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+
+        <tr>
+            <td colspan="2px">Reimbursable</td>
+            
+        </tr>
+
+        <tr>
+            <td>
+                <center>1</center>
+            </td>
+            <td>
+                <center>Documents for Travel Abroad</center>
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, non_personel.biaya  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN non_personel 
+                ON modul.id_modul = non_personel.id_modul 
+                WHERE project.id_project='$idProject' and non_personel.name = 'Documents for Travel Abroad'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+           
+
+
+            <td>
+                <?php echo $d['biaya']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+           
+        </tr>
+
+        <tr>
+            <td>
+                <center>2</center>
+            </td>
+            <td>
+                <center>Transportation Ticket</center>
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, non_personel.biaya  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN non_personel 
+                ON modul.id_modul = non_personel.id_modul 
+                WHERE project.id_project='$idProject' and non_personel.name = 'Transportation Ticket'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+           
+
+
+            <td>
+                <?php echo $d['biaya']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+
+        <tr>
+            <td>
+                <center>3</center>
+            </td>
+            <td>
+                <center>Excess Baggage</center>
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, non_personel.biaya  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN non_personel 
+                ON modul.id_modul = non_personel.id_modul 
+                WHERE project.id_project='$idProject' and non_personel.name = 'Excess Baggage'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+           
+
+
+            <td>
+                <?php echo $d['biaya']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                <center>4</center>
+            </td>
+            <td>
+                <center>Unaccompanied Baggage</center>
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, non_personel.biaya  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN non_personel 
+                ON modul.id_modul = non_personel.id_modul 
+                WHERE project.id_project='$idProject' and non_personel.name = 'Unaccompanied Baggage'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+           
+
+
+            <td>
+                <?php echo $d['biaya']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                <center>5</center>
+            </td>
+            <td>
+                <center>Local/inland travel</center>
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, non_personel.biaya  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN non_personel 
+                ON modul.id_modul = non_personel.id_modul 
+                WHERE project.id_project='$idProject' and non_personel.name = 'Local/inland travel'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+           
+
+
+            <td>
+                <?php echo $d['biaya']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                <center>6</center>
+            </td>
+            <td>
+                <center>The Cost of Purchasing Project Needs</center>
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, non_personel.biaya  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN non_personel 
+                ON modul.id_modul = non_personel.id_modul 
+                WHERE project.id_project='$idProject' and non_personel.name = 'The Cost of Purchasing Project Needs'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+           
+
+
+            <td>
+                <?php echo $d['biaya']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                <center>7</center>
+            </td>
+            <td>
+                <center>Instalation Cost of Phone/internet/website</center>
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, non_personel.biaya  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN non_personel 
+                ON modul.id_modul = non_personel.id_modul 
+                WHERE project.id_project='$idProject' and non_personel.name = 'Instalation Cost of Phone/internet/website'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+           
+
+
+            <td>
+                <?php echo $d['biaya']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td colspan="2px">Fixed Unit Rate</td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, non_personel.biaya  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN non_personel 
+                ON modul.id_modul = non_personel.id_modul 
+                WHERE project.id_project='$idProject' and non_personel.name = 'Fixed Unit Rate'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+           
+
+
+            <td>
+                <?php echo $d['biaya']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                <center>8</center>
+            </td>
+            <td>
+                <center>Rent a vechile</center>
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, non_personel.biaya  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN non_personel 
+                ON modul.id_modul = non_personel.id_modul 
+                WHERE project.id_project='$idProject' and non_personel.name = 'Rent a vechile'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+           
+
+
+            <td>
+                <?php echo $d['biaya']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                <center>9</center>
+            </td>
+            <td>
+                <center>Rent the project office</center>
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, non_personel.biaya  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN non_personel 
+                ON modul.id_modul = non_personel.id_modul 
+                WHERE project.id_project='$idProject' and non_personel.name = 'Rent the project office'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+           
+
+
+            <td>
+                <?php echo $d['biaya']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                <center>10</center>
+            </td>
+            <td>
+                <center>Rent office equipment</center>
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, non_personel.biaya  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN non_personel 
+                ON modul.id_modul = non_personel.id_modul 
+                WHERE project.id_project='$idProject' and non_personel.name = 'Rent office equipment'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+           
+
+
+            <td>
+                <?php echo $d['biaya']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                <center>11</center>
+            </td>
+            <td>
+                <center>Rent office furniture</center>
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, non_personel.biaya  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN non_personel 
+                ON modul.id_modul = non_personel.id_modul 
+                WHERE project.id_project='$idProject' and non_personel.name = 'Rent office furniture'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+           
+
+
+            <td>
+                <?php echo $d['biaya']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                <center>12</center>
+            </td>
+            <td>
+                <center>Operational Cost of The Project Office</center>
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, non_personel.biaya  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN non_personel 
+                ON modul.id_modul = non_personel.id_modul 
+                WHERE project.id_project='$idProject' and non_personel.name = 'Operational Cost of The Project Office'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+           
+
+
+            <td>
+                <?php echo $d['biaya']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                <center>13</center>
+            </td>
+            <td>
+                <center>Office Consumabled</center>
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, non_personel.biaya  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN non_personel 
+                ON modul.id_modul = non_personel.id_modul 
+                WHERE project.id_project='$idProject' and non_personel.name = 'Office Consumabled'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+           
+
+
+            <td>
+                <?php echo $d['biaya']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                <center>14</center>
+            </td>
+            <td>
+                <center>Computer and Printer Consumables</center>
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, non_personel.biaya  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN non_personel 
+                ON modul.id_modul = non_personel.id_modul 
+                WHERE project.id_project='$idProject' and non_personel.name = 'Computer and Printer Consumables'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+           
+
+
+            <td>
+                <?php echo $d['biaya']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                <center>15</center>
+            </td>
+            <td>
+                <center>Communication Costs</center>
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, non_personel.biaya  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN non_personel 
+                ON modul.id_modul = non_personel.id_modul 
+                WHERE project.id_project='$idProject' and non_personel.name = 'Communication Costs'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+           
+
+
+            <td>
+                <?php echo $d['biaya']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                <center>16</center>
+            </td>
+            <td>
+                <center>Per Diem Allowwance</center>
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, non_personel.biaya  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN non_personel 
+                ON modul.id_modul = non_personel.id_modul 
+                WHERE project.id_project='$idProject' and non_personel.name = 'Per Diem Allowwance'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+           
+
+
+            <td>
+                <?php echo $d['biaya']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                <center>17</center>
+            </td>
+            <td>
+                <center>Housing Allowwance</center>
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, non_personel.biaya  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN non_personel 
+                ON modul.id_modul = non_personel.id_modul 
+                WHERE project.id_project='$idProject' and non_personel.name = 'Housing Allowwance'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+           
+
+
+            <td>
+                <?php echo $d['biaya']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                <center>18</center>
+            </td>
+            <td>
+                <center>Temporaray Loadging</center>
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, non_personel.biaya  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN non_personel 
+                ON modul.id_modul = non_personel.id_modul 
+                WHERE project.id_project='$idProject' and non_personel.name = 'Temporaray Loadging'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+           
+
+
+            <td>
+                <?php echo $d['biaya']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                <center>19</center>
+            </td>
+            <td>
+                <center>Relocation Allowwance</center>
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, non_personel.biaya  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN non_personel 
+                ON modul.id_modul = non_personel.id_modul 
+                WHERE project.id_project='$idProject' and non_personel.name = 'Relocation Allowwance'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+           
+
+
+            <td>
+                <?php echo $d['biaya']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                <center>20</center>
+            </td>
+            <td>
+                <center>Out Of Station Allowwance</center>
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, non_personel.biaya  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN non_personel 
+                ON modul.id_modul = non_personel.id_modul 
+                WHERE project.id_project='$idProject' and non_personel.name = 'Out Of Station Allowwance'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+           
+
+
+            <td>
+                <?php echo $d['biaya']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                <center>21</center>
+            </td>
+            <td>
+                <center>Eksternal Task Lodging</center>
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, non_personel.biaya  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN non_personel 
+                ON modul.id_modul = non_personel.id_modul 
+                WHERE project.id_project='$idProject' and non_personel.name = 'Eksternal Task Lodging'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+           
+
+
+            <td>
+                <?php echo $d['biaya']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                <center>22</center>
+            </td>
+            <td>
+                <center>Annual Leave</center>
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, non_personel.biaya  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN non_personel 
+                ON modul.id_modul = non_personel.id_modul 
+                WHERE project.id_project='$idProject' and non_personel.name = 'Annual Leave'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+           
+
+
+            <td>
+                <?php echo $d['biaya']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                <center>23</center>
+            </td>
+            <td>
+                <center>Reporting Costs</center>
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, non_personel.biaya  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN non_personel 
+                ON modul.id_modul = non_personel.id_modul 
+                WHERE project.id_project='$idProject' and non_personel.name = 'Reporting Costs'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+           
+
+
+            <td>
+                <?php echo $d['biaya']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                <center>24</center>
+            </td>
+            <td>
+                <center>Rent Supporting Equipment</center>
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, non_personel.biaya  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN non_personel 
+                ON modul.id_modul = non_personel.id_modul 
+                WHERE project.id_project='$idProject' and non_personel.name = 'Rent Supporting Equipment'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+           
+
+
+            <td>
+                <?php echo $d['biaya']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td colspan="2px">Lumpsum</td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, non_personel.biaya  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN non_personel 
+                ON modul.id_modul = non_personel.id_modul 
+                WHERE project.id_project='$idProject' and non_personel.name = 'Lumpsum'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+           
+
+
+            <td>
+                <?php echo $d['biaya']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                <center>25</center>
+            </td>
+            <td>
+                <center>Secondary Data Collection</center>
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, non_personel.biaya  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN non_personel 
+                ON modul.id_modul = non_personel.id_modul 
+                WHERE project.id_project='$idProject' and non_personel.name = 'Secondary Data Collection'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+           
+
+
+            <td>
+                <?php echo $d['biaya']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                <center>26</center>
+            </td>
+            <td>
+                <center style="width:150px;">Seminar, workshop, socialization, training, dissemination, discussion,
+                    coordination, among agencies, and Focus Group discussion</center>
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, non_personel.biaya  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN non_personel 
+                ON modul.id_modul = non_personel.id_modul 
+                WHERE project.id_project='$idProject' and non_personel.name like '%Seminar%'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+           
+
+
+            <td>
+                <?php echo $d['biaya']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                <center>27</center>
+            </td>
+            <td>
+                <center>Survey</center>
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, non_personel.biaya  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN non_personel 
+                ON modul.id_modul = non_personel.id_modul 
+                WHERE project.id_project='$idProject' and non_personel.name = 'Survey'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+           
+
+
+            <td>
+                <?php echo $d['biaya']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                <center>28</center>
+            </td>
+            <td>
+                <center>Laboratory Test</center>
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, non_personel.biaya  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN non_personel 
+                ON modul.id_modul = non_personel.id_modul 
+                WHERE project.id_project='$idProject' and non_personel.name = 'Laboratory Test'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+           
+
+
+            <td>
+                <?php echo $d['biaya']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        <tr>
+            <td>
+                <center>29</center>
+            </td>
+            <td>
+                <center>Copyright</center>
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT modul.id_modul, non_personel.biaya  FROM project 
+                INNER JOIN modul 
+                ON project.id_project = modul.id_project 
+                INNER JOIN non_personel 
+                ON modul.id_modul = non_personel.id_modul 
+                WHERE project.id_project='$idProject' and non_personel.name = 'Copyright'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+           
+
+
+            <td>
+                <?php echo $d['biaya']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+        </tr>
+        <tr>
+            <td colspan="2px">
+                <center>Total of Non-Personel Direct Costs</center>
+            </td>
+            <?php 
+                $idUser = $_SESSION['id_user'];
+                $no = 0;
+                $sql = "SELECT all_cost_user.personel_direct_cost_before_profit, all_cost_user.profit, all_cost_user.personel_direct_cost, all_cost_user.non_personel_direct_cost, all_cost_user.owner_estimate_before_tax, all_cost_user.tax, all_cost_user.owner_cost_estimate from modul 
+                JOIN all_cost_user ON modul.id_modul = all_cost_user.id_modul 
+                JOIN project ON modul.id_project = project.id_project 
+                WHERE modul.id_project = '$idProject'";
+                $res = mysqli_query($con,$sql);
+                if($res){
+                    while($d = mysqli_fetch_array($res)){ 
+                        $no++;
+                        ?>
+           
+
+
+            <td>
+                <?php echo $d['non_personel_direct_cost']; ?>
+            </td>
+            <?php
+                }
+            }
+            ?>
+        </tr>
+    </table>
+
+    <hr>
+
     <table border="1">
         <tr>
             <td rowspan="2">
@@ -2196,1377 +4044,6 @@ if($res){
 
     </table>
 
-    <hr>
-
-    <table border="1">
-        <tr>
-            <td style="width:150px;">
-                <center><b>Position In Project Team</b></center>
-            </td>
-            <td style="width:150px;">
-                <center><b>Minimum Requirement</b></center>
-            </td>
-            <td style="width:190px;">
-                <center><b>Payment Rate For Private Sector in Person Month Rate(PMR) Requirement</b></center>
-            </td>
-            <td style="width:150px;">
-                <center><b>Payment Rate For Public Sector (70% OF Private Sector[6])</b></center>
-            </td>
-        </tr>
-        <tr>
-            <td style="width:150px;">Project Management</td>
-            <td style="width:150px;">Minimal Undergraduate And Experience > 4 years</td>
-            <td style="width:150px;">
-                <center>18,250,000</center>
-            </td>
-            <td style="width:150px;">
-                <center>12,775,000</center>
-            </td>
-        </tr>
-        <tr>
-            <td style="width:150px;">System Analyst</td>
-            <td style="width:150px;">Minimal Undergraduate And Experience > 3 years</td>
-            <td style="width:150px;">
-                <center>12,000,000</center>
-            </td>
-            <td style="width:150px;">
-                <center>8,400,000</center>
-            </td>
-        </tr>
-        <tr>
-            <td style="width:150px;">Programmer</td>
-            <td style="width:150px;">Experience 1-2 years</td>
-            <td style="width:150px;">
-                <center>11,000,000</center>
-            </td>
-            <td style="width:150px;">
-                <center>7,700,000</center>
-            </td>
-        </tr>
-        <tr>
-            <td style="width:150px;">System Testing</td>
-            <td style="width:150px;">Experience 1-2 years</td>
-            <td style="width:150px;">
-                <center>9,300,000</center>
-            </td>
-            <td style="width:150px;">
-                <center>6,510,000</center>
-            </td>
-        </tr>
-        <tr>
-            <td style="width:150px;">Technical Support</td>
-            <td style="width:150px;">Experience 1-2 years</td>
-            <td style="width:150px;">
-                <center>9,300,000</center>
-            </td>
-            <td style="width:150px;">
-                <center>6,510,000</center>
-            </td>
-        </tr>
-        <tr>
-            <td style="width:150px;">Documenter</td>
-            <td style="width:150px;">Experience 1-2 years</td>
-            <td style="width:150px;">
-                <center>5,000,000</center>
-            </td>
-            <td style="width:150px;">
-                <center>3,500,000</center>
-            </td>
-        </tr>
-    </table>
-
-    <hr>
-    <table border="1">
-        <tr>
-            <td rowspan="2">
-                <center><b>No</b></center>
-            </td>
-            <td rowspan="2">
-                <center><b>Activity</b></center>
-            </td>
-            <td rowspan="2">
-                <center><b>Used By</b></center>
-            </td>
-
-            <td colspan="<?php echo $totalModul; ?>">
-                <center><b>Modul-ID</b></center>
-            </td>
-        </tr>
-        <tr>
-            <?php 
-                $idUser = $_SESSION['id_user'];
-                $sql = "SELECT modul.id_modul as idmodul   
-                FROM project  
-                INNER JOIN modul  
-                ON project.id_project = modul.id_project WHERE project.id_project='$idProject'";
-                $res = mysqli_query($con,$sql);
-                $no = 0;
-                if($res){
-                    while($d = mysqli_fetch_array($res)){ 
-                        $no++; ?>
-            <td>
-                <center><b><?php echo $no; ?></b></center>
-            </td>
-            <?php
-                }
-            }
-            ?>
-        </tr>
-
-        <tr>
-            <td>
-                1
-            </td>
-            <td>
-                Requirement
-            </td>
-            <?php 
-                $no = 0;
-                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value, activity_user.used, activity_user.payrate, activity_user.total  FROM project 
-                INNER JOIN modul 
-                ON project.id_project = modul.id_project 
-                INNER JOIN activity_user 
-                ON modul.id_modul = activity_user.id_modul 
-                WHERE project.id_project='$idProject' and activity_user.id_activity = 'rec'";
-                $res = mysqli_query($con,$sql);
-                if($res){
-                    while($d = mysqli_fetch_array($res)){ 
-                        $no++;
-                        ?>
-            <?php if($no == 1){ ?>
-
-            <td>
-                <?php echo $d['used']; ?>
-            </td>
-
-            <?php    }
-
-                        ?>
-     
-            <td>
-                <?php echo $d['total']; ?>
-            </td>
-            <?php
-                }
-            }
-            ?>
-        </tr>
-        <tr>
-            <td>
-                2
-            </td>
-            <td>
-                Specifications
-            </td>
-            <?php 
-                $idUser = $_SESSION['id_user'];
-                $no = 0;
-                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value, activity_user.used, activity_user.payrate, activity_user.total FROM project 
-                INNER JOIN modul 
-                ON project.id_project = modul.id_project 
-                INNER JOIN activity_user 
-                ON modul.id_modul = activity_user.id_modul 
-                WHERE project.id_project='$idProject' and activity_user.id_activity = 'spe'";
-                $res = mysqli_query($con,$sql);
-                if($res){
-                    while($d = mysqli_fetch_array($res)){ 
-                        $no++;
-                        ?>
-            <?php if($no == 1){ ?>
-
-            <td>
-                <?php echo $d['used']; ?>
-            </td>
-
-            <?php    }
-
-                        ?>
-
-
-            <td>
-                <?php echo $d['total']; ?>
-            </td>
-            <?php
-                }
-            }
-            ?>
-        </tr>
-        <tr>
-            <td>
-                3
-            </td>
-            <td>
-                Design
-            </td>
-            <?php 
-                $idUser = $_SESSION['id_user'];
-                $no = 0;
-                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value, activity_user.used, activity_user.payrate, activity_user.total  FROM project 
-                INNER JOIN modul 
-                ON project.id_project = modul.id_project 
-                INNER JOIN activity_user 
-                ON modul.id_modul = activity_user.id_modul 
-                WHERE project.id_project='$idProject' and activity_user.id_activity = 'des'";
-                $res = mysqli_query($con,$sql);
-                if($res){
-                    while($d = mysqli_fetch_array($res)){ 
-                        $no++;
-                        ?>
-            <?php if($no == 1){ ?>
-
-            <td>
-                <?php echo $d['used']; ?>
-            </td>
-
-            <?php    }
-
-                        ?>
-
-            <td>
-                <?php echo $d['total']; ?>
-            </td>
-            <?php
-                }
-            }
-            ?>
-        </tr>
-        <tr>
-            <td>
-                4
-            </td>
-            <td>
-                Implementation
-            </td>
-            <?php 
-                $idUser = $_SESSION['id_user'];
-                $no = 0;
-                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value, activity_user.used, activity_user.payrate, activity_user.total  FROM project 
-                INNER JOIN modul 
-                ON project.id_project = modul.id_project 
-                INNER JOIN activity_user 
-                ON modul.id_modul = activity_user.id_modul 
-                WHERE project.id_project='$idProject' and activity_user.id_activity = 'imp'";
-                $res = mysqli_query($con,$sql);
-                if($res){
-                    while($d = mysqli_fetch_array($res)){ 
-                        $no++;
-                        ?>
-            <?php if($no == 1){ ?>
-
-            <td>
-                <?php echo $d['used']; ?>
-            </td>
-
-            <?php    }
-
-                        ?>
-
-
-            <td>
-                <?php echo $d['total']; ?>
-            </td>
-            <?php
-                }
-            }
-            ?>
-        </tr>
-        <tr>
-            <td>
-                5
-            </td>
-            <td>
-                Integration Testing
-            </td>
-            <?php 
-                $idUser = $_SESSION['id_user'];
-                $no = 0;
-                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value, activity_user.used, activity_user.payrate, activity_user.total  FROM project 
-                INNER JOIN modul 
-                ON project.id_project = modul.id_project 
-                INNER JOIN activity_user 
-                ON modul.id_modul = activity_user.id_modul 
-                WHERE project.id_project='$idProject' and activity_user.id_activity = 'int'";
-                $res = mysqli_query($con,$sql);
-                if($res){
-                    while($d = mysqli_fetch_array($res)){ 
-                        $no++;
-                        ?>
-            <?php if($no == 1){ ?>
-
-            <td>
-                <?php echo $d['used']; ?>
-            </td>
-
-            <?php    }
-
-                        ?>
-
-
-            <td>
-                <?php echo $d['total']; ?>
-            </td>
-            <?php
-                }
-            }
-            ?>
-        </tr>
-        <tr>
-            <td>
-                6
-            </td>
-            <td>
-                Acceptance & deployment
-            </td>
-            <?php 
-                $idUser = $_SESSION['id_user'];
-                $no = 0;
-                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value, activity_user.used, activity_user.payrate, activity_user.total  FROM project 
-                INNER JOIN modul 
-                ON project.id_project = modul.id_project 
-                INNER JOIN activity_user 
-                ON modul.id_modul = activity_user.id_modul 
-                WHERE project.id_project='$idProject' and activity_user.id_activity = 'acc'";
-                $res = mysqli_query($con,$sql);
-                if($res){
-                    while($d = mysqli_fetch_array($res)){ 
-                        $no++;
-                        ?>
-            <?php if($no == 1){ ?>
-
-            <td>
-                <?php echo $d['used']; ?>
-            </td>
-
-            <?php    }
-
-                        ?>
-
-
-            <td>
-                <?php echo $d['total']; ?>
-            </td>
-            <?php
-                }
-            }
-            ?>
-        </tr>
-        <tr>
-            <td>
-                7
-            </td>
-            <td>
-                Project Management
-            </td>
-            <?php 
-                $idUser = $_SESSION['id_user'];
-                $no = 0;
-                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value, activity_user.used, activity_user.payrate, activity_user.total  FROM project 
-                INNER JOIN modul 
-                ON project.id_project = modul.id_project 
-                INNER JOIN activity_user 
-                ON modul.id_modul = activity_user.id_modul 
-                WHERE project.id_project='$idProject' and activity_user.id_activity = 'pro'";
-                $res = mysqli_query($con,$sql);
-                if($res){
-                    while($d = mysqli_fetch_array($res)){ 
-                        $no++;
-                        ?>
-            <?php if($no == 1){ ?>
-
-            <td>
-                <?php echo $d['used']; ?>
-            </td>
-
-            <?php    }
-
-                        ?>
-
-
-            <td>
-                <?php echo $d['total']; ?>
-            </td>
-            <?php
-                }
-            }
-            ?>
-        </tr>
-        <tr>
-            <td>
-                8
-            </td>
-            <td>
-                Configuration Management
-            </td>
-            <?php 
-                $idUser = $_SESSION['id_user'];
-                $no = 0;
-                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value, activity_user.used, activity_user.payrate, activity_user.total  FROM project 
-                INNER JOIN modul 
-                ON project.id_project = modul.id_project 
-                INNER JOIN activity_user 
-                ON modul.id_modul = activity_user.id_modul 
-                WHERE project.id_project='$idProject' and activity_user.id_activity = 'con'";
-                $res = mysqli_query($con,$sql);
-                if($res){
-                    while($d = mysqli_fetch_array($res)){ 
-                        $no++;
-                        ?>
-            <?php if($no == 1){ ?>
-
-            <td>
-                <?php echo $d['used']; ?>
-            </td>
-
-            <?php    }
-
-                        ?>
-
-            <td>
-                <?php echo $d['total']; ?>
-            </td>
-            <?php
-                }
-            }
-            ?>
-        </tr>
-        <tr>
-            <td>
-                9
-            </td>
-            <td>
-                Quality Assurance
-            </td>
-            <?php 
-                $idUser = $_SESSION['id_user'];
-                $no = 0;
-                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value, activity_user.used, activity_user.payrate, activity_user.total  FROM project 
-                INNER JOIN modul 
-                ON project.id_project = modul.id_project 
-                INNER JOIN activity_user 
-                ON modul.id_modul = activity_user.id_modul 
-                WHERE project.id_project='$idProject' and activity_user.id_activity = 'qua'";
-                $res = mysqli_query($con,$sql);
-                if($res){
-                    while($d = mysqli_fetch_array($res)){ 
-                        $no++;
-                        ?>
-            <?php if($no == 1){ ?>
-
-            <td>
-                <?php echo $d['used']; ?>
-            </td>
-
-            <?php    }
-
-                        ?>
-
-            <td>
-                <?php echo $d['total']; ?>
-            </td>
-            <?php
-                }
-            }
-            ?>
-        </tr>
-        <tr>
-            <td>
-                10
-            </td>
-            <td>
-                Documentations
-            </td>
-            <?php 
-                $idUser = $_SESSION['id_user'];
-                $no = 0;
-                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value, activity_user.used, activity_user.payrate, activity_user.total  FROM project 
-                INNER JOIN modul 
-                ON project.id_project = modul.id_project 
-                INNER JOIN activity_user 
-                ON modul.id_modul = activity_user.id_modul 
-                WHERE project.id_project='$idProject' and activity_user.id_activity = 'doc'";
-                $res = mysqli_query($con,$sql);
-                if($res){
-                    while($d = mysqli_fetch_array($res)){ 
-                        $no++;
-                        ?>
-            <?php if($no == 1){ ?>
-
-            <td>
-                <?php echo $d['used']; ?>
-            </td>
-
-            <?php    }
-
-                        ?>
-
-            <td>
-                <?php echo $d['total']; ?>
-            </td>
-            <?php
-                }
-            }
-            ?>
-        </tr>
-        <tr>
-            <td>
-                11
-            </td>
-            <td>
-                Training & support
-            </td>
-            <?php 
-                $idUser = $_SESSION['id_user'];
-                $no = 0;
-                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value, activity_user.used, activity_user.payrate, activity_user.total  FROM project 
-                INNER JOIN modul 
-                ON project.id_project = modul.id_project 
-                INNER JOIN activity_user 
-                ON modul.id_modul = activity_user.id_modul 
-                WHERE project.id_project='$idProject' and activity_user.id_activity = 'tra'";
-                $res = mysqli_query($con,$sql);
-                if($res){
-                    while($d = mysqli_fetch_array($res)){ 
-                        $no++;
-                        ?>
-            <?php if($no == 1){ ?>
-
-            <td>
-                <?php echo $d['used']; ?>
-            </td>
-
-            <?php    }
-
-                        ?>
-
-            <td>
-                <?php echo $d['total']; ?>
-            </td>
-            <?php
-                }
-            }
-            ?>
-        </tr>
-        <tr>
-            <td>
-                12
-            </td>
-            <td>
-                Evaluation & testing
-            </td>
-            <?php 
-                $idUser = $_SESSION['id_user'];
-                $no = 0;
-                $sql = "SELECT modul.id_modul, activity_user.persen, activity_user.value, activity_user.used, activity_user.payrate, activity_user.total  FROM project 
-                INNER JOIN modul 
-                ON project.id_project = modul.id_project 
-                INNER JOIN activity_user 
-                ON modul.id_modul = activity_user.id_modul 
-                WHERE project.id_project='$idProject' and activity_user.id_activity = 'eva'";
-                $res = mysqli_query($con,$sql);
-                if($res){
-                    while($d = mysqli_fetch_array($res)){ 
-                        $no++;
-                        ?>
-            <?php if($no == 1){ ?>
-
-            <td>
-                <?php echo $d['used']; ?>
-            </td>
-
-            <?php    }
-
-                        ?>
-
-            <td>
-                <?php echo $d['total']; ?>
-            </td>
-            <?php
-                }
-            }
-            ?>
-        </tr>
-        <tr>
-            <td colspan="3">
-                <b>Total</b>
-            </td>
-            <?php 
-                $idUser = $_SESSION['id_user'];
-                $sql = "SELECT modul.id_modul, total_activity_user.total  FROM project 
-                INNER JOIN modul 
-                ON project.id_project = modul.id_project 
-                INNER JOIN total_activity_user 
-                ON modul.id_modul = total_activity_user.id_modul 
-                WHERE project.id_project='$idProject'";
-                $res = mysqli_query($con,$sql);
-                if($res){
-                    while($d = mysqli_fetch_array($res)){ 
-                        ?>
-       
-            <td>
-                <?php echo $d['total']; ?>
-            </td>
-
-            <?php
-                }
-            }
-            ?>
-        </tr>
-
-
-
-    </table>
-    <hr>
-
-    <table border="1">
-        <tr>
-            <td>Modul</td>
-            <td>Personnel</td>
-            <td>Profit 10%</td>
-            <td>Personnel + Profit</td>
-        </tr>
-        <?php 
-
-                $sql = "SELECT all_cost_user.personel_direct_cost_before_profit, all_cost_user.profit, all_cost_user.personel_direct_cost, all_cost_user.non_personel_direct_cost, all_cost_user.owner_estimate_before_tax, all_cost_user.tax, all_cost_user.owner_cost_estimate from modul 
-                JOIN all_cost_user ON modul.id_modul = all_cost_user.id_modul 
-                JOIN project ON modul.id_project = project.id_project 
-                WHERE modul.id_project = '$idProject';
-                ";
-                $res = mysqli_query($con,$sql);
-                $no = 0;
-                if($res){
-                    while($d = mysqli_fetch_array($res)){ 
-                        $no++;
-                        ?>
-        <tr>
-            <td><?php echo $no; ?></td>
-            <td><?php echo $d['personel_direct_cost_before_profit']; ?></td>
-            <td><?php echo $d['profit']; ?></td>
-            <td><?php echo $d['personel_direct_cost']; ?></td>
-        </tr>
-        <?php
-                }
-            }
-            ?>
-
-    </table>
-
-    <hr>
-    <table border="1">
-        <tr>
-            <td rowspan="2">
-                <center><b>No</b></center>
-            </td>
-            <td rowspan="2">
-                <center><b>Cost Driver of Non-Personnel Direct Cost</b></center>
-            </td>
-            <td style="width:190px;" colspan="4px">
-                <center><b>Project ID (IDR)</b></center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>1</center>
-            </td>
-            <td>
-                <center>2</center>
-            </td>
-            <td>
-                <center>3</center>
-            </td>
-            <td>
-                <center>4</center>
-            </td>
-        </tr>
-
-        <tr>
-            <td colspan="2px">Reimbursable</td>
-            <td>
-                <center>14,700,000</center>
-            </td>
-            <td>
-                <center>5,060,000</center>
-            </td>
-            <td>
-                <center>15,900,000</center>
-            </td>
-            <td>
-                <center>19,100,000</center>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <center>1</center>
-            </td>
-            <td>
-                <center>Documents for Travel Abroad</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <center>2</center>
-            </td>
-            <td>
-                <center>Transportation Ticket</center>
-            </td>
-            <td>
-                <center>3,500,000</center>
-            </td>
-            <td>
-                <center>2,760,000</center>
-            </td>
-            <td>
-                <center>5,000,000</center>
-            </td>
-            <td>
-                <center>5,300,000</center>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <center>3</center>
-            </td>
-            <td>
-                <center>Excess Baggage</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>4</center>
-            </td>
-            <td>
-                <center>Unaccompanied Baggage</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>5</center>
-            </td>
-            <td>
-                <center>Local/inland travel</center>
-            </td>
-            <td>
-                <center>1,200,000</center>
-            </td>
-            <td>
-                <center>2,300,000</center>
-            </td>
-            <td>
-                <center>3,300,000</center>
-            </td>
-            <td>
-                <center>5,000,000</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>6</center>
-            </td>
-            <td>
-                <center>The Cost of Purchasing Project Needs</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>7</center>
-            </td>
-            <td>
-                <center>Instalation Cost of Phone/internet/website</center>
-            </td>
-            <td>
-                <center>10,000,000</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>7,600,000</center>
-            </td>
-            <td>
-                <center>8,800,000</center>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2px">Fixed Unit Rate</td>
-            <td>
-                <center>24,750,00</center>
-            </td>
-            <td>
-                <center>25,600,000</center>
-            </td>
-            <td>
-                <center>16,050,000</center>
-            </td>
-            <td>
-                <center>23,310,000</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>8</center>
-            </td>
-            <td>
-                <center>Rent a vechile</center>
-            </td>
-            <td>
-                <center>5,600,000</center>
-            </td>
-            <td>
-                <center>7,400,000</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>9</center>
-            </td>
-            <td>
-                <center>Rent the project office</center>
-            </td>
-            <td>
-                <center>3,000,000</center>
-            </td>
-            <td>
-                <center>5,000,000</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>7,000,000</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>10</center>
-            </td>
-            <td>
-                <center>Rent office equipment</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>11</center>
-            </td>
-            <td>
-                <center>Rent office furniture</center>
-            </td>
-            <td>
-                <center>2,000,000</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>12</center>
-            </td>
-            <td>
-                <center>Operational Cost of The Project Office</center>
-            </td>
-            <td>
-                <center>850,000</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>1,200,000</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>13</center>
-            </td>
-            <td>
-                <center>Office Consumabled</center>
-            </td>
-            <td>
-                <center>800,000</center>
-            </td>
-            <td>
-                <center>1,200,000</center>
-            </td>
-            <td>
-                <center>2,300,000</center>
-            </td>
-            <td>
-                <center>760,000</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>14</center>
-            </td>
-            <td>
-                <center>Computer and Printer Consumables</center>
-            </td>
-            <td>
-                <center>1,500,000</center>
-            </td>
-            <td>
-                <center>3,000,000</center>
-            </td>
-            <td>
-                <center>2,500,000</center>
-            </td>
-            <td>
-                <center>2,500,000</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>15</center>
-            </td>
-            <td>
-                <center>Communication Costs</center>
-            </td>
-            <td>
-                <center>3,500,000</center>
-            </td>
-            <td>
-                <center>2,500,000</center>
-            </td>
-            <td>
-                <center>4,750,000</center>
-            </td>
-            <td>
-                <center>3,350,000</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>16</center>
-            </td>
-            <td>
-                <center>Per Diem Allowwance</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>17</center>
-            </td>
-            <td>
-                <center>Housing Allowwance</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>00</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>18</center>
-            </td>
-            <td>
-                <center>Temporaray Loadging</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>19</center>
-            </td>
-            <td>
-                <center>Relocation Allowwance</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>20</center>
-            </td>
-            <td>
-                <center>Out Of Station Allowwance</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>21</center>
-            </td>
-            <td>
-                <center>Eksternal Task Lodging</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>22</center>
-            </td>
-            <td>
-                <center>Annual Leave</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>23</center>
-            </td>
-            <td>
-                <center>Reporting Costs</center>
-            </td>
-            <td>
-                <center>7,500,000</center>
-            </td>
-            <td>
-                <center>6,500,000</center>
-            </td>
-            <td>
-                <center>6,500,000</center>
-            </td>
-            <td>
-                <center>8,500,000</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>24</center>
-            </td>
-            <td>
-                <center>Rent Supporting Equipment</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2px">Lumpsum</td>
-            <td>
-                <center>3,800,00</center>
-            </td>
-            <td>
-                <center>5,000,000</center>
-            </td>
-            <td>
-                <center>6,900,000</center>
-            </td>
-            <td>
-                <center>4,800,000</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>25</center>
-            </td>
-            <td>
-                <center>Secondary Data Collection</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>26</center>
-            </td>
-            <td>
-                <center style="width:150px;">Seminar, workshop, socialization, training, dissemination, discussion,
-                    coordination, among agencies, and Focus Group discussion</center>
-            </td>
-            <td>
-                <center>3,800,000</center>
-            </td>
-            <td>
-                <center>5,000,000</center>
-            </td>
-            <td>
-                <center>6,900,000</center>
-            </td>
-            <td>
-                <center>4,800,000</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>27</center>
-            </td>
-            <td>
-                <center>Survey</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>28</center>
-            </td>
-            <td>
-                <center>Laboratory Test</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <center>29</center>
-            </td>
-            <td>
-                <center>Copyright</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-            <td>
-                <center>0</center>
-            </td>
-        </tr>
-        </tr>
-        <tr>
-            <td colspan="2px">
-                <center>Total of Non-Personel Direct Costs</center>
-            </td>
-            <td>
-                <center>43,250,000</center>
-            </td>
-            <td>
-                <center>35,660,000</center>
-            </td>
-            <td>
-                <center>38,850,000</center>
-            </td>
-            <td>
-                <center>47,210,000</center>
-            </td>
-        </tr>
-    </table>
-
-    <table border="1">
-        <tr>
-            <td>Modul</td>
-            <td>Personnel</td>
-            <td>Profit 10%</td>
-            <td>Personnel + Profit</td>
-            <td>Non-Personnel</td>
-            <td>Cost Estimate</td>
-            <td>Tax 10%</td>
-            <td>Cost Estimate + Tax</td>
-        </tr>
-        <?php 
-
-                $sql = "SELECT all_cost_user.personel_direct_cost_before_profit, all_cost_user.profit, all_cost_user.personel_direct_cost, all_cost_user.non_personel_direct_cost, all_cost_user.owner_estimate_before_tax, all_cost_user.tax, all_cost_user.owner_cost_estimate from modul 
-                JOIN all_cost_user ON modul.id_modul = all_cost_user.id_modul 
-                JOIN project ON modul.id_project = project.id_project 
-                WHERE modul.id_project = '$idProject';
-                ";
-                $res = mysqli_query($con,$sql);
-                $no = 0;
-                if($res){
-                    while($d = mysqli_fetch_array($res)){ 
-                        $no++;
-                        ?>
-        <tr>
-            <td><?php echo $no; ?></td>
-            <td><?php echo $d['personel_direct_cost_before_profit']; ?></td>
-            <td><?php echo $d['profit']; ?></td>
-            <td><?php echo $d['personel_direct_cost']; ?></td>
-            <td><?php echo $d['non_personel_direct_cost']; ?></td>
-            <td><?php echo $d['owner_estimate_before_tax']; ?></td>
-            <td><?php echo $d['tax']; ?></td>
-            <td><?php echo $d['owner_cost_estimate']; ?></td>
-        </tr>
-        <?php
-                }
-            }
-            ?>
-
-    </table>
 
 
 </body>

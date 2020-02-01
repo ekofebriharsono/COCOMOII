@@ -331,6 +331,7 @@ if(isset($_POST['id_modul'])){
     ($id_modul,'Housing Allowwance',$ha),
     ($id_modul,'Temporaray Loadging',$tl),
     ($id_modul,'Relocation Allowwance',$ra),
+    ($id_modul,'Out Of Station Allowwance',$oosa),
     ($id_modul,'Eksternal Task Lodging',$etl),
     ($id_modul,'Annual Leave',$al),
     ($id_modul,'Reporting Costs',$rc),

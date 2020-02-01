@@ -152,7 +152,7 @@ if(isset($_SESSION['username'])==""){
                         <div class="col-3">
                             <form id="regBox" method="POST" action="#">
                                 <h6>Profit</h6>
-                                <h5 class="text-warning">
+                                <h6 class="text-warning">
                                     <?php
 
                                 $idProject = $_GET['project'];
@@ -164,13 +164,13 @@ if(isset($_SESSION['username'])==""){
                                     } 
                                    
                                 ?>
-                                </h5>
+                                </h6>
                             </form>
                         </div>
                         <div class="col-3">
                             <form id="regBox" method="POST" action="#">
                                 <h6>Tax</h6>
-                                <h5 class="text-warning">
+                                <h6 class="text-warning">
                                     <?php
 
                                 $idProject = $_GET['project'];
@@ -182,7 +182,7 @@ if(isset($_SESSION['username'])==""){
                                     } 
                                    
                                 ?>
-                                </h5>
+                                </h6>
                             </form>
                         </div>
                     </div>
