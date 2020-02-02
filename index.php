@@ -1,6 +1,14 @@
 <?php 
 session_start();
 include 'proses_php/koneksi.php';
+
+function rupiah($angka){
+                                    
+  $hasil_rupiah = "Rp " . number_format($angka,0,',','.');
+  return $hasil_rupiah;
+
+}
+
 if(isset($_SESSION['username'])==""){
     echo "<script>window.open('login.php?pesan=belum_login','_self')</script>";
     } else { 
@@ -79,19 +87,16 @@ if(isset($_SESSION['username'])==""){
             </div>
             <div class="col-4">
               <form id="regBox" method="POST" action="#">
-                <p>Module</p>
+                <p>Profit</p>
                 <?php 
                 $idUser = $_SESSION['id_user'];
-                $sql = "SELECT COUNT(modul.id_modul) as totalmodul
-                FROM project   
-                INNER JOIN modul  
-                ON project.id_project = modul.id_project WHERE project.id_user=$idUser";
+                $sql = "select sum(all_cost_user.profit) as profit from modul JOIN project ON modul.id_project = project.id_project JOIN all_cost_user ON modul.id_modul = all_cost_user.id_modul JOIN user ON user.id_user = project.id_user WHERE project.id_user = $idUser";
                 $res = mysqli_query($con,$sql);
                 $result = mysqli_num_rows($res);
                 if($res){
                   if($result > 0){
                     $row = mysqli_fetch_array($res); ?>
-                <h4 class="text-warning"><?php echo $row['totalmodul']; ?></h4>
+                <h4 class="text-warning"><?php echo rupiah($row['profit']); ?></h4>
                 <?php
                   }
                 }
@@ -100,8 +105,20 @@ if(isset($_SESSION['username'])==""){
             </div>
             <div class="col-4">
               <form id="regBox" method="POST" action="#">
-                <p>Profit</p>
-                <h4 class="text-warning">Rp. 3.000.000</h4>
+                <p>Tax</p>
+                <?php 
+                $idUser = $_SESSION['id_user'];
+                $sql = "select sum(all_cost_user.tax) as tax from modul JOIN project ON modul.id_project = project.id_project JOIN all_cost_user ON modul.id_modul = all_cost_user.id_modul JOIN user ON user.id_user = project.id_user WHERE project.id_user = $idUser";
+                $res = mysqli_query($con,$sql);
+                $result = mysqli_num_rows($res);
+                if($res){
+                  if($result > 0){
+                    $row = mysqli_fetch_array($res); ?>
+                <h4 class="text-warning"><?php echo rupiah($row['tax']); ?></h4>
+                <?php
+                  }
+                }
+                ?>
               </form>
             </div>
           </div>

@@ -2,6 +2,13 @@
 session_start();
 include '../proses_php/koneksi.php';
 
+function rupiah($angka){
+                                    
+    $hasil_rupiah = "Rp " . number_format($angka,0,',','.');
+    return $hasil_rupiah;
+
+}
+
 $idProject = $_SESSION['project'];
 $namaProject = "";
 
@@ -87,14 +94,14 @@ if(isset($_SESSION['username'])==""){
 
 <table border="1">
         <tr>
-            <td>Modul</td>
-            <td>Personnel</td>
-            <td>Profit 10%</td>
-            <td>Personnel + Profit</td>
-            <td>Non-Personnel</td>
-            <td>Cost Estimate</td>
-            <td>Tax 10%</td>
-            <td>Cost Estimate + Tax</td>
+            <th>Modul</th>
+            <th>Personnel</th>
+            <th>Profit 10%</th>
+            <th>Personnel + Profit</th>
+            <th>Non-Personnel</th>
+            <th>Cost Estimate</th>
+            <th>Tax 10%</th>
+            <th>Cost Estimate + Tax</th>
         </tr>
         <?php 
 
@@ -110,13 +117,13 @@ if(isset($_SESSION['username'])==""){
                         ?>
         <tr>
             <td><?php echo $no; ?></td>
-            <td><?php echo $d['personel_direct_cost_before_profit']; ?></td>
-            <td><?php echo $d['profit']; ?></td>
-            <td><?php echo $d['personel_direct_cost']; ?></td>
-            <td><?php echo $d['non_personel_direct_cost']; ?></td>
-            <td><?php echo $d['owner_estimate_before_tax']; ?></td>
-            <td><?php echo $d['tax']; ?></td>
-            <td><?php echo $d['owner_cost_estimate']; ?></td>
+            <td><?php echo rupiah($d['personel_direct_cost_before_profit']); ?></td>
+            <td><?php echo rupiah($d['profit']); ?></td>
+            <td><?php echo rupiah($d['personel_direct_cost']); ?></td>
+            <td><?php echo rupiah($d['non_personel_direct_cost']); ?></td>
+            <td><?php echo rupiah($d['owner_estimate_before_tax']); ?></td>
+            <td><?php echo rupiah($d['tax']); ?></td>
+            <td><?php echo rupiah($d['owner_cost_estimate']); ?></td>
         </tr>
         <?php
                 }
@@ -172,7 +179,7 @@ if(isset($_SESSION['username'])==""){
                         ?>
 
             <td>
-                <?php echo $d['public']; ?>
+                <?php echo rupiah($d['public']); ?>
             </td>
             <?php
                 }
@@ -196,7 +203,7 @@ if(isset($_SESSION['username'])==""){
                         ?>
 
             <td>
-                <?php echo $d['public']; ?>
+                <?php echo rupiah($d['public']); ?>
             </td>
             <?php
                 }
@@ -220,7 +227,7 @@ if(isset($_SESSION['username'])==""){
                         ?>
 
             <td>
-                <?php echo $d['public']; ?>
+                <?php echo rupiah($d['public']); ?>
             </td>
             <?php
                 }
@@ -244,7 +251,7 @@ if(isset($_SESSION['username'])==""){
                         ?>
 
             <td>
-                <?php echo $d['public']; ?>
+                <?php echo rupiah($d['public']); ?>
             </td>
             <?php
                 }
@@ -268,7 +275,7 @@ if(isset($_SESSION['username'])==""){
                         ?>
 
             <td style="width:150px;">
-                <?php echo $d['public']; ?>
+                <?php echo rupiah($d['public']); ?>
             </td>
             <?php
                 }
@@ -292,7 +299,7 @@ if(isset($_SESSION['username'])==""){
                         ?>
 
             <td style="width:150px;">
-                <?php echo $d['public']; ?>
+                <?php echo rupiah($d['public']); ?>
             </td>
             <?php
                 }
@@ -370,7 +377,7 @@ if(isset($_SESSION['username'])==""){
                         ?>
      
             <td>
-                <?php echo $d['total']; ?>
+                <?php echo rupiah($d['total']); ?>
             </td>
             <?php
                 }
@@ -410,7 +417,7 @@ if(isset($_SESSION['username'])==""){
 
 
             <td>
-                <?php echo $d['total']; ?>
+                <?php echo rupiah($d['total']); ?>
             </td>
             <?php
                 }
@@ -449,7 +456,7 @@ if(isset($_SESSION['username'])==""){
                         ?>
 
             <td>
-                <?php echo $d['total']; ?>
+                <?php echo rupiah($d['total']); ?>
             </td>
             <?php
                 }
@@ -489,7 +496,7 @@ if(isset($_SESSION['username'])==""){
 
 
             <td>
-                <?php echo $d['total']; ?>
+                <?php echo rupiah($d['total']); ?>
             </td>
             <?php
                 }
@@ -529,7 +536,7 @@ if(isset($_SESSION['username'])==""){
 
 
             <td>
-                <?php echo $d['total']; ?>
+                <?php echo rupiah($d['total']); ?>
             </td>
             <?php
                 }
@@ -569,7 +576,7 @@ if(isset($_SESSION['username'])==""){
 
 
             <td>
-                <?php echo $d['total']; ?>
+                <?php echo rupiah($d['total']); ?>
             </td>
             <?php
                 }
@@ -609,7 +616,7 @@ if(isset($_SESSION['username'])==""){
 
 
             <td>
-                <?php echo $d['total']; ?>
+                <?php echo rupiah($d['total']); ?>
             </td>
             <?php
                 }
@@ -648,7 +655,7 @@ if(isset($_SESSION['username'])==""){
                         ?>
 
             <td>
-                <?php echo $d['total']; ?>
+                <?php echo rupiah($d['total']); ?>
             </td>
             <?php
                 }
@@ -687,7 +694,7 @@ if(isset($_SESSION['username'])==""){
                         ?>
 
             <td>
-                <?php echo $d['total']; ?>
+                <?php echo rupiah($d['total']); ?>
             </td>
             <?php
                 }
@@ -726,7 +733,7 @@ if(isset($_SESSION['username'])==""){
                         ?>
 
             <td>
-                <?php echo $d['total']; ?>
+                <?php echo rupiah($d['total']); ?>
             </td>
             <?php
                 }
@@ -765,7 +772,7 @@ if(isset($_SESSION['username'])==""){
                         ?>
 
             <td>
-                <?php echo $d['total']; ?>
+                <?php echo rupiah($d['total']); ?>
             </td>
             <?php
                 }
@@ -804,7 +811,7 @@ if(isset($_SESSION['username'])==""){
                         ?>
 
             <td>
-                <?php echo $d['total']; ?>
+                <?php echo rupiah($d['total']); ?>
             </td>
             <?php
                 }
@@ -829,7 +836,7 @@ if(isset($_SESSION['username'])==""){
                         ?>
        
             <td>
-                <?php echo $d['total']; ?>
+                <?php echo rupiah($d['total']); ?>
             </td>
 
             <?php
@@ -845,10 +852,10 @@ if(isset($_SESSION['username'])==""){
 
     <table border="1">
         <tr>
-            <td>Modul</td>
-            <td>Personnel</td>
-            <td>Profit 10%</td>
-            <td>Personnel + Profit</td>
+            <th>Modul</th>
+            <th>Personnel</th>
+            <th>Profit 10%</th>
+            <th>Personnel + Profit</th>
         </tr>
         <?php 
 
@@ -865,9 +872,9 @@ if(isset($_SESSION['username'])==""){
                         ?>
         <tr>
             <td><?php echo $no; ?></td>
-            <td><?php echo $d['personel_direct_cost_before_profit']; ?></td>
-            <td><?php echo $d['profit']; ?></td>
-            <td><?php echo $d['personel_direct_cost']; ?></td>
+            <td><?php echo rupiah($d['personel_direct_cost_before_profit']); ?></td>
+            <td><?php echo rupiah($d['profit']); ?></td>
+            <td><?php echo rupiah($d['personel_direct_cost']); ?></td>
         </tr>
         <?php
                 }
@@ -940,7 +947,7 @@ if(isset($_SESSION['username'])==""){
 
 
             <td>
-                <?php echo $d['biaya']; ?>
+                <?php echo rupiah($d['biaya']); ?>
             </td>
             <?php
                 }
@@ -974,7 +981,7 @@ if(isset($_SESSION['username'])==""){
 
 
             <td>
-                <?php echo $d['biaya']; ?>
+                <?php echo rupiah($d['biaya']); ?>
             </td>
             <?php
                 }
@@ -1007,7 +1014,7 @@ if(isset($_SESSION['username'])==""){
 
 
             <td>
-                <?php echo $d['biaya']; ?>
+                <?php echo rupiah($d['biaya']); ?>
             </td>
             <?php
                 }
@@ -1039,7 +1046,7 @@ if(isset($_SESSION['username'])==""){
 
 
             <td>
-                <?php echo $d['biaya']; ?>
+                <?php echo rupiah($d['biaya']); ?>
             </td>
             <?php
                 }
@@ -1071,7 +1078,7 @@ if(isset($_SESSION['username'])==""){
 
 
             <td>
-                <?php echo $d['biaya']; ?>
+                <?php echo rupiah($d['biaya']); ?>
             </td>
             <?php
                 }
@@ -1103,7 +1110,7 @@ if(isset($_SESSION['username'])==""){
 
 
             <td>
-                <?php echo $d['biaya']; ?>
+                <?php echo rupiah($d['biaya']); ?>
             </td>
             <?php
                 }
@@ -1135,7 +1142,7 @@ if(isset($_SESSION['username'])==""){
 
 
             <td>
-                <?php echo $d['biaya']; ?>
+                <?php echo rupiah($d['biaya']); ?>
             </td>
             <?php
                 }
@@ -1162,7 +1169,7 @@ if(isset($_SESSION['username'])==""){
 
 
             <td>
-                <?php echo $d['biaya']; ?>
+                <?php echo rupiah($d['biaya']); ?>
             </td>
             <?php
                 }
@@ -1194,7 +1201,7 @@ if(isset($_SESSION['username'])==""){
 
 
             <td>
-                <?php echo $d['biaya']; ?>
+                <?php echo rupiah($d['biaya']); ?>
             </td>
             <?php
                 }
@@ -1226,7 +1233,7 @@ if(isset($_SESSION['username'])==""){
 
 
             <td>
-                <?php echo $d['biaya']; ?>
+                <?php echo rupiah($d['biaya']); ?>
             </td>
             <?php
                 }
@@ -1258,7 +1265,7 @@ if(isset($_SESSION['username'])==""){
 
 
             <td>
-                <?php echo $d['biaya']; ?>
+                <?php echo rupiah($d['biaya']); ?>
             </td>
             <?php
                 }
@@ -1290,7 +1297,7 @@ if(isset($_SESSION['username'])==""){
 
 
             <td>
-                <?php echo $d['biaya']; ?>
+                <?php echo rupiah($d['biaya']); ?>
             </td>
             <?php
                 }
@@ -1322,7 +1329,7 @@ if(isset($_SESSION['username'])==""){
 
 
             <td>
-                <?php echo $d['biaya']; ?>
+                <?php echo rupiah($d['biaya']); ?>
             </td>
             <?php
                 }
@@ -1354,7 +1361,7 @@ if(isset($_SESSION['username'])==""){
 
 
             <td>
-                <?php echo $d['biaya']; ?>
+                <?php echo rupiah($d['biaya']); ?>
             </td>
             <?php
                 }
@@ -1386,7 +1393,7 @@ if(isset($_SESSION['username'])==""){
 
 
             <td>
-                <?php echo $d['biaya']; ?>
+                <?php echo rupiah($d['biaya']); ?>
             </td>
             <?php
                 }
@@ -1418,7 +1425,7 @@ if(isset($_SESSION['username'])==""){
 
 
             <td>
-                <?php echo $d['biaya']; ?>
+                <?php echo rupiah($d['biaya']); ?>
             </td>
             <?php
                 }
@@ -1450,7 +1457,7 @@ if(isset($_SESSION['username'])==""){
 
 
             <td>
-                <?php echo $d['biaya']; ?>
+                <?php echo rupiah($d['biaya']); ?>
             </td>
             <?php
                 }
@@ -1482,7 +1489,7 @@ if(isset($_SESSION['username'])==""){
 
 
             <td>
-                <?php echo $d['biaya']; ?>
+                <?php echo rupiah($d['biaya']); ?>
             </td>
             <?php
                 }
@@ -1514,7 +1521,7 @@ if(isset($_SESSION['username'])==""){
 
 
             <td>
-                <?php echo $d['biaya']; ?>
+                <?php echo rupiah($d['biaya']); ?>
             </td>
             <?php
                 }
@@ -1546,7 +1553,7 @@ if(isset($_SESSION['username'])==""){
 
 
             <td>
-                <?php echo $d['biaya']; ?>
+                <?php echo rupiah($d['biaya']); ?>
             </td>
             <?php
                 }
@@ -1578,7 +1585,7 @@ if(isset($_SESSION['username'])==""){
 
 
             <td>
-                <?php echo $d['biaya']; ?>
+                <?php echo rupiah($d['biaya']); ?>
             </td>
             <?php
                 }
@@ -1610,7 +1617,7 @@ if(isset($_SESSION['username'])==""){
 
 
             <td>
-                <?php echo $d['biaya']; ?>
+                <?php echo rupiah($d['biaya']); ?>
             </td>
             <?php
                 }
@@ -1642,7 +1649,7 @@ if(isset($_SESSION['username'])==""){
 
 
             <td>
-                <?php echo $d['biaya']; ?>
+                <?php echo rupiah($d['biaya']); ?>
             </td>
             <?php
                 }
@@ -1674,7 +1681,7 @@ if(isset($_SESSION['username'])==""){
 
 
             <td>
-                <?php echo $d['biaya']; ?>
+                <?php echo rupiah($d['biaya']); ?>
             </td>
             <?php
                 }
@@ -1706,7 +1713,7 @@ if(isset($_SESSION['username'])==""){
 
 
             <td>
-                <?php echo $d['biaya']; ?>
+                <?php echo rupiah($d['biaya']); ?>
             </td>
             <?php
                 }
@@ -1733,7 +1740,7 @@ if(isset($_SESSION['username'])==""){
 
 
             <td>
-                <?php echo $d['biaya']; ?>
+                <?php echo rupiah($d['biaya']); ?>
             </td>
             <?php
                 }
@@ -1765,7 +1772,7 @@ if(isset($_SESSION['username'])==""){
 
 
             <td>
-                <?php echo $d['biaya']; ?>
+                <?php echo rupiah($d['biaya']); ?>
             </td>
             <?php
                 }
@@ -1798,7 +1805,7 @@ if(isset($_SESSION['username'])==""){
 
 
             <td>
-                <?php echo $d['biaya']; ?>
+                <?php echo rupiah($d['biaya']); ?>
             </td>
             <?php
                 }
@@ -1830,7 +1837,7 @@ if(isset($_SESSION['username'])==""){
 
 
             <td>
-                <?php echo $d['biaya']; ?>
+                <?php echo rupiah($d['biaya']); ?>
             </td>
             <?php
                 }
@@ -1862,7 +1869,7 @@ if(isset($_SESSION['username'])==""){
 
 
             <td>
-                <?php echo $d['biaya']; ?>
+                <?php echo rupiah($d['biaya']); ?>
             </td>
             <?php
                 }
@@ -1894,7 +1901,7 @@ if(isset($_SESSION['username'])==""){
 
 
             <td>
-                <?php echo $d['biaya']; ?>
+                <?php echo rupiah($d['biaya']); ?>
             </td>
             <?php
                 }
@@ -1922,7 +1929,7 @@ if(isset($_SESSION['username'])==""){
 
 
             <td>
-                <?php echo $d['non_personel_direct_cost']; ?>
+                <?php echo rupiah($d['non_personel_direct_cost']); ?>
             </td>
             <?php
                 }
