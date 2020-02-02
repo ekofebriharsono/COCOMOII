@@ -65,6 +65,13 @@ if(isset($_SESSION['username'])==""){
                             </form>
                         </div>
                     </div>
+                    <div class="row">
+            <div class="col-12">
+              <form id="regInfo" method="GET" action="javascript:history.back()">
+                <center> <button type="submit" name="submitDeleteProject" class="warning">Go back</button></center>
+              </form>
+            </div>
+          </div>
                 </div>
             </div>
             <div class="col-8">
