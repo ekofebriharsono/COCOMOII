@@ -75,9 +75,6 @@ if(isset($_SESSION['username'])==""){
                   <th>
                     <center><b>Project Name</b></center>
                   </th>
-                  <th>
-                    <center><b>Total</b></center>
-                  </th>
                   <th colspan="2">
                     <center><b>Action</b></center>
                   </th>
@@ -95,9 +92,6 @@ if(isset($_SESSION['username'])==""){
                   <center><?php echo $no; ?></center>
                 </td>
                 <td><?php echo $d['nama_project']; ?></td>
-                <td>
-                  <center><?php echo $d['total']; ?></center>
-                </td>
                 <td>
                   <form action="tambah_project.php" method="get">
                     <input hidden type="text" name="project" value="<?php echo $d['id_project']; ?>">

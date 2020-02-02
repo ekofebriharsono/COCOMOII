@@ -72,13 +72,55 @@ if(isset($_SESSION['username'])==""){
                 <p>Project</p>
                 <?php 
                 $idUser = $_SESSION['id_user'];
-                $sql = "select COUNT(id_project) as totalproject from project where id_user = $idUser";
+                $sql = "SELECT count(id_project) as total_project FROM `project` WHERE id_user = $idUser";
                 $res = mysqli_query($con,$sql);
                 $result = mysqli_num_rows($res);
                 if($res){
                   if($result > 0){
                     $row = mysqli_fetch_array($res); ?>
-                <h4 class="text-warning"><?php echo $row['totalproject']; ?></h4>
+                <h4 class="text-warning"><?php echo $row['total_project']; ?></h4>
+                <?php
+                  }
+                }
+                ?>
+              </form>
+            </div>
+            <div class="col-8">
+              <form id="regBox" method="POST" action="#">
+                <p>Total</p>
+                <?php 
+                $idUser = $_SESSION['id_user'];
+                $sql = "select sum(all_cost_user.owner_cost_estimate) as owner_cost_estimate from modul JOIN project ON modul.id_project = project.id_project JOIN all_cost_user ON modul.id_modul = all_cost_user.id_modul JOIN user ON user.id_user = project.id_user WHERE project.id_user = $idUser";
+                $res = mysqli_query($con,$sql);
+                $result = mysqli_num_rows($res);
+                if($res){
+                  if($result > 0){
+                    $row = mysqli_fetch_array($res); ?>
+                <h4 class="text-warning"><?php echo rupiah($row['owner_cost_estimate']); ?></h4>
+                <?php
+                  }
+                }
+                ?>
+              </form>
+            </div>
+           
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <form id="regBox" method="POST" action="#">
+                <p>Modul</p>
+                <?php 
+                $idUser = $_SESSION['id_user'];
+                $sql = "SELECT COUNT(modul.id_modul) as totalmodul
+                FROM project   
+                INNER JOIN modul  
+                ON project.id_project = modul.id_project WHERE project.id_user=$idUser";
+                $res = mysqli_query($con,$sql);
+                $result = mysqli_num_rows($res);
+                if($res){
+                  if($result > 0){
+                    $row = mysqli_fetch_array($res); ?>
+                <h4 class="text-warning"><?php echo $row['totalmodul']; ?></h4>
                 <?php
                   }
                 }
