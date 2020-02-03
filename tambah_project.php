@@ -235,21 +235,21 @@ if(isset($_SESSION['username'])==""){
                                             <td>
                                                 <center><?php echo rupiah($d['total']); ?></center>
                                             </td>
-                                            <td>
+                                            <!-- <td>
                                                 <form action="cocomoii.php" method="post">
                                                     <input hidden type="text" name="project"
-                                                        value="<?php echo $d['id_project']; ?>">
+                                                        value="<?php // echo $d['id_project']; ?>">
                                                     <input hidden type="text" name="nama_modul"
-                                                        value="<?php echo $d['nama_modul']; ?>">
+                                                        value="<?php// echo $d['nama_modul']; ?>">
                                                     <input hidden type="text" name="id_modul"
-                                                        value="<?php echo $d['id_modul']; ?>">
+                                                        value="<?php// echo $d['id_modul']; ?>">
                                                     <?php if ($d['status']==1){ $isAllCounted = true; ?>
                                                     <button type="submit" name="submitEditData">Change Data</button>
                                                     <?php } else { $isAllCounted = false; ?>
                                                     <button type="submit" name="submitIsiData">Add Data</button>
                                                     <?php } ?>
                                                 </form>
-                                            </td>
+                                            </td> -->
                                             <td>
                                                 <form action="proses_php/prosesTambahModul.php" method="post">
                                                     <input hidden type="text" name="idModul"
