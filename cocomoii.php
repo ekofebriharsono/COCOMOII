@@ -49,9 +49,30 @@ if(isset($_SESSION['username'])==""){
           <div class="row">
             <div class="col-12">
               <form id="regInfo" method="GET" action="https://en.wikipedia.org/wiki/COCOMO">
-                <h1 class="text-warning">Infomation</h1>
-                <div class="tab1">
-                </div>
+
+                <h1 class="text-warning">Documentation</h1>
+
+                <a href="#modal1" class="text-warning stretched-link" data-toggle="modal" data-target="#modal1">1. UFP</a>
+                <br>
+                <a href="#modal2" class="text-warning stretched-link" data-toggle="modal" data-target="#modal1">2. SLOC</a>
+                <br>
+                <a href="#modal3" class="text-warning stretched-link" data-toggle="modal" data-target="#modal1">3. SF</a>
+                <br>
+                <a href="#modal4" class="text-warning stretched-link" data-toggle="modal" data-target="#modal1">4. EM</a>
+                <br>
+                <a href="#modal5" class="text-warning stretched-link" data-toggle="modal" data-target="#modal1">5. Activity</a>
+
+                <?php include('modal_documentaion/modal_ufp.php'); ?>
+
+              
+              </form>
+            </div>
+            <div class="col-12">
+            <form id="regInfo" method="GET" action="https://en.wikipedia.org/wiki/COCOMO">
+
+              <h1 class="text-warning">Information</h1>
+
+
                 <table class="table">
                   <tr>
                     <td>
@@ -102,13 +123,6 @@ if(isset($_SESSION['username'])==""){
                     </td>
                   </tr>
                 </table>
-                <!-- <div style="overflow:auto;">
-                  <div style="float:right;">
-                    <p class="text-justify">New Project is a feature of adding or editing projects
-                      and modules to calculate or determine the estimated total cost of developing
-                      a software project using the COCOMO II method</p>
-                  </div>
-                </div> -->
                 <div style="text-align:center;margin-top:40px;">
                   <p>&copy; 2019 LUG by <a href="https://github.com/ekofebriharsono"
                       class="text-warning stretched-link">Maseko</a></p>
@@ -122,6 +136,7 @@ if(isset($_SESSION['username'])==""){
               </form>
             </div>
           </div>
+          
         </div>
       </div>
       <div class="col-8">
