@@ -97,7 +97,7 @@ function hitungStepOne() {
   document.getElementById("UFP").value = UFP;
   UFPGlobal = UFP;
   document.getElementById("UFPFromStepOne").value = UFPGlobal;
-  document.getElementById("resultTotalUFP").innerHTML = UFPGlobal;
+  //document.getElementById("resultTotalUFP").innerHTML = UFPGlobal;
 
 }
 
@@ -248,7 +248,7 @@ function hitungStepTwo() {
     document.getElementById("SLOC").value = SLOC_Conversion_ratios;
     document.getElementById("SIZE").value = SIZE;
     KLOCGlobal = SIZE / 1000;
-    document.getElementById("resultTotalSize").innerHTML = KLOCGlobal;
+   // document.getElementById("resultTotalSize").innerHTML = KLOCGlobal;
   }
 
 }
@@ -391,7 +391,7 @@ function hitungStepThree() {
   document.getElementById("TeamCohesionValue").value = TeamCohesion;
   document.getElementById("ProcessMaturityValue").value = ProcessMaturity;
 
-  document.getElementById("resultTotalScaleFactor").innerHTML = Efixed;
+ // document.getElementById("resultTotalScaleFactor").innerHTML = Efixed;
 
   EGlobal = Efixed;
 }
@@ -435,8 +435,8 @@ function hitungStepFour() {
   PMGlobal = PM;
   EMGlobal = EM;
 
-  document.getElementById("resultTotalEffortMultiplier").innerHTML = EMGlobal;
-  document.getElementById("resultTotalPersonMonth").innerHTML = PMGlobal;
+ // document.getElementById("resultTotalEffortMultiplier").innerHTML = EMGlobal;
+ // document.getElementById("resultTotalPersonMonth").innerHTML = PMGlobal;
 
 }
 
@@ -641,7 +641,7 @@ function hitungTotalCostOfActivityWaterfall() {
   document.getElementById("totalTraining").value = KOMAActivityTraining;
   document.getElementById("totalEvaluation").value = KOMAActivityEvaluation;
 
-  document.getElementById("resultTotalMethod").innerHTML = totalActivityWaterfall;
+ // document.getElementById("resultTotalMethod").innerHTML = totalActivityWaterfall;
 
 }
 

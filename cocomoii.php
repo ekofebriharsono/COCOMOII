@@ -52,28 +52,38 @@ if(isset($_SESSION['username'])==""){
 
                 <h1 class="text-warning">Documentation</h1>
 
-                <a href="#modal1" class="text-warning stretched-link" data-toggle="modal" data-target="#modal1">1. UFP</a>
+                <a href="#modal1" class="text-warning stretched-link" data-toggle="modal" data-target="#modal1">1.
+                  UFP</a>
                 <br>
-                <a href="#modal2" class="text-warning stretched-link" data-toggle="modal" data-target="#modal1">2. SLOC</a>
+                <a href="#modal2" class="text-warning stretched-link" data-toggle="modal" data-target="#modal2">2.
+                  SLOC</a>
                 <br>
-                <a href="#modal3" class="text-warning stretched-link" data-toggle="modal" data-target="#modal1">3. SF</a>
+                <a href="#modal3" class="text-warning stretched-link" data-toggle="modal" data-target="#modal3">3.
+                  SF</a>
                 <br>
-                <a href="#modal4" class="text-warning stretched-link" data-toggle="modal" data-target="#modal1">4. EM</a>
+                <a href="#modal4" class="text-warning stretched-link" data-toggle="modal" data-target="#modal4">4.
+                  EM</a>
                 <br>
-                <a href="#modal5" class="text-warning stretched-link" data-toggle="modal" data-target="#modal1">5. Activity</a>
+                <a href="#modal5" class="text-warning stretched-link" data-toggle="modal" data-target="#modal5">5.
+                  Activity</a>
 
                 <?php include('modal_documentaion/modal_ufp.php'); ?>
+                <?php include('modal_documentaion/modal_sloc.php'); ?>
+                <?php include('modal_documentaion/modal_sf.php'); ?>
+                <?php include('modal_documentaion/modal_em.php'); ?>
+                <?php include('modal_documentaion/modal_activity.php'); ?>
 
-              
               </form>
             </div>
             <div class="col-12">
-            <form id="regInfo" method="GET" action="https://en.wikipedia.org/wiki/COCOMO">
+              <form id="regInfo" method="GET" action="https://en.wikipedia.org/wiki/COCOMO">
 
-              <h1 class="text-warning">Information</h1>
+                <h1 class="text-warning">Information</h1>
 
-
-                <table class="table">
+                <center> <a href="#modalPerhitungan" class="text-warning stretched-link" data-toggle="modal"
+                    data-target="#modalPerhitungan">Lihat Detail Perhitungan</a>
+                </center>
+                <table hidden class="table">
                   <tr>
                     <td>
                       Total UFP
@@ -136,7 +146,7 @@ if(isset($_SESSION['username'])==""){
               </form>
             </div>
           </div>
-          
+
         </div>
       </div>
       <div class="col-8">
@@ -146,7 +156,7 @@ if(isset($_SESSION['username'])==""){
               <form id="regBoxModuleRumus" action="proses_php/prosesSimpanDataPerModul.php" method="post">
                 <input hidden type="text" name="id_modul" value="<?php echo $_POST['id_modul']; ?>">
                 <input hidden type="text" name="id_project" value="<?php echo $_POST['project']; ?>">
-               
+
                 <?php include('step_cocomoII/stepOne.php'); ?>
 
                 <?php include('step_cocomoII/stepTwo.php'); ?>
