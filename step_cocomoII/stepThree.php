@@ -1,5 +1,5 @@
 <div class="tab">
-  Step Three:
+<p>SF (Scale Factor)</p>
   <p>Software Scale Drivers</p>
   <table border="0" class="table">
     <tr>

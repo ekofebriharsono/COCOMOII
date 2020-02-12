@@ -20,6 +20,8 @@
         <!-- body modal -->
         <div class="modal-body">
         <p>Activity berikut menggunakan activity metode waterfall</p>
+        <p>Nilai total activity harus sama dengan nilai total PM (Person-Month). secara default nilai activity sudah terisi dan ketika dihitung akan sama dengan nilai PM. tetapi user bisa mengganti nilainya tersebut sesuai dengan kebutuhan dengan syarat nilai total activity dan PM harus sama.</p>
+        <p>*Note : nilai PM bisa dilihat pada tahap sebelumnya</p>
           
         </div>
         <!-- footer modal -->

@@ -66,16 +66,36 @@ if(isset($_SESSION['username'])==""){
                 <br>
                 <a href="#modal5" class="text-warning stretched-link" data-toggle="modal" data-target="#modal5">5.
                   Activity</a>
+                <br>
+                <a href="#modal6" class="text-warning stretched-link" data-toggle="modal" data-target="#modal6">6.
+                  Salary</a>
+                <br>
+                <a href="#modal7" class="text-warning stretched-link" data-toggle="modal" data-target="#modal7">7.
+                  Cost Per Activity</a>
+                <br>
+                <a href="#modal8" class="text-warning stretched-link" data-toggle="modal" data-target="#modal8">8.
+                  Profit</a>
+                <br>
+                <a href="#modal9" class="text-warning stretched-link" data-toggle="modal" data-target="#modal9">9.
+                  Non Personnel Direct Cost</a>
+                <br>
+                <a href="#modal10" class="text-warning stretched-link" data-toggle="modal" data-target="#modal10">10.
+                  Tax</a>
 
                 <?php include('modal_documentaion/modal_ufp.php'); ?>
                 <?php include('modal_documentaion/modal_sloc.php'); ?>
                 <?php include('modal_documentaion/modal_sf.php'); ?>
                 <?php include('modal_documentaion/modal_em.php'); ?>
                 <?php include('modal_documentaion/modal_activity.php'); ?>
+                <?php include('modal_documentaion/modal_salary.php'); ?>
+                <?php include('modal_documentaion/modal_cost_activity.php'); ?>
+                <?php include('modal_documentaion/modal_profit.php'); ?>
+                <?php include('modal_documentaion/modal_non_personnel.php'); ?>
+                <?php include('modal_documentaion/modal_tax.php'); ?>
 
               </form>
             </div>
-            <div class="col-12">
+            <!-- <div class="col-12">
               <form id="regInfo" method="GET" action="https://en.wikipedia.org/wiki/COCOMO">
 
                 <h1 class="text-warning">Information</h1>
@@ -138,7 +158,7 @@ if(isset($_SESSION['username'])==""){
                       class="text-warning stretched-link">Maseko</a></p>
                 </div>
               </form>
-            </div>
+            </div> -->
             <div class="col-12">
               <form id="regInfo" method="GET" action="javascript:history.back()">
                 <center> <button type="submit" name="submitDeleteProject"

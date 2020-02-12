@@ -1,5 +1,4 @@
 <div class="tab">
-  Step Two:
   <p>SLOC (Source Line of Code)</p>
   <table border="0" class="table">
     <tr>

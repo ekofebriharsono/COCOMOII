@@ -1,23 +1,27 @@
-<div id="modal2" class="modal fade" role="dialog">
+<div id="modal7" class="modal fade" role="dialog">
     <div class="modal-dialog">
       <!-- konten modal-->
       <div class="modal-content" style="background: rgba(0, 0, 0, 0.699);
   color: white;
-  width: 100%;
+  width: 263%;
   border-radius: 20px;
+  margin-left: -80%;
   -webkit-box-shadow: 0 0 5px 2px #fff;
     -moz-box-shadow: 0 0 5px 2px #fff;
     box-shadow: 0 0 5px 5px #fff;">
         <!-- heading modal -->
         <div class="modal-header">
           <center>
-            <h6>SLOC (Source Line Of Code)</h6>
+            <h6>Cost Per Activity</h6>
           </center>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
+
         </div>
         <!-- body modal -->
         <div class="modal-body">
-        <p>SLOC adalah bahasa pemrograman yang akan dipakai dalam pembuatan aplikasi dan hanya boleh memilih 1 bahasa pemogramman.</p>
+        <p>Secara default sistem mengelompokan personil sesuai dengan kebutuhan activity berlaku juga pada salary setiap personil.</p>
+        <p>user hanya perlu menekan tombol hitung untuk melihat hasil nilai total per activity</p>
+        <p>*Note : User tidak bisa mengubah nominal apapun pada tahap ini. jika ingin mengubah nominal, user harus kembali pada tahap sebelumnya.</p>
           
         </div>
         <!-- footer modal -->

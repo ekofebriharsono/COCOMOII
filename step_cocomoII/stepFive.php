@@ -79,12 +79,12 @@
         </td>
         <td>
           <label class="containerz">1.17
-            <input type="radio" value="1.17" onclick="getValueRequirements(this.value)" name="Requirements">
+            <input type="radio" checked value="1.17" onclick="getValueRequirements(this.value)" name="Requirements">
             <span class="checkmark"></span>
           </label>
         </td>
         <td>
-          <input type="number" oninput="this.className = ''" id="valueRequirements" name="valueRequirements">
+          <input type="number" value="1.17" oninput="this.className = ''" id="valueRequirements" name="valueRequirements">
           <input hidden type="number" oninput="this.className = ''" id="totalRequirements" name="totalRequirements">
         </td>
       </tr>
@@ -99,12 +99,12 @@
         </td>
         <td>
           <label class="containerz">6.75
-            <input type="radio" value="6.75" onclick="getValueSpecifications(this.value)" name="Specifications">
+            <input type="radio" checked value="6.75" onclick="getValueSpecifications(this.value)" name="Specifications">
             <span class="checkmark"></span>
           </label>
         </td>
         <td>
-          <input type="number" oninput="this.className = ''" id="valueSpecifications" name="valueSpecifications">
+          <input type="number" value="6.75" oninput="this.className = ''" id="valueSpecifications" name="valueSpecifications">
           <input hidden type="number" oninput="this.className = ''" id="totalSpecifications" name="totalSpecifications">
         </td>
       </tr>
@@ -119,12 +119,12 @@
         </td>
         <td>
           <label class="containerz">5.57
-            <input type="radio" value="5.57" onclick="getValueDesign(this.value)" name="Design">
+            <input type="radio" checked value="5.57" onclick="getValueDesign(this.value)" name="Design">
             <span class="checkmark"></span>
           </label>
         </td>
         <td>
-          <input type="number" oninput="this.className = ''" id="valueDesign" name="valueDesign">
+          <input type="number" value="5.57" oninput="this.className = ''" id="valueDesign" name="valueDesign">
           <input hidden type="number" oninput="this.className = ''" id="totalDesign" name="totalDesign">
         </td>
       </tr>
@@ -139,12 +139,12 @@
         </td>
         <td>
           <label class="containerz">55.65
-            <input type="radio" value="55.65" onclick="getValueImplementation(this.value)" name="Implementation">
+            <input type="radio" checked value="55.65" onclick="getValueImplementation(this.value)" name="Implementation">
             <span class="checkmark"></span>
           </label>
         </td>
         <td>
-          <input type="number" oninput="this.className = ''" id="valueImplementation" name="valueImplementation">
+          <input type="number" value="55.65" oninput="this.className = ''" id="valueImplementation" name="valueImplementation">
           <input hidden type="number" oninput="this.className = ''" id="totalImplementation" name="totalImplementation">
         </td>
       </tr>
@@ -159,12 +159,12 @@
         </td>
         <td>
           <label class="containerz">6.42
-            <input type="radio" value="6.42" onclick="getValueIntegration(this.value)" name="Integration">
+            <input type="radio" checked value="6.42" onclick="getValueIntegration(this.value)" name="Integration">
             <span class="checkmark"></span>
           </label>
         </td>
         <td>
-          <input type="number" oninput="this.className = ''" id="valueIntegration" name="valueIntegration">
+          <input type="number" value="6.42" oninput="this.className = ''" id="valueIntegration" name="valueIntegration">
           <input hidden type="number" oninput="this.className = ''" id="totalIntegration" name="totalIntegration">
         </td>
       </tr>
@@ -179,12 +179,12 @@
         </td>
         <td>
           <label class="containerz">5.60
-            <input type="radio" value="5.60" onclick="getValueAcceptance(this.value)" name="Acceptance">
+            <input type="radio" checked value="5.60" onclick="getValueAcceptance(this.value)" name="Acceptance">
             <span class="checkmark"></span>
           </label>
         </td>
         <td>
-          <input type="number" oninput="this.className = ''" id="valueAcceptance" name="valueAcceptance">
+          <input type="number" value="5.60" oninput="this.className = ''" id="valueAcceptance" name="valueAcceptance">
           <input hidden type="number" oninput="this.className = ''" id="totalAcceptance" name="totalAcceptance">
         </td>
       </tr>
@@ -199,12 +199,12 @@
         </td>
         <td>
           <label class="containerz">2.55
-            <input type="radio" value="2.55" onclick="getValueProjectManagement(this.value)" name="ProjectManagement">
+            <input type="radio" checked value="2.55" onclick="getValueProjectManagement(this.value)" name="ProjectManagement">
             <span class="checkmark"></span>
           </label>
         </td>
         <td>
-          <input type="number" oninput="this.className = ''" id="valueProjectManagement" name="valueProjectManagement">
+          <input type="number" value="2.55" oninput="this.className = ''" id="valueProjectManagement" name="valueProjectManagement">
           <input hidden type="number" oninput="this.className = ''" id="totalProjectManagement"
             name="totalProjectManagement">
         </td>
@@ -220,12 +220,12 @@
         </td>
         <td>
           <label class="containerz">3.58
-            <input type="radio" value="3.58" onclick="getValueConfiguration(this.value)" name="Configuration">
+            <input type="radio" checked value="3.58" onclick="getValueConfiguration(this.value)" name="Configuration">
             <span class="checkmark"></span>
           </label>
         </td>
         <td>
-          <input type="number" oninput="this.className = ''" id="valueConfiguration" name="valueConfiguration">
+          <input type="number" value="3.58" oninput="this.className = ''" id="valueConfiguration" name="valueConfiguration">
           <input hidden type="number" oninput="this.className = ''" id="totalConfiguration" name="totalConfiguration">
         </td>
       </tr>
@@ -240,12 +240,12 @@
         </td>
         <td>
           <label class="containerz">0.66
-            <input type="radio" value="0.66" onclick="getValueQuality(this.value)" name="Quality">
+            <input type="radio" checked value="0.66" onclick="getValueQuality(this.value)" name="Quality">
             <span class="checkmark"></span>
           </label>
         </td>
         <td>
-          <input type="number" oninput="this.className = ''" id="valueQuality" name="valueQuality">
+          <input type="number" value="0.66" oninput="this.className = ''" id="valueQuality" name="valueQuality">
           <input hidden type="number" oninput="this.className = ''" id="totalQuality" name="totalQuality">
         </td>
       </tr>
@@ -260,12 +260,12 @@
         </td>
         <td>
           <label class="containerz">9.76
-            <input type="radio" value="9.76" onclick="getValueDocumentations(this.value)" name="Documentations">
+            <input type="radio" checked value="9.76" onclick="getValueDocumentations(this.value)" name="Documentations">
             <span class="checkmark"></span>
           </label>
         </td>
         <td>
-          <input type="number" oninput="this.className = ''" id="valueDocumentations" name="valueDocumentations">
+          <input type="number" value="9.76" oninput="this.className = ''" id="valueDocumentations" name="valueDocumentations">
           <input hidden type="number" oninput="this.className = ''" id="totalDocumentations" name="totalDocumentations">
         </td>
       </tr>
@@ -280,12 +280,12 @@
         </td>
         <td>
           <label class="containerz">0.60
-            <input type="radio" value="0.60" onclick="getValueTraining(this.value)" name="Training">
+            <input type="radio" checked value="0.60" onclick="getValueTraining(this.value)" name="Training">
             <span class="checkmark"></span>
           </label>
         </td>
         <td>
-          <input type="number" oninput="this.className = ''" id="valueTraining" name="valueTraining">
+          <input type="number" value="0.60" oninput="this.className = ''" id="valueTraining" name="valueTraining">
           <input hidden type="number" oninput="this.className = ''" id="totalTraining" name="totalTraining">
         </td>
       </tr>
@@ -300,12 +300,12 @@
         </td>
         <td>
           <label class="containerz">1.67
-            <input type="radio" value="1.67" onclick="getValueEvaluation(this.value)" name="Evaluation">
+            <input type="radio" checked value="1.67" onclick="getValueEvaluation(this.value)" name="Evaluation">
             <span class="checkmark"></span>
           </label>
         </td>
         <td>
-          <input type="number" oninput="this.className = ''" id="valueEvaluation" name="valueEvaluation">
+          <input type="number" value="1.67" oninput="this.className = ''" id="valueEvaluation" name="valueEvaluation">
           <input hidden type="number" oninput="this.className = ''" id="totalEvaluation" name="totalEvaluation">
         </td>
       </tr>
