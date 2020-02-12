@@ -81,6 +81,9 @@ if(isset($_SESSION['username'])==""){
                 <br>
                 <a href="#modal10" class="text-warning stretched-link" data-toggle="modal" data-target="#modal10">10.
                   Tax</a>
+<hr>
+                  <a href="http://www.dmi.usherb.ca/~frappier/IFT721/COCOMOII.PDF" target = '_blank' rel="noopener noreferrer" class="text-warning stretched-link" >
+                  Manual COCOMO II</a>
 
                 <?php include('modal_documentaion/modal_ufp.php'); ?>
                 <?php include('modal_documentaion/modal_sloc.php'); ?>
