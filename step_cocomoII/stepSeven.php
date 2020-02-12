@@ -16,10 +16,10 @@
         <td>
           <h6>System Analyst</h6>
         </td>
-        <td> <input type="number" oninput="this.className = ''" id="RequirementsPayrate" name="RequirementsPayrate">
+        <td> <input type="number" readonly oninput="this.className = ''" id="RequirementsPayrate" name="RequirementsPayrate">
         </td>
         <td>
-          <input type="number" oninput="this.className = ''" id="valueRequirementsPayrate"
+          <input type="number" readonly oninput="this.className = ''" id="valueRequirementsPayrate"
             name="valueRequirementsPayrate">
         </td>
       </tr>
@@ -42,10 +42,10 @@
         <td>
           <h6>System Analyst</h6>
         </td>
-        <td> <input type="number" oninput="this.className = ''" id="DesignPayrate" name="DesignPayrate">
+        <td> <input type="number" readonly oninput="this.className = ''" id="DesignPayrate" name="DesignPayrate">
         </td>
         <td>
-          <input type="number" oninput="this.className = ''" id="valueDesignPayrate"
+          <input type="number" readonly oninput="this.className = ''" id="valueDesignPayrate"
             name="valueDesignPayrate">
         </td>
       </tr>
@@ -55,10 +55,10 @@
         <td>
           <h6>Programmer</h6>
         </td>
-        <td> <input type="number" oninput="this.className = ''" id="ImplementationPayrate" name="ImplementationPayrate">
+        <td> <input type="number" readonly oninput="this.className = ''" id="ImplementationPayrate" name="ImplementationPayrate">
         </td>
         <td>
-          <input type="number" oninput="this.className = ''" id="valueImplementationPayrate"
+          <input type="number" readonly oninput="this.className = ''" id="valueImplementationPayrate"
             name="valueImplementationPayrate">
         </td>
       </tr>
@@ -68,10 +68,10 @@
         <td>
           <h6>System Testing</h6>
         </td>
-        <td> <input type="number" oninput="this.className = ''" id="IntegrationPayrate" name="IntegrationPayrate">
+        <td> <input type="number" readonly oninput="this.className = ''" id="IntegrationPayrate" name="IntegrationPayrate">
         </td>
         <td>
-          <input type="number" oninput="this.className = ''" id="valueIntegrationPayrate"
+          <input type="number" readonly oninput="this.className = ''" id="valueIntegrationPayrate"
             name="valueIntegrationPayrate">
         </td>
       </tr>
@@ -81,10 +81,10 @@
         <td>
           <h6>System Testing</h6>
         </td>
-        <td> <input type="number" oninput="this.className = ''" id="AcceptancePayrate" name="AcceptancePayrate">
+        <td> <input type="number" readonly oninput="this.className = ''" id="AcceptancePayrate" name="AcceptancePayrate">
         </td>
         <td>
-          <input type="number" oninput="this.className = ''" id="valueAcceptancePayrate"
+          <input type="number" readonly oninput="this.className = ''" id="valueAcceptancePayrate"
             name="valueAcceptancePayrate">
         </td>
       </tr>
@@ -94,10 +94,10 @@
         <td>
           <h6>Project Manager</h6>
         </td>
-        <td> <input type="number" oninput="this.className = ''" id="ProjectManagementPayrate" name="ProjectManagementPayrate">
+        <td> <input type="number" readonly oninput="this.className = ''" id="ProjectManagementPayrate" name="ProjectManagementPayrate">
         </td>
         <td>
-          <input type="number" oninput="this.className = ''" id="valueProjectManagementPayrate"
+          <input type="number" readonly oninput="this.className = ''" id="valueProjectManagementPayrate"
             name="valueProjectManagementPayrate">
         </td>
       </tr>
@@ -107,10 +107,10 @@
         <td>
           <h6>System Analyst</h6>
         </td>
-        <td> <input type="number" oninput="this.className = ''" id="ConfigurationPayrate" name="ConfigurationPayrate">
+        <td> <input type="number" readonly oninput="this.className = ''" id="ConfigurationPayrate" name="ConfigurationPayrate">
         </td>
         <td>
-          <input type="number" oninput="this.className = ''" id="valueConfigurationPayrate"
+          <input type="number" readonly oninput="this.className = ''" id="valueConfigurationPayrate"
             name="valueConfigurationPayrate">
         </td>
       </tr>
@@ -120,10 +120,10 @@
         <td>
           <h6>System Testing</h6>
         </td>
-        <td> <input type="number" oninput="this.className = ''" id="QualityPayrate" name="QualityPayrate">
+        <td> <input type="number" readonly oninput="this.className = ''" id="QualityPayrate" name="QualityPayrate">
         </td>
         <td>
-          <input type="number" oninput="this.className = ''" id="valueQualityPayrate"
+          <input type="number" readonly oninput="this.className = ''" id="valueQualityPayrate"
             name="valueQualityPayrate">
         </td>
       </tr>
@@ -133,10 +133,10 @@
         <td>
           <h6>Documenter</h6>
         </td>
-        <td> <input type="number" oninput="this.className = ''" id="DocumentationsPayrate" name="DocumentationsPayrate">
+        <td> <input type="number" readonly oninput="this.className = ''" id="DocumentationsPayrate" name="DocumentationsPayrate">
         </td>
         <td>
-          <input type="number" oninput="this.className = ''" id="valueDocumentationsPayrate"
+          <input type="number" readonly oninput="this.className = ''" id="valueDocumentationsPayrate"
             name="valueDocumentationsPayrate">
         </td>
       </tr>
@@ -146,10 +146,10 @@
         <td>
           <h6>Technical Support</h6>
         </td>
-        <td> <input type="number" oninput="this.className = ''" id="TrainingPayrate" name="TrainingPayrate">
+        <td> <input type="number" readonly oninput="this.className = ''" id="TrainingPayrate" name="TrainingPayrate">
         </td>
         <td>
-          <input type="number" oninput="this.className = ''" id="valueTrainingPayrate"
+          <input type="number" readonly oninput="this.className = ''" id="valueTrainingPayrate"
             name="valueTrainingPayrate">
         </td>
       </tr>
@@ -159,10 +159,10 @@
         <td>
           <h6>System Testing</h6>
         </td>
-        <td> <input type="number" oninput="this.className = ''" id="EvaluationPayrate" name="EvaluationPayrate">
+        <td> <input type="number" readonly oninput="this.className = ''" id="EvaluationPayrate" name="EvaluationPayrate">
         </td>
         <td>
-          <input type="number" oninput="this.className = ''" id="valueEvaluationPayrate"
+          <input type="number" readonly oninput="this.className = ''" id="valueEvaluationPayrate"
             name="valueEvaluationPayrate">
         </td>
       </tr>
@@ -172,7 +172,7 @@
             onclick="hitungStepSeven()">Count</button>
         </td>
         <td>
-          <input type="number" oninput="this.className = ''" name="valueTotalCostOfActivityWaterfallWithPayrate"
+          <input type="number" readonly oninput="this.className = ''" name="valueTotalCostOfActivityWaterfallWithPayrate"
             id="valueTotalCostOfActivityWaterfallWithPayrate">
         </td>
       </tr>

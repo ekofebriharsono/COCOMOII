@@ -1,5 +1,5 @@
 <div class="tab">
-  <h3>Personel Direct Cost</h3>
+  <h3>Profit</h3>
 
   <table class="table">
     <tr>
@@ -41,13 +41,13 @@
         1
       </td>
       <td>
-        <input type="number" value="0" oninput="this.className = ''" id="costBeforeProfit" name="costBeforeProfit">
+        <input type="number" readonly value="0" oninput="this.className = ''" id="costBeforeProfit" name="costBeforeProfit">
       </td>
       <td>
-        <input type="number" value="0" oninput="this.className = ''" id="totalProfit" name="totalProfit">
+        <input type="number" readonly value="0" oninput="this.className = ''" id="totalProfit" name="totalProfit">
       </td>
       <td>
-        <input type="number" value="0" oninput="this.className = ''" id="costWithProfit" name="costWithProfit">
+        <input type="number" readonly value="0" oninput="this.className = ''" id="costWithProfit" name="costWithProfit">
       </td>
     </tr>
 

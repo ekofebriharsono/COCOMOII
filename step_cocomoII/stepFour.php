@@ -787,7 +787,7 @@
 
     </tr>
     <tr>
-      <td><input placeholder="Total" type="text" oninput="this.className = ''" id="totalStepFour" name="totalEM"></td>
+      <td><input placeholder="Total" readonly type="text" oninput="this.className = ''" id="totalStepFour" name="totalEM"></td>
     </tr>
     <tr>
       <td>
@@ -795,7 +795,7 @@
       </td>
     </tr>
     <tr>
-      <td><input placeholder="Total" type="text" oninput="this.className = ''" id="totalStepFourPM" name="totalPM"></td>
+      <td><input placeholder="Total" readonly type="text" oninput="this.className = ''" id="totalStepFourPM" name="totalPM"></td>
 
     </tr>
 

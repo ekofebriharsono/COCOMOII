@@ -27,7 +27,7 @@
         Personel Direct Cost Before Profit (IDR)
       </td>
       <td>
-        <input type="number" value="0" oninput="this.className = ''" id="PersonelDirectCostBeforeProfit"
+        <input type="number" readonly value="0" oninput="this.className = ''" id="PersonelDirectCostBeforeProfit"
           name="PersonelDirectCostBeforeProfit">
       </td>
     </tr>
@@ -36,7 +36,7 @@
         Profit (IDR)
       </td>
       <td>
-        <input type="number" value="0" oninput="this.className = ''" id="totalProfitIDR" name="totalProfitIDR">
+        <input type="number" readonly value="0" oninput="this.className = ''" id="totalProfitIDR" name="totalProfitIDR">
       </td>
     </tr>
     <tr>
@@ -44,7 +44,7 @@
         Personel Direct Cost (IDR)
       </td>
       <td>
-        <input type="number" value="0" oninput="this.className = ''" id="PersonelDirectCost" name="PersonelDirectCost">
+        <input type="number" readonly value="0" oninput="this.className = ''" id="PersonelDirectCost" name="PersonelDirectCost">
       </td>
     </tr>
     <tr>
@@ -52,7 +52,7 @@
         Non Personnel Direct Cost (IDR)
       </td>
       <td>
-        <input type="number" value="0" oninput="this.className = ''" id="NonPersonnelDirectCost"
+        <input type="number" readonly value="0" oninput="this.className = ''" id="NonPersonnelDirectCost"
           name="NonPersonnelDirectCost">
       </td>
     </tr>
@@ -61,7 +61,7 @@
         Owner Cost Estimate Before Taxes (IDR)
       </td>
       <td>
-        <input type="number" value="0" oninput="this.className = ''" id="OwnerCostEstimateBeforeTaxes"
+        <input type="number" readonly value="0" oninput="this.className = ''" id="OwnerCostEstimateBeforeTaxes"
           name="OwnerCostEstimateBeforeTaxes">
       </td>
     </tr>
@@ -70,7 +70,7 @@
         Tax (Value Added Tax 10%) (IDR)
       </td>
       <td>
-        <input type="number" value="0" oninput="this.className = ''" id="ValueAddedTax" name="ValueAddedTax">
+        <input type="number" readonly value="0" oninput="this.className = ''" id="ValueAddedTax" name="ValueAddedTax">
       </td>
     </tr>
     <tr>
@@ -78,7 +78,7 @@
         Owner Cost Estimate (IDR)
       </td>
       <td>
-        <input type="number" value="0" oninput="this.className = ''" id="OwnerCostEstimate" name="OwnerCostEstimate">
+        <input type="number" readonly value="0" oninput="this.className = ''" id="OwnerCostEstimate" name="OwnerCostEstimate">
       </td>
     </tr>
   </table>

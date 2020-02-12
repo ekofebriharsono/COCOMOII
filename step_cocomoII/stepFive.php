@@ -53,7 +53,7 @@
 
   </div> -->
   <div id="Waterfall" class="tabcontent11">
-    <h3>Waterfall</h3>
+    <h3>Activity</h3>
     <table class="table">
       <tr>
         <td rowspan="2">No</td>
@@ -315,7 +315,7 @@
             onclick="hitungTotalCostOfActivityWaterfall()">Hitung</button>
         </td>
         <td>
-          <input type="number" oninput="this.className = ''" name="valueTotalCostOfActivityWaterfall"
+          <input type="number" readonly oninput="this.className = ''" name="valueTotalCostOfActivityWaterfall"
             id="valueTotalCostOfActivityWaterfall">
         </td>
       </tr>

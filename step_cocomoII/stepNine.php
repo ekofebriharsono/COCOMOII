@@ -10,13 +10,13 @@
     <tr>
       <td>1</td>
       <td>Documents for travel abroad</td>
-      <td><input placeholder="ex. 100" type="number" value="100000" oninput="this.className = ''" id="dfta" name="dfta">
+      <td><input placeholder="ex. 100" type="number" value="0" oninput="this.className = ''" id="dfta" name="dfta">
       </td>
     </tr>
     <tr>
       <td>2</td>
       <td>Transportation Ticket</td>
-      <td><input placeholder="ex. 100" type="number" value="50000" oninput="this.className = ''" id="tt" name="tt">
+      <td><input placeholder="ex. 100" type="number" value="0" oninput="this.className = ''" id="tt" name="tt">
       </td>
     </tr>
     <tr>
@@ -188,7 +188,7 @@
         <button type="button" onclick="hitungNonPersonel()" id="btnHitungProfit">Count</button>
       </td>
       <td>
-        <input placeholder="0" type="number" value="0" oninput="this.className = ''" id="totalNonPersonel"
+        <input placeholder="0" readonly type="number" value="0" oninput="this.className = ''" id="totalNonPersonel"
           name="totalNonPersonel">
       </td>
     </tr>
