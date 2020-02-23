@@ -2,6 +2,11 @@
 include 'koneksi.php';
 session_start();
 
+function getNumber($string){
+$result = preg_replace("/[^0-9]/", "", $string);
+return $result;
+}
+
 if(isset($_POST['id_modul'])){
 
     // // required
@@ -178,43 +183,43 @@ if(isset($_POST['id_modul'])){
     $TotalCostOfActivityWaterfall = $_POST['valueTotalCostOfActivityWaterfall'];
 
     // Data Step 7
-    $RequirementsPayrate = $_POST['RequirementsPayrate'];
-    $valueRequirementsPayrate = $_POST['valueRequirementsPayrate'];
+    $RequirementsPayrate = getNumber($_POST['RequirementsPayrate']);
+    $valueRequirementsPayrate = getNumber($_POST['valueRequirementsPayrate']);
 
-    $SpecificationsPayrate = $_POST['SpecificationsPayrate'];
-    $valueSpecificationsPayrate = $_POST['valueSpecificationsPayrate'];
+    $SpecificationsPayrate = getNumber($_POST['SpecificationsPayrate']);
+    $valueSpecificationsPayrate = getNumber($_POST['valueSpecificationsPayrate']);
 
-    $DesignPayrate = $_POST['DesignPayrate'];
-    $valueDesignPayrate = $_POST['valueDesignPayrate'];
+    $DesignPayrate = getNumber($_POST['DesignPayrate']);
+    $valueDesignPayrate = getNumber($_POST['valueDesignPayrate']);
 
-    $ImplementationPayrate = $_POST['ImplementationPayrate'];
-    $valueImplementationPayrate = $_POST['valueImplementationPayrate'];
+    $ImplementationPayrate = getNumber($_POST['ImplementationPayrate']);
+    $valueImplementationPayrate = getNumber($_POST['valueImplementationPayrate']);
 
-    $IntegrationPayrate = $_POST['IntegrationPayrate'];
-    $valueIntegrationPayrate = $_POST['valueIntegrationPayrate'];
+    $IntegrationPayrate = getNumber($_POST['IntegrationPayrate']);
+    $valueIntegrationPayrate = getNumber($_POST['valueIntegrationPayrate']);
 
-    $AcceptancePayrate = $_POST['AcceptancePayrate'];
-    $valueAcceptancePayrate = $_POST['valueAcceptancePayrate'];
+    $AcceptancePayrate = getNumber($_POST['AcceptancePayrate']);
+    $valueAcceptancePayrate = getNumber($_POST['valueAcceptancePayrate']);
 
-    $ProjectManagementPayrate = $_POST['ProjectManagementPayrate'];
-    $valueProjectManagementPayrate = $_POST['valueProjectManagementPayrate'];
+    $ProjectManagementPayrate = getNumber($_POST['ProjectManagementPayrate']);
+    $valueProjectManagementPayrate = getNumber($_POST['valueProjectManagementPayrate']);
 
-    $ConfigurationPayrate = $_POST['ConfigurationPayrate'];
-    $valueConfigurationPayrate = $_POST['valueConfigurationPayrate'];
+    $ConfigurationPayrate = getNumber($_POST['ConfigurationPayrate']);
+    $valueConfigurationPayrate = getNumber($_POST['valueConfigurationPayrate']);
 
-    $QualityPayrate = $_POST['QualityPayrate'];
-    $valueQualityPayrate = $_POST['valueQualityPayrate'];
+    $QualityPayrate = getNumber($_POST['QualityPayrate']);
+    $valueQualityPayrate = getNumber($_POST['valueQualityPayrate']);
 
-    $DocumentationsPayrate = $_POST['DocumentationsPayrate'];
-    $valueDocumentationsPayrate = $_POST['valueDocumentationsPayrate'];
+    $DocumentationsPayrate = getNumber($_POST['DocumentationsPayrate']);
+    $valueDocumentationsPayrate = getNumber($_POST['valueDocumentationsPayrate']);
 
-    $TrainingPayrate = $_POST['TrainingPayrate'];
-    $valueTrainingPayrate = $_POST['valueTrainingPayrate'];
+    $TrainingPayrate = getNumber($_POST['TrainingPayrate']);
+    $valueTrainingPayrate = getNumber($_POST['valueTrainingPayrate']);
 
-    $EvaluationPayrate = $_POST['EvaluationPayrate'];
-    $valueEvaluationPayrate = $_POST['valueEvaluationPayrate'];
+    $EvaluationPayrate = getNumber($_POST['EvaluationPayrate']);
+    $valueEvaluationPayrate = getNumber($_POST['valueEvaluationPayrate']);
 
-    $valueTotalCostOfActivityWaterfallWithPayrate = $_POST['valueTotalCostOfActivityWaterfallWithPayrate'];
+    $valueTotalCostOfActivityWaterfallWithPayrate = getNumber($_POST['valueTotalCostOfActivityWaterfallWithPayrate']);
 
 
     // Query Step 5
@@ -245,19 +250,19 @@ if(isset($_POST['id_modul'])){
     }
 
     //step 6
-    $salaryPublicPM = $_POST['salaryPublicPM'];
-    $salaryPublicSA = $_POST['salaryPublicSA'];
-    $salaryPublicP = $_POST['salaryPublicP'];
-    $salaryPublicST = $_POST['salaryPublicST'];
-    $salaryPublicTS = $_POST['salaryPublicTS'];
-    $salaryPublicD = $_POST['salaryPublicD'];
+    $salaryPublicPM = getNumber($_POST['salaryPublicPM']);
+    $salaryPublicSA = getNumber($_POST['salaryPublicSA']);
+    $salaryPublicP = getNumber($_POST['salaryPublicP']);
+    $salaryPublicST = getNumber($_POST['salaryPublicST']);
+    $salaryPublicTS = getNumber($_POST['salaryPublicTS']);
+    $salaryPublicD = getNumber($_POST['salaryPublicD']);
 
-    $salaryPrivatePM = $_POST['salaryPrivatePM'];
-    $salaryPrivateSA = $_POST['salaryPrivateSA'];
-    $salaryPrivateP = $_POST['salaryPrivateP'];
-    $salaryPrivateST = $_POST['salaryPrivateST'];
-    $salaryPrivateTS = $_POST['salaryPrivateTS'];
-    $salaryPrivateD = $_POST['salaryPrivateD'];
+    $salaryPrivatePM = getNumber($_POST['salaryPrivatePM']);
+    $salaryPrivateSA = getNumber($_POST['salaryPrivateSA']);
+    $salaryPrivateP = getNumber($_POST['salaryPrivateP']);
+    $salaryPrivateST = getNumber($_POST['salaryPrivateST']);
+    $salaryPrivateTS = getNumber($_POST['salaryPrivateTS']);
+    $salaryPrivateD = getNumber($_POST['salaryPrivateD']);
 
     // Query Step 6
     $sqlPayrateUser = "INSERT INTO pay_rate_user (id_modul, position, requirement, private, public) VALUES 
@@ -278,37 +283,37 @@ if(isset($_POST['id_modul'])){
     }
 
     // Data Step 9
-    $dfta = $_POST['dfta'];
-    $tt = $_POST['tt'];
-    $eb = $_POST['eb'];
-    $ub = $_POST['ub'];
-    $lt = $_POST['lt'];
-    $tcoppn = $_POST['tcoppn'];
-    $icop = $_POST['icop'];
-    $rav = $_POST['rav'];
-    $rtpo = $_POST['rtpo'];
-    $roe = $_POST['roe'];
-    $rof = $_POST['rof'];
-    $ocotpo = $_POST['ocotpo'];
-    $oc = $_POST['oc'];
-    $capc = $_POST['capc'];
-    $cc = $_POST['cc'];
-    $pda = $_POST['pda'];
-    $ha = $_POST['ha'];
-    $tl = $_POST['tl'];
-    $ra = $_POST['ra'];
-    $oosa = $_POST['oosa'];
-    $etl = $_POST['etl'];
-    $al = $_POST['al'];
-    $rc = $_POST['rc'];
-    $rse = $_POST['rse'];
-    $sdc = $_POST['sdc'];
-    $seminar = $_POST['seminar'];
-    $s = $_POST['s'];
-    $labt = $_POST['labt'];
-    $c = $_POST['c'];
+    $dfta = getNumber($_POST['dfta']);
+    $tt = getNumber($_POST['tt']);
+    $eb = getNumber($_POST['eb']);
+    $ub = getNumber($_POST['ub']);
+    $lt = getNumber($_POST['lt']);
+    $tcoppn = getNumber($_POST['tcoppn']);
+    $icop = getNumber($_POST['icop']);
+    $rav = getNumber($_POST['rav']);
+    $rtpo = getNumber($_POST['rtpo']);
+    $roe = getNumber($_POST['roe']);
+    $rof = getNumber($_POST['rof']);
+    $ocotpo = getNumber($_POST['ocotpo']);
+    $oc = getNumber($_POST['oc']);
+    $capc = getNumber($_POST['capc']);
+    $cc = getNumber($_POST['cc']);
+    $pda = getNumber($_POST['pda']);
+    $ha = getNumber($_POST['ha']);
+    $tl = getNumber($_POST['tl']);
+    $ra = getNumber($_POST['ra']);
+    $oosa = getNumber($_POST['oosa']);
+    $etl = getNumber($_POST['etl']);
+    $al = getNumber($_POST['al']);
+    $rc = getNumber($_POST['rc']);
+    $rse = getNumber($_POST['rse']);
+    $sdc = getNumber($_POST['sdc']);
+    $seminar = getNumber($_POST['seminar']);
+    $s = getNumber($_POST['s']);
+    $labt = getNumber($_POST['labt']);
+    $c = getNumber($_POST['c']);
 
-    $totalNonPersonel = $_POST['totalNonPersonel'];
+    $totalNonPersonel = getNumber($_POST['totalNonPersonel']);
 
     // Query Step 9
     $sqlNonpersonnel = "INSERT INTO non_personel (id_modul, name, biaya) VALUES 
@@ -352,13 +357,13 @@ if(isset($_POST['id_modul'])){
     }
 
     // Data Step 10
-    $PersonelDirectCostBeforeProfit = $_POST['PersonelDirectCostBeforeProfit'];
-    $totalProfitIDR = $_POST['totalProfitIDR'];
-    $PersonelDirectCost = $_POST['PersonelDirectCost'];
-    $NonPersonnelDirectCost = $_POST['NonPersonnelDirectCost'];
-    $OwnerCostEstimateBeforeTaxes = $_POST['OwnerCostEstimateBeforeTaxes'];
-    $ValueAddedTax = $_POST['ValueAddedTax'];
-    $OwnerCostEstimate = $_POST['OwnerCostEstimate'];
+    $PersonelDirectCostBeforeProfit = getNumber($_POST['PersonelDirectCostBeforeProfit']);
+    $totalProfitIDR = getNumber($_POST['totalProfitIDR']);
+    $PersonelDirectCost = getNumber($_POST['PersonelDirectCost']);
+    $NonPersonnelDirectCost = getNumber($_POST['NonPersonnelDirectCost']);
+    $OwnerCostEstimateBeforeTaxes = getNumber($_POST['OwnerCostEstimateBeforeTaxes']);
+    $ValueAddedTax = getNumber($_POST['ValueAddedTax']);
+    $OwnerCostEstimate = getNumber($_POST['OwnerCostEstimate']);
 
     // Query Step 10
     $sqlAllCost = "INSERT INTO all_cost_user (id_modul, personel_direct_cost_before_profit, profit, personel_direct_cost, non_personel_direct_cost, owner_estimate_before_tax, tax, owner_cost_estimate) 
@@ -385,8 +390,8 @@ if(isset($_POST['id_modul'])){
       echo "Gagal Mengupdate data Total Proyek!".'</br>';
     }
 
-    $profit = $_POST['profit'];
-    $tax = $_POST['tax'];
+    $profit = getNumber($_POST['profit']);
+    $tax = getNumber($_POST['tax']);
 
     $sqlProfit = "INSERT INTO profit_user (id_modul, total) VALUES ($id_modul, $profit)";
     $sqlTax = "INSERT INTO tax_user (id_modul, total) VALUES ($id_modul, $tax)";
