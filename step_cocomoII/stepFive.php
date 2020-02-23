@@ -312,7 +312,7 @@
       <tr>
         <td>
           <button type="button" id="btnHitungTotalCostOfActivityWaterfall"
-            onclick="hitungTotalCostOfActivityWaterfall()">Hitung</button>
+            onclick="hitungTotalCostOfActivityWaterfall()">Count</button>
         </td>
         <td>
           <input type="number" readonly oninput="this.className = ''" name="valueTotalCostOfActivityWaterfall"

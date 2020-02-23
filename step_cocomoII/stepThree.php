@@ -73,7 +73,7 @@
       </td>
     </tr>
     <tr>
-      <td colspan="3"><button type="button" onclick="hitungStepThree()">Hitung</button></td>
+      <td colspan="3"><button type="button" onclick="hitungStepThree()">Count</button></td>
     </tr>
     <tr>
       <td>

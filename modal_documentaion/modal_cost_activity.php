@@ -19,9 +19,9 @@
         </div>
         <!-- body modal -->
         <div class="modal-body">
-        <p>Secara default sistem mengelompokan personil sesuai dengan kebutuhan activity berlaku juga pada salary setiap personil.</p>
-        <p>user hanya perlu menekan tombol hitung untuk melihat hasil nilai total per activity</p>
-        <p>*Note : User tidak bisa mengubah nominal apapun pada tahap ini. jika ingin mengubah nominal, user harus kembali pada tahap sebelumnya.</p>
+        <p>By default the system classify personnel according to the needs of the activity apply also on salary every personnel.</p>
+        <p>User just need to press the Calculate button to view the result of total value per activity.</p>
+        <p>*Note : The user cannot change any nominal at this stage. if you want to change the nominal, the user must return to the previous stage.</p>
           
         </div>
         <!-- footer modal -->

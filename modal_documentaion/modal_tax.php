@@ -19,9 +19,9 @@
         </div>
         <!-- body modal -->
         <div class="modal-body">
-        <p>Secara default sistem memberikan nilai tax sebesar 10% pada setiap proyek.</p>
-        <p>Tax mengambil dari biaya total proyek (Personnel direct cost with profit and Non personnel direct cost)</p>
-        <p>*Note : User bisa mengganti nilai tax dalam satuan % (persen) sesuai dengan kebutuhan.</p>
+        <p>By default the system provides 10% tax on each project.</p>
+        <p>Tax taken from the total cost of the project (Personnel direct cost with profit and Non Personnel direct cost)</p>
+        <p>*Note : User can change the tax value in% (percent) according to their needs.</p>
           
         </div>
         <!-- footer modal -->

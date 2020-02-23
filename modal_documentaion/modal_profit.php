@@ -19,9 +19,9 @@
         </div>
         <!-- body modal -->
         <div class="modal-body">
-        <p>Secara default sistem memberikan nilai profit sebesar 10% pada setiap proyek.</p>
-        <p>Profit hanya diambil dari total activity (Personnel direct cost)</p>
-        <p>*Note : User bisa mengganti nilai profit dalam satuan % (persen) sesuai dengan kebutuhan.</p>
+        <p>By default the system gives a profit value of 10% on each project.</p>
+        <p>Profit is only taken from the total activity (Personnel Direct cost)</p>
+        <p>*Note : User can change the value of profit in % (percent) according to the needs.</p>
           
         </div>
         <!-- footer modal -->

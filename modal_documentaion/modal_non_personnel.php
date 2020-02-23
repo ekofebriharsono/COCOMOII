@@ -19,9 +19,9 @@
         </div>
         <!-- body modal -->
         <div class="modal-body">
-        <p>Secara default sistem memberikan beberapa parameter dengan default biaya Rp.0 .</p>
-        <p>user bisa mengisi biaya sesuai dengan kebutuhan. jika tidak dibutuhkan bisa dibiarkan Rp.0 .</p>
-        <p>*Note : User tidak bisa menambahkan parameter yang telah ditentukan.</p>
+        <p>By default the system gives some parameters with the default cost of Rp. 0.</p>
+        <p>User can fill the cost according to the needs. If not needed can be left Rp. 0.</p>
+        <p>*Note : User cannot add predefined parameters.	</p>
           
         </div>
         <!-- footer modal -->

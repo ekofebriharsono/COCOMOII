@@ -284,7 +284,7 @@
       </td>
     </tr>
     <tr>
-      <td colspan="4"><button type="button" onclick="hitungStepTwo()">Hitung</button></td>
+      <td colspan="4"><button type="button" onclick="hitungStepTwo()">Count</button></td>
 
     </tr>
     <tr>

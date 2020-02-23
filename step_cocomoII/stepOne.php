@@ -123,7 +123,7 @@ UFP (Unjusted Function Point)
 
     <tr>
       <td></td>
-      <td colspan="3"><button type="button" id="btnHitung" onclick="hitungStepOne()">Hitung</button></td>
+      <td colspan="3"><button type="button" id="btnHitung" onclick="hitungStepOne()">Count</button></td>
     </tr>
     <tr>
       <td><b>TOTAL</b></td>

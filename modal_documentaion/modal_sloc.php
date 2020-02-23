@@ -17,7 +17,7 @@
         </div>
         <!-- body modal -->
         <div class="modal-body">
-        <p>SLOC adalah bahasa pemrograman yang akan dipakai dalam pembuatan aplikasi dan hanya boleh memilih 1 bahasa pemogramman.</p>
+        <p>SLOC is a programming language that will be used in making applications and can only choose 1 programming language.</p>
           
         </div>
         <!-- footer modal -->

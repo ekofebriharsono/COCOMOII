@@ -19,10 +19,10 @@
         </div>
         <!-- body modal -->
         <div class="modal-body">
-        <p>Secara default sistem menyediakan beberapa orang dan salary sesuai standart.</p>
-        <p>untuk nilai salary bisa diubah sesuai dengan kebutuhan, terdapat 2 kolom terkait tentang salary yaitu payrate 100% dan 70%. untuk payrate yang 100% digunakan untuk pihak pemerintahan sedangkan untuk payrate 70% digunakan oleh pihak luar (Software House). tapi dalam aplikasi ini hanya menggunakan payrate 100%</p>
-        <p>user hanya perlu mengubah nilai salary pada bagian payrate 100% kemudian menekan tombol hitung. otomatis payrate 70% akan terisi</p>
-        <p>*Note : jumlah personil dan kebutuhan personil tidak dapat diubah.</p>
+        <p>By default the system provides several people and salary according to standard.</p>
+        <p>For the salary value can be changed according to the needs, there are 2 related columns about the salary of PayRate 100% and 70%. For PayRate that is 100% used for the administration party while for PayRate 70% is used by outside parties (Software House). But in this application only use PayRate 100%.</p>
+        <p>The user only needs to change the value of salary at the PayRate 100% and then press the Calculate button. 70% automatic PayRate will be charged.</p>
+        <p>*Note : Number of personnel and personnel needs cannot be changed.</p>
           
         </div>
         <!-- footer modal -->
