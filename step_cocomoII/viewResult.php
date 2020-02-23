@@ -72,7 +72,11 @@ if(isset($_SESSION['username'])==""){
     <?php  if(!isset($_GET['excel'])){ ?>
     <center>
         <a href="viewResult.php?excel=true">EXPORT KE EXCEL</a>
+       
+        <a href="../pdfnya.php?idProject='<?php echo $idProject;?>'">EXPORT KE PDF</a>
+
     </center>
+
 
     <?php } ?>
     <?php 
