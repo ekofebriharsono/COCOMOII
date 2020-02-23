@@ -52,11 +52,11 @@
         Minimal undergraduate and experience > 4 years
       </td>
       <td>
-        <input placeholder="ex: 10000" type="number" value="18250000" oninput="this.className = ''" id="salaryPublicPM"
+        <input placeholder="ex: 10000" type="text" oninput="this.className = ''" id="salaryPublicPM"
           name="salaryPublicPM">
       </td>
       <td>
-        <input placeholder="ex: 10000" type="number" value="0" oninput="this.className = ''" id="salaryPrivatePM"
+        <input placeholder="ex: 10000" type="text" value="0" oninput="this.className = ''" id="salaryPrivatePM"
           name="salaryPrivatePM" readonly>
       </td>
     </tr>
@@ -68,11 +68,11 @@
         Minimal undergraduate and experience > 3 years
       </td>
       <td>
-        <input placeholder="ex: 10000" type="number" value="12000000" oninput="this.className = ''" id="salaryPublicSA"
+        <input placeholder="ex: 10000" type="text" oninput="this.className = ''" id="salaryPublicSA"
           name="salaryPublicSA">
       </td>
       <td>
-        <input placeholder="ex: 10000" type="number" value="0" oninput="this.className = ''" id="salaryPrivateSA"
+        <input placeholder="ex: 10000" type="text" value="0" oninput="this.className = ''" id="salaryPrivateSA"
           name="salaryPrivateSA" readonly>
       </td>
     </tr>
@@ -84,11 +84,11 @@
         Experience 1-2 years
       </td>
       <td>
-        <input placeholder="ex: 10000" type="number" value="11000000" oninput="this.className = ''" id="salaryPublicP"
+        <input placeholder="ex: 10000" type="text" value="11000000" oninput="this.className = ''" id="salaryPublicP"
           name="salaryPublicP">
       </td>
       <td>
-        <input placeholder="ex: 10000" type="number" value="0" oninput="this.className = ''" id="salaryPrivateP"
+        <input placeholder="ex: 10000" type="text" value="0" oninput="this.className = ''" id="salaryPrivateP"
           name="salaryPrivateP" readonly>
       </td>
     </tr>
@@ -101,11 +101,11 @@
         Experience 1-2 years
       </td>
       <td>
-        <input placeholder="ex: 10000" type="number" value="9300000" oninput="this.className = ''" id="salaryPublicST"
+        <input placeholder="ex: 10000" type="text" value="9300000" oninput="this.className = ''" id="salaryPublicST"
           name="salaryPublicST">
       </td>
       <td>
-        <input placeholder="ex: 10000" type="number" value="0" oninput="this.className = ''" id="salaryPrivateST"
+        <input placeholder="ex: 10000" type="text" value="0" oninput="this.className = ''" id="salaryPrivateST"
           name="salaryPrivateST" readonly>
       </td>
     </tr>
@@ -117,11 +117,11 @@
         Experience 1-2 years
       </td>
       <td>
-        <input placeholder="ex: 10000" type="number" value="9300000" oninput="this.className = ''" id="salaryPublicTS"
+        <input placeholder="ex: 10000" type="text" value="9300000" oninput="this.className = ''" id="salaryPublicTS"
           name="salaryPublicTS">
       </td>
       <td>
-        <input placeholder="ex: 10000" type="number" value="0" oninput="this.className = ''" id="salaryPrivateTS"
+        <input placeholder="ex: 10000" type="text" value="0" oninput="this.className = ''" id="salaryPrivateTS"
           name="salaryPrivateTS" readonly>
       </td>
     </tr>
@@ -133,11 +133,11 @@
         Experience 1-2 years
       </td>
       <td>
-        <input placeholder="ex: 10000" type="number" value="5000000" oninput="this.className = ''" id="salaryPublicD"
+        <input placeholder="ex: 10000" type="text" value="5000000" oninput="this.className = ''" id="salaryPublicD"
           name="salaryPublicD">
       </td>
       <td>
-        <input placeholder="ex: 10000" type="number" value="0" oninput="this.className = ''" id="salaryPrivateD"
+        <input placeholder="ex: 10000" type="text" value="0" oninput="this.className = ''" id="salaryPrivateD"
           name="salaryPrivateD" readonly>
       </td>
     </tr>

@@ -1,53 +1,122 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!-- <!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <style type="text/css">
-    .modal-full {
-    min-width: 80%;
-    margin-left: 80;
-}
-
-.modal-full .modal-content {
-    min-height: 100vh;
-}
-
-
-    </style>
+	<title>sdf</title>
 </head>
-
 <body>
-    <a href="#myModal" role="button" class="btn btn-primary" data-toggle="modal">Launch modal</a>
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-full" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Modal</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body p-4" id="result">
-                    <p>The grid inside the modal is responsive too..</p>
-                    <div class="row">
-                        <div class="col-sm-6 col-lg-3"> Content </div>
-
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
-                </div>
-            </div>
-        </div>
-    </div>
+	<h2></h2>
 </body>
+	<script type="text/javascript">
+		let h2 = document.querySelector('h2')
+		let str = '10,000,000,000'
+		var justOneDot = str.replace(/[.](?=.*?\.)/g, '');
+		var outStr = parseFloat(justOneDot.replace(/,/g,'')); 
 
+			h2.innerHTML = outStr;
+
+	</script>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Membuat Format Rupiah Dengan Javascript - www.malasngoding.com</title>
+</head>
+<body>
+
+	<style type="text/css">
+	body {
+		font-family: sans-serif;
+	}
+	.kotak {
+		width: 350px;
+		margin: auto;
+		margin-top: 15px;
+		padding: 10px;
+	}
+
+	p{
+		margin-bottom: 20px;
+		color: #0004ff;
+	}
+
+	input {
+		text-align: right;
+		width: 100%;
+		margin-bottom: 20px;
+		margin-top: 10px;
+		padding: 7px 10px;
+		font-size: 18px;
+	}
+	</style>
+
+	<center>
+		<h1>Membuat Format Rupiah Dengan Javascript <br/> www.malasngoding.com</h1>
+	</center>
+
+	<div class="kotak">
+		<p>Ketik jumlah nominal pada form di bawah ini.</p>
+		<span>Nominal Rupiah. :</span>
+		<input type="text" id="rupiah"/>
+        <button onclick="convert()">convert</button>
+
+        <input type="text" name="" id="hasil">
+
+        <input type="text" name="" id="balik">
+	</div>
+
+
+	<script type="text/javascript">
+
+    function convert(){
+        var rupiah = document.getElementById('rupiah');
+        var hasil = document.getElementById('hasil');
+        var ba;ik = document.getElementById('balik');
+
+
+        hasil.value = delFormatRupiah(rupiah.value);
+        balik.value= formatRupiah(hasil.value,'Rp ');
+
+
+    }
+		
+		var rupiah = document.getElementById('rupiah');
+		rupiah.addEventListener('keyup', function(e){
+			// tambahkan 'Rp.' pada saat form di ketik
+			// gunakan fungsi formatRupiah() untuk mengubah angka yang di ketik menjadi format angka
+			rupiah.value = formatRupiah(this.value, '');
+		});
+
+		/* Fungsi formatRupiah */
+		function formatRupiah(angka, prefix){
+			var number_string = angka.replace(/[^.\d]/g, '').toString(),
+			split   		= number_string.split('.'),
+			sisa     		= split[0].length % 3,
+			rupiah     		= split[0].substr(0, sisa),
+			ribuan     		= split[0].substr(sisa).match(/\d{3}/gi);
+
+			// tambahkan titik jika yang di input sudah menjadi angka ribuan
+			if(ribuan){
+				separator = sisa ? ',' : '';
+				rupiah += separator + ribuan.join(',');
+			}
+
+			rupiah = split[1] != undefined ? rupiah + '.' + split[1] : rupiah;
+			return prefix == undefined ? rupiah : (rupiah ? 'Rp ' + rupiah : '');
+        }
+        
+
+
+        function delFormatRupiah(num){
+
+            var str = "? this is a ? test999 ?";
+var justOneDot = str.replace(/[.](?=.*?\.)/g, '');
+var outStr = parseFloat(justOneDot.replace(/[^0-9.]/g,'')); 
+//document.write(result);
+            return (outStr);
+        }
+	</script>
+</body>
 </html>

@@ -179,7 +179,7 @@ if(isset($_SESSION['username'])==""){
               <form id="regBoxModuleRumus" action="proses_php/prosesSimpanDataPerModul.php" method="post">
                 <input hidden type="text" name="id_modul" value="<?php echo $_POST['id_modul']; ?>">
                 <input hidden type="text" name="id_project" value="<?php echo $_POST['project']; ?>">
-
+               
                 <?php include('step_cocomoII/stepOne.php'); ?>
 
                 <?php include('step_cocomoII/stepTwo.php'); ?>
@@ -230,6 +230,7 @@ if(isset($_SESSION['username'])==""){
 
 <script src="js/formPagination.js"></script>
 <script src="js/cocomoII.js"></script>
+<!-- <script src="js/formatnumber.js"></script> -->
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
   integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">

@@ -248,7 +248,7 @@ function hitungStepTwo() {
     document.getElementById("SLOC").value = SLOC_Conversion_ratios;
     document.getElementById("SIZE").value = SIZE;
     KLOCGlobal = SIZE / 1000;
-   // document.getElementById("resultTotalSize").innerHTML = KLOCGlobal;
+    // document.getElementById("resultTotalSize").innerHTML = KLOCGlobal;
   }
 
 }
@@ -391,7 +391,7 @@ function hitungStepThree() {
   document.getElementById("TeamCohesionValue").value = TeamCohesion;
   document.getElementById("ProcessMaturityValue").value = ProcessMaturity;
 
- // document.getElementById("resultTotalScaleFactor").innerHTML = Efixed;
+  // document.getElementById("resultTotalScaleFactor").innerHTML = Efixed;
 
   EGlobal = Efixed;
 }
@@ -435,8 +435,8 @@ function hitungStepFour() {
   PMGlobal = PM;
   EMGlobal = EM;
 
- // document.getElementById("resultTotalEffortMultiplier").innerHTML = EMGlobal;
- // document.getElementById("resultTotalPersonMonth").innerHTML = PMGlobal;
+  // document.getElementById("resultTotalEffortMultiplier").innerHTML = EMGlobal;
+  // document.getElementById("resultTotalPersonMonth").innerHTML = PMGlobal;
 
 }
 
@@ -641,8 +641,60 @@ function hitungTotalCostOfActivityWaterfall() {
   document.getElementById("totalTraining").value = KOMAActivityTraining;
   document.getElementById("totalEvaluation").value = KOMAActivityEvaluation;
 
- // document.getElementById("resultTotalMethod").innerHTML = totalActivityWaterfall;
+  // document.getElementById("resultTotalMethod").innerHTML = totalActivityWaterfall;
 
+}
+
+var salaryPublicPMRupiah = document.getElementById('salaryPublicPM');
+salaryPublicPMRupiah.addEventListener('keyup', function (e) {
+  salaryPublicPMRupiah.value = formatRupiah(this.value, 'Rp ');
+});
+
+var salaryPublicSARupiah = document.getElementById('salaryPublicSA');
+salaryPublicSARupiah.addEventListener('keyup', function (e) {
+  salaryPublicSARupiah.value = formatRupiah(this.value, 'Rp ');
+});
+
+var salaryPublicPRupiah = document.getElementById('salaryPublicP');
+salaryPublicPRupiah.addEventListener('keyup', function (e) {
+  salaryPublicPRupiah.value = formatRupiah(this.value, 'Rp ');
+});
+
+var salaryPublicSTRupiah = document.getElementById('salaryPublicST');
+salaryPublicSTRupiah.addEventListener('keyup', function (e) {
+  salaryPublicSTRupiah.value = formatRupiah(this.value, 'Rp ');
+});
+
+var salaryPublicTSRupiah = document.getElementById('salaryPublicTS');
+salaryPublicTSRupiah.addEventListener('keyup', function (e) {
+  salaryPublicTSRupiah.value = formatRupiah(this.value, 'Rp ');
+});
+
+var salaryPublicDRupiah = document.getElementById('salaryPublicD');
+salaryPublicDRupiah.addEventListener('keyup', function (e) {
+  salaryPublicDRupiah.value = formatRupiah(this.value, 'Rp ');
+});
+
+function formatRupiah(angka, prefix) {
+  var number_string = angka.replace(/[^.\d]/g, '').toString(),
+    split = number_string.split('.'),
+    sisa = split[0].length % 3,
+    rupiah = split[0].substr(0, sisa),
+    ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+
+  if (ribuan) {
+    separator = sisa ? ',' : '';
+    rupiah += separator + ribuan.join(',');
+  }
+
+  rupiah = split[1] != undefined ? rupiah + '.' + split[1] : rupiah;
+  return prefix == undefined ? rupiah : (rupiah ? 'Rp ' + rupiah : '');
+}
+
+function delFormatRupiah(num) {
+  var justOneDot = num.replace(/[.](?=.*?\.)/g, '');
+  var outStr = parseFloat(justOneDot.replace(/[^0-9.]/g, ''));
+  return (outStr);
 }
 
 function hitungPaymentRate() {
@@ -654,32 +706,32 @@ function hitungPaymentRate() {
   var salaryPublicTS = document.getElementById("salaryPublicTS").value;
   var salaryPublicD = document.getElementById("salaryPublicD").value;
 
-  TsalaryPublicPM = salaryPublicPM * 0.7;
-  TsalaryPublicSA = salaryPublicSA * 0.7;
-  TsalaryPublicP = salaryPublicP * 0.7;
-  TsalaryPublicST = salaryPublicST * 0.7;
-  TsalaryPublicTS = salaryPublicTS * 0.7;
-  TsalaryPublicD = salaryPublicD * 0.7;
+  TsalaryPublicPM = delFormatRupiah(salaryPublicPM) * 0.7;
+  TsalaryPublicSA = delFormatRupiah(salaryPublicSA) * 0.7;
+  TsalaryPublicP = delFormatRupiah(salaryPublicP) * 0.7;
+  TsalaryPublicST = delFormatRupiah(salaryPublicST) * 0.7;
+  TsalaryPublicTS = delFormatRupiah(salaryPublicTS) * 0.7;
+  TsalaryPublicD = delFormatRupiah(salaryPublicD) * 0.7;
 
-  document.getElementById("salaryPrivatePM").value = TsalaryPublicPM.toFixed(0);
-  document.getElementById("salaryPrivateSA").value = TsalaryPublicSA.toFixed(0);
-  document.getElementById("salaryPrivateP").value = TsalaryPublicP.toFixed(0);
-  document.getElementById("salaryPrivateST").value = TsalaryPublicST.toFixed(0);
-  document.getElementById("salaryPrivateTS").value = TsalaryPublicTS.toFixed(0);
-  document.getElementById("salaryPrivateD").value = TsalaryPublicD.toFixed(0);
+  document.getElementById("salaryPrivatePM").value = formatRupiah(TsalaryPublicPM.toFixed(0), '');
+  document.getElementById("salaryPrivateSA").value = formatRupiah(TsalaryPublicSA.toFixed(0), '');
+  document.getElementById("salaryPrivateP").value = formatRupiah(TsalaryPublicP.toFixed(0), '');
+  document.getElementById("salaryPrivateST").value = formatRupiah(TsalaryPublicST.toFixed(0), '');
+  document.getElementById("salaryPrivateTS").value = formatRupiah(TsalaryPublicTS.toFixed(0), '');
+  document.getElementById("salaryPrivateD").value = formatRupiah(TsalaryPublicD.toFixed(0), '');
 
-  document.getElementById("RequirementsPayrate").value = salaryPublicSA;
-  document.getElementById("SpecificationsPayrate").value = salaryPublicSA;
-  document.getElementById("DesignPayrate").value = salaryPublicSA;
-  document.getElementById("ImplementationPayrate").value = salaryPublicP;
-  document.getElementById("IntegrationPayrate").value = salaryPublicST;
-  document.getElementById("AcceptancePayrate").value = salaryPublicST;
-  document.getElementById("ProjectManagementPayrate").value = salaryPublicPM;
-  document.getElementById("ConfigurationPayrate").value = salaryPublicSA;
-  document.getElementById("QualityPayrate").value = salaryPublicST;
-  document.getElementById("DocumentationsPayrate").value = salaryPublicD;
-  document.getElementById("TrainingPayrate").value = salaryPublicTS;
-  document.getElementById("EvaluationPayrate").value = salaryPublicST;
+  document.getElementById("RequirementsPayrate").value = formatRupiah(TsalaryPublicSA.toFixed(0), '');
+  document.getElementById("SpecificationsPayrate").value = formatRupiah(TsalaryPublicSA.toFixed(0), '');
+  document.getElementById("DesignPayrate").value = formatRupiah(TsalaryPublicSA.toFixed(0), '');
+  document.getElementById("ImplementationPayrate").value = formatRupiah(TsalaryPublicP.toFixed(0), '');
+  document.getElementById("IntegrationPayrate").value = formatRupiah(TsalaryPublicST.toFixed(0), '');
+  document.getElementById("AcceptancePayrate").value = formatRupiah(TsalaryPublicST.toFixed(0), '');
+  document.getElementById("ProjectManagementPayrate").value = formatRupiah(TsalaryPublicPM.toFixed(0), '');
+  document.getElementById("ConfigurationPayrate").value = formatRupiah(TsalaryPublicSA.toFixed(0), '');
+  document.getElementById("QualityPayrate").value = formatRupiah(TsalaryPublicST.toFixed(0), '');
+  document.getElementById("DocumentationsPayrate").value = formatRupiah(TsalaryPublicD.toFixed(0), '');
+  document.getElementById("TrainingPayrate").value = formatRupiah(TsalaryPublicTS.toFixed(0), '');
+  document.getElementById("EvaluationPayrate").value = formatRupiah(TsalaryPublicST.toFixed(0), '');
 
 
 }
@@ -698,36 +750,38 @@ function hitungStepSeven() {
   var TrainingPayrate = document.getElementById("TrainingPayrate").value;
   var EvaluationPayrate = document.getElementById("EvaluationPayrate").value;
 
-  RequirementsPayrate = 0.923 * KOMAActivityRequirements * RequirementsPayrate;
-  SpecificationsPayrate = 0.923 * KOMAActivitySpecifications * SpecificationsPayrate;
-  DesignPayrate = 0.923 * KOMAActivityDesign * DesignPayrate;
-  ImplementationPayrate = 0.923 * KOMAActivityImplementation * ImplementationPayrate;
-  IntegrationPayrate = 0.923 * KOMAActivityIntegration * IntegrationPayrate;
-  AcceptancePayrate = 0.923 * KOMAActivityAcceptance * AcceptancePayrate;
-  ProjectManagementPayrate = 0.923 * KOMAActivityProjectManagement * ProjectManagementPayrate;
-  ConfigurationPayrate = 0.923 * KOMAActivityConfiguration * ConfigurationPayrate;
-  QualityPayrate = 0.923 * KOMAActivityQuality * QualityPayrate;
-  DocumentationsPayrate = 0.923 * KOMAActivityDocumentations * DocumentationsPayrate;
-  TrainingPayrate = 0.923 * KOMAActivityTraining * TrainingPayrate;
-  EvaluationPayrate = 0.923 * KOMAActivityEvaluation * EvaluationPayrate;
+  var
 
-  document.getElementById("valueRequirementsPayrate").value = RequirementsPayrate.toFixed(0);
-  document.getElementById("valueSpecificationsPayrate").value = SpecificationsPayrate.toFixed(0);
-  document.getElementById("valueDesignPayrate").value = DesignPayrate.toFixed(0);
-  document.getElementById("valueImplementationPayrate").value = ImplementationPayrate.toFixed(0);
-  document.getElementById("valueIntegrationPayrate").value = IntegrationPayrate.toFixed(0);
-  document.getElementById("valueAcceptancePayrate").value = AcceptancePayrate.toFixed(0);
-  document.getElementById("valueProjectManagementPayrate").value = ProjectManagementPayrate.toFixed(0);
-  document.getElementById("valueConfigurationPayrate").value = ConfigurationPayrate.toFixed(0);
-  document.getElementById("valueQualityPayrate").value = QualityPayrate.toFixed(0);
-  document.getElementById("valueDocumentationsPayrate").value = DocumentationsPayrate.toFixed(0);
-  document.getElementById("valueTrainingPayrate").value = TrainingPayrate.toFixed(0);
-  document.getElementById("valueEvaluationPayrate").value = EvaluationPayrate.toFixed(0);
+    RequirementsPayrate = 0.923 * KOMAActivityRequirements * delFormatRupiah(RequirementsPayrate);
+  SpecificationsPayrate = 0.923 * KOMAActivitySpecifications * delFormatRupiah(SpecificationsPayrate);
+  DesignPayrate = 0.923 * KOMAActivityDesign * delFormatRupiah(DesignPayrate);
+  ImplementationPayrate = 0.923 * KOMAActivityImplementation * delFormatRupiah(ImplementationPayrate);
+  IntegrationPayrate = 0.923 * KOMAActivityIntegration * delFormatRupiah(IntegrationPayrate);
+  AcceptancePayrate = 0.923 * KOMAActivityAcceptance * delFormatRupiah(AcceptancePayrate);
+  ProjectManagementPayrate = 0.923 * KOMAActivityProjectManagement * delFormatRupiah(ProjectManagementPayrate);
+  ConfigurationPayrate = 0.923 * KOMAActivityConfiguration * delFormatRupiah(ConfigurationPayrate);
+  QualityPayrate = 0.923 * KOMAActivityQuality * delFormatRupiah(QualityPayrate);
+  DocumentationsPayrate = 0.923 * KOMAActivityDocumentations * delFormatRupiah(DocumentationsPayrate);
+  TrainingPayrate = 0.923 * KOMAActivityTraining * delFormatRupiah(TrainingPayrate);
+  EvaluationPayrate = 0.923 * KOMAActivityEvaluation * delFormatRupiah(EvaluationPayrate);
+
+  document.getElementById("valueRequirementsPayrate").value = formatRupiah(RequirementsPayrate.toFixed(0), '');
+  document.getElementById("valueSpecificationsPayrate").value = formatRupiah(SpecificationsPayrate.toFixed(0), '');
+  document.getElementById("valueDesignPayrate").value = formatRupiah(DesignPayrate.toFixed(0), '');
+  document.getElementById("valueImplementationPayrate").value = formatRupiah(ImplementationPayrate.toFixed(0), '');
+  document.getElementById("valueIntegrationPayrate").value = formatRupiah(IntegrationPayrate.toFixed(0), '');
+  document.getElementById("valueAcceptancePayrate").value = formatRupiah(AcceptancePayrate.toFixed(0), '');
+  document.getElementById("valueProjectManagementPayrate").value = formatRupiah(ProjectManagementPayrate.toFixed(0), '');
+  document.getElementById("valueConfigurationPayrate").value = formatRupiah(ConfigurationPayrate.toFixed(0), '');
+  document.getElementById("valueQualityPayrate").value = formatRupiah(QualityPayrate.toFixed(0), '');
+  document.getElementById("valueDocumentationsPayrate").value = formatRupiah(DocumentationsPayrate.toFixed(0), '');
+  document.getElementById("valueTrainingPayrate").value = formatRupiah(TrainingPayrate.toFixed(0), '');
+  document.getElementById("valueEvaluationPayrate").value = formatRupiah(EvaluationPayrate.toFixed(0), '');
 
   var totalStepSeven = RequirementsPayrate + SpecificationsPayrate + DesignPayrate + ImplementationPayrate + IntegrationPayrate + AcceptancePayrate + ProjectManagementPayrate + ConfigurationPayrate + QualityPayrate + DocumentationsPayrate + TrainingPayrate + EvaluationPayrate;
 
-  document.getElementById("valueTotalCostOfActivityWaterfallWithPayrate").value = totalStepSeven.toFixed(0);
-  document.getElementById("costBeforeProfit").value = totalStepSeven.toFixed(0);
+  document.getElementById("valueTotalCostOfActivityWaterfallWithPayrate").value = formatRupiah(totalStepSeven.toFixed(0), '');
+  document.getElementById("costBeforeProfit").value = formatRupiah(totalStepSeven.toFixed(0), '');
 
 }
 
@@ -737,17 +791,163 @@ function hitungProfit() {
 
   profit = profit / 100;
 
-  var totalProfit = costz * profit;
-  var totalCostWithProfit = Number(costz) + Number(totalProfit);
+  var totalProfit = delFormatRupiah(costz) * profit;
+  var totalCostWithProfit = Number(delFormatRupiah(costz)) + Number(totalProfit);
 
-  document.getElementById("totalProfit").value = totalProfit.toFixed(0);
-  document.getElementById("costWithProfit").value = totalCostWithProfit.toFixed(0);
+  document.getElementById("totalProfit").value = formatRupiah(totalProfit.toFixed(0), '');
+  document.getElementById("costWithProfit").value = formatRupiah(totalCostWithProfit.toFixed(0), '');
 
-  document.getElementById("PersonelDirectCostBeforeProfit").value = costz;
-  document.getElementById("totalProfitIDR").value = totalProfit.toFixed(0);
-  document.getElementById("PersonelDirectCost").value = totalCostWithProfit.toFixed(0);
+  document.getElementById("PersonelDirectCostBeforeProfit").value = formatRupiah(costz, '');
+  document.getElementById("totalProfitIDR").value = formatRupiah(totalProfit.toFixed(0), '');
+  document.getElementById("PersonelDirectCost").value = formatRupiah(totalCostWithProfit.toFixed(0), '');
 
 }
+
+var dfta = document.getElementById('dfta');
+dfta.addEventListener('keyup', function (e) {
+  dfta.value = formatRupiah(this.value, 'Rp ');
+});
+
+var tt = document.getElementById('tt');
+tt.addEventListener('keyup', function (e) {
+  tt.value = formatRupiah(this.value, 'Rp ');
+});
+
+var eb = document.getElementById('eb');
+eb.addEventListener('keyup', function (e) {
+  eb.value = formatRupiah(this.value, 'Rp ');
+});
+
+var ub = document.getElementById('ub');
+ub.addEventListener('keyup', function (e) {
+  ub.value = formatRupiah(this.value, 'Rp ');
+});
+
+var lt = document.getElementById('lt');
+lt.addEventListener('keyup', function (e) {
+  lt.value = formatRupiah(this.value, 'Rp ');
+});
+
+var tcoppn = document.getElementById('tcoppn');
+tcoppn.addEventListener('keyup', function (e) {
+  tcoppn.value = formatRupiah(this.value, 'Rp ');
+});
+
+var icop = document.getElementById('icop');
+icop.addEventListener('keyup', function (e) {
+  icop.value = formatRupiah(this.value, 'Rp ');
+});
+
+var rav = document.getElementById('rav');
+rav.addEventListener('keyup', function (e) {
+  rav.value = formatRupiah(this.value, 'Rp ');
+});
+
+var rtpo = document.getElementById('rtpo');
+rtpo.addEventListener('keyup', function (e) {
+  rtpo.value = formatRupiah(this.value, 'Rp ');
+});
+
+var roe = document.getElementById('roe');
+roe.addEventListener('keyup', function (e) {
+  roe.value = formatRupiah(this.value, 'Rp ');
+});
+
+var rof = document.getElementById('rof');
+rof.addEventListener('keyup', function (e) {
+  rof.value = formatRupiah(this.value, 'Rp ');
+});
+
+var ocotpo = document.getElementById('ocotpo');
+ocotpo.addEventListener('keyup', function (e) {
+  ocotpo.value = formatRupiah(this.value, 'Rp ');
+});
+
+var oc = document.getElementById('oc');
+oc.addEventListener('keyup', function (e) {
+  oc.value = formatRupiah(this.value, 'Rp ');
+});
+
+var capc = document.getElementById('capc');
+capc.addEventListener('keyup', function (e) {
+  capc.value = formatRupiah(this.value, 'Rp ');
+});
+
+var cc = document.getElementById('cc');
+cc.addEventListener('keyup', function (e) {
+  cc.value = formatRupiah(this.value, 'Rp ');
+});
+
+var pda = document.getElementById('pda');
+pda.addEventListener('keyup', function (e) {
+  pda.value = formatRupiah(this.value, 'Rp ');
+});
+
+var ha = document.getElementById('ha');
+ha.addEventListener('keyup', function (e) {
+  ha.value = formatRupiah(this.value, 'Rp ');
+});
+
+var tl = document.getElementById('tl');
+tl.addEventListener('keyup', function (e) {
+  tl.value = formatRupiah(this.value, 'Rp ');
+});
+
+var ra = document.getElementById('ra');
+ra.addEventListener('keyup', function (e) {
+  ra.value = formatRupiah(this.value, 'Rp ');
+});
+
+var oosa = document.getElementById('oosa');
+oosa.addEventListener('keyup', function (e) {
+  oosa.value = formatRupiah(this.value, 'Rp ');
+});
+
+var etl = document.getElementById('etl');
+etl.addEventListener('keyup', function (e) {
+  etl.value = formatRupiah(this.value, 'Rp ');
+});
+
+var al = document.getElementById('al');
+al.addEventListener('keyup', function (e) {
+  al.value = formatRupiah(this.value, 'Rp ');
+});
+
+var rc = document.getElementById('rc');
+rc.addEventListener('keyup', function (e) {
+  rc.value = formatRupiah(this.value, 'Rp ');
+});
+
+var rse = document.getElementById('rse');
+rse.addEventListener('keyup', function (e) {
+  rse.value = formatRupiah(this.value, 'Rp ');
+});
+
+var sdc = document.getElementById('sdc');
+sdc.addEventListener('keyup', function (e) {
+  sdc.value = formatRupiah(this.value, 'Rp ');
+});
+
+var seminar = document.getElementById('seminar');
+seminar.addEventListener('keyup', function (e) {
+  seminar.value = formatRupiah(this.value, 'Rp ');
+});
+
+var s = document.getElementById('s');
+s.addEventListener('keyup', function (e) {
+  s.value = formatRupiah(this.value, 'Rp ');
+});
+
+var labt = document.getElementById('labt');
+labt.addEventListener('keyup', function (e) {
+  labt.value = formatRupiah(this.value, 'Rp ');
+});
+
+var c = document.getElementById('c');
+c.addEventListener('keyup', function (e) {
+  c.value = formatRupiah(this.value, 'Rp ');
+});
+
 
 function hitungNonPersonel() {
   var dfta = document.getElementById("dfta").value;
@@ -782,12 +982,12 @@ function hitungNonPersonel() {
 
 
 
-  var total = Number(dfta) + Number(tt) + Number(eb) + Number(ub) + Number(lt) + Number(tcoppn) + Number(icop) + Number(rav) + Number(rtpo) + Number(roe) +
-    Number(rof) + Number(ocotpo) + Number(oc) + Number(capc) + Number(cc) + Number(pda) + Number(ha) +
-    Number(tl) + Number(ra) + Number(oosa) + Number(etl) + Number(al) + Number(rc) + Number(rse) + Number(sdc)+ Number(seminar)+ Number(s)+ Number(labt)+ Number(c);
+  var total = Number(delFormatRupiah(dfta)) + Number(delFormatRupiah(tt)) + Number(delFormatRupiah(eb)) + Number(delFormatRupiah(ub)) + Number(delFormatRupiah(lt)) + Number(delFormatRupiah(tcoppn)) + Number(delFormatRupiah(icop)) + Number(delFormatRupiah(rav)) + Number(delFormatRupiah(rtpo)) + Number(delFormatRupiah(roe)) +
+    Number(delFormatRupiah(rof)) + Number(delFormatRupiah(ocotpo)) + Number(delFormatRupiah(oc)) + Number(delFormatRupiah(capc)) + Number(delFormatRupiah(cc)) + Number(delFormatRupiah(pda)) + Number(delFormatRupiah(ha)) +
+    Number(delFormatRupiah(tl)) + Number(delFormatRupiah(ra)) + Number(delFormatRupiah(oosa)) + Number(delFormatRupiah(etl)) + Number(delFormatRupiah(al)) + Number(delFormatRupiah(rc)) + Number(delFormatRupiah(rse)) + Number(delFormatRupiah(sdc)) + Number(delFormatRupiah(seminar)) + Number(delFormatRupiah(s)) + Number(delFormatRupiah(labt)) + Number(delFormatRupiah(c));
 
-  document.getElementById("totalNonPersonel").value = total.toFixed(0);
-  document.getElementById("NonPersonnelDirectCost").value = total.toFixed(0);
+  document.getElementById("totalNonPersonel").value = formatRupiah(total.toFixed(0), '');
+  document.getElementById("NonPersonnelDirectCost").value = formatRupiah(total.toFixed(0), '');
 
 }
 
@@ -797,16 +997,16 @@ function hitungTax() {
   var PersonelDirectCost = document.getElementById("PersonelDirectCost").value;
   var tax = document.getElementById("tax").value;
 
-  var totalOwnerCostEstimateBeforeTax = Number(NonPersonnelDirectCost) + Number(PersonelDirectCost);
+  var totalOwnerCostEstimateBeforeTax = Number(delFormatRupiah(NonPersonnelDirectCost)) + Number(delFormatRupiah(PersonelDirectCost));
 
   tax = tax / 100;
 
   var totalTax = tax * totalOwnerCostEstimateBeforeTax;
   var OwnerCostEstimate = Number(totalTax) + Number(totalOwnerCostEstimateBeforeTax);
 
-  document.getElementById("OwnerCostEstimateBeforeTaxes").value = totalOwnerCostEstimateBeforeTax.toFixed(0);
-  document.getElementById("ValueAddedTax").value = totalTax.toFixed(0);
-  document.getElementById("OwnerCostEstimate").value = OwnerCostEstimate.toFixed(0);
+  document.getElementById("OwnerCostEstimateBeforeTaxes").value = formatRupiah(totalOwnerCostEstimateBeforeTax.toFixed(0), '');
+  document.getElementById("ValueAddedTax").value = formatRupiah(totalTax.toFixed(0), '');
+  document.getElementById("OwnerCostEstimate").value = formatRupiah(OwnerCostEstimate.toFixed(0), '');
 
 
 }

@@ -41,13 +41,13 @@
         1
       </td>
       <td>
-        <input type="number" readonly value="0" oninput="this.className = ''" id="costBeforeProfit" name="costBeforeProfit">
+        <input type="text" readonly value="0" oninput="this.className = ''" id="costBeforeProfit" name="costBeforeProfit">
       </td>
       <td>
-        <input type="number" readonly value="0" oninput="this.className = ''" id="totalProfit" name="totalProfit">
+        <input type="text" readonly value="0" oninput="this.className = ''" id="totalProfit" name="totalProfit">
       </td>
       <td>
-        <input type="number" readonly value="0" oninput="this.className = ''" id="costWithProfit" name="costWithProfit">
+        <input type="text" readonly value="0" oninput="this.className = ''" id="costWithProfit" name="costWithProfit">
       </td>
     </tr>
 
